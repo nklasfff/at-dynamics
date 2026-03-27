@@ -1,0 +1,124 @@
+/* ═══════════════════════════════════════════
+   AT Dynamics — Global Styles
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* Dark theme (default) */
+  --bg-primary: #080c14;
+  --bg-secondary: #0e1320;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.06);
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --bg-glass-border: rgba(255, 255, 255, 0.08);
+
+  --text-primary: #e8e4df;
+  --text-secondary: rgba(232, 228, 223, 0.55);
+  --text-tertiary: rgba(232, 228, 223, 0.3);
+
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.1);
+
+  /* Practice accent colors — used subtly */
+  --color-alt: #c4956a;
+  --color-alt-soft: rgba(196, 149, 106, 0.08);
+  --color-alt-mid: rgba(196, 149, 106, 0.15);
+
+  --color-whm: #5a8aaa;
+  --color-whm-soft: rgba(90, 138, 170, 0.08);
+  --color-whm-mid: rgba(90, 138, 170, 0.15);
+
+  --color-cst: #c9a87c;
+  --color-cst-soft: rgba(201, 168, 124, 0.08);
+  --color-cst-mid: rgba(201, 168, 124, 0.15);
+
+  --glow-opacity: 0.06;
+  --illustration-opacity: 0.5;
+
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f8f6f3;
+  --bg-secondary: #f0ede8;
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --bg-card-hover: rgba(255, 255, 255, 0.9);
+  --bg-glass: rgba(255, 255, 255, 0.6);
+  --bg-glass-border: rgba(0, 0, 0, 0.06);
+
+  --text-primary: #1a1815;
+  --text-secondary: rgba(26, 24, 21, 0.5);
+  --text-tertiary: rgba(26, 24, 21, 0.25);
+
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --border-medium: rgba(0, 0, 0, 0.08);
+
+  --color-alt-soft: rgba(196, 149, 106, 0.06);
+  --color-alt-mid: rgba(196, 149, 106, 0.12);
+
+  --color-whm-soft: rgba(90, 138, 170, 0.06);
+  --color-whm-mid: rgba(90, 138, 170, 0.12);
+
+  --color-cst-soft: rgba(201, 168, 124, 0.06);
+  --color-cst-mid: rgba(201, 168, 124, 0.12);
+
+  --glow-opacity: 0.04;
+  --illustration-opacity: 0.35;
+
+  color-scheme: light;
+}
+
+/* ── Reset ── */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.7;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* ── Typography ── */
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+/* ── Scrollbar ── */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 2px;
+}
+
+/* ── Selection ── */
+
+::selection {
+  background: var(--color-cst-mid);
+  color: var(--text-primary);
+}
