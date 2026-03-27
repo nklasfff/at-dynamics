@@ -122,9 +122,9 @@ export default function CranioPage({ language }) {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>{t('cranioRhythmsLabel', language) || 'De tre tidevande'}</p>
+              <p className={styles.cardLabel}>{t('cranioRhythmsLabel', language) || 'De tre bevægelser'}</p>
               <h2 className={styles.cardTitle}>{t('cranioRhythmsTitle', language) || 'CRI, Mid-Tide, Long Tide'}</h2>
-              <p className={styles.cardSubtitle}>{t('cranioRhythmsSubtitle', language) || 'Tre hastigheder af liv'}</p>
+              <p className={styles.cardSubtitle}>{t('cranioRhythmsSubtitle', language) || 'Krop, væske og energi'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'rhythms' ? '−' : '+'}</span>
           </div>
@@ -134,13 +134,13 @@ export default function CranioPage({ language }) {
                 {t('cranioRhythmsText', language) || 'Den hurtigste rytme — Cranial Rhythmic Impulse — bevæger sig med otte til tolv cykler i minuttet. Det er denne rytme, de fleste behandlere først lærer at palpere. Den afspejler den mekaniske bevægelse af cerebrospinalvæsken og knoglerne. CRI er kroppens fysiologiske kommentar — den fortæller, hvor der er frihed og hvor der er restriktion.'}
               </p>
               <p className={styles.cardTextExtra}>
-                {t('cranioRhythmsTextExtra', language) || 'Mid-Tide er langsommere — omkring to en halv cyklus i minuttet — og tilhører et andet perceptuelt felt. Her mærker behandleren ikke strukturer men kræfter. Det er det organiserende princip der former og opretholder vævets arkitektur. Long Tide er den langsomste: én cyklus på hundrede sekunder. Den opleves som en universel tidevandsbevægelse der transcenderer det individuelle. Sutherland kaldte den "Breath of Life" — livets åndedræt, der var til stede før det første lungeåndedrag.'}
+                {t('cranioRhythmsTextExtra', language) || 'Mid-Tide er langsommere — omkring to en halv cyklus i minuttet — og tilhører væskekroppen. Her mærker behandleren ikke strukturer men kræfter. Det er det organiserende princip der former og opretholder vævets arkitektur. Long Tide er den langsomste: én cyklus på hundrede sekunder. Den opleves som en universel energetisk bevægelse der transcenderer det individuelle. Sutherland kaldte den "Breath of Life" — livets åndedræt, der var til stede før det første lungeåndedrag.'}
               </p>
               <ul className={styles.bullets}>
                 {(t('cranioRhythmsBullets', language) || [
-                  'CRI: mekanik og struktur — den mest håndgribelige rytme',
-                  'Mid-Tide: organiseringskraft — det felt der former vævet',
-                  'Long Tide: universel bevægelse — livets grundpuls',
+                  'CRI: den fysiske krop — den mest håndgribelige rytme',
+                  'Mid-Tide: væskekroppen — det felt der former vævet',
+                  'Long Tide: den energetiske bevægelse — livets grundpuls',
                   'Behandleren skifter perceptuelt niveau, ikke teknik',
                   'Dybere lytning afslører dybere lag af sundhed',
                 ]).map((b, i) => <li key={i}>{b}</li>)}

@@ -197,9 +197,9 @@ export default function HomePage({ onNavigate, language }) {
             </p>
             <ul className={styles.cardBullets}>
               {(t('homeCstBullets', language) || [
-                'CRI: Kranial rytmisk impuls — 8–12 cykler/min',
-                'Mid-tide: Langsommere rytme — 2–3 cykler/min',
-                'Long tide: Den dybeste rytme — ca. 1 cyklus/100 sek.',
+                'CRI: Den fysiske krop — 8–12 cykler/min',
+                'Mid-Tide: Væskekroppen — 2–3 cykler/min',
+                'Long Tide: Den energetiske bevægelse — ca. 1 cyklus/100 sek.',
                 'Still point: Øjeblikke af fuldstændig stilhed og reorganisering',
                 '5 grams berøring — lettere end en sommerfugls landing',
               ]).map((b, i) => <li key={i}>{b}</li>)}

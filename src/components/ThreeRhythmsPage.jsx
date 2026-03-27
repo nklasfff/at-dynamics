@@ -15,7 +15,7 @@ export default function ThreeRhythmsPage({ language }) {
         <p className={styles.eyebrow}>{t('rhythmEyebrow', language) || 'Tre bevægelser'}</p>
         <h1 className={styles.title}>{t('rhythmTitle', language) || 'De tre rytmer'}</h1>
         <p className={styles.subtitle}>
-          {t('rhythmSubtitle', language) || 'Berøring, åndedræt og tidevand — tre sprog for den samme intelligens. Når de mødes, opstår noget større end summen.'}
+          {t('rhythmSubtitle', language) || 'Berøring, åndedræt og den kraniosakrale puls — tre sprog for den samme intelligens. Når de mødes, opstår noget større end summen.'}
         </p>
       </header>
 
@@ -61,7 +61,7 @@ export default function ThreeRhythmsPage({ language }) {
           {/* Labels */}
           <text x="30" y="82" fill="var(--color-alt)" fontSize="7" opacity="0.4" fontFamily="'Cormorant Garamond', serif" fontStyle="italic">{t('rhythmSvgTouch', language) || 'Berøring'}</text>
           <text x="30" y="133" fill="var(--color-whm)" fontSize="7" opacity="0.4" fontFamily="'Cormorant Garamond', serif" fontStyle="italic">{t('rhythmSvgBreath', language) || 'Åndedræt'}</text>
-          <text x="30" y="195" fill="var(--color-cst)" fontSize="7" opacity="0.4" fontFamily="'Cormorant Garamond', serif" fontStyle="italic">{t('rhythmSvgTide', language) || 'Tidevand'}</text>
+          <text x="30" y="195" fill="var(--color-cst)" fontSize="7" opacity="0.4" fontFamily="'Cormorant Garamond', serif" fontStyle="italic">{t('rhythmSvgTide', language) || 'Kraniosakral'}</text>
         </svg>
       </div>
 
@@ -213,26 +213,26 @@ export default function ThreeRhythmsPage({ language }) {
             </div>
             <div className={styles.cardContent}>
               <p className={styles.cardLabel}>{t('rhythmTideLabel', language) || 'Kraniosakral'}</p>
-              <h2 className={styles.cardTitle}>{t('rhythmTideTitle', language) || 'Tidevandets rytme'}</h2>
-              <p className={styles.cardSubtitle}>{t('rhythmTideSubtitle', language) || 'Den rytme der var der før dig'}</p>
+              <h2 className={styles.cardTitle}>{t('rhythmTideTitle', language) || 'Den kraniosakrale rytme'}</h2>
+              <p className={styles.cardSubtitle}>{t('rhythmTideSubtitle', language) || 'Krop, væske og energi i bevægelse'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'tide' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                {t('rhythmTideText', language) || 'Den kraniosakrale rytme skabes ikke af kroppen — ifølge den biodynamiske tradition modtages den af kroppen. Primary Respiration er en tidevandskraft der var til stede i embryoet før lungerne udviklede sig, før hjertet begyndte at slå. Den bevæger sig med seks til tolv cykler per minut (CRI), to en halv cyklus per minut (Mid-Tide) eller én cyklus per hundrede sekunder (Long Tide). Behandleren måler ikke disse — de perciperes gennem opmærksomhedens kvalitet.'}
+                {t('rhythmTideText', language) || 'Den kraniosakrale rytme har tre lag. CRI — den hurtigste — afspejler den fysiske krops bevægelse: knogler, membraner, væv. Mid-Tide hører til væskekroppen — her mærker behandleren ikke strukturer men strømme og organiseringskræfter. Long Tide er den langsomste og dybeste: en energetisk bevægelse der transcenderer det individuelle. Behandleren måler ikke disse — de perciperes gennem opmærksomhedens kvalitet.'}
               </p>
               <p className={styles.cardTextExtra}>
-                {t('rhythmTideTextExtra', language) || 'I modsætning til berøringens og åndedrættets rytmer kan tidevandsrytmen ikke kontrolleres eller dirigeres. Den kan kun modtages. Det kræver en fundamentalt anderledes orientering: fra aktiv til receptiv, fra at gøre til at være. Behandleren synker ind i et bredt, blødt opmærksomhedsfelt og venter. Rytmen viser sig ikke fordi behandleren leder efter den, men fordi de bliver stille nok til at opdage det der altid har været der.'}
+                {t('rhythmTideTextExtra', language) || 'I modsætning til berøringens og åndedrættets rytmer kan den kraniosakrale rytme ikke kontrolleres eller dirigeres. Den kan kun modtages. Det kræver en fundamentalt anderledes orientering: fra aktiv til receptiv, fra at gøre til at være. Behandleren synker ind i et bredt, blødt opmærksomhedsfelt og venter. Rytmen viser sig ikke fordi behandleren leder efter den, men fordi de bliver stille nok til at opdage det der altid har været der.'}
               </p>
               <ul className={styles.bullets}>
                 {(t('rhythmTideBullets', language) || [
-                  'Primary Respiration var til stede før det første lungeåndedrag',
-                  'CRI er den mest håndgribelige — Mid-Tide den mest organiserende',
-                  'Long Tide transcenderer det individuelle og opleves som universel',
+                  'CRI afspejler den fysiske krop — knogler, membraner og væv',
+                  'Mid-Tide hører til væskekroppen — strømme og organiseringskræfter',
+                  'Long Tide er energetisk — den transcenderer det individuelle',
                   'Rytmen kan ikke styres — kun modtages gennem stille opmærksomhed',
-                  'At lytte til tidevandet kræver at behandleren selv bliver stille',
+                  'At lytte til kroppen kræver at behandleren selv bliver stille',
                 ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
@@ -265,10 +265,10 @@ export default function ThreeRhythmsPage({ language }) {
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                {t('rhythmSyncText', language) || 'I avanceret praksis begynder de tre rytmer at synkronisere. Behandlerens hænder finder en rytme der samtidig er responsiv over for vævet (ALT), koordineret med åndedrættet (WHM) og afstemt med tidevandsbevægelsen (kraniosakral). Det er ikke noget der kan tvinges eller planlægges — det opstår når behandleren er dybt nærværende og alle tre færdigheder er internaliseret.'}
+                {t('rhythmSyncText', language) || 'I avanceret praksis begynder de tre rytmer at synkronisere. Behandlerens hænder finder en rytme der samtidig er responsiv over for vævet (ALT), koordineret med åndedrættet (WHM) og afstemt med den kraniosakrale puls. Det er ikke noget der kan tvinges eller planlægges — det opstår når behandleren er dybt nærværende og alle tre færdigheder er internaliseret.'}
               </p>
               <p className={styles.cardTextExtra}>
-                {t('rhythmSyncTextExtra', language) || 'Synkronisering er kendetegnet på mesterskab i AnThes Dynamics. Det er øjeblikket hvor de tre separate discipliner opløses i ét samlet praksisfelt. Hænderne bevæger sig, åndedrættet flyder, tidevandet stiger — og alle tre er udtryk for den samme intelligens. Behandlere der når denne tilstand beskriver den som ubesværet — ikke fordi arbejdet er let, men fordi adskillelsen mellem behandler, teknik og klient forsvinder.'}
+                {t('rhythmSyncTextExtra', language) || 'Synkronisering er kendetegnet på mesterskab i AnThes Dynamics. Det er øjeblikket hvor de tre separate discipliner opløses i ét samlet praksisfelt. Hænderne bevæger sig, åndedrættet flyder, den kraniosakrale puls bærer det hele — og alle tre er udtryk for den samme intelligens. Behandlere der når denne tilstand beskriver den som ubesværet — ikke fordi arbejdet er let, men fordi adskillelsen mellem behandler, teknik og klient forsvinder.'}
               </p>
               <ul className={styles.bullets}>
                 {(t('rhythmSyncBullets', language) || [

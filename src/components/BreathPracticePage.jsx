@@ -182,7 +182,7 @@ export default function BreathPracticePage({ language }) {
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                {t('breathThreeText', language) || 'I Wim Hof er åndedrættet et redskab — kontrolleret hyperventilation efterfulgt af retention skaber målbare ændringer i blodets pH, adrenalin og immunrespons. I ALT understøtter åndedrættet vævsarbejdet — behandleren koordinerer berøringen med klientens åndedræt og bruger udåndingen til at frigøre fascielle restriktioner. I kraniosakral terapi lyttes der til åndedrættet — ikke lungeåndedrættet, men Primær Respiration, den dybere tidale bevægelse.'}
+                {t('breathThreeText', language) || 'I Wim Hof er åndedrættet et redskab — kontrolleret hyperventilation efterfulgt af retention skaber målbare ændringer i blodets pH, adrenalin og immunrespons. I ALT understøtter åndedrættet vævsarbejdet — behandleren koordinerer berøringen med klientens åndedræt og bruger udåndingen til at frigøre fascielle restriktioner. I kraniosakral terapi lyttes der til åndedrættet — ikke lungeåndedrættet, men Primær Respiration, den dybere kraniosakrale bevægelse.'}
               </p>
               <p className={styles.cardTextExtra}>
                 {t('breathThreeTextExtra', language) || 'Disse tre relationer til åndedrættet — at kommandere det, at koordinere med det og at lytte til det — repræsenterer en progression fra aktiv til receptiv. Mesterskab i åndedrætsarbejde betyder at beherske alle tre tilstande og vide, hvornår hver er passende. Nogle gange skal du drive systemet; nogle gange skal du følge det; nogle gange skal du blot bevidne det.'}
