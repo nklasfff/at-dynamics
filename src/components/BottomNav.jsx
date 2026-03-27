@@ -1,9 +1,11 @@
 import styles from './BottomNav.module.css'
+import { t } from '../translations'
 
 const tabs = [
   {
     id: 'home',
-    label: 'Hjem',
+    labelKey: 'navHome',
+    labelDa: 'Hjem',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.2" stroke="currentColor">
         <circle cx="12" cy="12" r="3" />
@@ -13,7 +15,8 @@ const tabs = [
   },
   {
     id: 'alt',
-    label: 'ALT',
+    labelKey: 'navAlt',
+    labelDa: 'ALT',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.2" stroke="currentColor">
         <ellipse cx="12" cy="11" rx="6" ry="8" />
@@ -23,7 +26,8 @@ const tabs = [
   },
   {
     id: 'whm',
-    label: 'Wim Hof',
+    labelKey: 'navWhm',
+    labelDa: 'Wim Hof',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.2" stroke="currentColor">
         <path d="M4,12 Q8,5 12,12 Q16,19 20,12" />
@@ -32,7 +36,8 @@ const tabs = [
   },
   {
     id: 'cranio',
-    label: 'Kranio',
+    labelKey: 'navCranio',
+    labelDa: 'Kranio',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.2" stroke="currentColor">
         <path d="M4,13 Q12,9 20,13" />
@@ -43,7 +48,8 @@ const tabs = [
   },
   {
     id: 'deeper',
-    label: 'Dybere',
+    labelKey: 'navDeeper',
+    labelDa: 'Dybere',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.2" stroke="currentColor">
         <circle cx="12" cy="12" r="8" opacity="0.2" />
@@ -54,7 +60,7 @@ const tabs = [
   },
 ]
 
-export default function BottomNav({ activeTab, onTabChange }) {
+export default function BottomNav({ activeTab, onTabChange, language }) {
   return (
     <nav className={styles.nav}>
       <div className={styles.navInner}>
@@ -65,7 +71,7 @@ export default function BottomNav({ activeTab, onTabChange }) {
             onClick={() => onTabChange(tab.id)}
           >
             <span className={styles.icon}>{tab.icon}</span>
-            <span className={styles.label}>{tab.label}</span>
+            <span className={styles.label}>{t(tab.labelKey, language) || tab.labelDa}</span>
           </button>
         ))}
       </div>

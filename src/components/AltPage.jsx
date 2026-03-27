@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import styles from './DeeperPage.module.css'
 import ScrollToTop from './ScrollToTop'
+import { t } from '../translations'
 
-export default function AltPage() {
+export default function AltPage({ language }) {
   const [expanded, setExpanded] = useState(null)
   const toggle = (id) => setExpanded(expanded === id ? null : id)
 
@@ -11,11 +12,10 @@ export default function AltPage() {
       <div className={styles.ambientGlow} />
 
       <header className={styles.header}>
-        <p className={styles.eyebrow}>Ansigtsbehandling</p>
-        <h1 className={styles.title}>ALT</h1>
+        <p className={styles.eyebrow}>{t('altEyebrow', language) || 'Ansigtsbehandling'}</p>
+        <h1 className={styles.title}>{t('altTitle', language) || 'ALT'}</h1>
         <p className={styles.subtitle}>
-          AnsigtsLøftningsTeknik. Seks lag af væv, fem kranienerver
-          og en direkte linje til nervesystemets kerne.
+          {t('altSubtitle', language) || 'AnsigtsLøftningsTeknik. Seks lag af væv, fem kranienerver og en direkte linje til nervesystemets kerne.'}
         </p>
       </header>
 
@@ -74,34 +74,28 @@ export default function AltPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Anatomi</p>
-              <h2 className={styles.cardTitle}>De seks lag</h2>
-              <p className={styles.cardSubtitle}>Fra overflade til dybde</p>
+              <p className={styles.cardLabel}>{t('altLayersLabel', language) || 'Anatomi'}</p>
+              <h2 className={styles.cardTitle}>{t('altLayersTitle', language) || 'De seks lag'}</h2>
+              <p className={styles.cardSubtitle}>{t('altLayersSubtitle', language) || 'Fra overflade til dybde'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'layers' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Ansigtets arkitektur er lagdelt som en geologisk formation. Yderst ligger
-                epidermis og dermis — den synlige hud, der bærer mærker af tid og vind.
-                Derunder hviler det subkutane fedtlag, der giver ansigtet dets volumen og
-                blødhed, men som også huser et tæt netværk af nerver og blodkar.
+                {t('altLayersText', language) || 'Ansigtets arkitektur er lagdelt som en geologisk formation. Yderst ligger epidermis og dermis — den synlige hud, der bærer mærker af tid og vind. Derunder hviler det subkutane fedtlag, der giver ansigtet dets volumen og blødhed, men som også huser et tæt netværk af nerver og blodkar.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Det tredje lag er SMAS — det superficielle muskuloaponeurotiske system —
-                et sammenhængende bindevævsark der forbinder alle ansigtsmuskler til ét
-                funktionelt hele. Under SMAS ligger den dybe muskulatur, derefter det dybe
-                fedtlag (som adskiller muskler fra knogle), og endelig periosten — den
-                levende hinde der omslutter selve knoglen. Hvert lag har sin egen
-                konsistens, sin egen nervation og sin egen respons på berøring.
+                {t('altLayersTextExtra', language) || 'Det tredje lag er SMAS — det superficielle muskuloaponeurotiske system — et sammenhængende bindevævsark der forbinder alle ansigtsmuskler til ét funktionelt hele. Under SMAS ligger den dybe muskulatur, derefter det dybe fedtlag (som adskiller muskler fra knogle), og endelig periosten — den levende hinde der omslutter selve knoglen. Hvert lag har sin egen konsistens, sin egen nervation og sin egen respons på berøring.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Hud: den sensoriske grænseflade — registrerer temperatur, tryk, smerte</li>
-                <li>Subkutant fedt: volumen og nervenetværk i ét</li>
-                <li>SMAS: bindevævsarket der forener alle ansigtsmuskler</li>
-                <li>Dyb muskulatur: tyggemuskler, mimiske muskler, udtrykkets motor</li>
-                <li>Periost og knogle: den stille base alt andet hviler på</li>
+                {(t('altLayersBullets', language) || [
+                  'Hud: den sensoriske grænseflade — registrerer temperatur, tryk, smerte',
+                  'Subkutant fedt: volumen og nervenetværk i ét',
+                  'SMAS: bindevævsarket der forener alle ansigtsmuskler',
+                  'Dyb muskulatur: tyggemuskler, mimiske muskler, udtrykkets motor',
+                  'Periost og knogle: den stille base alt andet hviler på'
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -124,34 +118,28 @@ export default function AltPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Neuroanatomi</p>
-              <h2 className={styles.cardTitle}>Fem kranienerver</h2>
-              <p className={styles.cardSubtitle}>Ansigtet som nervesystemets spejl</p>
+              <p className={styles.cardLabel}>{t('altNervesLabel', language) || 'Neuroanatomi'}</p>
+              <h2 className={styles.cardTitle}>{t('altNervesTitle', language) || 'Fem kranienerver'}</h2>
+              <p className={styles.cardSubtitle}>{t('altNervesSubtitle', language) || 'Ansigtet som nervesystemets spejl'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'nerves' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Trigeminus (V) er ansigtet store sensoriske nerve — den registrerer
-                alt fra let berøring til dyb smerte og dækker pande, kinder og kæbe i
-                tre forgreninger. Facialis (VII) styrer mimikken: hvert smil, hver
-                rynken, hvert løftet øjenbryn er facialis' værk.
+                {t('altNervesText', language) || 'Trigeminus (V) er ansigtet store sensoriske nerve — den registrerer alt fra let berøring til dyb smerte og dækker pande, kinder og kæbe i tre forgreninger. Facialis (VII) styrer mimikken: hvert smil, hver rynken, hvert løftet øjenbryn er facialis\' værk.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Glossopharyngeus (IX) innerverer svælget og tungens bageste del og er
-                involveret i synkerefleksen og smagssansen. Vagus (X) — den længste
-                kranienerve — sender forgreninger til øret, strubehovedet og derfra
-                videre til hjerte, lunger og tarmkanal. Accessorius (XI) styrer nakke-
-                og skuldermuskulaturen. Tilsammen danner disse fem nerver en
-                sensorisk-motorisk bro mellem ansigtet og hjernestammens autonome centre.
+                {t('altNervesTextExtra', language) || 'Glossopharyngeus (IX) innerverer svælget og tungens bageste del og er involveret i synkerefleksen og smagssansen. Vagus (X) — den længste kranienerve — sender forgreninger til øret, strubehovedet og derfra videre til hjerte, lunger og tarmkanal. Accessorius (XI) styrer nakke- og skuldermuskulaturen. Tilsammen danner disse fem nerver en sensorisk-motorisk bro mellem ansigtet og hjernestammens autonome centre.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Trigeminus (V): tre grene dækker hele ansigtet sensorisk</li>
-                <li>Facialis (VII): 42 mimiske muskler under én nerves kommando</li>
-                <li>Glossopharyngeus (IX): svælg, smag og synkekoordination</li>
-                <li>Vagus (X): den lange vandrer — fra øre til tarmkanal</li>
-                <li>Accessorius (XI): nakke og skulder — spændingens arnested</li>
+                {(t('altNervesBullets', language) || [
+                  'Trigeminus (V): tre grene dækker hele ansigtet sensorisk',
+                  'Facialis (VII): 42 mimiske muskler under én nerves kommando',
+                  'Glossopharyngeus (IX): svælg, smag og synkekoordination',
+                  'Vagus (X): den lange vandrer — fra øre til tarmkanal',
+                  'Accessorius (XI): nakke og skulder — spændingens arnested'
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -214,35 +202,28 @@ export default function AltPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Metoden</p>
-              <h2 className={styles.cardTitle}>Stanley Rosenberg</h2>
-              <p className={styles.cardSubtitle}>En livstids forskning i berøring</p>
+              <p className={styles.cardLabel}>{t('altMethodLabel', language) || 'Metoden'}</p>
+              <h2 className={styles.cardTitle}>{t('altMethodTitle', language) || 'Stanley Rosenberg'}</h2>
+              <p className={styles.cardSubtitle}>{t('altMethodSubtitle', language) || 'En livstids forskning i berøring'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'method' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Stanley Rosenberg tilbragte over fire årtier med at studere sammenhængen
-                mellem ansigtsbehandling og nervesystemet. Hans centrale indsigt var, at
-                konventionel ansigtsbehandling overser nervesystemets rolle — og at ægte,
-                varig forandring i ansigtets struktur kun kan opnås ved at adressere
-                det autonome nervesystems tilstand samtidig med vævet.
+                {t('altMethodText', language) || 'Stanley Rosenberg tilbragte over fire årtier med at studere sammenhængen mellem ansigtsbehandling og nervesystemet. Hans centrale indsigt var, at konventionel ansigtsbehandling overser nervesystemets rolle — og at ægte, varig forandring i ansigtets struktur kun kan opnås ved at adressere det autonome nervesystems tilstand samtidig med vævet.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Hans protokol følger en bestemt sekvens: først overfladen, derefter de
-                dybere lag, altid med respekt for vævets egen modtagelighed. Der presses
-                aldrig igennem modstand. I stedet venter behandleren på, at vævet inviterer
-                til den næste dybde. Denne tilgang — tålmodig, lyttende, lagdelt — adskiller
-                ALT fundamentalt fra kosmetisk ansigtsbehandling. Det er ikke reparation.
-                Det er genoprettelse af en samtale mellem væv og nerve.
+                {t('altMethodTextExtra', language) || 'Hans protokol følger en bestemt sekvens: først overfladen, derefter de dybere lag, altid med respekt for vævets egen modtagelighed. Der presses aldrig igennem modstand. I stedet venter behandleren på, at vævet inviterer til den næste dybde. Denne tilgang — tålmodig, lyttende, lagdelt — adskiller ALT fundamentalt fra kosmetisk ansigtsbehandling. Det er ikke reparation. Det er genoprettelse af en samtale mellem væv og nerve.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Over 40 års klinisk erfaring med ansigt og nervesystem</li>
-                <li>Behandlingssekvensen følger vævets egen parathed</li>
-                <li>Modstand mødes med tålmodighed, aldrig med kraft</li>
-                <li>Ansigtsbehandling som nervesystemsregulering — ikke kosmetik</li>
-                <li>Resultater der holder fordi de adresserer årsag, ikke symptom</li>
+                {(t('altMethodBullets', language) || [
+                  'Over 40 års klinisk erfaring med ansigt og nervesystem',
+                  'Behandlingssekvensen følger vævets egen parathed',
+                  'Modstand mødes med tålmodighed, aldrig med kraft',
+                  'Ansigtsbehandling som nervesystemsregulering — ikke kosmetik',
+                  'Resultater der holder fordi de adresserer årsag, ikke symptom'
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -263,35 +244,28 @@ export default function AltPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Den polyvagale bro</p>
-              <h2 className={styles.cardTitle}>Ansigt og vagusnerve</h2>
-              <p className={styles.cardSubtitle}>Hvorfor ansigtet regulerer kroppen</p>
+              <p className={styles.cardLabel}>{t('altVagalLabel', language) || 'Den polyvagale bro'}</p>
+              <h2 className={styles.cardTitle}>{t('altVagalTitle', language) || 'Ansigt og vagusnerve'}</h2>
+              <p className={styles.cardSubtitle}>{t('altVagalSubtitle', language) || 'Hvorfor ansigtet regulerer kroppen'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'vagal' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Stephen Porges' polyvagale teori forklarer, hvorfor ansigtet har
-                så stor indflydelse på hele kroppens tilstand. Den ventrale vagusnerve —
-                den nyeste evolutionært — innerverer ansigtsmuskulaturen, mellemøret,
-                strubehovedet og hjertet i ét sammenhængende kredsløb. Porges kalder
-                dette systemet for social engagement — vores evne til forbindelse.
+                {t('altVagalText', language) || 'Stephen Porges\' polyvagale teori forklarer, hvorfor ansigtet har så stor indflydelse på hele kroppens tilstand. Den ventrale vagusnerve — den nyeste evolutionært — innerverer ansigtsmuskulaturen, mellemøret, strubehovedet og hjertet i ét sammenhængende kredsløb. Porges kalder dette systemet for social engagement — vores evne til forbindelse.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Når ansigtsmuskulaturen er spændt eller immobil, sender det afferente
-                signaler til hjernestammen om, at der ikke er trygt. Hjertet accelererer,
-                åndedrættet bliver overfladisk, fordøjelsen bremser. Omvendt: når ansigtet
-                blødgøres, mellemøremusklerne slapper af og stemmen finder sin naturlige
-                dybde, fortolker nervesystemet det som tryghed. ALT arbejder direkte
-                med denne mekanisme — ikke gennem samtale, men gennem vævet selv.
+                {t('altVagalTextExtra', language) || 'Når ansigtsmuskulaturen er spændt eller immobil, sender det afferente signaler til hjernestammen om, at der ikke er trygt. Hjertet accelererer, åndedrættet bliver overfladisk, fordøjelsen bremser. Omvendt: når ansigtet blødgøres, mellemøremusklerne slapper af og stemmen finder sin naturlige dybde, fortolker nervesystemet det som tryghed. ALT arbejder direkte med denne mekanisme — ikke gennem samtale, men gennem vævet selv.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Den ventrale vagus forbinder ansigt, øre, stemme og hjerte</li>
-                <li>Ansigtets tonus signalerer tryghed eller trussel til hjernestammen</li>
-                <li>Mellemøremusklerne påvirker evnen til at filtrere menneskestemmer</li>
-                <li>Social engagement-systemet er kroppens nyeste reguleringsmekanisme</li>
-                <li>Blødgøring af ansigtet aktiverer hele den ventrale vagale kæde</li>
+                {(t('altVagalBullets', language) || [
+                  'Den ventrale vagus forbinder ansigt, øre, stemme og hjerte',
+                  'Ansigtets tonus signalerer tryghed eller trussel til hjernestammen',
+                  'Mellemøremusklerne påvirker evnen til at filtrere menneskestemmer',
+                  'Social engagement-systemet er kroppens nyeste reguleringsmekanisme',
+                  'Blødgøring af ansigtet aktiverer hele den ventrale vagale kæde'
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -311,34 +285,28 @@ export default function AltPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Forløbet</p>
-              <h2 className={styles.cardTitle}>Seks sessioner</h2>
-              <p className={styles.cardSubtitle}>En rejse gennem lagene</p>
+              <p className={styles.cardLabel}>{t('altSessionsLabel', language) || 'Forløbet'}</p>
+              <h2 className={styles.cardTitle}>{t('altSessionsTitle', language) || 'Seks sessioner'}</h2>
+              <p className={styles.cardSubtitle}>{t('altSessionsSubtitle', language) || 'En rejse gennem lagene'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'sessions' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Et komplet ALT-forløb består af seks sessioner med cirka en uges
-                mellemrum. Første session fokuserer på de ydre lag — hud og overfladisk
-                bindevæv. Berøringen er let, næsten svævende. Kroppen skal først lære
-                at tage imod, før dybere arbejde kan begynde.
+                {t('altSessionsText', language) || 'Et komplet ALT-forløb består af seks sessioner med cirka en uges mellemrum. Første session fokuserer på de ydre lag — hud og overfladisk bindevæv. Berøringen er let, næsten svævende. Kroppen skal først lære at tage imod, før dybere arbejde kan begynde.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Med hver session øges dybden gradvist. Session to og tre arbejder med
-                SMAS og den superficielle muskulatur. Session fire og fem når de dybe
-                fedtlag og den profunde muskulatur — her begynder de gamle spændingsmønstre
-                at vise sig og løsne. Sjette session integrerer alle lag og afslutter med
-                periosten, den mest stille og dybe berøring. Mange oplever en mærkbar
-                forandring i ansigtsudtryk, holdning og indre ro efter forløbet.
+                {t('altSessionsTextExtra', language) || 'Med hver session øges dybden gradvist. Session to og tre arbejder med SMAS og den superficielle muskulatur. Session fire og fem når de dybe fedtlag og den profunde muskulatur — her begynder de gamle spændingsmønstre at vise sig og løsne. Sjette session integrerer alle lag og afslutter med periosten, den mest stille og dybe berøring. Mange oplever en mærkbar forandring i ansigtsudtryk, holdning og indre ro efter forløbet.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Session 1-2: overflade — hud, subkutant væv, tillid</li>
-                <li>Session 3-4: mellemlag — SMAS, muskulatur, gamle mønstre</li>
-                <li>Session 5-6: dybde — periost, integration, varig forandring</li>
-                <li>Cirka en uge mellem sessioner giver vævet tid til at integrere</li>
-                <li>Forandringen er kumulativ — hvert lag forbereder det næste</li>
+                {(t('altSessionsBullets', language) || [
+                  'Session 1-2: overflade — hud, subkutant væv, tillid',
+                  'Session 3-4: mellemlag — SMAS, muskulatur, gamle mønstre',
+                  'Session 5-6: dybde — periost, integration, varig forandring',
+                  'Cirka en uge mellem sessioner giver vævet tid til at integrere',
+                  'Forandringen er kumulativ — hvert lag forbereder det næste'
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -346,7 +314,7 @@ export default function AltPage() {
         </div>
       </section>
 
-      <ScrollToTop />
+      <ScrollToTop language={language} />
       <div className={styles.bottomSpacer} />
     </main>
   )

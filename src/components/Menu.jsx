@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './Menu.module.css'
+import { t } from '../translations'
 
 export default function Menu({ onNavigate, language, onLanguageChange }) {
   const [open, setOpen] = useState(false)
@@ -45,61 +46,56 @@ export default function Menu({ onNavigate, language, onLanguageChange }) {
 
             {/* ── Profile ── */}
             <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>Anne Thestrup</h2>
+              <h2 className={styles.sectionTitle}>{t('menuProfileName', language) || 'Anne Thestrup'}</h2>
               <p className={styles.profileText}>
-                Terapeut og grundlægger af AnThes Dynamics. Specialiseret i
-                AnsigtsLøftningsTeknik (ALT), Wim Hof Metoden, kraniosakral terapi,
-                bindevævsmassage, arvævsterapi og organmassage. En praksis bygget på
-                berøring, tilstedeværelse og kroppens medfødte intelligens.
+                {t('menuProfileBio', language) || 'Terapeut og grundlægger af AnThes Dynamics. Specialiseret i AnsigtsLøftningsTeknik (ALT), Wim Hof Metoden, kraniosakral terapi, bindevævsmassage, arvævsterapi og organmassage. En praksis bygget på berøring, tilstedeværelse og kroppens medfødte intelligens.'}
               </p>
             </section>
 
             {/* ── App overview ── */}
             <section className={styles.section}>
-              <h3 className={styles.sectionLabel}>Udforsk</h3>
+              <h3 className={styles.sectionLabel}>{t('menuExplore', language) || 'Udforsk'}</h3>
               <nav className={styles.nav}>
-                <button onClick={() => navigate('home')}>Hjem</button>
-                <button onClick={() => navigate('alt')}>ALT — Ansigtsbehandling</button>
-                <button onClick={() => navigate('whm')}>Wim Hof — Åndedræt</button>
-                <button onClick={() => navigate('cranio')}>Kraniosakral — Lytning</button>
-                <button onClick={() => navigate('deeper')}>Dybere — Øvelser &amp; integration</button>
+                <button onClick={() => navigate('home')}>{t('menuHome', language) || 'Hjem'}</button>
+                <button onClick={() => navigate('alt')}>{t('menuAlt', language) || 'ALT — Ansigtsbehandling'}</button>
+                <button onClick={() => navigate('whm')}>{t('menuWhm', language) || 'Wim Hof — Åndedræt'}</button>
+                <button onClick={() => navigate('cranio')}>{t('menuCranio', language) || 'Kraniosakral — Lytning'}</button>
+                <button onClick={() => navigate('deeper')}>{t('menuDeeper', language) || 'Dybere — Øvelser & integration'}</button>
               </nav>
             </section>
 
             {/* ── WHM Instructor ── */}
             <section className={styles.section}>
-              <h3 className={styles.sectionLabel}>Wim Hof Instruktør</h3>
+              <h3 className={styles.sectionLabel}>{t('menuWhmInstructor', language) || 'Wim Hof Instruktør'}</h3>
               <p className={styles.profileText}>
-                Anne er certificeret Wim Hof Metode-instruktør og afholder løbende
-                kurser og workshops — både i Danmark og internationalt.
+                {t('menuWhmInstructorText', language) || 'Anne er certificeret Wim Hof Metode-instruktør og afholder løbende kurser og workshops — både i Danmark og internationalt.'}
               </p>
             </section>
 
             {/* ── Disciplines ── */}
             <section className={styles.section}>
-              <h3 className={styles.sectionLabel}>Behandlinger</h3>
+              <h3 className={styles.sectionLabel}>{t('menuTreatments', language) || 'Behandlinger'}</h3>
               <ul className={styles.list}>
-                <li>AnsigtsLøftningsTeknik (ALT)</li>
-                <li>Wim Hof Metoden</li>
-                <li>Kraniosakral terapi</li>
-                <li>Bindevævsmassage</li>
-                <li>Arvævsterapi</li>
-                <li>Organmassage</li>
+                <li>{t('menuTreatment1', language) || 'AnsigtsLøftningsTeknik (ALT)'}</li>
+                <li>{t('menuTreatment2', language) || 'Wim Hof Metoden'}</li>
+                <li>{t('menuTreatment3', language) || 'Kraniosakral terapi'}</li>
+                <li>{t('menuTreatment4', language) || 'Bindevævsmassage'}</li>
+                <li>{t('menuTreatment5', language) || 'Arvævsterapi'}</li>
+                <li>{t('menuTreatment6', language) || 'Organmassage'}</li>
               </ul>
             </section>
 
             {/* ── Privacy ── */}
             <section className={styles.section}>
-              <h3 className={styles.sectionLabel}>Privatliv &amp; notifikationer</h3>
+              <h3 className={styles.sectionLabel}>{t('menuPrivacy', language) || 'Privatliv & notifikationer'}</h3>
               <p className={styles.smallText}>
-                Denne app indsamler ingen persondata. Ingen cookies, ingen tracking.
-                Notifikationer kan til- og frakobles i din enheds indstillinger.
+                {t('menuPrivacyText', language) || 'Denne app indsamler ingen persondata. Ingen cookies, ingen tracking. Notifikationer kan til- og frakobles i din enheds indstillinger.'}
               </p>
             </section>
 
             {/* ── Contact ── */}
             <section className={styles.section}>
-              <h3 className={styles.sectionLabel}>Kontakt</h3>
+              <h3 className={styles.sectionLabel}>{t('menuContact', language) || 'Kontakt'}</h3>
               <p className={styles.smallText}>
                 Anne Thestrup
               </p>
