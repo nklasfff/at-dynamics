@@ -27,35 +27,35 @@ export default function ThreeRhythmsPage({ language }) {
 
           {/* ALT rhythm — medium-fast, tactile */}
           <path d="M40,90 Q80,70 120,90 Q160,110 200,90 Q240,70 280,90 Q320,110 360,90" fill="none" stroke="var(--color-alt)" strokeWidth="1.4" opacity="0.6">
-            <animate attributeName="d" values="M40,90 Q80,70 120,90 Q160,110 200,90 Q240,70 280,90 Q320,110 360,90;M40,90 Q80,78 120,90 Q160,102 200,90 Q240,78 280,90 Q320,102 360,90;M40,90 Q80,70 120,90 Q160,110 200,90 Q240,70 280,90 Q320,110 360,90" dur="6s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M40,90 Q80,60 120,90 Q160,120 200,90 Q240,60 280,90 Q320,120 360,90;M40,90 Q80,80 120,90 Q160,100 200,90 Q240,80 280,90 Q320,100 360,90;M40,90 Q80,60 120,90 Q160,120 200,90 Q240,60 280,90 Q320,120 360,90" dur="5s" repeatCount="indefinite" />
           </path>
           <path d="M40,100 Q80,80 120,100 Q160,120 200,100 Q240,80 280,100 Q320,120 360,100" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.25">
-            <animate attributeName="d" values="M40,100 Q80,82 120,100 Q160,118 200,100 Q240,82 280,100 Q320,118 360,100;M40,100 Q80,90 120,100 Q160,110 200,100 Q240,90 280,100 Q320,110 360,100;M40,100 Q80,82 120,100 Q160,118 200,100 Q240,82 280,100 Q320,118 360,100" dur="6s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M40,100 Q80,74 120,100 Q160,126 200,100 Q240,74 280,100 Q320,126 360,100;M40,100 Q80,92 120,100 Q160,108 200,100 Q240,92 280,100 Q320,108 360,100;M40,100 Q80,74 120,100 Q160,126 200,100 Q240,74 280,100 Q320,126 360,100" dur="5s" repeatCount="indefinite" />
           </path>
 
           {/* WHM rhythm — breath cycle, medium */}
           <path d="M40,140 Q120,110 200,140 Q280,170 360,140" fill="none" stroke="var(--color-whm)" strokeWidth="1.4" opacity="0.55">
-            <animate attributeName="d" values="M40,140 Q120,108 200,140 Q280,172 360,140;M40,140 Q120,128 200,140 Q280,152 360,140;M40,140 Q120,108 200,140 Q280,172 360,140" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M40,140 Q120,96 200,140 Q280,184 360,140;M40,140 Q120,130 200,140 Q280,150 360,140;M40,140 Q120,96 200,140 Q280,184 360,140" dur="8s" repeatCount="indefinite" />
           </path>
           <path d="M40,150 Q120,120 200,150 Q280,180 360,150" fill="none" stroke="var(--color-whm)" strokeWidth="0.6" opacity="0.2">
-            <animate attributeName="d" values="M40,150 Q120,122 200,150 Q280,178 360,150;M40,150 Q120,138 200,150 Q280,162 360,150;M40,150 Q120,122 200,150 Q280,178 360,150" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M40,150 Q120,112 200,150 Q280,188 360,150;M40,150 Q120,140 200,150 Q280,160 360,150;M40,150 Q120,112 200,150 Q280,188 360,150" dur="8s" repeatCount="indefinite" />
           </path>
 
           {/* CST rhythm — slow tide */}
           <path d="M40,200 Q200,165 360,200" fill="none" stroke="var(--color-cst)" strokeWidth="1.6" opacity="0.5">
-            <animate attributeName="d" values="M40,200 Q200,162 360,200;M40,200 Q200,190 360,200;M40,200 Q200,162 360,200" dur="22s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M40,200 Q200,145 360,200;M40,200 Q200,195 360,200;M40,200 Q200,145 360,200" dur="18s" repeatCount="indefinite" />
           </path>
           <path d="M40,210 Q200,178 360,210" fill="none" stroke="var(--color-cst)" strokeWidth="0.6" opacity="0.18">
-            <animate attributeName="d" values="M40,210 Q200,175 360,210;M40,210 Q200,200 360,210;M40,210 Q200,175 360,210" dur="22s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M40,210 Q200,160 360,210;M40,210 Q200,205 360,210;M40,210 Q200,160 360,210" dur="18s" repeatCount="indefinite" />
           </path>
 
           {/* Synchronization pulse at center */}
           <circle cx="200" cy="145" r="4" fill="none" stroke="var(--text-primary)" strokeWidth="0.6" opacity="0.15">
-            <animate attributeName="r" values="3;12;3" dur="22s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.25;0.06;0.25" dur="22s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1;18;1" dur="18s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.3;0.03;0.3" dur="18s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="145" r="2" fill="var(--text-primary)" opacity="0.2">
-            <animate attributeName="opacity" values="0.15;0.4;0.15" dur="22s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.08;0.5;0.08" dur="18s" repeatCount="indefinite" />
           </circle>
 
           {/* Labels */}
@@ -72,7 +72,7 @@ export default function ThreeRhythmsPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M14,28 Q18,22 24,28 Q30,22 34,28" fill="none" stroke="var(--color-alt)" strokeWidth="0.9" opacity="0.6">
-                  <animate attributeName="d" values="M14,28 Q18,20 24,28 Q30,20 34,28;M14,28 Q18,26 24,28 Q30,26 34,28;M14,28 Q18,20 24,28 Q30,20 34,28" dur="6s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M14,28 Q18,15 24,28 Q30,15 34,28;M14,28 Q18,27 24,28 Q30,27 34,28;M14,28 Q18,15 24,28 Q30,15 34,28" dur="5s" repeatCount="indefinite" />
                 </path>
                 <path d="M16,22 Q20,16 24,22 Q28,16 32,22" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.35" />
                 <circle cx="24" cy="34" r="2" fill="var(--color-alt)" opacity="0.3" />
@@ -115,7 +115,7 @@ export default function ThreeRhythmsPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M8,24 Q16,14 24,24 Q32,34 40,24" fill="none" stroke="var(--color-whm)" strokeWidth="1" opacity="0.6">
-                  <animate attributeName="d" values="M8,24 Q16,12 24,24 Q32,36 40,24;M8,24 Q16,20 24,24 Q32,28 40,24;M8,24 Q16,12 24,24 Q32,36 40,24" dur="8s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M8,24 Q16,5 24,24 Q32,43 40,24;M8,24 Q16,20 24,24 Q32,28 40,24;M8,24 Q16,5 24,24 Q32,43 40,24" dur="6.5s" repeatCount="indefinite" />
                 </path>
                 {/* Retention gap */}
                 <line x1="18" y1="32" x2="30" y2="32" stroke="var(--color-whm)" strokeWidth="0.5" opacity="0.3" strokeDasharray="2,2" />
@@ -157,39 +157,39 @@ export default function ThreeRhythmsPage({ language }) {
         <svg viewBox="0 0 400 220" className={styles.heroSvg}>
           {/* Three waves converging to center */}
           <path d="M60,70 Q130,50 200,110" fill="none" stroke="var(--color-alt)" strokeWidth="1.2" opacity="0.45">
-            <animate attributeName="d" values="M60,70 Q130,45 200,110;M60,70 Q130,65 200,110;M60,70 Q130,45 200,110" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M60,70 Q130,35 200,110;M60,70 Q130,68 200,110;M60,70 Q130,35 200,110" dur="6.5s" repeatCount="indefinite" />
           </path>
           <path d="M60,130 Q130,115 200,110" fill="none" stroke="var(--color-whm)" strokeWidth="1.2" opacity="0.4">
-            <animate attributeName="d" values="M60,130 Q130,110 200,110;M60,130 Q130,125 200,110;M60,130 Q130,110 200,110" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M60,130 Q130,100 200,110;M60,130 Q130,128 200,110;M60,130 Q130,100 200,110" dur="10s" repeatCount="indefinite" />
           </path>
           <path d="M60,180 Q130,170 200,110" fill="none" stroke="var(--color-cst)" strokeWidth="1.2" opacity="0.35">
-            <animate attributeName="d" values="M60,180 Q130,165 200,110;M60,180 Q130,175 200,110;M60,180 Q130,165 200,110" dur="20s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M60,180 Q130,158 200,110;M60,180 Q130,178 200,110;M60,180 Q130,158 200,110" dur="16s" repeatCount="indefinite" />
           </path>
 
           {/* Emerging unified waves */}
           <path d="M200,110 Q270,90 340,110" fill="none" stroke="var(--text-primary)" strokeWidth="1.3" opacity="0.3">
-            <animate attributeName="d" values="M200,110 Q270,85 340,110;M200,110 Q270,100 340,110;M200,110 Q270,85 340,110" dur="14s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,110 Q270,75 340,110;M200,110 Q270,103 340,110;M200,110 Q270,75 340,110" dur="11s" repeatCount="indefinite" />
           </path>
           <path d="M200,110 Q270,130 340,110" fill="none" stroke="var(--text-primary)" strokeWidth="0.7" opacity="0.15">
-            <animate attributeName="d" values="M200,110 Q270,135 340,110;M200,110 Q270,120 340,110;M200,110 Q270,135 340,110" dur="14s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,110 Q270,145 340,110;M200,110 Q270,117 340,110;M200,110 Q270,145 340,110" dur="11s" repeatCount="indefinite" />
           </path>
 
           {/* Central convergence point */}
           <circle cx="200" cy="110" r="8" fill="none" stroke="var(--color-cst)" strokeWidth="0.8" opacity="0.3">
-            <animate attributeName="r" values="6;16;6" dur="14s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.3;0.08;0.3" dur="14s" repeatCount="indefinite" />
+            <animate attributeName="r" values="4;20;4" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.35;0.04;0.35" dur="11s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="110" r="3" fill="var(--color-cst)" opacity="0.35">
-            <animate attributeName="opacity" values="0.2;0.5;0.2" dur="14s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.12;0.6;0.12" dur="11s" repeatCount="indefinite" />
           </circle>
 
           {/* Radiating harmony circles */}
           <circle cx="200" cy="110" r="30" fill="none" stroke="var(--color-cst)" strokeWidth="0.4" opacity="0.1">
-            <animate attributeName="r" values="28;45;28" dur="14s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.12;0.03;0.12" dur="14s" repeatCount="indefinite" />
+            <animate attributeName="r" values="22;55;22" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.15;0.02;0.15" dur="11s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="110" r="55" fill="none" stroke="var(--text-primary)" strokeWidth="0.3" opacity="0.05">
-            <animate attributeName="r" values="50;70;50" dur="14s" repeatCount="indefinite" />
+            <animate attributeName="r" values="40;80;40" dur="11s" repeatCount="indefinite" />
           </circle>
         </svg>
       </div>
@@ -201,13 +201,13 @@ export default function ThreeRhythmsPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <circle cx="24" cy="24" r="14" fill="none" stroke="var(--color-cst)" strokeWidth="0.6" opacity="0.3">
-                  <animate attributeName="r" values="12;18;12" dur="22s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="9;21;9" dur="18s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="24" r="8" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.25">
-                  <animate attributeName="r" values="7;11;7" dur="22s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="5;14;5" dur="18s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="24" r="2" fill="var(--color-cst)" opacity="0.4">
-                  <animate attributeName="opacity" values="0.25;0.55;0.25" dur="22s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.15;0.65;0.15" dur="18s" repeatCount="indefinite" />
                 </circle>
               </svg>
             </div>
@@ -251,7 +251,7 @@ export default function ThreeRhythmsPage({ language }) {
                 <circle cx="30" cy="20" r="8" fill="none" stroke="var(--color-whm)" strokeWidth="0.6" opacity="0.4" />
                 <circle cx="24" cy="30" r="8" fill="none" stroke="var(--color-cst)" strokeWidth="0.6" opacity="0.4" />
                 <circle cx="24" cy="23" r="2" fill="var(--text-primary)" opacity="0.3">
-                  <animate attributeName="opacity" values="0.2;0.5;0.2" dur="10s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.1;0.6;0.1" dur="8s" repeatCount="indefinite" />
                 </circle>
               </svg>
             </div>

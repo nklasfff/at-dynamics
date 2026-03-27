@@ -24,37 +24,37 @@ export default function AltPage({ language }) {
         <svg viewBox="0 0 400 320" className={styles.heroSvg}>
           {/* Outer face contour */}
           <ellipse cx="200" cy="155" rx="95" ry="130" fill="none" stroke="var(--color-alt)" strokeWidth="1.4" opacity="0.55">
-            <animateTransform attributeName="transform" type="scale" values="1,1;1.02,0.99;1,1" dur="14s" repeatCount="indefinite" additive="sum" />
+            <animateTransform attributeName="transform" type="scale" values="1,1;1.035,0.985;1,1" dur="11s" repeatCount="indefinite" additive="sum" />
           </ellipse>
           {/* Mid layers */}
           <ellipse cx="200" cy="155" rx="72" ry="100" fill="none" stroke="var(--color-alt)" strokeWidth="1" opacity="0.4">
-            <animateTransform attributeName="transform" type="scale" values="1,1;0.98,1.015;1,1" dur="12s" repeatCount="indefinite" additive="sum" />
+            <animateTransform attributeName="transform" type="scale" values="1,1;0.97,1.025;1,1" dur="10s" repeatCount="indefinite" additive="sum" />
           </ellipse>
           <ellipse cx="200" cy="155" rx="50" ry="70" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.3" />
           <ellipse cx="200" cy="155" rx="28" ry="40" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.2" />
 
           {/* Meridian/nerve lines */}
           <path d="M200,25 Q195,80 185,130 Q178,170 182,220 Q185,260 200,285" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.4" strokeDasharray="3,6">
-            <animate attributeName="stroke-dashoffset" values="0;-18" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="0;-27" dur="6.5s" repeatCount="indefinite" />
           </path>
           <path d="M200,25 Q205,80 215,130 Q222,170 218,220 Q215,260 200,285" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.4" strokeDasharray="3,6">
-            <animate attributeName="stroke-dashoffset" values="0;-18" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="0;-27" dur="6.5s" repeatCount="indefinite" />
           </path>
           {/* Horizontal nerve branches */}
           <path d="M140,100 Q170,95 200,100 Q230,95 260,100" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.3" strokeDasharray="2,5">
-            <animate attributeName="stroke-dashoffset" values="0;14" dur="6s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="0;21" dur="5s" repeatCount="indefinite" />
           </path>
           <path d="M130,155 Q165,148 200,155 Q235,148 270,155" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.3" strokeDasharray="2,5">
-            <animate attributeName="stroke-dashoffset" values="0;14" dur="7s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="0;21" dur="5.5s" repeatCount="indefinite" />
           </path>
           <path d="M150,200 Q175,194 200,200 Q225,194 250,200" fill="none" stroke="var(--color-alt)" strokeWidth="0.5" opacity="0.25" strokeDasharray="2,5">
-            <animate attributeName="stroke-dashoffset" values="0;14" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="0;21" dur="6.5s" repeatCount="indefinite" />
           </path>
           {/* Nerve junction points */}
           {[[170,90],[230,90],[155,150],[245,150],[175,200],[225,200]].map(([x,y], i) => (
             <circle key={i} cx={x} cy={y} r="3" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.4">
-              <animate attributeName="r" values="2;6;2" dur={`${7 + i}s`} repeatCount="indefinite" />
-              <animate attributeName="opacity" values="0.3;0.6;0.3" dur={`${7 + i}s`} repeatCount="indefinite" />
+              <animate attributeName="r" values="1;9;1" dur={`${5.5 + i * 0.8}s`} repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.2;0.7;0.2" dur={`${5.5 + i * 0.8}s`} repeatCount="indefinite" />
             </circle>
           ))}
           {/* Center axis */}
@@ -152,37 +152,37 @@ export default function AltPage({ language }) {
         <svg viewBox="0 0 400 200" className={styles.heroSvg}>
           {/* Central trunk */}
           <path d="M200,10 Q198,100 200,190" fill="none" stroke="var(--color-alt)" strokeWidth="1.2" opacity="0.4">
-            <animate attributeName="d" values="M200,10 Q196,100 200,190;M200,10 Q204,100 200,190;M200,10 Q196,100 200,190" dur="14s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,10 Q193,100 200,190;M200,10 Q207,100 200,190;M200,10 Q193,100 200,190" dur="11s" repeatCount="indefinite" />
           </path>
           {/* Left branches — five nerves */}
           <path d="M200,40 Q170,50 130,35" fill="none" stroke="var(--color-alt)" strokeWidth="1" opacity="0.45">
-            <animate attributeName="d" values="M200,40 Q165,52 125,32;M200,40 Q175,44 140,38;M200,40 Q165,52 125,32" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,40 Q158,56 118,28;M200,40 Q180,40 148,42;M200,40 Q158,56 118,28" dur="7s" repeatCount="indefinite" />
           </path>
           <path d="M200,70 Q160,82 120,72" fill="none" stroke="var(--color-alt)" strokeWidth="0.9" opacity="0.4">
-            <animate attributeName="d" values="M200,70 Q155,85 115,68;M200,70 Q168,76 130,74;M200,70 Q155,85 115,68" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,70 Q148,90 108,63;M200,70 Q174,72 138,76;M200,70 Q148,90 108,63" dur="8s" repeatCount="indefinite" />
           </path>
           <path d="M200,100 Q155,115 110,105" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.35">
-            <animate attributeName="d" values="M200,100 Q150,118 105,100;M200,100 Q165,108 120,106;M200,100 Q150,118 105,100" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,100 Q142,124 97,95;M200,100 Q172,104 128,108;M200,100 Q142,124 97,95" dur="9s" repeatCount="indefinite" />
           </path>
           <path d="M200,130 Q160,145 120,138" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.3" />
           <path d="M200,155 Q165,168 130,162" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.25" />
           {/* Right branches — mirrored */}
           <path d="M200,40 Q230,50 270,35" fill="none" stroke="var(--color-alt)" strokeWidth="1" opacity="0.45">
-            <animate attributeName="d" values="M200,40 Q235,52 275,32;M200,40 Q225,44 260,38;M200,40 Q235,52 275,32" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,40 Q242,56 282,28;M200,40 Q220,40 252,42;M200,40 Q242,56 282,28" dur="7s" repeatCount="indefinite" />
           </path>
           <path d="M200,70 Q240,82 280,72" fill="none" stroke="var(--color-alt)" strokeWidth="0.9" opacity="0.4">
-            <animate attributeName="d" values="M200,70 Q245,85 285,68;M200,70 Q232,76 270,74;M200,70 Q245,85 285,68" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,70 Q252,90 292,63;M200,70 Q226,72 262,76;M200,70 Q252,90 292,63" dur="8s" repeatCount="indefinite" />
           </path>
           <path d="M200,100 Q245,115 290,105" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.35">
-            <animate attributeName="d" values="M200,100 Q250,118 295,100;M200,100 Q235,108 280,106;M200,100 Q250,118 295,100" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,100 Q258,124 303,95;M200,100 Q228,104 272,108;M200,100 Q258,124 303,95" dur="9s" repeatCount="indefinite" />
           </path>
           <path d="M200,130 Q240,145 280,138" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.3" />
           <path d="M200,155 Q235,168 270,162" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.25" />
           {/* Junction pulses */}
           {[40,70,100,130,155].map((y,i) => (
             <circle key={i} cx="200" cy={y} r="3" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.4">
-              <animate attributeName="r" values="2;6;2" dur={`${7+i*1.5}s`} repeatCount="indefinite" />
-              <animate attributeName="opacity" values="0.3;0.6;0.3" dur={`${7+i*1.5}s`} repeatCount="indefinite" />
+              <animate attributeName="r" values="1;9;1" dur={`${5.5+i*1.2}s`} repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.2;0.7;0.2" dur={`${5.5+i*1.2}s`} repeatCount="indefinite" />
             </circle>
           ))}
         </svg>
@@ -195,7 +195,7 @@ export default function AltPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <ellipse cx="24" cy="22" rx="12" ry="16" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.4">
-                  <animateTransform attributeName="transform" type="scale" values="1,1;1.03,0.98;1,1" dur="10s" repeatCount="indefinite" additive="sum" />
+                  <animateTransform attributeName="transform" type="scale" values="1,1;1.05,0.965;1,1" dur="8s" repeatCount="indefinite" additive="sum" />
                 </ellipse>
                 <path d="M16,18 Q20,16 24,18 Q28,16 32,18" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.3" />
                 <path d="M19,28 Q24,31 29,28" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.25" />
@@ -238,7 +238,7 @@ export default function AltPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M24,8 Q20,20 24,32 Q28,40 24,44" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.4">
-                  <animate attributeName="d" values="M24,8 Q18,20 24,32 Q30,40 24,44;M24,8 Q28,20 24,32 Q20,40 24,44;M24,8 Q18,20 24,32 Q30,40 24,44" dur="12s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M24,8 Q14,20 24,32 Q34,40 24,44;M24,8 Q32,20 24,32 Q16,40 24,44;M24,8 Q14,20 24,32 Q34,40 24,44" dur="10s" repeatCount="indefinite" />
                 </path>
                 <circle cx="24" cy="8" r="3" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.3" />
               </svg>

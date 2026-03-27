@@ -24,42 +24,42 @@ export default function CranioPage({ language }) {
         <svg viewBox="0 0 400 320" className={styles.heroSvg}>
           {/* Spinal column */}
           <path d="M200,30 Q198,160 200,290" fill="none" stroke="var(--text-primary)" strokeWidth="0.9" opacity="0.2">
-            <animate attributeName="d" values="M200,30 Q195,160 200,290;M200,30 Q205,160 200,290;M200,30 Q195,160 200,290" dur="20s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,30 Q192,160 200,290;M200,30 Q208,160 200,290;M200,30 Q192,160 200,290" dur="16s" repeatCount="indefinite" />
           </path>
           {/* Cranium */}
           <ellipse cx="200" cy="60" rx="50" ry="40" fill="none" stroke="var(--color-cst)" strokeWidth="1.2" opacity="0.45">
-            <animateTransform attributeName="transform" type="scale" values="1,1;1.015,0.99;1,1" dur="12s" repeatCount="indefinite" additive="sum" />
+            <animateTransform attributeName="transform" type="scale" values="1,1;1.04,0.97;1,1" dur="10s" repeatCount="indefinite" additive="sum" />
           </ellipse>
           <ellipse cx="200" cy="60" rx="35" ry="28" fill="none" stroke="var(--color-cst)" strokeWidth="0.7" opacity="0.3" />
           {/* Sacrum */}
           <path d="M185,260 Q200,275 215,260 Q210,285 200,290 Q190,285 185,260" fill="none" stroke="var(--color-cst)" strokeWidth="0.9" opacity="0.4">
-            <animateTransform attributeName="transform" type="scale" values="1,1;0.98,1.01;1,1" dur="12s" repeatCount="indefinite" additive="sum" />
+            <animateTransform attributeName="transform" type="scale" values="1,1;0.96,1.025;1,1" dur="10s" repeatCount="indefinite" additive="sum" />
           </path>
           {/* CRI wave — fast */}
           <path d="M120,120 Q160,105 200,120 Q240,135 280,120" fill="none" stroke="var(--color-cst)" strokeWidth="1" opacity="0.55">
-            <animate attributeName="d" values="M120,120 Q160,100 200,120 Q240,140 280,120;M120,120 Q160,115 200,120 Q240,125 280,120;M120,120 Q160,100 200,120 Q240,140 280,120" dur="5s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M120,120 Q160,90 200,120 Q240,150 280,120;M120,120 Q160,117 200,120 Q240,123 280,120;M120,120 Q160,90 200,120 Q240,150 280,120" dur="4s" repeatCount="indefinite" />
           </path>
           {/* Mid-tide — medium */}
           <path d="M100,170 Q200,145 300,170" fill="none" stroke="var(--color-cst)" strokeWidth="1.2" opacity="0.4">
-            <animate attributeName="d" values="M100,170 Q200,140 300,170;M100,170 Q200,162 300,170;M100,170 Q200,140 300,170" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M100,170 Q200,125 300,170;M100,170 Q200,165 300,170;M100,170 Q200,125 300,170" dur="10s" repeatCount="indefinite" />
           </path>
           {/* Long tide — slow */}
           <path d="M80,220 Q200,195 320,220" fill="none" stroke="var(--color-cst)" strokeWidth="1.5" opacity="0.3">
-            <animate attributeName="d" values="M80,220 Q200,190 320,220;M80,220 Q200,212 320,220;M80,220 Q200,190 320,220" dur="25s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M80,220 Q200,175 320,220;M80,220 Q200,215 320,220;M80,220 Q200,175 320,220" dur="20s" repeatCount="indefinite" />
           </path>
           {/* Still point */}
           <circle cx="200" cy="160" r="3" fill="var(--color-cst)" opacity="0.3">
-            <animate attributeName="opacity" values="0.16;0.55;0.16" dur="25s" repeatCount="indefinite" />
-            <animate attributeName="r" values="2;6;2" dur="25s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.1;0.7;0.1" dur="20s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1;9;1" dur="20s" repeatCount="indefinite" />
           </circle>
           {/* Cerebrospinal flow indicators */}
           <circle cx="200" cy="80" r="2" fill="var(--color-cst)" opacity="0.3">
-            <animate attributeName="cy" values="80;240;80" dur="12s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.4;0.1;0.4" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="60;260;60" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.5;0.05;0.5" dur="10s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="180" r="1.5" fill="var(--color-cst)" opacity="0.2">
-            <animate attributeName="cy" values="180;80;180" dur="12s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.3;0.08;0.3" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="200;60;200" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.4;0.04;0.4" dur="10s" repeatCount="indefinite" />
           </circle>
         </svg>
       </div>
@@ -111,13 +111,13 @@ export default function CranioPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M8,20 Q24,12 40,20" fill="none" stroke="var(--color-cst)" strokeWidth="0.9" opacity="0.7">
-                  <animate attributeName="d" values="M8,20 Q24,10 40,20;M8,20 Q24,17 40,20;M8,20 Q24,10 40,20" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M8,20 Q24,5 40,20;M8,20 Q24,18 40,20;M8,20 Q24,5 40,20" dur="4s" repeatCount="indefinite" />
                 </path>
                 <path d="M8,28 Q24,22 40,28" fill="none" stroke="var(--color-cst)" strokeWidth="0.9" opacity="0.55">
-                  <animate attributeName="d" values="M8,28 Q24,20 40,28;M8,28 Q24,26 40,28;M8,28 Q24,20 40,28" dur="12s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M8,28 Q24,16 40,28;M8,28 Q24,27 40,28;M8,28 Q24,16 40,28" dur="10s" repeatCount="indefinite" />
                 </path>
                 <path d="M8,36 Q24,32 40,36" fill="none" stroke="var(--color-cst)" strokeWidth="0.9" opacity="0.4">
-                  <animate attributeName="d" values="M8,36 Q24,30 40,36;M8,36 Q24,34 40,36;M8,36 Q24,30 40,36" dur="25s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M8,36 Q24,27 40,36;M8,36 Q24,35 40,36;M8,36 Q24,27 40,36" dur="20s" repeatCount="indefinite" />
                 </path>
               </svg>
             </div>
@@ -156,38 +156,38 @@ export default function CranioPage({ language }) {
         <svg viewBox="0 0 400 200" className={styles.heroSvg}>
           {/* Cranium at top */}
           <ellipse cx="200" cy="35" rx="40" ry="30" fill="none" stroke="var(--color-cst)" strokeWidth="1" opacity="0.4">
-            <animateTransform attributeName="transform" type="scale" values="1,1;1.02,0.99;1,1" dur="12s" repeatCount="indefinite" additive="sum" />
+            <animateTransform attributeName="transform" type="scale" values="1,1;1.04,0.975;1,1" dur="10s" repeatCount="indefinite" additive="sum" />
           </ellipse>
           {/* Spinal membranes — dural tube */}
           <path d="M190,65 Q188,100 190,140 Q192,160 195,175" fill="none" stroke="var(--color-cst)" strokeWidth="0.7" opacity="0.3">
-            <animate attributeName="d" values="M190,65 Q186,100 190,140 Q192,160 195,175;M190,65 Q192,100 190,140 Q188,160 195,175;M190,65 Q186,100 190,140 Q192,160 195,175" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M190,65 Q183,100 190,140 Q194,160 195,175;M190,65 Q195,100 190,140 Q185,160 195,175;M190,65 Q183,100 190,140 Q194,160 195,175" dur="10s" repeatCount="indefinite" />
           </path>
           <path d="M210,65 Q212,100 210,140 Q208,160 205,175" fill="none" stroke="var(--color-cst)" strokeWidth="0.7" opacity="0.3">
-            <animate attributeName="d" values="M210,65 Q214,100 210,140 Q208,160 205,175;M210,65 Q208,100 210,140 Q212,160 205,175;M210,65 Q214,100 210,140 Q208,160 205,175" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M210,65 Q217,100 210,140 Q206,160 205,175;M210,65 Q205,100 210,140 Q215,160 205,175;M210,65 Q217,100 210,140 Q206,160 205,175" dur="10s" repeatCount="indefinite" />
           </path>
           {/* Sacrum at bottom */}
           <path d="M192,175 Q200,192 208,175" fill="none" stroke="var(--color-cst)" strokeWidth="0.9" opacity="0.4">
-            <animateTransform attributeName="transform" type="scale" values="1,1;0.98,1.01;1,1" dur="12s" repeatCount="indefinite" additive="sum" />
+            <animateTransform attributeName="transform" type="scale" values="1,1;0.96,1.025;1,1" dur="10s" repeatCount="indefinite" additive="sum" />
           </path>
           {/* CSF flow particles */}
           {[0,1,2].map(i => (
             <circle key={i} cx="200" cy={70+i*10} r="1.5" fill="var(--color-cst)" opacity={0.3-i*0.06}>
-              <animate attributeName="cy" values={`${70+i*10};${160-i*5};${70+i*10}`} dur={`${10+i*2}s`} repeatCount="indefinite" />
-              <animate attributeName="opacity" values={`${0.36-i*0.06};${0.1};${0.36-i*0.06}`} dur={`${10+i*2}s`} repeatCount="indefinite" />
+              <animate attributeName="cy" values={`${55+i*10};${175-i*5};${55+i*10}`} dur={`${8+i*1.6}s`} repeatCount="indefinite" />
+              <animate attributeName="opacity" values={`${0.45-i*0.08};${0.05};${0.45-i*0.08}`} dur={`${8+i*1.6}s`} repeatCount="indefinite" />
             </circle>
           ))}
           {/* Expansion/contraction field */}
           <ellipse cx="200" cy="105" rx="60" ry="50" fill="none" stroke="var(--color-cst)" strokeWidth="0.55" opacity="0.16">
-            <animate attributeName="rx" values="55;70;55" dur="12s" repeatCount="indefinite" />
-            <animate attributeName="ry" values="45;58;45" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="rx" values="50;78;50" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="ry" values="40;65;40" dur="10s" repeatCount="indefinite" />
           </ellipse>
           <ellipse cx="200" cy="105" rx="35" ry="28" fill="none" stroke="var(--color-cst)" strokeWidth="0.45" opacity="0.12">
-            <animate attributeName="rx" values="32;42;32" dur="12s" repeatCount="indefinite" />
-            <animate attributeName="ry" values="25;34;25" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="rx" values="28;48;28" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="ry" values="21;40;21" dur="10s" repeatCount="indefinite" />
           </ellipse>
           {/* Still point at center */}
           <circle cx="200" cy="105" r="2" fill="var(--color-cst)" opacity="0.3">
-            <animate attributeName="opacity" values="0.16;0.55;0.16" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.1;0.7;0.1" dur="10s" repeatCount="indefinite" />
           </circle>
         </svg>
       </div>
@@ -201,8 +201,8 @@ export default function CranioPage({ language }) {
                 <ellipse cx="24" cy="18" rx="10" ry="8" fill="none" stroke="var(--color-cst)" strokeWidth="0.9" opacity="0.55" />
                 <path d="M24,26 Q23,34 24,42" fill="none" stroke="var(--color-cst)" strokeWidth="0.7" opacity="0.45" />
                 <circle cx="24" cy="18" r="3" fill="var(--color-cst)" opacity="0.2">
-                  <animate attributeName="r" values="2;5;2" dur="6s" repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="0.2;0.4;0.2" dur="6s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="1;7;1" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.12;0.55;0.12" dur="5s" repeatCount="indefinite" />
                 </circle>
               </svg>
             </div>
@@ -243,10 +243,10 @@ export default function CranioPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <circle cx="24" cy="24" r="14" fill="none" stroke="var(--color-cst)" strokeWidth="0.55" opacity="0.25">
-                  <animate attributeName="r" values="12;18;12" dur="25s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="9;22;9" dur="20s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="24" r="2" fill="var(--color-cst)" opacity="0.4">
-                  <animate attributeName="opacity" values="0.2;0.7;0.2" dur="25s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.1;0.85;0.1" dur="20s" repeatCount="indefinite" />
                 </circle>
               </svg>
             </div>

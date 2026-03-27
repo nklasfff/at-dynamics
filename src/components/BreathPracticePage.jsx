@@ -42,61 +42,61 @@ export default function BreathPracticePage({ language }) {
 
           {/* Fast shallow waves — left side */}
           <path d="M20,120 Q35,100 50,120 Q65,140 80,120 Q95,100 110,120 Q125,140 140,120" fill="none" stroke="url(#bpWhm)" strokeWidth="1.2">
-            <animate attributeName="d" values="M20,120 Q35,98 50,120 Q65,142 80,120 Q95,98 110,120 Q125,142 140,120;M20,120 Q35,104 50,120 Q65,136 80,120 Q95,104 110,120 Q125,136 140,120;M20,120 Q35,98 50,120 Q65,142 80,120 Q95,98 110,120 Q125,142 140,120" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M20,120 Q35,92 50,120 Q65,148 80,120 Q95,92 110,120 Q125,148 140,120;M20,120 Q35,108 50,120 Q65,132 80,120 Q95,108 110,120 Q125,132 140,120;M20,120 Q35,92 50,120 Q65,148 80,120 Q95,92 110,120 Q125,148 140,120" dur="2.5s" repeatCount="indefinite" />
           </path>
 
           {/* Deep slow wave — center */}
           <path d="M130,120 Q175,55 220,120 Q265,185 310,120" fill="none" stroke="var(--color-whm)" strokeWidth="1.5" opacity="0.6">
-            <animate attributeName="d" values="M130,120 Q175,50 220,120 Q265,190 310,120;M130,120 Q175,70 220,120 Q265,170 310,120;M130,120 Q175,50 220,120 Q265,190 310,120" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M130,120 Q175,30 220,120 Q265,210 310,120;M130,120 Q175,75 220,120 Q265,165 310,120;M130,120 Q175,30 220,120 Q265,210 310,120" dur="6.5s" repeatCount="indefinite" />
           </path>
 
           {/* Dissolving into stillness — right side */}
           <path d="M300,120 Q330,110 360,120 Q380,125 400,120" fill="none" stroke="var(--color-whm)" strokeWidth="0.6" opacity="0.25">
-            <animate attributeName="d" values="M300,120 Q330,108 360,120 Q380,127 400,120;M300,120 Q330,115 360,120 Q380,123 400,120;M300,120 Q330,108 360,120 Q380,127 400,120" dur="14s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M300,120 Q330,102 360,120 Q380,132 400,120;M300,120 Q330,116 360,120 Q380,124 400,120;M300,120 Q330,102 360,120 Q380,132 400,120" dur="11s" repeatCount="indefinite" />
           </path>
 
           {/* ALT undertone wave */}
           <path d="M60,135 Q130,125 200,135 Q270,145 340,135" fill="none" stroke="url(#bpAlt)" strokeWidth="0.5">
-            <animate attributeName="d" values="M60,135 Q130,123 200,135 Q270,147 340,135;M60,135 Q130,130 200,134 Q270,138 340,135;M60,135 Q130,123 200,135 Q270,147 340,135" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M60,135 Q130,116 200,135 Q270,154 340,135;M60,135 Q130,131 200,134 Q270,137 340,135;M60,135 Q130,116 200,135 Q270,154 340,135" dur="9s" repeatCount="indefinite" />
           </path>
 
           {/* CST undertone wave */}
           <path d="M80,150 Q180,140 280,150 Q340,155 380,150" fill="none" stroke="url(#bpCst)" strokeWidth="0.4">
-            <animate attributeName="d" values="M80,150 Q180,138 280,150 Q340,158 380,150;M80,150 Q180,145 280,149 Q340,152 380,150;M80,150 Q180,138 280,150 Q340,158 380,150" dur="18s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M80,150 Q180,131 280,150 Q340,163 380,150;M80,150 Q180,146 280,149 Q340,152 380,150;M80,150 Q180,131 280,150 Q340,163 380,150" dur="14.5s" repeatCount="indefinite" />
           </path>
 
           {/* Lung-like expansion shapes — left lung */}
           <ellipse cx="170" cy="120" rx="28" ry="45" fill="none" stroke="var(--color-whm)" strokeWidth="0.5" opacity="0.15">
-            <animate attributeName="ry" values="45;55;45" dur="6s" repeatCount="indefinite" />
-            <animate attributeName="rx" values="28;34;28" dur="6s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.15;0.25;0.15" dur="6s" repeatCount="indefinite" />
+            <animate attributeName="ry" values="38;62;38" dur="5s" repeatCount="indefinite" />
+            <animate attributeName="rx" values="24;38;24" dur="5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.1;0.32;0.1" dur="5s" repeatCount="indefinite" />
           </ellipse>
 
           {/* Lung-like expansion shapes — right lung */}
           <ellipse cx="230" cy="120" rx="28" ry="45" fill="none" stroke="var(--color-whm)" strokeWidth="0.5" opacity="0.15">
-            <animate attributeName="ry" values="45;55;45" dur="6s" repeatCount="indefinite" />
-            <animate attributeName="rx" values="28;34;28" dur="6s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.15;0.25;0.15" dur="6s" repeatCount="indefinite" />
+            <animate attributeName="ry" values="38;62;38" dur="5s" repeatCount="indefinite" />
+            <animate attributeName="rx" values="24;38;24" dur="5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.1;0.32;0.1" dur="5s" repeatCount="indefinite" />
           </ellipse>
 
           {/* Diaphragm line between lungs */}
           <path d="M140,155 Q200,170 260,155" fill="none" stroke="var(--color-whm)" strokeWidth="0.6" opacity="0.2">
-            <animate attributeName="d" values="M140,155 Q200,175 260,155;M140,155 Q200,160 260,155;M140,155 Q200,175 260,155" dur="6s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M140,155 Q200,185 260,155;M140,155 Q200,157 260,155;M140,155 Q200,185 260,155" dur="5s" repeatCount="indefinite" />
           </path>
 
           {/* Central breath dot */}
           <circle cx="200" cy="120" r="3" fill="var(--color-whm)" opacity="0.3">
-            <animate attributeName="r" values="3;7;3" dur="6s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.3;0.5;0.3" dur="6s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1;10;1" dur="5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.2;0.6;0.2" dur="5s" repeatCount="indefinite" />
           </circle>
 
           {/* Breath cycle arrows — inhale */}
           <path d="M200,85 L200,70" fill="none" stroke="var(--color-whm)" strokeWidth="0.4" opacity="0.2" markerEnd="none">
-            <animate attributeName="opacity" values="0.1;0.35;0.1" dur="6s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.05;0.45;0.05" dur="5s" repeatCount="indefinite" />
           </path>
           {/* Breath cycle arrows — exhale */}
           <path d="M200,155 L200,170" fill="none" stroke="var(--color-whm)" strokeWidth="0.4" opacity="0.2">
-            <animate attributeName="opacity" values="0.35;0.1;0.35" dur="6s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.45;0.05;0.45" dur="5s" repeatCount="indefinite" />
           </path>
         </svg>
       </div>
@@ -111,14 +111,14 @@ export default function BreathPracticePage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M6,24 Q15,10 24,24 Q33,38 42,24" fill="none" stroke="var(--color-whm)" strokeWidth="0.8" opacity="0.6">
-                  <animate attributeName="d" values="M6,24 Q15,8 24,24 Q33,40 42,24;M6,24 Q15,16 24,24 Q33,32 42,24;M6,24 Q15,8 24,24 Q33,40 42,24" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M6,24 Q15,2 24,24 Q33,46 42,24;M6,24 Q15,18 24,24 Q33,30 42,24;M6,24 Q15,2 24,24 Q33,46 42,24" dur="4s" repeatCount="indefinite" />
                 </path>
                 <ellipse cx="24" cy="24" rx="10" ry="14" fill="none" stroke="var(--color-whm)" strokeWidth="0.4" opacity="0.2">
-                  <animate attributeName="ry" values="14;18;14" dur="5s" repeatCount="indefinite" />
-                  <animate attributeName="rx" values="10;13;10" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="ry" values="11;22;11" dur="4s" repeatCount="indefinite" />
+                  <animate attributeName="rx" values="8;16;8" dur="4s" repeatCount="indefinite" />
                 </ellipse>
                 <circle cx="24" cy="24" r="2" fill="var(--color-whm)" opacity="0.35">
-                  <animate attributeName="r" values="2;4;2" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="1;6;1" dur="4s" repeatCount="indefinite" />
                 </circle>
               </svg>
             </div>
@@ -162,13 +162,13 @@ export default function BreathPracticePage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M6,18 Q15,10 24,18 Q33,26 42,18" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.5">
-                  <animate attributeName="d" values="M6,18 Q15,8 24,18 Q33,28 42,18;M6,18 Q15,14 24,18 Q33,22 42,18;M6,18 Q15,8 24,18 Q33,28 42,18" dur="7s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M6,18 Q15,3 24,18 Q33,33 42,18;M6,18 Q15,14 24,18 Q33,22 42,18;M6,18 Q15,3 24,18 Q33,33 42,18" dur="5.5s" repeatCount="indefinite" />
                 </path>
                 <path d="M6,24 Q15,16 24,24 Q33,32 42,24" fill="none" stroke="var(--color-whm)" strokeWidth="0.7" opacity="0.5">
-                  <animate attributeName="d" values="M6,24 Q15,14 24,24 Q33,34 42,24;M6,24 Q15,20 24,24 Q33,28 42,24;M6,24 Q15,14 24,24 Q33,34 42,24" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M6,24 Q15,8 24,24 Q33,40 42,24;M6,24 Q15,20 24,24 Q33,28 42,24;M6,24 Q15,8 24,24 Q33,40 42,24" dur="4s" repeatCount="indefinite" />
                 </path>
                 <path d="M6,30 Q15,22 24,30 Q33,38 42,30" fill="none" stroke="var(--color-cst)" strokeWidth="0.7" opacity="0.5">
-                  <animate attributeName="d" values="M6,30 Q15,20 24,30 Q33,40 42,30;M6,30 Q15,26 24,30 Q33,34 42,30;M6,30 Q15,20 24,30 Q33,40 42,30" dur="12s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M6,30 Q15,15 24,30 Q33,45 42,30;M6,30 Q15,26 24,30 Q33,34 42,30;M6,30 Q15,15 24,30 Q33,45 42,30" dur="10s" repeatCount="indefinite" />
                 </path>
               </svg>
             </div>
@@ -207,26 +207,26 @@ export default function BreathPracticePage({ language }) {
         <svg viewBox="0 0 400 200" className={styles.heroSvg}>
           {/* Heart rhythm baseline */}
           <path d="M40,100 L120,100 L135,70 L145,130 L155,60 L165,110 L175,100 L260,100 L275,70 L285,130 L295,60 L305,110 L315,100 L380,100" fill="none" stroke="var(--color-whm)" strokeWidth="0.8" opacity="0.35">
-            <animate attributeName="opacity" values="0.25;0.45;0.25" dur="4s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.15;0.55;0.15" dur="3s" repeatCount="indefinite" />
           </path>
 
           {/* Breath wave modulating the heart */}
           <path d="M30,100 Q110,60 200,100 Q290,140 370,100" fill="none" stroke="var(--color-whm)" strokeWidth="1.2" opacity="0.2">
-            <animate attributeName="d" values="M30,100 Q110,55 200,100 Q290,145 370,100;M30,100 Q110,75 200,100 Q290,125 370,100;M30,100 Q110,55 200,100 Q290,145 370,100" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M30,100 Q110,38 200,100 Q290,162 370,100;M30,100 Q110,78 200,100 Q290,122 370,100;M30,100 Q110,38 200,100 Q290,162 370,100" dur="6.5s" repeatCount="indefinite" />
           </path>
 
           {/* Vagus nerve suggestion — descending path */}
           <path d="M200,30 Q195,50 200,70 Q205,90 200,110 Q195,130 200,150 Q205,170 200,185" fill="none" stroke="var(--color-whm)" strokeWidth="0.5" opacity="0.15" strokeDasharray="3,5">
-            <animate attributeName="stroke-dashoffset" values="0;-16" dur="4s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="0;-24" dur="3s" repeatCount="indefinite" />
           </path>
 
           {/* Heart center pulse */}
           <circle cx="200" cy="100" r="8" fill="none" stroke="var(--color-whm)" strokeWidth="0.6" opacity="0.2">
-            <animate attributeName="r" values="8;14;8" dur="4s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.2;0.35;0.2" dur="4s" repeatCount="indefinite" />
+            <animate attributeName="r" values="5;18;5" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.12;0.45;0.12" dur="3s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="100" r="3" fill="var(--color-whm)" opacity="0.3">
-            <animate attributeName="r" values="3;5;3" dur="4s" repeatCount="indefinite" />
+            <animate attributeName="r" values="2;7;2" dur="3s" repeatCount="indefinite" />
           </circle>
 
           {/* Inhale label — left */}
@@ -236,7 +236,7 @@ export default function BreathPracticePage({ language }) {
 
           {/* Coherence wave — outer gentle ring */}
           <ellipse cx="200" cy="100" rx="160" ry="60" fill="none" stroke="var(--color-whm)" strokeWidth="0.3" opacity="0.08">
-            <animate attributeName="ry" values="60;70;60" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="ry" values="52;78;52" dur="6.5s" repeatCount="indefinite" />
           </ellipse>
         </svg>
       </div>
@@ -252,14 +252,14 @@ export default function BreathPracticePage({ language }) {
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 {/* Heart rate pulse */}
                 <path d="M4,24 L14,24 L17,16 L21,32 L25,12 L29,28 L32,24 L44,24" fill="none" stroke="var(--color-whm)" strokeWidth="0.8" opacity="0.6">
-                  <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite" />
                 </path>
                 {/* Vagus nerve line descending */}
                 <path d="M24,6 Q22,14 24,20 Q26,26 24,34 Q22,40 24,44" fill="none" stroke="var(--color-whm)" strokeWidth="0.35" opacity="0.2" strokeDasharray="2,3">
-                  <animate attributeName="stroke-dashoffset" values="0;-10" dur="3s" repeatCount="indefinite" />
+                  <animate attributeName="stroke-dashoffset" values="0;-15" dur="2.5s" repeatCount="indefinite" />
                 </path>
                 <circle cx="24" cy="24" r="2" fill="var(--color-whm)" opacity="0.3">
-                  <animate attributeName="r" values="1.5;3;1.5" dur="3s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="0.8;4.5;0.8" dur="2.5s" repeatCount="indefinite" />
                 </circle>
               </svg>
             </div>
@@ -308,12 +308,12 @@ export default function BreathPracticePage({ language }) {
                 <line x1="4" y1="34" x2="44" y2="34" stroke="var(--color-whm)" strokeWidth="0.4" opacity="0.25" />
                 {/* Sun rays */}
                 <circle cx="24" cy="28" r="5" fill="none" stroke="var(--color-whm)" strokeWidth="0.6" opacity="0.4">
-                  <animate attributeName="r" values="5;7;5" dur="6s" repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="0.3;0.5;0.3" dur="6s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="3;10;3" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.2;0.6;0.2" dur="5s" repeatCount="indefinite" />
                 </circle>
                 {/* Breath wave through sunrise */}
                 <path d="M10,28 Q17,22 24,28 Q31,34 38,28" fill="none" stroke="var(--color-whm)" strokeWidth="0.4" opacity="0.3">
-                  <animate attributeName="d" values="M10,28 Q17,20 24,28 Q31,36 38,28;M10,28 Q17,24 24,27 Q31,30 38,28;M10,28 Q17,20 24,28 Q31,36 38,28" dur="5.5s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M10,28 Q17,16 24,28 Q31,40 38,28;M10,28 Q17,25 24,27 Q31,29 38,28;M10,28 Q17,16 24,28 Q31,40 38,28" dur="4.5s" repeatCount="indefinite" />
                 </path>
                 <circle cx="24" cy="28" r="1.5" fill="var(--color-whm)" opacity="0.35" />
               </svg>
