@@ -33,6 +33,7 @@
 
   --glow-opacity: 0.06;
   --illustration-opacity: 0.5;
+  --svg-filter: saturate(1.2) brightness(1.25);
 
   color-scheme: dark;
 }
@@ -52,17 +53,21 @@
   --border-subtle: rgba(0, 0, 0, 0.05);
   --border-medium: rgba(0, 0, 0, 0.08);
 
-  --color-alt-soft: rgba(196, 149, 106, 0.06);
-  --color-alt-mid: rgba(196, 149, 106, 0.12);
+  --color-alt: #9a6b3a;
+  --color-alt-soft: rgba(154, 107, 58, 0.1);
+  --color-alt-mid: rgba(154, 107, 58, 0.25);
 
-  --color-whm-soft: rgba(90, 138, 170, 0.06);
-  --color-whm-mid: rgba(90, 138, 170, 0.12);
+  --color-whm: #3a6d8a;
+  --color-whm-soft: rgba(58, 109, 138, 0.1);
+  --color-whm-mid: rgba(58, 109, 138, 0.25);
 
-  --color-cst-soft: rgba(201, 168, 124, 0.06);
-  --color-cst-mid: rgba(201, 168, 124, 0.12);
+  --color-cst: #8a7040;
+  --color-cst-soft: rgba(138, 112, 64, 0.1);
+  --color-cst-mid: rgba(138, 112, 64, 0.25);
 
-  --glow-opacity: 0.04;
-  --illustration-opacity: 0.35;
+  --glow-opacity: 0.06;
+  --illustration-opacity: 0.7;
+  --svg-filter: saturate(2.2) contrast(1.6) brightness(0.75);
 
   color-scheme: light;
 }
