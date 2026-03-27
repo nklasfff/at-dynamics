@@ -174,7 +174,7 @@ export default function AltPage({ language }) {
             <animate attributeName="d" values="M200,70 Q252,90 292,63;M200,70 Q226,72 262,76;M200,70 Q252,90 292,63" dur="9s" repeatCount="indefinite" />
           </path>
           <path d="M200,100 Q245,115 290,105" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.35">
-            <animate attributeName="d" values="M200,100 Q258,124 303,95;M200,100 Q228,104 272,108;M200,100 Q258,124 303,95" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,100 Q258,124 303,95;M200,100 Q228,104 272,108;M200,100 Q258,124 303,95" dur="10s" repeatCount="indefinite" />
           </path>
           <path d="M200,130 Q240,145 280,138" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.3" />
           <path d="M200,155 Q235,168 270,162" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.25" />
@@ -195,7 +195,7 @@ export default function AltPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <ellipse cx="24" cy="22" rx="12" ry="16" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.4">
-                  <animateTransform attributeName="transform" type="scale" values="1,1;1.05,0.965;1,1" dur="8s" repeatCount="indefinite" additive="sum" />
+                  <animateTransform attributeName="transform" type="scale" values="1,1;1.05,0.965;1,1" dur="9s" repeatCount="indefinite" additive="sum" />
                 </ellipse>
                 <path d="M16,18 Q20,16 24,18 Q28,16 32,18" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.3" />
                 <path d="M19,28 Q24,31 29,28" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.25" />
@@ -238,7 +238,7 @@ export default function AltPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M24,8 Q20,20 24,32 Q28,40 24,44" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.4">
-                  <animate attributeName="d" values="M24,8 Q14,20 24,32 Q34,40 24,44;M24,8 Q32,20 24,32 Q16,40 24,44;M24,8 Q14,20 24,32 Q34,40 24,44" dur="10s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M24,8 Q14,20 24,32 Q34,40 24,44;M24,8 Q32,20 24,32 Q16,40 24,44;M24,8 Q14,20 24,32 Q34,40 24,44" dur="11s" repeatCount="indefinite" />
                 </path>
                 <circle cx="24" cy="8" r="3" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.3" />
               </svg>

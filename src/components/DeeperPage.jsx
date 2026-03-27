@@ -261,7 +261,7 @@ export default function DeeperPage({ language }) {
               <animate
                 attributeName="d"
                 values={`M${20 + i * 10},80 Q${100 + i * 5},${15 + i * 14} 200,80 Q${300 - i * 5},${145 - i * 14} ${380 - i * 10},80;M${20 + i * 10},80 Q${100 + i * 5},${58 + i * 5} 200,77 Q${300 - i * 5},${102 - i * 5} ${380 - i * 10},80;M${20 + i * 10},80 Q${100 + i * 5},${15 + i * 14} 200,80 Q${300 - i * 5},${145 - i * 14} ${380 - i * 10},80`}
-                dur={`${5 + i * 0.8}s`}
+                dur={`${5.4 + i * 0.9}s`}
                 repeatCount="indefinite"
               />
             </path>

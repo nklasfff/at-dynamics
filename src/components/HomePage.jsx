@@ -172,11 +172,11 @@ export default function HomePage({ onNavigate, language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M6,24 Q24,16 42,24" fill="none" stroke="var(--color-cst)" strokeWidth="1" opacity="0.6">
-                  <animate attributeName="d" values="M6,24 Q24,9 42,24;M6,24 Q24,22 42,24;M6,24 Q24,9 42,24" dur="9.5s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M6,24 Q24,9 42,24;M6,24 Q24,22 42,24;M6,24 Q24,9 42,24" dur="11s" repeatCount="indefinite" />
                 </path>
                 <path d="M10,28 Q24,22 38,28" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.3" />
                 <circle cx="24" cy="23" r="2.5" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.25">
-                  <animate attributeName="r" values="2;5.5;2" dur="9.5s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="2;5.5;2" dur="11s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="23" r="1" fill="var(--color-cst)" opacity="0.3" />
               </svg>
@@ -214,42 +214,42 @@ export default function HomePage({ onNavigate, language }) {
         <svg viewBox="0 0 400 280" className={styles.heroSvg}>
           {/* Spine / vagus trunk */}
           <path d="M200,30 Q198,140 200,250" fill="none" stroke="var(--text-primary)" strokeWidth="0.7" opacity="0.18">
-            <animate attributeName="d" values="M200,30 Q190,140 200,250;M200,30 Q210,140 200,250;M200,30 Q190,140 200,250" dur="13s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,30 Q190,140 200,250;M200,30 Q210,140 200,250;M200,30 Q190,140 200,250" dur="14.5s" repeatCount="indefinite" />
           </path>
 
           {/* Branching nerves — left */}
           <path d="M200,60 Q160,70 120,55" fill="none" stroke="var(--color-alt)" strokeWidth="1" opacity="0.55">
-            <animate attributeName="d" values="M200,60 Q160,82 108,43;M200,60 Q160,58 130,63;M200,60 Q160,82 108,43" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,60 Q160,82 108,43;M200,60 Q160,58 130,63;M200,60 Q160,82 108,43" dur="10s" repeatCount="indefinite" />
           </path>
           <path d="M200,100 Q150,115 100,105" fill="none" stroke="var(--color-whm)" strokeWidth="1" opacity="0.5">
-            <animate attributeName="d" values="M200,100 Q150,130 88,95;M200,100 Q150,102 110,115;M200,100 Q150,130 88,95" dur="10.5s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,100 Q150,130 88,95;M200,100 Q150,102 110,115;M200,100 Q150,130 88,95" dur="12s" repeatCount="indefinite" />
           </path>
           <path d="M200,150 Q145,170 90,160" fill="none" stroke="var(--color-cst)" strokeWidth="1" opacity="0.45">
-            <animate attributeName="d" values="M200,150 Q145,185 78,148;M200,150 Q145,155 100,170;M200,150 Q145,185 78,148" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,150 Q145,185 78,148;M200,150 Q145,155 100,170;M200,150 Q145,185 78,148" dur="13.5s" repeatCount="indefinite" />
           </path>
 
           {/* Branching nerves — right */}
           <path d="M200,60 Q240,70 280,55" fill="none" stroke="var(--color-alt)" strokeWidth="1" opacity="0.55">
-            <animate attributeName="d" values="M200,60 Q240,82 292,43;M200,60 Q240,58 270,63;M200,60 Q240,82 292,43" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,60 Q240,82 292,43;M200,60 Q240,58 270,63;M200,60 Q240,82 292,43" dur="10s" repeatCount="indefinite" />
           </path>
           <path d="M200,100 Q250,115 300,105" fill="none" stroke="var(--color-whm)" strokeWidth="1" opacity="0.5">
-            <animate attributeName="d" values="M200,100 Q250,130 312,95;M200,100 Q250,102 290,115;M200,100 Q250,130 312,95" dur="10.5s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,100 Q250,130 312,95;M200,100 Q250,102 290,115;M200,100 Q250,130 312,95" dur="12s" repeatCount="indefinite" />
           </path>
           <path d="M200,150 Q255,170 310,160" fill="none" stroke="var(--color-cst)" strokeWidth="1" opacity="0.45">
-            <animate attributeName="d" values="M200,150 Q255,185 322,148;M200,150 Q255,155 300,170;M200,150 Q255,185 322,148" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,150 Q255,185 322,148;M200,150 Q255,155 300,170;M200,150 Q255,185 322,148" dur="13.5s" repeatCount="indefinite" />
           </path>
 
           {/* Pulse points */}
           {[60, 100, 150].map((y) => (
             <circle key={y} cx="200" cy={y} r="3" fill="none" stroke="var(--text-primary)" strokeWidth="0.5" opacity="0.2">
-              <animate attributeName="r" values="2;9;2" dur={`${6.5 + y / 38}s`} repeatCount="indefinite" />
-              <animate attributeName="opacity" values="0.15;0.55;0.15" dur={`${6.5 + y / 38}s`} repeatCount="indefinite" />
+              <animate attributeName="r" values="2;9;2" dur={`${7.3 + y / 33}s`} repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.15;0.55;0.15" dur={`${7.3 + y / 33}s`} repeatCount="indefinite" />
             </circle>
           ))}
 
           {/* Lower body arc */}
           <path d="M140,230 Q200,200 260,230" fill="none" stroke="var(--text-primary)" strokeWidth="0.5" opacity="0.1">
-            <animate attributeName="d" values="M140,230 Q200,185 260,230;M140,230 Q200,220 260,230;M140,230 Q200,185 260,230" dur="13s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M140,230 Q200,185 260,230;M140,230 Q200,220 260,230;M140,230 Q200,185 260,230" dur="14.5s" repeatCount="indefinite" />
           </path>
         </svg>
       </div>
@@ -306,10 +306,10 @@ export default function HomePage({ onNavigate, language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <circle cx="24" cy="24" r="14" fill="none" stroke="var(--color-cst)" strokeWidth="0.6" opacity="0.3" strokeDasharray="3,4">
-                  <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="24s" repeatCount="indefinite" />
+                  <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="27s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="24" r="8" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.3" strokeDasharray="2,3">
-                  <animateTransform attributeName="transform" type="rotate" from="360 24 24" to="0 24 24" dur="16s" repeatCount="indefinite" />
+                  <animateTransform attributeName="transform" type="rotate" from="360 24 24" to="0 24 24" dur="18s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="24" r="2" fill="var(--text-primary)" opacity="0.15" />
               </svg>
@@ -346,21 +346,21 @@ export default function HomePage({ onNavigate, language }) {
         <svg viewBox="0 0 400 240" className={styles.heroSvg}>
           {/* Concentric rhythm rings */}
           <circle cx="200" cy="120" r="90" fill="none" stroke="var(--color-cst)" strokeWidth="0.6" opacity="0.2">
-            <animate attributeName="r" values="82;106;82" dur="14s" repeatCount="indefinite" />
+            <animate attributeName="r" values="82;106;82" dur="16s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="120" r="65" fill="none" stroke="var(--color-whm)" strokeWidth="0.7" opacity="0.25">
-            <animate attributeName="r" values="57;80;57" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="r" values="57;80;57" dur="12.5s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="120" r="40" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.35">
-            <animate attributeName="r" values="33;53;33" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="r" values="33;53;33" dur="9s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="120" r="18" fill="none" stroke="var(--text-primary)" strokeWidth="0.5" opacity="0.18">
-            <animate attributeName="r" values="13;28;13" dur="6.5s" repeatCount="indefinite" />
+            <animate attributeName="r" values="13;28;13" dur="7s" repeatCount="indefinite" />
           </circle>
 
           {/* Still point */}
           <circle cx="200" cy="120" r="3" fill="var(--text-primary)" opacity="0.12">
-            <animate attributeName="opacity" values="0.08;0.45;0.08" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.08;0.45;0.08" dur="9s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="120" r="1" fill="var(--text-primary)" opacity="0.5" />
 
@@ -389,7 +389,7 @@ export default function HomePage({ onNavigate, language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M12,34 Q18,24 24,14 Q30,24 36,34" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.5">
-                  <animate attributeName="d" values="M12,34 Q18,18 24,8 Q30,18 36,34;M12,34 Q18,30 24,22 Q30,30 36,34;M12,34 Q18,18 24,8 Q30,18 36,34" dur="8s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M12,34 Q18,18 24,8 Q30,18 36,34;M12,34 Q18,30 24,22 Q30,30 36,34;M12,34 Q18,18 24,8 Q30,18 36,34" dur="9s" repeatCount="indefinite" />
                 </path>
               </svg>
             </div>
@@ -427,7 +427,7 @@ export default function HomePage({ onNavigate, language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <circle cx="24" cy="24" r="10" fill="none" stroke="var(--color-cst)" strokeWidth="0.6" opacity="0.3">
-                  <animate attributeName="r" values="7;18;7" dur="9.5s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="7;18;7" dur="11s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="24" r="1.5" fill="var(--color-cst)" opacity="0.4" />
               </svg>
@@ -477,13 +477,13 @@ export default function HomePage({ onNavigate, language }) {
           <div className={styles.deeperTeaserIcon}>
             <svg viewBox="0 0 48 48">
               <circle cx="24" cy="24" r="18" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.2">
-                <animate attributeName="r" values="15;22;15" dur="11s" repeatCount="indefinite" />
+                <animate attributeName="r" values="15;22;15" dur="12.5s" repeatCount="indefinite" />
               </circle>
               <circle cx="24" cy="24" r="12" fill="none" stroke="var(--color-whm)" strokeWidth="0.6" opacity="0.25">
-                <animate attributeName="r" values="9;16;9" dur="8s" repeatCount="indefinite" />
+                <animate attributeName="r" values="9;16;9" dur="9s" repeatCount="indefinite" />
               </circle>
               <circle cx="24" cy="24" r="6" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.35">
-                <animate attributeName="r" values="3.5;9.5;3.5" dur="5.5s" repeatCount="indefinite" />
+                <animate attributeName="r" values="3.5;9.5;3.5" dur="6s" repeatCount="indefinite" />
               </circle>
               <circle cx="24" cy="24" r="2" fill="var(--text-primary)" opacity="0.3" />
             </svg>
