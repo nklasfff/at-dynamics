@@ -499,21 +499,21 @@ export default function HomePage({ onNavigate, language }) {
         </div>
       </section>
 
-      {/* ═══ PILLS — Preview of other screens ═══ */}
+      {/* ═══ PILLS — Navigate to dedicated screens ═══ */}
       <section className={styles.pillsSection}>
-        <div className={styles.pill}>
+        <div className={styles.pill} onClick={() => onNavigate && onNavigate('session-plan')}>
           <span className={styles.pillDot} style={{ background: 'var(--color-alt)' }} />
           <span className={styles.pillText}>{t('homePill1', language) || 'Din sessionsplan'}</span>
         </div>
-        <div className={styles.pill}>
+        <div className={styles.pill} onClick={() => onNavigate && onNavigate('breath-practice')}>
           <span className={styles.pillDot} style={{ background: 'var(--color-whm)' }} />
           <span className={styles.pillText}>{t('homePill2', language) || 'Åndedrætspraksis'}</span>
         </div>
-        <div className={styles.pill}>
+        <div className={styles.pill} onClick={() => onNavigate && onNavigate('three-rhythms')}>
           <span className={styles.pillDot} style={{ background: 'var(--color-cst)' }} />
           <span className={styles.pillText}>{t('homePill3', language) || 'De tre rytmer'}</span>
         </div>
-        <div className={styles.pill}>
+        <div className={styles.pill} onClick={() => onNavigate && onNavigate('deeper')}>
           <span className={styles.pillDot} style={{ background: 'var(--text-secondary)' }} />
           <span className={styles.pillText}>{t('homePill4', language) || 'Dyk dybere'}</span>
         </div>

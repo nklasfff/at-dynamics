@@ -4,6 +4,9 @@ import DeeperPage from './components/DeeperPage'
 import AltPage from './components/AltPage'
 import WhmPage from './components/WhmPage'
 import CranioPage from './components/CranioPage'
+import SessionPlanPage from './components/SessionPlanPage'
+import BreathPracticePage from './components/BreathPracticePage'
+import ThreeRhythmsPage from './components/ThreeRhythmsPage'
 import BottomNav from './components/BottomNav'
 import ThemeToggle from './components/ThemeToggle'
 import Menu from './components/Menu'
@@ -30,6 +33,9 @@ export default function App() {
       case 'whm': return <WhmPage language={language} />
       case 'cranio': return <CranioPage language={language} />
       case 'deeper': return <DeeperPage language={language} />
+      case 'session-plan': return <SessionPlanPage language={language} />
+      case 'breath-practice': return <BreathPracticePage language={language} />
+      case 'three-rhythms': return <ThreeRhythmsPage language={language} />
       default: return <HomePage activeTab={activeTab} onNavigate={handleTabChange} language={language} />
     }
   }
