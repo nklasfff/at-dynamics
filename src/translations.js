@@ -290,6 +290,182 @@ const es = {
   whmSvgComfort: 'Confort',
   whmSvgCold: 'Frío',
   whmSvgWill: 'La voluntad',
+
+  // ══════════════════════════════════════
+  // CranioPage
+  // ══════════════════════════════════════
+  cranioEyebrow: 'Escucha',
+  cranioTitle: 'Craneosacral',
+  cranioSubtitle: 'Terapia construida sobre el silencio, el tacto y los ritmos más antiguos del cuerpo. Escuchar aquello que ya sabe.',
+  cranioOriginsLabel: 'La historia',
+  cranioOriginsTitle: 'De Still a Jealous',
+  cranioOriginsSubtitle: '150 años escuchando al cuerpo',
+  cranioOriginsText: 'Andrew Taylor Still fundó la osteopatía en 1874 a partir de una convicción radical: el cuerpo posee una inteligencia autocurativa innata, y la tarea del médico es eliminar los obstáculos que impiden esa inteligencia. Su alumno William Garner Sutherland llevó esta idea al cráneo y descubrió en 1899 que las suturas craneales están diseñadas para el movimiento — no para la fusión.',
+  cranioOriginsTextExtra: 'Sutherland dedicó los siguientes cincuenta años a refinar su palpación y ampliar su comprensión. Pasó de un modelo mecánico (osteopatía craneal) a una comprensión viva, biodinámica, donde el terapeuta colabora con las fuerzas propias del cuerpo en lugar de manipularlas. James Jealous heredó esta tradición y formalizó el enfoque biodinámico en los años noventa — una práctica donde las manos no hacen, sino que reciben. Donde el silencio no es ausencia, sino el estado más activo de todos.',
+  cranioOriginsBullets: [
+    'A.T. Still (1874): el cuerpo como organismo autorregulador',
+    'Sutherland (1899): los huesos craneales están diseñados para moverse',
+    '50 años de palpación: de la mecánica a la biodinámica',
+    'James Jealous (años 90): formalización del enfoque biodinámico',
+    'Tres generaciones de legado: de la manipulación a la escucha',
+  ],
+  cranioRhythmsLabel: 'Las tres mareas',
+  cranioRhythmsTitle: 'CRI, Mid-Tide, Long Tide',
+  cranioRhythmsSubtitle: 'Tres velocidades de la vida',
+  cranioRhythmsText: 'El ritmo más rápido — Cranial Rhythmic Impulse — se mueve a ocho a doce ciclos por minuto. Es el ritmo que la mayoría de los terapeutas aprenden a palpar primero. Refleja el movimiento mecánico del líquido cefalorraquídeo y los huesos. El CRI es el comentario fisiológico del cuerpo — indica dónde hay libertad y dónde hay restricción.',
+  cranioRhythmsTextExtra: 'Mid-Tide es más lento — alrededor de dos ciclos y medio por minuto — y pertenece a otro campo perceptivo. Aquí el terapeuta no percibe estructuras sino fuerzas. Es el principio organizador que forma y mantiene la arquitectura del tejido. Long Tide es el más lento: un ciclo en cien segundos. Se experimenta como un movimiento mareal universal que trasciende lo individual. Sutherland lo llamó "Breath of Life" — el aliento de la vida, presente antes de la primera respiración pulmonar.',
+  cranioRhythmsBullets: [
+    'CRI: mecánica y estructura — el ritmo más tangible',
+    'Mid-Tide: fuerza organizadora — el campo que forma el tejido',
+    'Long Tide: movimiento universal — el pulso fundamental de la vida',
+    'El terapeuta cambia de nivel perceptivo, no de técnica',
+    'Una escucha más profunda revela capas más profundas de salud',
+  ],
+  cranioCsfLabel: 'El fluido',
+  cranioCsfTitle: 'Líquido cefalorraquídeo',
+  cranioCsfSubtitle: 'El océano interior del sistema nervioso',
+  cranioCsfText: 'El líquido cefalorraquídeo (LCR) envuelve el cerebro y la médula espinal como una capa protectora de agua. Se produce principalmente en los ventrículos cerebrales por el plexo coroideo — pequeñas estructuras vasculares que filtran la sangre y crean un fluido claro y nutritivo. Diariamente se producen alrededor de 500 mililitros, y el volumen total se renueva tres a cuatro veces al día.',
+  cranioCsfTextExtra: 'El LCR transporta nutrientes al tejido cerebral, elimina desechos metabólicos (incluidas las proteínas amiloides asociadas al Alzheimer) y funciona como amortiguador hidráulico. En la comprensión craneosacral, el LCR es más que un fluido pasivo — porta una potencia dinámica, una fuerza vital que Sutherland consideraba la fuerza motriz del ritmo craneosacral. Cuando el flujo del LCR es libre, se refleja en la vitalidad y capacidad de autorregulación de todo el cuerpo.',
+  cranioCsfBullets: [
+    '500 ml producidos diariamente — el volumen total se renueva 3-4 veces',
+    'Elimina desechos metabólicos del cerebro, especialmente durante el sueño',
+    'Protección hidráulica contra impactos y presión',
+    'Según Sutherland, porta una potencia — una fuerza vital',
+    'El flujo libre del LCR se correlaciona con vitalidad y autorregulación',
+  ],
+  cranioStillnessLabel: 'El núcleo',
+  cranioStillnessTitle: 'Dynamic Stillness',
+  cranioStillnessSubtitle: 'Donde movimiento y quietud se encuentran',
+  cranioStillnessText: 'Bajo los tres ritmos — bajo el CRI, bajo Mid-Tide, bajo Long Tide — existe un campo de quietud absoluta. No vacío, sino una quietud que vibra con potencial. Sutherland y Jealous lo llamaron Dynamic Stillness. Es el punto desde el cual la reorganización surge espontáneamente en el cuerpo.',
+  cranioStillnessTextExtra: 'En la tradición biodinámica, la tarea más profunda del terapeuta es facilitar el contacto con este campo. No requiere acción sino presencia — una cualidad de atención lo suficientemente amplia para abarcar todo el sistema y lo suficientemente silenciosa para no perturbarlo. Cuando cliente y terapeuta alcanzan juntos este campo, suelen ocurrir liberaciones espontáneas: las tensiones tisulares se disuelven, la respiración se profundiza y surge una sensación de descanso profundo diferente al sueño. Es el punto de integración propio del cuerpo.',
+  cranioStillnessBullets: [
+    'La quietud no es ausencia sino un campo activo de potencial',
+    'La reorganización espontánea surge desde el punto de quietud',
+    'El terapeuta facilita el contacto — no actúa',
+    'Cliente y terapeuta alcanzan el campo juntos en resonancia',
+    'La sanación más profunda del cuerpo ocurre desde este centro silencioso',
+  ],
+  cranioSessionLabel: 'En la práctica',
+  cranioSessionTitle: 'Una sesión',
+  cranioSessionSubtitle: 'Qué sucede en la camilla',
+  cranioSessionText: 'Te recuestas completamente vestido en una camilla de tratamiento. El terapeuta coloca las manos con delicadeza — generalmente bajo la cabeza, en los pies o a lo largo de la columna vertebral. La presión es mínima: aproximadamente cinco gramos, equivalente al peso de una moneda pequeña. Los primeros minutos se dedican al contacto — permitir que el sistema nervioso se acostumbre a una presencia sin agenda.',
+  cranioSessionTextExtra: 'A medida que se establece la confianza, el terapeuta comienza a palpar los ritmos craneosacrales. Se escuchan las restricciones — lugares donde el movimiento está limitado o es asimétrico. El terapeuta sigue los propios patrones de movimiento del tejido, y en ese proceso surgen a menudo puntos de quietud naturales — momentos donde todo el sistema hace una pausa y se reorganiza. Una sesión dura típicamente 45-60 minutos. Muchos experimentan una relajación profunda similar al estado justo antes del sueño, mientras otros perciben movimientos sutiles, calor o una sensación de expansión.',
+  cranioSessionBullets: [
+    'Completamente vestido — sin aceites, sin posturas exigentes',
+    'Contacto de cinco gramos — más suave de lo que la mayoría puede imaginar',
+    'El terapeuta escucha con las manos buscando movimiento y restricción',
+    'Los puntos de quietud surgen espontáneamente y son señal de reorganización',
+    '45-60 minutos en un estado entre vigilia y sueño',
+  ],
+
+  // ══════════════════════════════════════
+  // DeeperPage
+  // ══════════════════════════════════════
+  deeperEyebrow: 'Profundo',
+  deeperTitle: 'Tres caminos de entrada',
+  deeperSubtitle: 'Explora cada disciplina en profundidad. Comprende los principios, siente los ritmos y prueba los ejercicios tú mismo.',
+
+  // ALT deep dive
+  deeperAltLabel: 'Tratamiento facial en profundidad',
+  deeperAltTitle: 'AnsigtsLøftningsTeknik',
+  deeperAltSubtitle: 'Seis capas, cinco nervios, una transformación',
+  deeperAltText: '¿Qué sucede realmente cuando las yemas de los dedos encuentran el tejido del rostro? Bajo la piel yace un paisaje complejo de tejido conectivo, fibras musculares y vías nerviosas que funcionan como un canal de comunicación directa entre la periferia y el tronco encefálico. El enfoque de Rosenberg se distingue del tratamiento facial convencional al respetar cada capa anatómica como un sistema independiente con su propio ritmo y su propio umbral de resistencia.',
+  deeperAltTextExtra: 'Los cinco nervios craneales que se ramifican a través del rostro — trigémino, facial, glosofaríngeo, vago y accesorio — forman juntos un puente sensorial hacia los centros de regulación autónoma del tronco encefálico. Por eso una presión gentil en la línea mandibular puede alterar la frecuencia cardíaca, y un contacto suave en la sien puede liberar la tensión del diafragma. El tratamiento se extiende a lo largo de seis semanas, y con cada sesión el trabajo penetra más profundamente en las capas — de la superficie al hueso, de la tensión a la libertad.',
+  deeperAltBullets: [
+    'Cada capa tiene su propia cualidad de contacto y tiempo de respuesta',
+    'Los nervios craneales transportan información sensorial en ambas direcciones',
+    'La línea mandibular es una llave al nervio vago y la regulación parasimpática',
+    'El cambio se acumula a lo largo de seis sesiones de profundidad creciente',
+    'El rostro refleja el estado del sistema nervioso — y puede transformarlo',
+  ],
+
+  // WHM deep dive
+  deeperWhmLabel: 'Respiración en profundidad',
+  deeperWhmTitle: 'Método Wim Hof',
+  deeperWhmSubtitle: 'Respiración, frío y la fuerza de la voluntad',
+  deeperWhmText: 'Detrás de las 30 inhalaciones potentes yace un mecanismo fisiológico preciso. Cuando el nivel de CO₂ en sangre desciende durante la respiración rápida, el pH se eleva y desencadena una cascada: los vasos sanguíneos se contraen, la entrega de oxígeno a los tejidos se altera, y el cerebro registra una carencia temporal de oxígeno. Es en la fase de retención — con los pulmones vacíos y la boca cerrada — donde ocurre lo interesante: el cuerpo encuentra su propia respuesta al estrés sin amenaza externa.',
+  deeperWhmTextExtra: 'El frío es el segundo pilar, y su efecto es profundamente fisiológico. El agua fría por debajo de 15 grados activa el tejido adiposo marrón del cuerpo, libera noradrenalina y agudiza el sistema vascular. Pero el verdadero entrenamiento no se trata del frío en sí — se trata del instante justo antes. Ese instante donde la voluntad encuentra la incomodidad y elige quedarse. El estudio Radboud de 2014 documentó que practicantes entrenados podían modular voluntariamente su respuesta inmunitaria innata — algo que hasta entonces se consideraba imposible.',
+  deeperWhmBullets: [
+    'La elevación del pH en sangre desencadena una reacción de alarma controlada',
+    'La fase de retención es el encuentro con el propio mecanismo de supervivencia del cuerpo',
+    'El tejido adiposo marrón se activa y aumenta la producción de calor corporal',
+    'La liberación de noradrenalina agudiza la atención y la función inmunitaria',
+    'La voluntad de permanecer en la incomodidad entrena la adaptabilidad del sistema nervioso',
+  ],
+
+  // CST deep dive
+  deeperCstLabel: 'Craneosacral en profundidad',
+  deeperCstTitle: 'Terapia Craneosacral',
+  deeperCstSubtitle: 'Tres ritmos, un silencio',
+  deeperCstText: 'A principios del siglo XX, el osteópata William Garner Sutherland observó algo notable: los huesos del cráneo no están completamente fusionados en los adultos, sino que se mueven en un patrón sutil y rítmico. Esta observación lo condujo a una investigación de décadas que reveló un sistema fisiológico completamente nuevo — impulsado por la producción y reabsorción del líquido cefalorraquídeo entre los ventrículos cerebrales y el canal espinal.',
+  deeperCstTextExtra: 'James Jealous continuó esta tradición y formalizó el enfoque biodinámico, donde el terapeuta no manipula sino que escucha. Hay tres niveles perceptivos: el ritmo más rápido es la respuesta mecánica del cuerpo, el intermedio es el campo organizador que forma tejido y estructura, y el más lento es un movimiento mareal universal que conecta al individuo con algo mayor. Entre y debajo de estas tres capas se encuentra la zona de quietud — el campo desde el cual la reorganización surge espontáneamente cuando el sistema es recibido con suficiente calma y presencia.',
+  deeperCstBullets: [
+    'El descubrimiento de Sutherland: los huesos craneales se mueven durante toda la vida',
+    'El líquido cefalorraquídeo pulsa independientemente del corazón y los pulmones',
+    'Tres capas perceptivas corresponden a tres niveles de organización',
+    'El terapeuta escucha con las manos — sin añadir fuerza ni dirección',
+    'La quietud no es ausencia de movimiento sino la fuente de todo movimiento',
+  ],
+
+  // Integration card
+  deeperIntegrationLabel: 'Las tres como una',
+  deeperIntegrationTitle: 'Integración',
+  deeperIntegrationSubtitle: 'Cuando las disciplinas se fusionan',
+  deeperIntegrationText: 'Las tres disciplinas no son prácticas separadas — son tres entradas al mismo territorio. ALT trabaja de afuera hacia adentro a través del tejido y los nervios. Wim Hof trabaja de adentro hacia afuera a través de la respiración y la química. La terapia craneosacral escucha lo que ya se mueve, sin añadir nada.',
+  deeperIntegrationTextExtra: 'Cuando las tres se combinan, surge una sinergia: el tratamiento facial abre los nervios craneales para que la respiración pueda moverse libremente. La respiración activa el sistema nervioso para que el ritmo craneosacral pueda desplegarse plenamente. Y la escucha craneosacral crea el espacio silencioso donde todo lo demás puede integrarse. Es una espiral, no una línea — cada práctica potencia a las otras, y con el tiempo la frontera entre ellas se vuelve imposible de encontrar.',
+  deeperIntegrationBullets: [
+    'ALT abre las vías nerviosas, la respiración las llena de energía',
+    'La exposición al frío agudiza lo que el contacto suaviza',
+    'La escucha craneosacral integra todo en silencio',
+    'El sistema nervioso es el eje común de las tres',
+    'Con el tiempo, las tres se experimentan como una sola práctica coherente',
+  ],
+
+  // SVG labels
+  deeperSvgExercises: 'Ejercicios',
+  deeperSvgStillness: 'Quietud',
+
+  // Exercise 1 — Breath
+  deeperBreathExLabel: 'Ejercicio — Respiración',
+  deeperBreathExTitle: 'Respiración consciente',
+  deeperBreathExSubtitle: 'Respiración cuadrada 4-4-4',
+  deeperBreathExText: 'Este ejercicio utiliza la respiración cuadrada (box breathing) para equilibrar el sistema nervioso. Inhala durante 4 segundos, mantén durante 4 segundos, exhala durante 4 segundos. El ejercicio activa la vía vagal ventral y te lleva del estrés a la presencia. Úsalo como preparación para prácticas más profundas.',
+  deeperBreathIn: 'Inhala',
+  deeperBreathHold: 'Mantén',
+  deeperBreathOut: 'Exhala',
+  deeperBreathStart: 'Inicio',
+  deeperBreathCycle: 'Ciclo',
+  deeperBreathPressBelow: 'Pulsa abajo',
+  deeperBreathBegin: 'Comenzar ejercicio',
+  deeperBreathStop: 'Stop',
+
+  // Exercise 2 — Face
+  deeperFaceExLabel: 'Ejercicio — Rostro',
+  deeperFaceExTitle: 'El mapa del rostro',
+  deeperFaceExSubtitle: 'Auto-contacto y presencia consciente',
+  deeperFaceExText: 'Este ejercicio te ayuda a sentir tu propio rostro con manos nuevas. Cierra los ojos. Coloca las yemas de ambas manos suavemente sobre las mejillas — tan suavemente que apenas percibas el contacto. Permanece allí 30 segundos sin moverte.',
+  deeperFaceExTextExtra: 'Ahora desplázate lentamente hacia arriba, hacia la zona de las sienes. Percibe la temperatura, la tensión, la suavidad. Desciende a lo largo de la línea mandibular. Finaliza con las yemas de los dedos colocadas suavemente sobre la frente. Todo el recorrido dura 3-5 minutos. No estás entrenando los músculos — estás restableciendo el contacto entre las manos y el sistema nervioso.',
+  deeperFaceSteps: [
+    'Cierra los ojos. Coloca las yemas de los dedos sobre las mejillas con contacto mínimo.',
+    'Permanece 30 segundos. Percibe calor, pulso, tensión.',
+    'Deslízate lentamente hacia las sienes. Permanece allí 20 segundos.',
+    'Sigue la línea mandibular hacia abajo con dedos lentos.',
+    'Finaliza en la frente. Percibe la quietud bajo las manos.',
+  ],
+
+  // Exercise 3 — Craniosacral listening
+  deeperListenExLabel: 'Ejercicio — Escucha',
+  deeperListenExTitle: 'La mano del silencio',
+  deeperListenExSubtitle: 'Percibe el ritmo craneosacral',
+  deeperListenExText: 'Este ejercicio te introduce a la escucha craneosacral. Siéntate cómodamente. Coloca una mano en la parte superior de tu cabeza (vértex) con un contacto suave y abierto. No presiones — imagina que tu mano flota sobre la superficie del agua.',
+  deeperListenExTextExtra: 'Espera. Escucha con la mano. Después de 1-2 minutos, quizá puedas percibir un movimiento sutil y lento — una expansión y contracción que no sigue tu respiración. Es el CRI, el ritmo craneosacral. No lo juzgues. No lo analices. Solo siéntelo. Esta cualidad de presencia — escuchar sin querer cambiar — es el corazón de toda práctica craneosacral.',
+  deeperListenSteps: [
+    'Siéntate cómodamente. Cierra los ojos. Deja que la respiración se calme.',
+    'Coloca una mano suavemente sobre la parte superior de la cabeza. Contacto mínimo.',
+    'Imagina que la mano flota. Suelta toda intención.',
+    'Espera 2-3 minutos. Percibe cualquier movimiento sutil.',
+    'Finaliza lentamente. Siente todo el cuerpo en quietud un momento.',
+  ],
 }
 
 export function t(key, language) {
