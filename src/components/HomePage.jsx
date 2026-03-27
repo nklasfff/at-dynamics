@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './HomePage.module.css'
 
-export default function HomePage() {
+export default function HomePage({ onNavigateDeeper }) {
   const [expandedCard, setExpandedCard] = useState(null)
   const [expandedNerve, setExpandedNerve] = useState(null)
   const [expandedDepth, setExpandedDepth] = useState(null)
@@ -16,7 +16,7 @@ export default function HomePage() {
       {/* Header */}
       <header className={styles.header}>
         <p className={styles.eyebrow}>Praksis</p>
-        <h1 className={styles.title}>AT Dynamics</h1>
+        <h1 className={styles.title}>AnThes Dynamics</h1>
         <p className={styles.subtitle}>
           Tre discipliner. Én krop. Hvor gammel visdom
           og moderne åndedrætsforskning mødes.
@@ -108,6 +108,19 @@ export default function HomePage() {
               polyvagale forbindelse, hele nervesystemet. 97 muskler. Seks sessioner.
               Én forvandling.
             </p>
+            <p className={styles.cardDescription2}>
+              Ansigtet er kroppens mest nerveforbundne område. Når bindevævet i de seks lag
+              løsnes, frigøres ikke blot spænding — der åbnes en direkte kanal til det
+              parasympatiske nervesystem. Resultatet er en forandring der kan ses udenpå
+              og mærkes indeni.
+            </p>
+            <ul className={styles.cardBullets}>
+              <li>Arbejder med fem kranienerver der styrer ansigt og hals</li>
+              <li>Seks lag: hud, subkutant fedt, SMAS, muskler, dybt fedt, periost</li>
+              <li>Aktiverer den ventrale vagusnerve via ansigtsmuskulaturen</li>
+              <li>97 ansigtsmuskler engageres i en systematisk protokol</li>
+              <li>Forbinder fysisk vævsarbejde med polyvagal regulering</li>
+            </ul>
           </div>
           <span className={styles.cardAccent} style={{ background: 'var(--color-alt)' }} />
         </div>
@@ -127,7 +140,7 @@ export default function HomePage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Åndeværk</p>
+              <p className={styles.cardLabel}>Åndedræt</p>
               <h2 className={styles.cardTitle}>Wim Hof</h2>
               <p className={styles.cardSubtitle}>Metoden</p>
             </div>
@@ -141,6 +154,19 @@ export default function HomePage() {
               det sympatiske respons. Dialektikken mellem komfort og stress skaber en ny
               kapacitet.
             </p>
+            <p className={styles.cardDescription2}>
+              Wim Hof-metoden er mere end vejrtrækningsøvelser. Det er et system der
+              træner nervesystemets evne til at skifte mellem aktivering og ro — og dermed
+              opbygger en resiliens der rækker langt ud over selve praksis. Videnskabelige
+              studier har vist målbar påvirkning af immunforsvaret og inflammationsmarkører.
+            </p>
+            <ul className={styles.cardBullets}>
+              <li>Kontrolleret hyperventilation øger blodets pH og sænker CO₂</li>
+              <li>Kuldeeksponering aktiverer brunt fedtvæv og noradrenalin</li>
+              <li>Retentionsfasen træner kroppens tolerans for stress</li>
+              <li>Bevidst mindset forbinder de fysiske teknikker med mental fokus</li>
+              <li>Dokumenteret effekt på immunrespons i kliniske studier</li>
+            </ul>
           </div>
           <span className={styles.cardAccent} style={{ background: 'var(--color-whm)' }} />
         </div>
@@ -178,6 +204,19 @@ export default function HomePage() {
               uafhængig af hjerteslag og lungeåndedræt. Det er livets mest grundlæggende
               udtryk i form.
             </p>
+            <p className={styles.cardDescription2}>
+              Kraniosakral terapi hviler på princippet om at kroppen besidder en medfødt
+              selvregulerende intelligens. Ved at lytte med ekstrem sensitivitet kan
+              behandleren opfange subtile bevægelsesmønstre der afslører, hvor systemet
+              holder fast — og hvor det er klar til at slippe.
+            </p>
+            <ul className={styles.cardBullets}>
+              <li>CRI: Kranial rytmisk impuls — 8–12 cykler/min</li>
+              <li>Mid-tide: Langsommere rytme — 2–3 cykler/min</li>
+              <li>Long tide: Den dybeste rytme — ca. 1 cyklus/100 sek.</li>
+              <li>Still point: Øjeblikke af fuldstændig stilhed og reorganisering</li>
+              <li>5 grams berøring — lettere end en sommerfugls landing</li>
+            </ul>
           </div>
           <span className={styles.cardAccent} style={{ background: 'var(--color-cst)' }} />
         </div>
@@ -261,6 +300,19 @@ export default function HomePage() {
               dybeste udtryk for medfødt intelligens. Forskellige indgange.
               Samme destination.
             </p>
+            <p className={styles.cardDescription2}>
+              Det autonome nervesystem er kroppens usynlige dirigent. Det styrer hjerterytme,
+              fordøjelse, immunrespons og følelsesmæssig regulering — alt sammen uden bevidst
+              kontrol. Når de tre praksisser mødes her, skabes en synergi der overstiger
+              summen af de enkelte dele.
+            </p>
+            <ul className={styles.cardBullets}>
+              <li>Vagusnerven forbinder hjerne, hjerte, lunger og tarm</li>
+              <li>80% af vagus' fibre sender information opad — fra krop til hjerne</li>
+              <li>Ansigtsnerven (CN VII) er direkte koblet til trygheds-signalering</li>
+              <li>Åndedræt er den eneste autonome funktion vi bevidst kan styre</li>
+              <li>De tre praksisser tilgår det samme system fra tre forskellige vinkler</li>
+            </ul>
           </div>
         </div>
 
@@ -295,6 +347,19 @@ export default function HomePage() {
               tovejs-kredsløb er motoren i alle tre praksisser — vævsarbejde
               ændrer følelse, åndedræt ændrer kemi, lytning ændrer alt.
             </p>
+            <p className={styles.cardDescription2}>
+              Denne tovejs-intelligens er ikke abstrakt filosofi — den er fysiologisk
+              virkelighed. Kroppens fascia-netværk, nervebaner og væskestrømme danner
+              et kommunikationssystem der konstant sender information i begge retninger.
+              At arbejde med kroppen er at arbejde med sindet, og omvendt.
+            </p>
+            <ul className={styles.cardBullets}>
+              <li>Bottom-up: Kropslige ændringer påvirker følelser og tanker</li>
+              <li>Top-down: Mental intention påvirker vævstilstand og kemi</li>
+              <li>Fascia forbinder alle strukturer i én kontinuerlig vævsmatrix</li>
+              <li>Interoception — evnen til at mærke kroppen indefra — er nøglen</li>
+              <li>Regulering sker i relationen mellem terapeut og klient</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -366,6 +431,19 @@ export default function HomePage() {
               i AT Dynamics arbejder på at genoprette ventral vagal funktion — den
               tilstand hvor heling, forbindelse og vækst bliver mulig.
             </p>
+            <p className={styles.cardDescription2}>
+              Den polyvagale forståelse revolutionerede synet på trauma og regulering.
+              Det handler ikke om at undgå stress — men om at opbygge nervesystemets
+              kapacitet til at bevæge sig fleksibelt mellem tilstande og vende tilbage
+              til tryghed. Det er præcis det, de tre praksisser træner.
+            </p>
+            <ul className={styles.cardBullets}>
+              <li>Ventral vagal: Tryghed, social kontakt, kreativitet og heling</li>
+              <li>Sympatisk: Mobilisering, kamp-eller-flugt, handling under pres</li>
+              <li>Dorsal vagal: Nedlukning, frys, energibesparelse, dissociation</li>
+              <li>Neuroception: Nervesystemets ubevidste scanning af sikkerhed</li>
+              <li>Co-regulering: Vi regulerer hinanden gennem nærvær og stemmeklang</li>
+            </ul>
           </div>
         </div>
 
@@ -397,6 +475,19 @@ export default function HomePage() {
               udtryk for liv, til stede fra den embryologiske udvikling til døden.
               Når denne rytme er fri, følger sundhed.
             </p>
+            <p className={styles.cardDescription2}>
+              William Garner Sutherland opdagede denne rytme i begyndelsen af 1900-tallet
+              og kaldte den "Breath of Life". Senere udviklede James Jealous den biodynamiske
+              tilgang, der betragter denne rytme som et udtryk for kroppens iboende
+              sundhed — ikke en mekanisk bevægelse, men en levende kraft.
+            </p>
+            <ul className={styles.cardBullets}>
+              <li>Opdaget af W.G. Sutherland — elev af osteopatiens grundlægger</li>
+              <li>Cerebrospinalvæsken pulserer uafhængigt af hjerte og lunger</li>
+              <li>Rytmen er til stede fra embryonalperioden til efter døden</li>
+              <li>Biodynamisk tilgang: At lytte til sundhed frem for at fixe sygdom</li>
+              <li>Still point-induktion kan nulstille hele nervesystemets tonus</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -412,6 +503,35 @@ export default function HomePage() {
               berøring er en samtale med noget dybere end tanken.
             </em>
           </p>
+        </div>
+      </section>
+
+      {/* ═══ DEEPER TEASER ═══ */}
+      <section className={styles.deeperTeaser}>
+        <div className={styles.deeperTeaserCard} onClick={onNavigateDeeper}>
+          <div className={styles.deeperTeaserIcon}>
+            <svg viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="18" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.2">
+                <animate attributeName="r" values="17;20;17" dur="14s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="24" cy="24" r="12" fill="none" stroke="var(--color-whm)" strokeWidth="0.6" opacity="0.25">
+                <animate attributeName="r" values="11;14;11" dur="10s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="24" cy="24" r="6" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.35">
+                <animate attributeName="r" values="5;8;5" dur="7s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="24" cy="24" r="2" fill="var(--text-primary)" opacity="0.3" />
+            </svg>
+          </div>
+          <div className={styles.deeperTeaserContent}>
+            <p className={styles.deeperTeaserLabel}>Udforsk i dybden</p>
+            <h2 className={styles.deeperTeaserTitle}>Gå dybere ind i de tre praksisser</h2>
+            <p className={styles.deeperTeaserSub}>
+              Detaljeret viden, interaktive øvelser og den fulde sammenhæng
+              mellem ansigt, åndedræt og kraniosakral terapi.
+            </p>
+          </div>
+          <span className={styles.deeperTeaserArrow}>→</span>
         </div>
       </section>
 
