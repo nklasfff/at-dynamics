@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './HomePage.module.css'
+import ScrollToTop from './ScrollToTop'
 
 export default function HomePage({ onNavigate }) {
   const [expandedCard, setExpandedCard] = useState(null)
@@ -556,6 +557,7 @@ export default function HomePage({ onNavigate }) {
       </section>
 
       {/* Bottom spacer for nav */}
+      <ScrollToTop />
       <div className={styles.bottomSpacer} />
     </main>
   )

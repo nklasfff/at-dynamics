@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './DeeperPage.module.css'
+import ScrollToTop from './ScrollToTop'
 
 export default function DeeperPage() {
   const [expandedCard, setExpandedCard] = useState(null)
@@ -138,28 +139,28 @@ export default function DeeperPage() {
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                AnsigtsLøftningsTeknik (ALT) er udviklet af Stanley Rosenberg og bygger
-                på en dyb forståelse af ansigtet som et vindue til nervesystemet. Teknikken
-                arbejder systematisk gennem seks anatomiske lag — fra overfladisk hud og
-                subkutant fedtvæv, gennem muskulatur og dyb fascia, til periost og endelig
-                knoglevævet selv. Hvert lag kræver sin egen berøringskvalitet, sin egen
-                hastighed og sin egen intention.
+                Hvad sker der egentlig, når fingerspidserne møder ansigtets væv? Under huden
+                ligger et komplekst landskab af bindevæv, muskelfibre og nervebaner, der
+                fungerer som en direkte kommunikationskanal mellem periferi og hjernestamme.
+                Rosenbergs tilgang adskiller sig fra konventionel ansigtsbehandling ved at
+                respektere hvert anatomisk lag som et selvstændigt system med sin egen rytme
+                og sin egen modstandsgrænse.
               </p>
               <p className={styles.cardTextExtra}>
-                Det afgørende ved ALT er forbindelsen til de fem kranienerver, der gennemløber
-                ansigtet: trigeminus (V), facialis (VII), glossopharyngeus (IX), vagus (X) og
-                accessorius (XI). Disse nerver er ikke blot motoriske — de bærer afferent
-                (sensorisk) information direkte til hjernestammen, hvor den polyvagale regulering
-                finder sted. Når vi arbejder med ansigtet, taler vi derfor direkte til det
-                autonome nervesystem. Hver session består af seks behandlinger over seks uger,
-                hvor lagene gradvist åbner sig og skaber varig strukturel forandring.
+                De fem kranienerver, der forgrener sig gennem ansigtet — trigeminus, facialis,
+                glossopharyngeus, vagus og accessorius — danner tilsammen en sensorisk bro til
+                hjernestammens autonome reguleringscentre. Det er derfor, at et skånsomt tryk
+                på kæbelinjen kan ændre hjertefrekvens, og en blid berøring ved tindingen kan
+                løsne spændingen i mellemgulvet. Behandlingsforløbet strækker sig over seks
+                uger, og med hver session trænger arbejdet dybere ind i lagene — fra overflade
+                mod knogle, fra spænding mod frihed.
               </p>
               <ul className={styles.bullets}>
-                <li>97 ansigtsmuskler forbundet til 5 kranienerver</li>
-                <li>Seks anatomiske lag fra hud til knogle</li>
-                <li>Direkte afferent forbindelse til hjernestammens reguleringscentre</li>
-                <li>Skånsom bindevævsteknik uden smerte eller kraftig manipulation</li>
-                <li>Strukturel forandring der holder — ikke midlertidig kosmetik</li>
+                <li>Hvert lag har sin egen berøringskvalitet og responstid</li>
+                <li>Kranienerverne bærer sensorisk information begge veje</li>
+                <li>Kæbelinjen er en nøgle til vagusnerven og parasympatisk regulering</li>
+                <li>Forandringen akkumuleres over seks sessioner i stigende dybde</li>
+                <li>Ansigtet afspejler nervesystemets tilstand — og kan ændre den</li>
               </ul>
             </div>
           </div>
@@ -233,27 +234,28 @@ export default function DeeperPage() {
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Wim Hof Metoden hviler på tre søjler: kontrolleret åndedræt, gradvis
-                kuldeeksponering og fokuseret mindset. Åndedrætsdelen består af cyklisk
-                hyperventilation — 30-40 dybe indåndinger efterfulgt af en retentionsfase
-                med tomme lunger. Denne proces ændrer blodets pH-værdi, øger iltmætningen
-                i vævene og aktiverer det sympatiske nervesystem på en kontrolleret måde.
+                Bag de 30 kraftfulde indåndinger ligger en præcis fysiologisk mekanisme.
+                Når blodets CO₂-niveau falder under den hurtige vejrtrækning, stiger pH-værdien
+                og udløser en kaskade: blodkarrene trækker sig sammen, iltafgivelsen til
+                vævene ændres, og hjernen registrerer en midlertidig iltmangel. Det er i
+                retentionsfasen — med tomme lunger og lukket mund — at det interessante sker:
+                kroppen møder sin egen stressrespons uden ekstern trussel.
               </p>
               <p className={styles.cardTextExtra}>
-                Kuldeeksponeringen — typisk kolde bade eller isbade — træner kroppens evne
-                til at regulere sin stressrespons. Ved gentagen eksponering lærer det autonome
-                nervesystem at skifte hurtigere mellem sympatisk aktivering og parasympatisk
-                hvile. Forskning fra Radboud Universitetet i Holland har vist, at metoden kan
-                påvirke det medfødte immunforsvar og reducere inflammatoriske markører. Det
-                tredje element, mindset, handler om at kultivere viljen til at forblive rolig
-                under ubehag — en kapacitet der overføres til alle livets områder.
+                Kulden er den anden søjle, og dens virkning er dybt fysiologisk. Koldt vand
+                under 15 grader aktiverer kroppens brune fedtvæv, frigiver noradrenalin og
+                skærper det vaskulære system. Men den egentlige træning handler ikke om kulden
+                selv — den handler om øjeblikket lige inden. Det øjeblik, hvor viljen møder
+                ubehaget og vælger at blive. Radboud-studiet fra 2014 dokumenterede, at
+                trænede udøvere kunne modulere deres medfødte immunrespons viljestyret —
+                noget der indtil da blev anset for umuligt.
               </p>
               <ul className={styles.bullets}>
-                <li>Cyklisk hyperventilation ændrer blodkemi og iltmætning</li>
-                <li>Kuldeeksponering træner det autonome nervesystems fleksibilitet</li>
-                <li>Videnskabeligt dokumenteret effekt på immunforsvar og inflammation</li>
-                <li>Bygger bro mellem sympatisk aktivering og parasympatisk hvile</li>
-                <li>Mindset-træning der styrker evnen til at navigere stress</li>
+                <li>pH-stigningen i blodet udløser en kontrolleret alarmreaktion</li>
+                <li>Retentionsfasen er mødet med kroppens egen overlevelsesmekanisme</li>
+                <li>Brunt fedtvæv aktiveres og øger kroppens varmeproduktion</li>
+                <li>Noradrenalin-frigivelsen skærper opmærksomhed og immunfunktion</li>
+                <li>Viljen til at forblive i ubehag træner nervesystemets omstillingsevne</li>
               </ul>
             </div>
           </div>
@@ -322,27 +324,28 @@ export default function DeeperPage() {
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Kraniosakral terapi (CST) har sine rødder i osteopatiens grundlægger A.T. Stills
-                arbejde og blev videreudviklet af William Garner Sutherland, der opdagede at
-                kraniets knogler bevæger sig i en subtil, rytmisk pulsering. Denne bevægelse —
-                den kraniosakrale rytme — drives af produktionen og reabsorptionen af
-                cerebrospinalvæsken, der omgiver hjernen og rygmarven.
+                I begyndelsen af det 20. århundrede bemærkede osteopaten William Garner
+                Sutherland noget bemærkelsesværdigt: kraniets knogler er ikke fuldstændig
+                fusionerede hos voksne, men bevæger sig i et subtilt, rytmisk mønster. Denne
+                observation førte ham på en årtier lang undersøgelse, der afslørede et helt
+                nyt fysiologisk system — drevet af cerebrospinalvæskens produktion og
+                reabsorption mellem hjernens ventrikler og rygmarvskanalen.
               </p>
               <p className={styles.cardTextExtra}>
-                I biodynamisk kraniosakral terapi, som James Jealous formaliserede, arbejder
-                behandleren med tre distinkte rytmer: CRI (Cranial Rhythmic Impulse) med 8-12
-                cykler per minut, den mellemliggende tidevandsbevægelse (Mid-Tide) med ca. 2,5
-                cykler per minut, og den langsomme Long Tide med én cyklus per 100 sekunder.
-                Under alle tre rytmer ligger stilhedspunktet — Dynamic Stillness — hvorfra al
-                bevægelse opstår. Behandleren bruger fem grams tryk og uendelig tålmodighed
-                for at lytte kroppen tilbage til sin medfødte sundhedsplan.
+                James Jealous videreførte denne tradition og formaliserede den biodynamiske
+                tilgang, hvor behandleren ikke manipulerer men lytter. Der er tre perceptuelle
+                niveauer: den hurtigste rytme er kroppens mekaniske respons, den mellemste er
+                det organiserende felt der former væv og struktur, og den langsomste er en
+                universel tidevandsbevægelse der forbinder individet med noget større. Mellem
+                og under disse tre lag findes stilhedszonen — det felt hvorfra reorganisering
+                spontant opstår, når systemet mødes med tilstrækkelig ro og tilstedeværelse.
               </p>
               <ul className={styles.bullets}>
-                <li>CRI: 8-12 cykler/min — den mest tilgængelige rytme</li>
-                <li>Mid-Tide: 2,5 cykler/min — kroppens organiserende kraft</li>
-                <li>Long Tide: 1 cyklus/100 sek — livets dybeste puls</li>
-                <li>Fem grams berøringstryk — lettere end en sommerfugl</li>
-                <li>Dynamic Stillness — stilheden hvorfra al bevægelse udspringer</li>
+                <li>Sutherlands opdagelse: kranieknoglerne bevæger sig hele livet</li>
+                <li>Cerebrospinalvæsken pulserer uafhængigt af hjerte og lunger</li>
+                <li>Tre perceptuelle lag svarer til tre niveauer af organisering</li>
+                <li>Behandleren lytter med hænderne — uden at tilføje kraft eller retning</li>
+                <li>Stilhed er ikke fravær af bevægelse men kilden til al bevægelse</li>
               </ul>
             </div>
           </div>
@@ -609,6 +612,7 @@ export default function DeeperPage() {
       </section>
 
       {/* Bottom spacer */}
+      <ScrollToTop />
       <div className={styles.bottomSpacer} />
     </main>
   )

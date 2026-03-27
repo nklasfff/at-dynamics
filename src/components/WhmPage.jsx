@@ -1,0 +1,380 @@
+import { useState } from 'react'
+import styles from './DeeperPage.module.css'
+import ScrollToTop from './ScrollToTop'
+
+export default function WhmPage() {
+  const [expanded, setExpanded] = useState(null)
+  const toggle = (id) => setExpanded(expanded === id ? null : id)
+
+  return (
+    <main className={styles.page}>
+      <div className={styles.ambientGlow} />
+
+      <header className={styles.header}>
+        <p className={styles.eyebrow}>Åndedræt</p>
+        <h1 className={styles.title}>Wim Hof</h1>
+        <p className={styles.subtitle}>
+          Metoden der forvandler åndedræt til et redskab for
+          fysiologisk kontrol og indre modstandskraft.
+        </p>
+      </header>
+
+      {/* ═══ HERO — Breath wave system ═══ */}
+      <div className={styles.heroVisual}>
+        <svg viewBox="0 0 400 300" className={styles.heroSvg}>
+          {/* Breath wave layers */}
+          {[0,1,2,3,4,5,6].map(i => (
+            <path
+              key={i}
+              d={`M30,${150+i*3} Q110,${100+i*8} 200,${150+i*3} Q290,${200-i*8} 370,${150+i*3}`}
+              fill="none"
+              stroke="var(--color-whm)"
+              strokeWidth={1.8-i*0.18}
+              opacity={0.7-i*0.07}
+            >
+              <animate
+                attributeName="d"
+                values={`M30,${150+i*3} Q110,${90+i*10} 200,${150+i*3} Q290,${210-i*10} 370,${150+i*3};M30,${150+i*3} Q110,${130+i*4} 200,${148+i*3} Q290,${170-i*4} 370,${150+i*3};M30,${150+i*3} Q110,${90+i*10} 200,${150+i*3} Q290,${210-i*10} 370,${150+i*3}`}
+                dur={`${5+i*0.8}s`}
+                repeatCount="indefinite"
+              />
+            </path>
+          ))}
+          {/* Retention void */}
+          <circle cx="200" cy="150" r="20" fill="none" stroke="var(--color-whm)" strokeWidth="0.9" opacity="0.25">
+            <animate attributeName="r" values="15;35;15" dur="16s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.25;0.1;0.25" dur="16s" repeatCount="indefinite" />
+          </circle>
+          {/* Ice crystal structure */}
+          {[0,60,120,180,240,300].map(angle => (
+            <line
+              key={angle}
+              x1="200" y1="150"
+              x2={200+Math.cos(angle*Math.PI/180)*40}
+              y2={150+Math.sin(angle*Math.PI/180)*40}
+              stroke="var(--color-whm)"
+              strokeWidth="0.55"
+              opacity="0.16"
+            />
+          ))}
+          {/* Breath count markers */}
+          {[1,2,3].map(i => (
+            <circle key={i} cx={130+i*45} cy="250" r="4" fill="none" stroke="var(--color-whm)" strokeWidth="0.7" opacity={0.2+i*0.14}>
+              <animate attributeName="r" values={`3;${5+i};3`} dur={`${8+i*2}s`} repeatCount="indefinite" />
+            </circle>
+          ))}
+          <text x="175" y="270" fill="var(--color-whm)" fontSize="6" opacity="0.25" fontFamily="Inter, sans-serif">Runde 1</text>
+          <text x="220" y="270" fill="var(--color-whm)" fontSize="6" opacity="0.3" fontFamily="Inter, sans-serif">Runde 2</text>
+          <text x="265" y="270" fill="var(--color-whm)" fontSize="6" opacity="0.4" fontFamily="Inter, sans-serif">Runde 3</text>
+        </svg>
+      </div>
+
+      {/* ═══ CARD 1 — The breath ═══ */}
+      <section className={styles.cardSection}>
+        <div className={`${styles.deepCard} ${expanded === 'breath' ? styles.expanded : ''}`} onClick={() => toggle('breath')}>
+          <div className={styles.cardRow}>
+            <div className={styles.cardIcon}>
+              <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
+                <path d="M8,24 Q16,8 24,24 Q32,40 40,24" fill="none" stroke="var(--color-whm)" strokeWidth="1.3" opacity="0.7">
+                  <animate attributeName="d" values="M8,24 Q16,6 24,24 Q32,42 40,24;M8,24 Q16,18 24,23 Q32,28 40,24;M8,24 Q16,6 24,24 Q32,42 40,24" dur="6s" repeatCount="indefinite" />
+                </path>
+              </svg>
+            </div>
+            <div className={styles.cardContent}>
+              <p className={styles.cardLabel}>Søjle 1</p>
+              <h2 className={styles.cardTitle}>Åndedrættet</h2>
+              <p className={styles.cardSubtitle}>30 åndedrag der ændrer kemien</p>
+            </div>
+            <span className={styles.cardChevron}>{expanded === 'breath' ? '−' : '+'}</span>
+          </div>
+          <div className={styles.cardExpandable}>
+            <div className={styles.cardBody}>
+              <p className={styles.cardText}>
+                Grundøvelsen er enkel i sin form men dybtgående i sin virkning. Tredive
+                til fyrre dybe indåndinger gennem næsen, med passive udåndinger, skaber
+                en tilstand af respiratorisk alkalose. Blodets kuldioxidniveau falder,
+                iltbindingen til hæmoglobin strammes (Bohr-effekten), og cellernes
+                faktiske iltforsyning ændrer paradoksalt karakter.
+              </p>
+              <p className={styles.cardTextExtra}>
+                Efter de tredive åndedrag kommer udåndingen — og så holder man vejret
+                med tomme lunger. Det er her, den egentlige transformation finder sted.
+                Uden luft i lungerne og med ændret blodkemi oplever kroppen en kontrolleret
+                dykning i iltmætning. Milten frigiver ekstra røde blodlegemer. Hjernen
+                skifter til en tilstand af skærpet opmærksomhed. Det sympatiske
+                nervesystem aktiveres — men uden panik, fordi konteksten er frivillig.
+              </p>
+              <ul className={styles.bullets}>
+                <li>Respiratorisk alkalose: pH stiger fra 7.4 mod 7.75 under øvelsen</li>
+                <li>Bohr-effekten: ilt bindes strammere til hæmoglobin ved lav CO₂</li>
+                <li>Milten kontraherer og frigiver ekstra røde blodlegemer</li>
+                <li>Retentionen er frivillig stress — nervesystemet lærer forskellen</li>
+                <li>Tre runder fordyber effekten progressivt med hver cyklus</li>
+              </ul>
+            </div>
+          </div>
+          <span className={styles.cardAccent} style={{ background: 'var(--color-whm)' }} />
+        </div>
+      </section>
+
+      {/* ═══ CARD 2 — The cold ═══ */}
+      <section className={styles.cardSection}>
+        <div className={`${styles.deepCard} ${expanded === 'cold' ? styles.expanded : ''}`} onClick={() => toggle('cold')}>
+          <div className={styles.cardRow}>
+            <div className={styles.cardIcon}>
+              <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
+                {[0,60,120,180,240,300].map(angle => (
+                  <line key={angle} x1="24" y1="24" x2={24+Math.cos(angle*Math.PI/180)*14} y2={24+Math.sin(angle*Math.PI/180)*14} stroke="var(--color-whm)" strokeWidth="0.9" opacity="0.65" />
+                ))}
+                <circle cx="24" cy="24" r="4" fill="none" stroke="var(--color-whm)" strokeWidth="1.0" opacity="0.7">
+                  <animate attributeName="r" values="3;6;3" dur="8s" repeatCount="indefinite" />
+                </circle>
+              </svg>
+            </div>
+            <div className={styles.cardContent}>
+              <p className={styles.cardLabel}>Søjle 2</p>
+              <h2 className={styles.cardTitle}>Kulden</h2>
+              <p className={styles.cardSubtitle}>Kroppens ældste træningspartner</p>
+            </div>
+            <span className={styles.cardChevron}>{expanded === 'cold' ? '−' : '+'}</span>
+          </div>
+          <div className={styles.cardExpandable}>
+            <div className={styles.cardBody}>
+              <p className={styles.cardText}>
+                Mennesket er evolutionært designet til temperaturvariation. Moderne
+                komfortkultur — konstant 21 grader, aldrig for koldt, aldrig for varmt —
+                har bedøvet et helt fysiologisk system. Kuldeeksponering genaktiverer det.
+                Når huden registrerer temperaturer under 15 grader, udløser det en kaskade
+                af vaskulære og hormonelle responser.
+              </p>
+              <p className={styles.cardTextExtra}>
+                Det perifere karsystem trækker sig sammen for at bevare kerntemperaturen.
+                Brunt fedtvæv — et metabolisk aktivt væv de fleste voksne har i
+                begrænset mængde — aktiveres og begynder at producere varme direkte fra
+                fedt. Noradrenalin udskilles i mængder der er tre til fem gange over
+                baseline. Denne neurotransmitter påvirker opmærksomhed, stemningsleje og
+                immunfunktion. Over tid udvider kroppen sin komfortzone bogstaveligt —
+                den tåler mere, reagerer hurtigere og restituerer bedre.
+              </p>
+              <ul className={styles.bullets}>
+                <li>Vaskulær gymnastik: karrene træner kontraktion og dilatation</li>
+                <li>Brunt fedtvæv producerer varme og øger metabolisk rate</li>
+                <li>Noradrenalin stiger 200-500% under kuldepåvirkning</li>
+                <li>Gradvis progression: fra kolde afslutninger til isbad</li>
+                <li>Komfortzonen udvides med praksis — ikke kun mentalt, men fysiologisk</li>
+              </ul>
+            </div>
+          </div>
+          <span className={styles.cardAccent} style={{ background: 'var(--color-whm)' }} />
+        </div>
+      </section>
+
+      {/* ═══ MID ILLUSTRATION — Ice crystal / temperature gradient ═══ */}
+      <div className={styles.heroVisual}>
+        <svg viewBox="0 0 400 200" className={styles.heroSvg}>
+          {/* Temperature gradient — warm to cold */}
+          <line x1="60" y1="100" x2="340" y2="100" stroke="var(--text-primary)" strokeWidth="0.55" opacity="0.12" />
+          {/* Warm side */}
+          <circle cx="80" cy="100" r="20" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.3">
+            <animate attributeName="r" values="18;24;18" dur="8s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="80" cy="100" r="10" fill="none" stroke="var(--color-alt)" strokeWidth="0.55" opacity="0.2" />
+          {/* Cold side — ice crystal */}
+          {[0,60,120,180,240,300].map(angle => (
+            <g key={angle}>
+              <line
+                x1="320" y1="100"
+                x2={320+Math.cos(angle*Math.PI/180)*30}
+                y2={100+Math.sin(angle*Math.PI/180)*30}
+                stroke="var(--color-whm)" strokeWidth="0.9" opacity="0.45"
+              />
+              <line
+                x1={320+Math.cos(angle*Math.PI/180)*15}
+                y1={100+Math.sin(angle*Math.PI/180)*15}
+                x2={320+Math.cos((angle+40)*Math.PI/180)*22}
+                y2={100+Math.sin((angle+40)*Math.PI/180)*22}
+                stroke="var(--color-whm)" strokeWidth="0.55" opacity="0.3"
+              />
+            </g>
+          ))}
+          <circle cx="320" cy="100" r="4" fill="none" stroke="var(--color-whm)" strokeWidth="0.9" opacity="0.55">
+            <animate attributeName="r" values="3;8;3" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.55;0.2;0.55" dur="10s" repeatCount="indefinite" />
+          </circle>
+          {/* Transition waves between warm and cold */}
+          {[0,1,2].map(i => (
+            <path
+              key={i}
+              d={`M${140+i*30},${85+i*10} Q${180+i*15},${100} ${220+i*10},${115-i*10}`}
+              fill="none"
+              stroke="var(--color-whm)"
+              strokeWidth={0.9-i*0.18}
+              opacity={0.4-i*0.08}
+            >
+              <animate
+                attributeName="d"
+                values={`M${140+i*30},${80+i*10} Q${180+i*15},${95} ${220+i*10},${120-i*10};M${140+i*30},${90+i*10} Q${180+i*15},${105} ${220+i*10},${110-i*10};M${140+i*30},${80+i*10} Q${180+i*15},${95} ${220+i*10},${120-i*10}`}
+                dur={`${6+i*2}s`}
+                repeatCount="indefinite"
+              />
+            </path>
+          ))}
+          {/* Labels */}
+          <text x="80" y="140" fill="var(--color-alt)" fontSize="6" opacity="0.3" fontFamily="Inter, sans-serif" textAnchor="middle">Komfort</text>
+          <text x="320" y="140" fill="var(--color-whm)" fontSize="6" opacity="0.4" fontFamily="Inter, sans-serif" textAnchor="middle">Kulde</text>
+          <text x="200" y="160" fill="var(--text-primary)" fontSize="7" opacity="0.2" fontFamily="'Cormorant Garamond', serif" textAnchor="middle" fontStyle="italic">Viljen</text>
+        </svg>
+      </div>
+
+      {/* ═══ CARD 3 — The mindset ═══ */}
+      <section className={styles.cardSection}>
+        <div className={`${styles.deepCard} ${expanded === 'mind' ? styles.expanded : ''}`} onClick={() => toggle('mind')}>
+          <div className={styles.cardRow}>
+            <div className={styles.cardIcon}>
+              <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
+                <circle cx="24" cy="24" r="10" fill="none" stroke="var(--color-whm)" strokeWidth="0.9" opacity="0.55">
+                  <animate attributeName="r" values="8;14;8" dur="10s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="24" cy="24" r="3" fill="var(--color-whm)" opacity="0.45" />
+              </svg>
+            </div>
+            <div className={styles.cardContent}>
+              <p className={styles.cardLabel}>Søjle 3</p>
+              <h2 className={styles.cardTitle}>Mindset</h2>
+              <p className={styles.cardSubtitle}>Viljen som fysiologisk kraft</p>
+            </div>
+            <span className={styles.cardChevron}>{expanded === 'mind' ? '−' : '+'}</span>
+          </div>
+          <div className={styles.cardExpandable}>
+            <div className={styles.cardBody}>
+              <p className={styles.cardText}>
+                Det tredje element i Wim Hof Metoden er det mindst synlige men måske det
+                mest afgørende. Mindset er ikke positiv tænkning — det er evnen til at
+                forblive tilstede med ubehag uden at flygte ind i reaktion. Det er
+                forskellen mellem at mærke kulden og at blive overtaget af kulden.
+              </p>
+              <p className={styles.cardTextExtra}>
+                Denne kapacitet er direkte knyttet til præfrontal cortex' kontrol over
+                amygdala — hjernens alarmcentral. Med gentagen øvelse styrkes de neurale
+                forbindelser, der tillader bevidst regulering af stressresponsen. Det
+                handler ikke om at undertrykke frygten, men om at skabe et rum mellem
+                stimulus og respons. I det rum ligger friheden — og det rum vokser med
+                praksis. Mange udøvere rapporterer, at denne evne overføres til andre
+                livsområder: vanskelige samtaler, præstationspres, kroniske smerter.
+              </p>
+              <ul className={styles.bullets}>
+                <li>Præfrontal regulering af amygdala styrkes med praksis</li>
+                <li>Rummet mellem stimulus og respons kan trænes og udvides</li>
+                <li>Ubehagstolerance overføres til alle livets stressorer</li>
+                <li>Bevidst fokus ændrer den neurochemiske respons på kulde</li>
+                <li>Viljen er ikke undertrykkelse men tilstedeværelse med det der er</li>
+              </ul>
+            </div>
+          </div>
+          <span className={styles.cardAccent} style={{ background: 'var(--color-whm)' }} />
+        </div>
+      </section>
+
+      {/* ═══ CARD 4 — The science ═══ */}
+      <section className={styles.cardSection}>
+        <div className={`${styles.deepCard} ${expanded === 'science' ? styles.expanded : ''}`} onClick={() => toggle('science')}>
+          <div className={styles.cardRow}>
+            <div className={styles.cardIcon}>
+              <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
+                <rect x="14" y="10" width="20" height="28" rx="2" fill="none" stroke="var(--color-whm)" strokeWidth="0.9" opacity="0.55" />
+                <line x1="18" y1="18" x2="30" y2="18" stroke="var(--color-whm)" strokeWidth="0.55" opacity="0.4" />
+                <line x1="18" y1="22" x2="28" y2="22" stroke="var(--color-whm)" strokeWidth="0.55" opacity="0.4" />
+                <line x1="18" y1="26" x2="26" y2="26" stroke="var(--color-whm)" strokeWidth="0.55" opacity="0.3" />
+                <line x1="18" y1="30" x2="24" y2="30" stroke="var(--color-whm)" strokeWidth="0.55" opacity="0.3" />
+              </svg>
+            </div>
+            <div className={styles.cardContent}>
+              <p className={styles.cardLabel}>Forskningen</p>
+              <h2 className={styles.cardTitle}>Videnskaben bag</h2>
+              <p className={styles.cardSubtitle}>Fra skepsis til peer-reviewed evidens</p>
+            </div>
+            <span className={styles.cardChevron}>{expanded === 'science' ? '−' : '+'}</span>
+          </div>
+          <div className={styles.cardExpandable}>
+            <div className={styles.cardBody}>
+              <p className={styles.cardText}>
+                I 2011 begyndte forskere ved Radboud University Medical Center i Nijmegen
+                at undersøge Wim Hofs påstande videnskabeligt. Resultaterne overraskede
+                det medicinske establishment. Hof demonstrerede under kontrollerede
+                laboratorieforhold, at han kunne påvirke sit medfødte immunsystem
+                viljestyret — noget der blev anset for fysiologisk umuligt.
+              </p>
+              <p className={styles.cardTextExtra}>
+                I 2014 publicerede Matthijs Kox og kollegaer et banebrydende studie i
+                Proceedings of the National Academy of Sciences. Tolv trænede frivillige
+                blev injiceret med endotoxin (et bakterielt komponent der normalt udløser
+                influenzalignende symptomer). De trænede deltagere viste signifikant lavere
+                niveauer af proinflammatoriske cytokiner og rapporterede færre symptomer
+                end kontrolgruppen. Studiet etablerede for første gang, at det autonome
+                nervesystem og immunresponsen kan påvirkes gennem bevidst praksis.
+              </p>
+              <ul className={styles.bullets}>
+                <li>Radboud-studiet 2014: viljestyret modulering af immunrespons</li>
+                <li>Proinflammatoriske cytokiner reduceret signifikant hos trænede</li>
+                <li>Adrenalin-niveauer steg markant under åndedrættsprotokollen</li>
+                <li>Endotoxin-symptomer halveret sammenlignet med kontrolgruppe</li>
+                <li>Publiceret i PNAS — et af verdens mest respekterede tidsskrifter</li>
+              </ul>
+            </div>
+          </div>
+          <span className={styles.cardAccent} style={{ background: 'var(--color-whm)' }} />
+        </div>
+      </section>
+
+      {/* ═══ CARD 5 — Daily practice ═══ */}
+      <section className={styles.cardSection}>
+        <div className={`${styles.deepCard} ${expanded === 'daily' ? styles.expanded : ''}`} onClick={() => toggle('daily')}>
+          <div className={styles.cardRow}>
+            <div className={styles.cardIcon}>
+              <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
+                <circle cx="24" cy="24" r="14" fill="none" stroke="var(--color-whm)" strokeWidth="0.7" opacity="0.4" />
+                <path d="M24,10 L24,24 L32,28" fill="none" stroke="var(--color-whm)" strokeWidth="0.9" opacity="0.7" />
+                <circle cx="24" cy="24" r="1.5" fill="var(--color-whm)" opacity="0.55" />
+              </svg>
+            </div>
+            <div className={styles.cardContent}>
+              <p className={styles.cardLabel}>Praksis</p>
+              <h2 className={styles.cardTitle}>Daglig rytme</h2>
+              <p className={styles.cardSubtitle}>Sådan ser en morgenrutine ud</p>
+            </div>
+            <span className={styles.cardChevron}>{expanded === 'daily' ? '−' : '+'}</span>
+          </div>
+          <div className={styles.cardExpandable}>
+            <div className={styles.cardBody}>
+              <p className={styles.cardText}>
+                En typisk Wim Hof-morgen begynder på tom mave. Sæt dig eller læg dig
+                behageligt. Tre runder åndedræt: tredive dybe indåndinger, derefter
+                retention med tomme lunger (start med 1-2 minutter, byg op over uger),
+                efterfulgt af en genopfyldningsindånding der holdes i 15 sekunder.
+              </p>
+              <p className={styles.cardTextExtra}>
+                Efter åndedrættet følger kulden. For begyndere er to minutter med koldt
+                brusebad tilstrækkeligt. Med tiden kan det udbygges til isbad, vinterbadning
+                eller længere eksponering. Det vigtige er progressionen — aldrig tvang, altid
+                respekt for kroppens aktuelle grænse. Hele rutinen tager 15-20 minutter og
+                efterlader de fleste udøvere med en følelse af klarhed, energi og
+                indre varme der kan mærkes i timevis.
+              </p>
+              <ul className={styles.bullets}>
+                <li>Morgen på tom mave giver den reneste fysiologiske respons</li>
+                <li>Tre runder: 30 åndedrag → retention → genopfyldning</li>
+                <li>Retentionstiden vokser naturligt med praksis</li>
+                <li>Kuldeeksponering fra 30 sekunder og op — aldrig forceret</li>
+                <li>15-20 minutters investering med effekt der varer hele dagen</li>
+              </ul>
+            </div>
+          </div>
+          <span className={styles.cardAccent} style={{ background: 'var(--color-whm)' }} />
+        </div>
+      </section>
+
+      <ScrollToTop />
+      <div className={styles.bottomSpacer} />
+    </main>
+  )
+}
