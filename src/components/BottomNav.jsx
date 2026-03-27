@@ -3,7 +3,7 @@ import styles from './BottomNav.module.css'
 const tabs = [
   {
     id: 'home',
-    label: 'Home',
+    label: 'Hjem',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.2" stroke="currentColor">
         <circle cx="12" cy="12" r="3" />

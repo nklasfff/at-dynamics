@@ -15,11 +15,11 @@ export default function HomePage() {
 
       {/* Header */}
       <header className={styles.header}>
-        <p className={styles.eyebrow}>The Practice</p>
+        <p className={styles.eyebrow}>Praksis</p>
         <h1 className={styles.title}>AT Dynamics</h1>
         <p className={styles.subtitle}>
-          Three disciplines. One body. Where ancient hands-on wisdom
-          and modern breath science converge.
+          Tre discipliner. Én krop. Hvor gammel visdom
+          og moderne åndedrætsforskning mødes.
         </p>
       </header>
 
@@ -28,47 +28,47 @@ export default function HomePage() {
         <svg viewBox="0 0 400 300" className={styles.heroSvg}>
           <defs>
             <linearGradient id="gAlt" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="var(--color-alt)" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="var(--color-alt)" stopOpacity="0.1" />
+              <stop offset="0%" stopColor="var(--color-alt)" stopOpacity="0.7" />
+              <stop offset="100%" stopColor="var(--color-alt)" stopOpacity="0.15" />
             </linearGradient>
             <linearGradient id="gWhm" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="var(--color-whm)" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="var(--color-whm)" stopOpacity="0.08" />
+              <stop offset="0%" stopColor="var(--color-whm)" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="var(--color-whm)" stopOpacity="0.12" />
             </linearGradient>
             <linearGradient id="gCst" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="var(--color-cst)" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="var(--color-cst)" stopOpacity="0.08" />
+              <stop offset="0%" stopColor="var(--color-cst)" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="var(--color-cst)" stopOpacity="0.12" />
             </linearGradient>
           </defs>
 
           {/* ALT — layered face form */}
-          <ellipse cx="150" cy="150" rx="75" ry="100" fill="none" stroke="url(#gAlt)" strokeWidth="1">
-            <animateTransform attributeName="transform" type="scale" values="1,1;1.02,0.99;1,1" dur="8s" repeatCount="indefinite" additive="sum" />
+          <ellipse cx="150" cy="150" rx="75" ry="100" fill="none" stroke="url(#gAlt)" strokeWidth="1.2">
+            <animateTransform attributeName="transform" type="scale" values="1,1;1.04,0.97;1,1" dur="10s" repeatCount="indefinite" additive="sum" />
           </ellipse>
-          <ellipse cx="150" cy="150" rx="55" ry="78" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.3">
-            <animateTransform attributeName="transform" type="scale" values="1,1;0.98,1.01;1,1" dur="7s" repeatCount="indefinite" additive="sum" />
+          <ellipse cx="150" cy="150" rx="55" ry="78" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.4">
+            <animateTransform attributeName="transform" type="scale" values="1,1;0.96,1.03;1,1" dur="9s" repeatCount="indefinite" additive="sum" />
           </ellipse>
 
           {/* WHM — breath wave */}
-          <path d="M80,150 Q130,80 200,150 Q270,220 320,150" fill="none" stroke="url(#gWhm)" strokeWidth="1.2">
-            <animate attributeName="d" values="M80,150 Q130,80 200,150 Q270,220 320,150;M80,150 Q130,100 200,140 Q270,180 320,150;M80,150 Q130,80 200,150 Q270,220 320,150" dur="6s" repeatCount="indefinite" />
+          <path d="M80,150 Q130,80 200,150 Q270,220 320,150" fill="none" stroke="url(#gWhm)" strokeWidth="1.4">
+            <animate attributeName="d" values="M80,150 Q130,70 200,150 Q270,230 320,150;M80,150 Q130,110 200,135 Q270,170 320,150;M80,150 Q130,70 200,150 Q270,230 320,150" dur="8s" repeatCount="indefinite" />
           </path>
-          <path d="M100,150 Q150,100 200,150 Q250,200 300,150" fill="none" stroke="var(--color-whm)" strokeWidth="0.5" opacity="0.25">
-            <animate attributeName="d" values="M100,150 Q150,100 200,150 Q250,200 300,150;M100,150 Q150,115 200,145 Q250,175 300,150;M100,150 Q150,100 200,150 Q250,200 300,150" dur="6s" repeatCount="indefinite" />
+          <path d="M100,150 Q150,100 200,150 Q250,200 300,150" fill="none" stroke="var(--color-whm)" strokeWidth="0.6" opacity="0.3">
+            <animate attributeName="d" values="M100,150 Q150,95 200,150 Q250,205 300,150;M100,150 Q150,120 200,142 Q250,168 300,150;M100,150 Q150,95 200,150 Q250,205 300,150" dur="8s" repeatCount="indefinite" />
           </path>
 
-          {/* CST — tide arcs */}
-          <path d="M60,165 Q200,130 340,165" fill="none" stroke="url(#gCst)" strokeWidth="1">
-            <animate attributeName="d" values="M60,165 Q200,130 340,165;M60,165 Q200,145 340,165;M60,165 Q200,130 340,165" dur="12s" repeatCount="indefinite" />
+          {/* CST — rhythm arcs */}
+          <path d="M60,165 Q200,125 340,165" fill="none" stroke="url(#gCst)" strokeWidth="1.2">
+            <animate attributeName="d" values="M60,165 Q200,120 340,165;M60,165 Q200,150 340,165;M60,165 Q200,120 340,165" dur="14s" repeatCount="indefinite" />
           </path>
-          <path d="M80,180 Q200,155 320,180" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.25">
-            <animate attributeName="d" values="M80,180 Q200,155 320,180;M80,180 Q200,165 320,180;M80,180 Q200,155 320,180" dur="12s" repeatCount="indefinite" />
+          <path d="M80,180 Q200,150 320,180" fill="none" stroke="var(--color-cst)" strokeWidth="0.6" opacity="0.3">
+            <animate attributeName="d" values="M80,180 Q200,148 320,180;M80,180 Q200,168 320,180;M80,180 Q200,148 320,180" dur="14s" repeatCount="indefinite" />
           </path>
 
           {/* Center convergence */}
           <circle cx="200" cy="150" r="4" fill="none" stroke="var(--text-primary)" strokeWidth="0.5" opacity="0.2">
-            <animate attributeName="r" values="4;6;4" dur="8s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.2;0.35;0.2" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="r" values="4;8;4" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.2;0.4;0.2" dur="10s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="150" r="1.5" fill="var(--text-primary)" opacity="0.4" />
 
@@ -88,7 +88,7 @@ export default function HomePage() {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <ellipse cx="24" cy="22" rx="12" ry="16" fill="none" stroke="var(--color-alt)" strokeWidth="1" opacity="0.7">
-                  <animateTransform attributeName="transform" type="scale" values="1,1;1.03,0.98;1,1" dur="7s" repeatCount="indefinite" additive="sum" />
+                  <animateTransform attributeName="transform" type="scale" values="1,1;1.05,0.96;1,1" dur="9s" repeatCount="indefinite" additive="sum" />
                 </ellipse>
                 <ellipse cx="24" cy="22" rx="8" ry="11" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.35" />
                 <line x1="24" y1="6" x2="24" y2="38" stroke="var(--color-alt)" strokeWidth="0.3" opacity="0.2" />
@@ -103,10 +103,10 @@ export default function HomePage() {
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              Six layers from skin to soul. Stanley Rosenberg's gentle connective tissue
-              technique works through five cranial nerves — restoring the face and,
-              through the polyvagal connection, the entire nervous system. 97 muscles.
-              Six sessions. One transformation.
+              Seks lag fra hud til sjæl. Stanley Rosenbergs skånsomme bindevævsteknik
+              arbejder gennem fem kranienerver — og genopretter ansigtet og, via den
+              polyvagale forbindelse, hele nervesystemet. 97 muskler. Seks sessioner.
+              Én forvandling.
             </p>
           </div>
           <span className={styles.cardAccent} style={{ background: 'var(--color-alt)' }} />
@@ -121,7 +121,7 @@ export default function HomePage() {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M8,24 Q16,10 24,24 Q32,38 40,24" fill="none" stroke="var(--color-whm)" strokeWidth="1" opacity="0.7">
-                  <animate attributeName="d" values="M8,24 Q16,10 24,24 Q32,38 40,24;M8,24 Q16,16 24,22 Q32,28 40,24;M8,24 Q16,10 24,24 Q32,38 40,24" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M8,24 Q16,8 24,24 Q32,40 40,24;M8,24 Q16,17 24,22 Q32,27 40,24;M8,24 Q16,8 24,24 Q32,40 40,24" dur="7s" repeatCount="indefinite" />
                 </path>
                 <circle cx="24" cy="24" r="2" fill="var(--color-whm)" opacity="0.3" />
               </svg>
@@ -129,17 +129,17 @@ export default function HomePage() {
             <div className={styles.cardContent}>
               <p className={styles.cardLabel}>Åndeværk</p>
               <h2 className={styles.cardTitle}>Wim Hof</h2>
-              <p className={styles.cardSubtitle}>Method</p>
+              <p className={styles.cardSubtitle}>Metoden</p>
             </div>
             <span className={styles.cardChevron}>{expandedCard === 'whm' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              Breath, cold, mindset. Three pillars that unlock the autonomic nervous
-              system — proving that willpower can reach where medicine said it could
-              not. Controlled hyperventilation shifts blood chemistry. Cold exposure
-              trains the sympathetic response. The dialectic of comfort and stress
-              creates a new capacity.
+              Åndedræt, kulde, mindset. Tre søjler der åbner det autonome nervesystem
+              — og beviser at viljen kan nå derhen, hvor medicinen sagde det var umuligt.
+              Kontrolleret hyperventilation ændrer blodkemien. Kuldeeksponering træner
+              det sympatiske respons. Dialektikken mellem komfort og stress skaber en ny
+              kapacitet.
             </p>
           </div>
           <span className={styles.cardAccent} style={{ background: 'var(--color-whm)' }} />
@@ -154,11 +154,11 @@ export default function HomePage() {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M6,24 Q24,16 42,24" fill="none" stroke="var(--color-cst)" strokeWidth="1" opacity="0.6">
-                  <animate attributeName="d" values="M6,24 Q24,16 42,24;M6,24 Q24,20 42,24;M6,24 Q24,16 42,24" dur="10s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M6,24 Q24,14 42,24;M6,24 Q24,21 42,24;M6,24 Q24,14 42,24" dur="12s" repeatCount="indefinite" />
                 </path>
                 <path d="M10,28 Q24,22 38,28" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.3" />
                 <circle cx="24" cy="23" r="2.5" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.25">
-                  <animate attributeName="r" values="2.5;3.5;2.5" dur="10s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="2.5;4.5;2.5" dur="12s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="23" r="1" fill="var(--color-cst)" opacity="0.3" />
               </svg>
@@ -172,11 +172,11 @@ export default function HomePage() {
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              Three tides, one stillness. From A.T. Still to James Jealous — listening
-              to the body's deepest rhythms with five grams of pressure and infinite
-              patience. The craniosacral system pulses with primary respiration, an
-              involuntary rhythm independent of heartbeat and lung breath. It is life's
-              most fundamental expression in form.
+              Tre rytmer, én stilhed. Fra A.T. Still til James Jealous — at lytte til
+              kroppens dybeste rytmer med fem grams tryk og uendelig tålmodighed. Det
+              kraniosakrale system pulserer med Primary Respiration, en ufrivillig rytme
+              uafhængig af hjerteslag og lungeåndedræt. Det er livets mest grundlæggende
+              udtryk i form.
             </p>
           </div>
           <span className={styles.cardAccent} style={{ background: 'var(--color-cst)' }} />
@@ -187,43 +187,43 @@ export default function HomePage() {
       <div className={styles.heroVisual}>
         <svg viewBox="0 0 400 280" className={styles.heroSvg}>
           {/* Spine / vagus trunk */}
-          <path d="M200,30 Q198,140 200,250" fill="none" stroke="var(--text-primary)" strokeWidth="0.6" opacity="0.15">
-            <animate attributeName="d" values="M200,30 Q198,140 200,250;M200,30 Q202,140 200,250;M200,30 Q198,140 200,250" dur="14s" repeatCount="indefinite" />
+          <path d="M200,30 Q198,140 200,250" fill="none" stroke="var(--text-primary)" strokeWidth="0.7" opacity="0.18">
+            <animate attributeName="d" values="M200,30 Q195,140 200,250;M200,30 Q205,140 200,250;M200,30 Q195,140 200,250" dur="16s" repeatCount="indefinite" />
           </path>
 
           {/* Branching nerves — left */}
-          <path d="M200,60 Q160,70 120,55" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.5">
-            <animate attributeName="d" values="M200,60 Q160,70 120,55;M200,60 Q160,65 118,58;M200,60 Q160,70 120,55" dur="9s" repeatCount="indefinite" />
+          <path d="M200,60 Q160,70 120,55" fill="none" stroke="var(--color-alt)" strokeWidth="1" opacity="0.55">
+            <animate attributeName="d" values="M200,60 Q160,75 115,50;M200,60 Q160,62 125,60;M200,60 Q160,75 115,50" dur="11s" repeatCount="indefinite" />
           </path>
-          <path d="M200,100 Q150,115 100,105" fill="none" stroke="var(--color-whm)" strokeWidth="0.8" opacity="0.45">
-            <animate attributeName="d" values="M200,100 Q150,115 100,105;M200,100 Q150,108 98,108;M200,100 Q150,115 100,105" dur="11s" repeatCount="indefinite" />
+          <path d="M200,100 Q150,115 100,105" fill="none" stroke="var(--color-whm)" strokeWidth="1" opacity="0.5">
+            <animate attributeName="d" values="M200,100 Q150,120 95,100;M200,100 Q150,105 105,110;M200,100 Q150,120 95,100" dur="13s" repeatCount="indefinite" />
           </path>
-          <path d="M200,150 Q145,170 90,160" fill="none" stroke="var(--color-cst)" strokeWidth="0.8" opacity="0.4">
-            <animate attributeName="d" values="M200,150 Q145,170 90,160;M200,150 Q145,162 88,163;M200,150 Q145,170 90,160" dur="13s" repeatCount="indefinite" />
+          <path d="M200,150 Q145,170 90,160" fill="none" stroke="var(--color-cst)" strokeWidth="1" opacity="0.45">
+            <animate attributeName="d" values="M200,150 Q145,175 85,155;M200,150 Q145,158 95,165;M200,150 Q145,175 85,155" dur="15s" repeatCount="indefinite" />
           </path>
 
           {/* Branching nerves — right */}
-          <path d="M200,60 Q240,70 280,55" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.5">
-            <animate attributeName="d" values="M200,60 Q240,70 280,55;M200,60 Q240,65 282,58;M200,60 Q240,70 280,55" dur="9s" repeatCount="indefinite" />
+          <path d="M200,60 Q240,70 280,55" fill="none" stroke="var(--color-alt)" strokeWidth="1" opacity="0.55">
+            <animate attributeName="d" values="M200,60 Q240,75 285,50;M200,60 Q240,62 275,60;M200,60 Q240,75 285,50" dur="11s" repeatCount="indefinite" />
           </path>
-          <path d="M200,100 Q250,115 300,105" fill="none" stroke="var(--color-whm)" strokeWidth="0.8" opacity="0.45">
-            <animate attributeName="d" values="M200,100 Q250,115 300,105;M200,100 Q250,108 302,108;M200,100 Q250,115 300,105" dur="11s" repeatCount="indefinite" />
+          <path d="M200,100 Q250,115 300,105" fill="none" stroke="var(--color-whm)" strokeWidth="1" opacity="0.5">
+            <animate attributeName="d" values="M200,100 Q250,120 305,100;M200,100 Q250,105 295,110;M200,100 Q250,120 305,100" dur="13s" repeatCount="indefinite" />
           </path>
-          <path d="M200,150 Q255,170 310,160" fill="none" stroke="var(--color-cst)" strokeWidth="0.8" opacity="0.4">
-            <animate attributeName="d" values="M200,150 Q255,170 310,160;M200,150 Q255,162 312,163;M200,150 Q255,170 310,160" dur="13s" repeatCount="indefinite" />
+          <path d="M200,150 Q255,170 310,160" fill="none" stroke="var(--color-cst)" strokeWidth="1" opacity="0.45">
+            <animate attributeName="d" values="M200,150 Q255,175 315,155;M200,150 Q255,158 305,165;M200,150 Q255,175 315,155" dur="15s" repeatCount="indefinite" />
           </path>
 
           {/* Pulse points */}
           {[60, 100, 150].map((y) => (
             <circle key={y} cx="200" cy={y} r="3" fill="none" stroke="var(--text-primary)" strokeWidth="0.5" opacity="0.2">
-              <animate attributeName="r" values="3;5;3" dur={`${6 + y / 30}s`} repeatCount="indefinite" />
-              <animate attributeName="opacity" values="0.2;0.4;0.2" dur={`${6 + y / 30}s`} repeatCount="indefinite" />
+              <animate attributeName="r" values="3;7;3" dur={`${8 + y / 30}s`} repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.2;0.45;0.2" dur={`${8 + y / 30}s`} repeatCount="indefinite" />
             </circle>
           ))}
 
           {/* Lower body arc */}
-          <path d="M140,230 Q200,200 260,230" fill="none" stroke="var(--text-primary)" strokeWidth="0.4" opacity="0.08">
-            <animate attributeName="d" values="M140,230 Q200,200 260,230;M140,230 Q200,210 260,230;M140,230 Q200,200 260,230" dur="14s" repeatCount="indefinite" />
+          <path d="M140,230 Q200,200 260,230" fill="none" stroke="var(--text-primary)" strokeWidth="0.5" opacity="0.1">
+            <animate attributeName="d" values="M140,230 Q200,195 260,230;M140,230 Q200,215 260,230;M140,230 Q200,195 260,230" dur="16s" repeatCount="indefinite" />
           </path>
         </svg>
       </div>
@@ -246,20 +246,20 @@ export default function HomePage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>The Common Thread</p>
-              <h2 className={styles.cardTitle}>The Nervous System</h2>
-              <p className={styles.cardSubtitle}>Where all three meet</p>
+              <p className={styles.cardLabel}>Den røde tråd</p>
+              <h2 className={styles.cardTitle}>Nervesystemet</h2>
+              <p className={styles.cardSubtitle}>Hvor alle tre mødes</p>
             </div>
             <span className={styles.cardChevron}>{expandedNerve === 'ns' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              All three practices share a single axis: the autonomic nervous system.
-              ALT works through the five cranial nerves of social engagement. Wim Hof
-              trains the shift between sympathetic activation and parasympathetic rest.
-              Craniosacral therapy listens to primary respiration — the deepest
-              expression of the nervous system's innate intelligence. Different entry
-              points. Same destination.
+              Alle tre praksisser deler én akse: det autonome nervesystem.
+              ALT arbejder gennem de fem kranienerver for social kontakt. Wim Hof
+              træner skiftet mellem sympatisk aktivering og parasympatisk hvile.
+              Kraniosakral terapi lytter til Primary Respiration — nervesystemets
+              dybeste udtryk for medfødt intelligens. Forskellige indgange.
+              Samme destination.
             </p>
           </div>
         </div>
@@ -282,43 +282,43 @@ export default function HomePage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>The Feedback Loop</p>
-              <h2 className={styles.cardTitle}>Body ⇄ Mind</h2>
-              <p className={styles.cardSubtitle}>Bidirectional intelligence</p>
+              <p className={styles.cardLabel}>Feedback-kredsløbet</p>
+              <h2 className={styles.cardTitle}>Krop ⇄ Sind</h2>
+              <p className={styles.cardSubtitle}>Tovejs-intelligens</p>
             </div>
             <span className={styles.cardChevron}>{expandedNerve === 'loop' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              The face shapes the nervous system. The nervous system shapes emotion.
-              Emotion shapes relationship. And relationship reshapes the body. This
-              bidirectional loop is the engine of all three practices — tissue work
-              changes feeling, breath changes chemistry, listening changes everything.
+              Ansigtet former nervesystemet. Nervesystemet former følelsen.
+              Følelsen former relationen. Og relationen omformer kroppen. Dette
+              tovejs-kredsløb er motoren i alle tre praksisser — vævsarbejde
+              ændrer følelse, åndedræt ændrer kemi, lytning ændrer alt.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ═══ HERO ILLUSTRATION 3 — Tidal stillness ═══ */}
+      {/* ═══ HERO ILLUSTRATION 3 — Rhythmic stillness ═══ */}
       <div className={styles.heroVisual}>
         <svg viewBox="0 0 400 240" className={styles.heroSvg}>
-          {/* Concentric tide rings */}
-          <circle cx="200" cy="120" r="90" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.15">
-            <animate attributeName="r" values="90;95;90" dur="16s" repeatCount="indefinite" />
+          {/* Concentric rhythm rings */}
+          <circle cx="200" cy="120" r="90" fill="none" stroke="var(--color-cst)" strokeWidth="0.6" opacity="0.2">
+            <animate attributeName="r" values="88;100;88" dur="18s" repeatCount="indefinite" />
           </circle>
-          <circle cx="200" cy="120" r="65" fill="none" stroke="var(--color-whm)" strokeWidth="0.6" opacity="0.2">
-            <animate attributeName="r" values="65;70;65" dur="12s" repeatCount="indefinite" />
+          <circle cx="200" cy="120" r="65" fill="none" stroke="var(--color-whm)" strokeWidth="0.7" opacity="0.25">
+            <animate attributeName="r" values="63;74;63" dur="14s" repeatCount="indefinite" />
           </circle>
-          <circle cx="200" cy="120" r="40" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.3">
-            <animate attributeName="r" values="40;44;40" dur="8s" repeatCount="indefinite" />
+          <circle cx="200" cy="120" r="40" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.35">
+            <animate attributeName="r" values="38;48;38" dur="10s" repeatCount="indefinite" />
           </circle>
-          <circle cx="200" cy="120" r="18" fill="none" stroke="var(--text-primary)" strokeWidth="0.5" opacity="0.15">
-            <animate attributeName="r" values="18;21;18" dur="6s" repeatCount="indefinite" />
+          <circle cx="200" cy="120" r="18" fill="none" stroke="var(--text-primary)" strokeWidth="0.5" opacity="0.18">
+            <animate attributeName="r" values="16;24;16" dur="8s" repeatCount="indefinite" />
           </circle>
 
           {/* Still point */}
           <circle cx="200" cy="120" r="3" fill="var(--text-primary)" opacity="0.12">
-            <animate attributeName="opacity" values="0.12;0.3;0.12" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.12;0.35;0.12" dur="10s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="120" r="1" fill="var(--text-primary)" opacity="0.5" />
 
@@ -347,24 +347,24 @@ export default function HomePage() {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M12,34 Q18,24 24,14 Q30,24 36,34" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.5">
-                  <animate attributeName="d" values="M12,34 Q18,24 24,14 Q30,24 36,34;M12,34 Q18,26 24,16 Q30,26 36,34;M12,34 Q18,24 24,14 Q30,24 36,34" dur="8s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M12,34 Q18,22 24,12 Q30,22 36,34;M12,34 Q18,28 24,18 Q30,28 36,34;M12,34 Q18,22 24,12 Q30,22 36,34" dur="10s" repeatCount="indefinite" />
                 </path>
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Going Deeper</p>
-              <h2 className={styles.cardTitle}>Polyvagal Theory</h2>
-              <p className={styles.cardSubtitle}>The science of safety</p>
+              <p className={styles.cardLabel}>Gå dybere</p>
+              <h2 className={styles.cardTitle}>Polyvagal teori</h2>
+              <p className={styles.cardSubtitle}>Videnskaben om tryghed</p>
             </div>
             <span className={styles.cardChevron}>{expandedDepth === 'polyvagal' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              Stephen Porges' polyvagal theory reveals three states of the autonomic
-              nervous system: ventral vagal (social engagement, safety), sympathetic
-              (fight/flight), and dorsal vagal (freeze, shutdown). All three practices
-              in AT Dynamics work to restore ventral vagal function — the state where
-              healing, connection, and growth become possible.
+              Stephen Porges' polyvagale teori afdækker tre tilstande i det autonome
+              nervesystem: ventral vagal (social kontakt, tryghed), sympatisk
+              (kamp/flugt) og dorsal vagal (frys, nedlukning). Alle tre praksisser
+              i AT Dynamics arbejder på at genoprette ventral vagal funktion — den
+              tilstand hvor heling, forbindelse og vækst bliver mulig.
             </p>
           </div>
         </div>
@@ -377,25 +377,25 @@ export default function HomePage() {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <circle cx="24" cy="24" r="10" fill="none" stroke="var(--color-cst)" strokeWidth="0.6" opacity="0.3">
-                  <animate attributeName="r" values="10;13;10" dur="10s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="9;15;9" dur="12s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="24" r="1.5" fill="var(--color-cst)" opacity="0.4" />
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>The Deepest Rhythm</p>
+              <p className={styles.cardLabel}>Den dybeste rytme</p>
               <h2 className={styles.cardTitle}>Primary Respiration</h2>
-              <p className={styles.cardSubtitle}>Life's breath beneath breath</p>
+              <p className={styles.cardSubtitle}>Livets åndedræt under åndedrættet</p>
             </div>
             <span className={styles.cardChevron}>{expandedDepth === 'primary' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              Beneath the lung breath and beneath the heartbeat, there is a slower,
-              subtler rhythm. Primary respiration — the craniosacral pulse — moves at
-              6–12 cycles per minute. It is the body's most fundamental expression of
-              life, present from embryological development until death. When this
-              rhythm is free, health follows.
+              Under lungeåndedrættet og under hjerteSlaget findes en langsommere,
+              finere rytme. Primary Respiration — den kraniosakrale puls — bevæger
+              sig med 6–12 cykler i minuttet. Det er kroppens mest grundlæggende
+              udtryk for liv, til stede fra den embryologiske udvikling til døden.
+              Når denne rytme er fri, følger sundhed.
             </p>
           </div>
         </div>
@@ -404,13 +404,12 @@ export default function HomePage() {
       {/* ═══ DAILY READING ═══ */}
       <section className={styles.todaySection}>
         <div className={styles.todayCard}>
-          <p className={styles.todayLabel}>Daily Reading</p>
+          <p className={styles.todayLabel}>Dagens læsning</p>
           <p className={styles.todayQuote}>
             <em>
-              The body is not a thing to be fixed — it is a process
-              to be listened to. Every breath, every stillness,
-              every touch is a conversation with something deeper
-              than thought.
+              Kroppen er ikke noget der skal repareres — den er en proces
+              der skal lyttes til. Hvert åndedræt, hver stilhed, hver
+              berøring er en samtale med noget dybere end tanken.
             </em>
           </p>
         </div>
@@ -420,15 +419,19 @@ export default function HomePage() {
       <section className={styles.pillsSection}>
         <div className={styles.pill}>
           <span className={styles.pillDot} style={{ background: 'var(--color-alt)' }} />
-          <span className={styles.pillText}>Your Session Plan</span>
+          <span className={styles.pillText}>Din sessionsplan</span>
         </div>
         <div className={styles.pill}>
           <span className={styles.pillDot} style={{ background: 'var(--color-whm)' }} />
-          <span className={styles.pillText}>Breathing Protocol</span>
+          <span className={styles.pillText}>Åndedrætspraksis</span>
         </div>
         <div className={styles.pill}>
           <span className={styles.pillDot} style={{ background: 'var(--color-cst)' }} />
-          <span className={styles.pillText}>The Three Tides</span>
+          <span className={styles.pillText}>De tre rytmer</span>
+        </div>
+        <div className={styles.pill}>
+          <span className={styles.pillDot} style={{ background: 'var(--text-secondary)' }} />
+          <span className={styles.pillText}>Dyk dybere</span>
         </div>
       </section>
 
