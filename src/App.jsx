@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import HomePage from './components/HomePage'
+import DeeperPage from './components/DeeperPage'
 import BottomNav from './components/BottomNav'
 import ThemeToggle from './components/ThemeToggle'
 
@@ -16,7 +17,11 @@ export default function App() {
   return (
     <div className="app-shell">
       <ThemeToggle theme={theme} onToggle={toggleTheme} />
-      <HomePage activeTab={activeTab} />
+      {activeTab === 'deeper' ? (
+        <DeeperPage />
+      ) : (
+        <HomePage activeTab={activeTab} onNavigate={setActiveTab} />
+      )}
       <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
     </div>
   )

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './HomePage.module.css'
 
-export default function HomePage({ onNavigateDeeper }) {
+export default function HomePage({ onNavigate }) {
   const [expandedCard, setExpandedCard] = useState(null)
   const [expandedNerve, setExpandedNerve] = useState(null)
   const [expandedDepth, setExpandedDepth] = useState(null)
@@ -508,7 +508,7 @@ export default function HomePage({ onNavigateDeeper }) {
 
       {/* ═══ DEEPER TEASER ═══ */}
       <section className={styles.deeperTeaser}>
-        <div className={styles.deeperTeaserCard} onClick={onNavigateDeeper}>
+        <div className={styles.deeperTeaserCard} onClick={() => onNavigate && onNavigate('deeper')}>
           <div className={styles.deeperTeaserIcon}>
             <svg viewBox="0 0 48 48">
               <circle cx="24" cy="24" r="18" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.2">

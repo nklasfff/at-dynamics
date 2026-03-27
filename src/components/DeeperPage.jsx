@@ -1,0 +1,615 @@
+import { useState } from 'react'
+import styles from './DeeperPage.module.css'
+
+export default function DeeperPage() {
+  const [expandedCard, setExpandedCard] = useState(null)
+  const [activeExercise, setActiveExercise] = useState(null)
+  const [breathCount, setBreathCount] = useState(0)
+  const [breathPhase, setBreathPhase] = useState(null) // 'in', 'hold', 'out'
+  const [breathTimer, setBreathTimer] = useState(null)
+
+  const toggle = (id) => setExpandedCard(expandedCard === id ? null : id)
+
+  const startBreathExercise = (e) => {
+    e.stopPropagation()
+    if (breathPhase) {
+      clearInterval(breathTimer)
+      setBreathPhase(null)
+      setBreathCount(0)
+      setBreathTimer(null)
+      return
+    }
+    setBreathCount(0)
+    const phases = ['in', 'hold', 'out']
+    let idx = 0
+    setBreathPhase('in')
+    const timer = setInterval(() => {
+      idx = (idx + 1) % 3
+      setBreathPhase(phases[idx])
+      if (phases[idx] === 'in') setBreathCount((c) => c + 1)
+    }, 4000)
+    setBreathTimer(timer)
+  }
+
+  return (
+    <main className={styles.page}>
+      <div className={styles.ambientGlow} />
+
+      {/* Header */}
+      <header className={styles.header}>
+        <p className={styles.eyebrow}>Dybere</p>
+        <h1 className={styles.title}>Tre veje ind</h1>
+        <p className={styles.subtitle}>
+          Udforsk hver disciplin i dybden. Forstå principperne,
+          mærk rytmerne, og prøv øvelserne selv.
+        </p>
+      </header>
+
+      {/* ═══ HERO — Layered depth rings ═══ */}
+      <div className={styles.heroVisual}>
+        <svg viewBox="0 0 400 260" className={styles.heroSvg}>
+          {/* Three interlocking paths representing the disciplines */}
+          <defs>
+            <linearGradient id="dAlt" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="var(--color-alt)" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="var(--color-alt)" stopOpacity="0.1" />
+            </linearGradient>
+            <linearGradient id="dWhm" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="var(--color-whm)" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="var(--color-whm)" stopOpacity="0.1" />
+            </linearGradient>
+            <linearGradient id="dCst" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="var(--color-cst)" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="var(--color-cst)" stopOpacity="0.1" />
+            </linearGradient>
+          </defs>
+
+          {/* ALT — descending face layers */}
+          <ellipse cx="130" cy="110" rx="60" ry="85" fill="none" stroke="url(#dAlt)" strokeWidth="0.8">
+            <animateTransform attributeName="transform" type="scale" values="1,1;1.03,0.98;1,1" dur="12s" repeatCount="indefinite" additive="sum" />
+          </ellipse>
+          <ellipse cx="130" cy="110" rx="42" ry="60" fill="none" stroke="var(--color-alt)" strokeWidth="0.5" opacity="0.3">
+            <animateTransform attributeName="transform" type="scale" values="1,1;0.97,1.02;1,1" dur="10s" repeatCount="indefinite" additive="sum" />
+          </ellipse>
+          <ellipse cx="130" cy="110" rx="24" ry="35" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.2" />
+          {/* Meridian lines */}
+          <line x1="130" y1="25" x2="130" y2="195" stroke="var(--color-alt)" strokeWidth="0.3" opacity="0.15" />
+          <line x1="70" y1="110" x2="190" y2="110" stroke="var(--color-alt)" strokeWidth="0.2" opacity="0.1" />
+
+          {/* WHM — breath spiral */}
+          <path d="M200,50 Q240,80 200,130 Q160,180 200,210" fill="none" stroke="url(#dWhm)" strokeWidth="1">
+            <animate attributeName="d" values="M200,50 Q245,80 200,130 Q155,180 200,210;M200,50 Q220,95 200,130 Q180,165 200,210;M200,50 Q245,80 200,130 Q155,180 200,210" dur="8s" repeatCount="indefinite" />
+          </path>
+          <path d="M200,70 Q230,95 200,130 Q170,165 200,190" fill="none" stroke="var(--color-whm)" strokeWidth="0.5" opacity="0.3">
+            <animate attributeName="d" values="M200,70 Q235,95 200,130 Q165,165 200,190;M200,70 Q215,105 200,130 Q185,155 200,190;M200,70 Q235,95 200,130 Q165,165 200,190" dur="8s" repeatCount="indefinite" />
+          </path>
+          {/* Breath dots */}
+          <circle cx="200" cy="130" r="3" fill="var(--color-whm)" opacity="0.25">
+            <animate attributeName="r" values="3;6;3" dur="4s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.25;0.5;0.25" dur="4s" repeatCount="indefinite" />
+          </circle>
+
+          {/* CST — tidal waves */}
+          <path d="M260,80 Q310,130 260,180" fill="none" stroke="url(#dCst)" strokeWidth="0.8">
+            <animate attributeName="d" values="M260,75 Q315,130 260,185;M260,95 Q295,130 260,165;M260,75 Q315,130 260,185" dur="16s" repeatCount="indefinite" />
+          </path>
+          <path d="M275,90 Q315,130 275,170" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.3">
+            <animate attributeName="d" values="M275,85 Q320,130 275,175;M275,100 Q300,130 275,160;M275,85 Q320,130 275,175" dur="16s" repeatCount="indefinite" />
+          </path>
+          <path d="M290,100 Q320,130 290,160" fill="none" stroke="var(--color-cst)" strokeWidth="0.3" opacity="0.2">
+            <animate attributeName="d" values="M290,95 Q325,130 290,165;M290,108 Q308,130 290,152;M290,95 Q325,130 290,165" dur="16s" repeatCount="indefinite" />
+          </path>
+          {/* Still point at center */}
+          <circle cx="290" cy="130" r="2" fill="var(--color-cst)" opacity="0.3">
+            <animate attributeName="opacity" values="0.15;0.4;0.15" dur="16s" repeatCount="indefinite" />
+          </circle>
+
+          {/* Connecting threads between disciplines */}
+          <path d="M170,110 Q200,100 200,130" fill="none" stroke="var(--text-primary)" strokeWidth="0.3" opacity="0.08" strokeDasharray="2,6" />
+          <path d="M200,130 Q230,140 260,130" fill="none" stroke="var(--text-primary)" strokeWidth="0.3" opacity="0.08" strokeDasharray="2,6" />
+        </svg>
+      </div>
+
+      {/* ═══ ALT — DEEP DIVE ═══ */}
+      <section className={styles.cardSection}>
+        <div
+          className={`${styles.deepCard} ${expandedCard === 'alt' ? styles.expanded : ''}`}
+          onClick={() => toggle('alt')}
+        >
+          <div className={styles.cardRow}>
+            <div className={styles.cardIcon}>
+              <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
+                <ellipse cx="24" cy="22" rx="14" ry="18" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.6">
+                  <animateTransform attributeName="transform" type="scale" values="1,1;1.04,0.97;1,1" dur="11s" repeatCount="indefinite" additive="sum" />
+                </ellipse>
+                <ellipse cx="24" cy="22" rx="9" ry="12" fill="none" stroke="var(--color-alt)" strokeWidth="0.5" opacity="0.3" />
+                <ellipse cx="24" cy="22" rx="4" ry="6" fill="none" stroke="var(--color-alt)" strokeWidth="0.3" opacity="0.2" />
+                <line x1="24" y1="4" x2="24" y2="40" stroke="var(--color-alt)" strokeWidth="0.3" opacity="0.15" />
+                <line x1="10" y1="22" x2="38" y2="22" stroke="var(--color-alt)" strokeWidth="0.2" opacity="0.1" />
+              </svg>
+            </div>
+            <div className={styles.cardContent}>
+              <p className={styles.cardLabel}>Ansigtsbehandling i dybden</p>
+              <h2 className={styles.cardTitle}>AnsigtsLøftningsTeknik</h2>
+              <p className={styles.cardSubtitle}>Seks lag, fem nerver, én forvandling</p>
+            </div>
+            <span className={styles.cardChevron}>{expandedCard === 'alt' ? '−' : '+'}</span>
+          </div>
+          <div className={styles.cardExpandable}>
+            <div className={styles.cardBody}>
+              <p className={styles.cardText}>
+                AnsigtsLøftningsTeknik (ALT) er udviklet af Stanley Rosenberg og bygger
+                på en dyb forståelse af ansigtet som et vindue til nervesystemet. Teknikken
+                arbejder systematisk gennem seks anatomiske lag — fra overfladisk hud og
+                subkutant fedtvæv, gennem muskulatur og dyb fascia, til periost og endelig
+                knoglevævet selv. Hvert lag kræver sin egen berøringskvalitet, sin egen
+                hastighed og sin egen intention.
+              </p>
+              <p className={styles.cardTextExtra}>
+                Det afgørende ved ALT er forbindelsen til de fem kranienerver, der gennemløber
+                ansigtet: trigeminus (V), facialis (VII), glossopharyngeus (IX), vagus (X) og
+                accessorius (XI). Disse nerver er ikke blot motoriske — de bærer afferent
+                (sensorisk) information direkte til hjernestammen, hvor den polyvagale regulering
+                finder sted. Når vi arbejder med ansigtet, taler vi derfor direkte til det
+                autonome nervesystem. Hver session består af seks behandlinger over seks uger,
+                hvor lagene gradvist åbner sig og skaber varig strukturel forandring.
+              </p>
+              <ul className={styles.bullets}>
+                <li>97 ansigtsmuskler forbundet til 5 kranienerver</li>
+                <li>Seks anatomiske lag fra hud til knogle</li>
+                <li>Direkte afferent forbindelse til hjernestammens reguleringscentre</li>
+                <li>Skånsom bindevævsteknik uden smerte eller kraftig manipulation</li>
+                <li>Strukturel forandring der holder — ikke midlertidig kosmetik</li>
+              </ul>
+            </div>
+          </div>
+          <span className={styles.cardAccent} style={{ background: 'var(--color-alt)' }} />
+        </div>
+      </section>
+
+      {/* ═══ ALT ILLUSTRATION — Layers ═══ */}
+      <div className={styles.heroVisual}>
+        <svg viewBox="0 0 400 180" className={styles.heroSvg}>
+          {/* Six concentric face layers */}
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <ellipse
+              key={i}
+              cx="200"
+              cy="90"
+              rx={20 + i * 18}
+              ry={25 + i * 22}
+              fill="none"
+              stroke="var(--color-alt)"
+              strokeWidth={0.3 + (7 - i) * 0.1}
+              opacity={0.08 + (7 - i) * 0.05}
+            >
+              <animateTransform
+                attributeName="transform"
+                type="scale"
+                values={`1,1;${1 + i * 0.005},${1 - i * 0.003};1,1`}
+                dur={`${8 + i * 2}s`}
+                repeatCount="indefinite"
+                additive="sum"
+              />
+            </ellipse>
+          ))}
+          {/* Nerve pathways */}
+          <path d="M200,10 Q180,50 160,90 Q150,120 155,160" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.2" strokeDasharray="3,6">
+            <animate attributeName="stroke-dashoffset" values="0;-18" dur="6s" repeatCount="indefinite" />
+          </path>
+          <path d="M200,10 Q220,50 240,90 Q250,120 245,160" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.2" strokeDasharray="3,6">
+            <animate attributeName="stroke-dashoffset" values="0;-18" dur="6s" repeatCount="indefinite" />
+          </path>
+        </svg>
+      </div>
+
+      {/* ═══ WHM — DEEP DIVE ═══ */}
+      <section className={styles.cardSection}>
+        <div
+          className={`${styles.deepCard} ${expandedCard === 'whm' ? styles.expanded : ''}`}
+          onClick={() => toggle('whm')}
+        >
+          <div className={styles.cardRow}>
+            <div className={styles.cardIcon}>
+              <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
+                <path d="M6,24 Q14,8 24,24 Q34,40 42,24" fill="none" stroke="var(--color-whm)" strokeWidth="0.8" opacity="0.6">
+                  <animate attributeName="d" values="M6,24 Q14,6 24,24 Q34,42 42,24;M6,24 Q14,18 24,22 Q34,26 42,24;M6,24 Q14,6 24,24 Q34,42 42,24" dur="6s" repeatCount="indefinite" />
+                </path>
+                <path d="M10,24 Q18,14 24,24 Q30,34 38,24" fill="none" stroke="var(--color-whm)" strokeWidth="0.4" opacity="0.3">
+                  <animate attributeName="d" values="M10,24 Q18,12 24,24 Q30,36 38,24;M10,24 Q18,20 24,23 Q30,26 38,24;M10,24 Q18,12 24,24 Q30,36 38,24" dur="6s" repeatCount="indefinite" />
+                </path>
+                <circle cx="24" cy="24" r="2" fill="var(--color-whm)" opacity="0.3">
+                  <animate attributeName="r" values="2;4;2" dur="4s" repeatCount="indefinite" />
+                </circle>
+              </svg>
+            </div>
+            <div className={styles.cardContent}>
+              <p className={styles.cardLabel}>Åndedræt i dybden</p>
+              <h2 className={styles.cardTitle}>Wim Hof Metoden</h2>
+              <p className={styles.cardSubtitle}>Åndedræt, kulde og viljens kraft</p>
+            </div>
+            <span className={styles.cardChevron}>{expandedCard === 'whm' ? '−' : '+'}</span>
+          </div>
+          <div className={styles.cardExpandable}>
+            <div className={styles.cardBody}>
+              <p className={styles.cardText}>
+                Wim Hof Metoden hviler på tre søjler: kontrolleret åndedræt, gradvis
+                kuldeeksponering og fokuseret mindset. Åndedrætsdelen består af cyklisk
+                hyperventilation — 30-40 dybe indåndinger efterfulgt af en retentionsfase
+                med tomme lunger. Denne proces ændrer blodets pH-værdi, øger iltmætningen
+                i vævene og aktiverer det sympatiske nervesystem på en kontrolleret måde.
+              </p>
+              <p className={styles.cardTextExtra}>
+                Kuldeeksponeringen — typisk kolde bade eller isbade — træner kroppens evne
+                til at regulere sin stressrespons. Ved gentagen eksponering lærer det autonome
+                nervesystem at skifte hurtigere mellem sympatisk aktivering og parasympatisk
+                hvile. Forskning fra Radboud Universitetet i Holland har vist, at metoden kan
+                påvirke det medfødte immunforsvar og reducere inflammatoriske markører. Det
+                tredje element, mindset, handler om at kultivere viljen til at forblive rolig
+                under ubehag — en kapacitet der overføres til alle livets områder.
+              </p>
+              <ul className={styles.bullets}>
+                <li>Cyklisk hyperventilation ændrer blodkemi og iltmætning</li>
+                <li>Kuldeeksponering træner det autonome nervesystems fleksibilitet</li>
+                <li>Videnskabeligt dokumenteret effekt på immunforsvar og inflammation</li>
+                <li>Bygger bro mellem sympatisk aktivering og parasympatisk hvile</li>
+                <li>Mindset-træning der styrker evnen til at navigere stress</li>
+              </ul>
+            </div>
+          </div>
+          <span className={styles.cardAccent} style={{ background: 'var(--color-whm)' }} />
+        </div>
+      </section>
+
+      {/* ═══ WHM ILLUSTRATION — Breath waves ═══ */}
+      <div className={styles.heroVisual}>
+        <svg viewBox="0 0 400 160" className={styles.heroSvg}>
+          {/* Multiple breath waves at different amplitudes */}
+          {[0, 1, 2, 3, 4].map((i) => (
+            <path
+              key={i}
+              d={`M${20 + i * 10},80 Q${100 + i * 5},${30 + i * 12} 200,80 Q${300 - i * 5},${130 - i * 12} ${380 - i * 10},80`}
+              fill="none"
+              stroke="var(--color-whm)"
+              strokeWidth={0.8 - i * 0.12}
+              opacity={0.5 - i * 0.08}
+            >
+              <animate
+                attributeName="d"
+                values={`M${20 + i * 10},80 Q${100 + i * 5},${30 + i * 12} 200,80 Q${300 - i * 5},${130 - i * 12} ${380 - i * 10},80;M${20 + i * 10},80 Q${100 + i * 5},${60 + i * 5} 200,78 Q${300 - i * 5},${100 - i * 5} ${380 - i * 10},80;M${20 + i * 10},80 Q${100 + i * 5},${30 + i * 12} 200,80 Q${300 - i * 5},${130 - i * 12} ${380 - i * 10},80`}
+                dur={`${6 + i}s`}
+                repeatCount="indefinite"
+              />
+            </path>
+          ))}
+          {/* Retention circle */}
+          <circle cx="200" cy="80" r="8" fill="none" stroke="var(--color-whm)" strokeWidth="0.5" opacity="0.2">
+            <animate attributeName="r" values="6;18;6" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.2;0.08;0.2" dur="12s" repeatCount="indefinite" />
+          </circle>
+        </svg>
+      </div>
+
+      {/* ═══ CST — DEEP DIVE ═══ */}
+      <section className={styles.cardSection}>
+        <div
+          className={`${styles.deepCard} ${expandedCard === 'cst' ? styles.expanded : ''}`}
+          onClick={() => toggle('cst')}
+        >
+          <div className={styles.cardRow}>
+            <div className={styles.cardIcon}>
+              <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
+                <path d="M8,26 Q24,16 40,26" fill="none" stroke="var(--color-cst)" strokeWidth="0.7" opacity="0.5">
+                  <animate attributeName="d" values="M8,26 Q24,14 40,26;M8,26 Q24,22 40,26;M8,26 Q24,14 40,26" dur="14s" repeatCount="indefinite" />
+                </path>
+                <path d="M12,30 Q24,22 36,30" fill="none" stroke="var(--color-cst)" strokeWidth="0.4" opacity="0.3">
+                  <animate attributeName="d" values="M12,30 Q24,20 36,30;M12,30 Q24,27 36,30;M12,30 Q24,20 36,30" dur="14s" repeatCount="indefinite" />
+                </path>
+                <path d="M16,34 Q24,28 32,34" fill="none" stroke="var(--color-cst)" strokeWidth="0.3" opacity="0.2" />
+                <circle cx="24" cy="26" r="2" fill="none" stroke="var(--color-cst)" strokeWidth="0.4" opacity="0.3">
+                  <animate attributeName="r" values="2;5;2" dur="14s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="24" cy="26" r="0.8" fill="var(--color-cst)" opacity="0.4" />
+              </svg>
+            </div>
+            <div className={styles.cardContent}>
+              <p className={styles.cardLabel}>Kraniosakral i dybden</p>
+              <h2 className={styles.cardTitle}>Kraniosakral Terapi</h2>
+              <p className={styles.cardSubtitle}>Tre rytmer, én stilhed</p>
+            </div>
+            <span className={styles.cardChevron}>{expandedCard === 'cst' ? '−' : '+'}</span>
+          </div>
+          <div className={styles.cardExpandable}>
+            <div className={styles.cardBody}>
+              <p className={styles.cardText}>
+                Kraniosakral terapi (CST) har sine rødder i osteopatiens grundlægger A.T. Stills
+                arbejde og blev videreudviklet af William Garner Sutherland, der opdagede at
+                kraniets knogler bevæger sig i en subtil, rytmisk pulsering. Denne bevægelse —
+                den kraniosakrale rytme — drives af produktionen og reabsorptionen af
+                cerebrospinalvæsken, der omgiver hjernen og rygmarven.
+              </p>
+              <p className={styles.cardTextExtra}>
+                I biodynamisk kraniosakral terapi, som James Jealous formaliserede, arbejder
+                behandleren med tre distinkte rytmer: CRI (Cranial Rhythmic Impulse) med 8-12
+                cykler per minut, den mellemliggende tidevandsbevægelse (Mid-Tide) med ca. 2,5
+                cykler per minut, og den langsomme Long Tide med én cyklus per 100 sekunder.
+                Under alle tre rytmer ligger stilhedspunktet — Dynamic Stillness — hvorfra al
+                bevægelse opstår. Behandleren bruger fem grams tryk og uendelig tålmodighed
+                for at lytte kroppen tilbage til sin medfødte sundhedsplan.
+              </p>
+              <ul className={styles.bullets}>
+                <li>CRI: 8-12 cykler/min — den mest tilgængelige rytme</li>
+                <li>Mid-Tide: 2,5 cykler/min — kroppens organiserende kraft</li>
+                <li>Long Tide: 1 cyklus/100 sek — livets dybeste puls</li>
+                <li>Fem grams berøringstryk — lettere end en sommerfugl</li>
+                <li>Dynamic Stillness — stilheden hvorfra al bevægelse udspringer</li>
+              </ul>
+            </div>
+          </div>
+          <span className={styles.cardAccent} style={{ background: 'var(--color-cst)' }} />
+        </div>
+      </section>
+
+      {/* ═══ CST ILLUSTRATION — Three tides ═══ */}
+      <div className={styles.heroVisual}>
+        <svg viewBox="0 0 400 180" className={styles.heroSvg}>
+          {/* CRI — fast rhythm */}
+          <path d="M40,60 Q80,40 120,60 Q160,80 200,60 Q240,40 280,60 Q320,80 360,60" fill="none" stroke="var(--color-cst)" strokeWidth="0.7" opacity="0.45">
+            <animate attributeName="d" values="M40,60 Q80,35 120,60 Q160,85 200,60 Q240,35 280,60 Q320,85 360,60;M40,60 Q80,50 120,60 Q160,70 200,60 Q240,50 280,60 Q320,70 360,60;M40,60 Q80,35 120,60 Q160,85 200,60 Q240,35 280,60 Q320,85 360,60" dur="5s" repeatCount="indefinite" />
+          </path>
+          {/* Mid-Tide — slower */}
+          <path d="M40,100 Q120,75 200,100 Q280,125 360,100" fill="none" stroke="var(--color-cst)" strokeWidth="0.9" opacity="0.35">
+            <animate attributeName="d" values="M40,100 Q120,70 200,100 Q280,130 360,100;M40,100 Q120,88 200,100 Q280,112 360,100;M40,100 Q120,70 200,100 Q280,130 360,100" dur="12s" repeatCount="indefinite" />
+          </path>
+          {/* Long Tide — slowest */}
+          <path d="M40,140 Q200,115 360,140" fill="none" stroke="var(--color-cst)" strokeWidth="1.1" opacity="0.2">
+            <animate attributeName="d" values="M40,140 Q200,110 360,140;M40,140 Q200,132 360,140;M40,140 Q200,110 360,140" dur="25s" repeatCount="indefinite" />
+          </path>
+          {/* Labels */}
+          <text x="370" y="62" fill="var(--color-cst)" fontSize="7" opacity="0.3" fontFamily="Inter, sans-serif">CRI</text>
+          <text x="370" y="102" fill="var(--color-cst)" fontSize="7" opacity="0.25" fontFamily="Inter, sans-serif">Mid-Tide</text>
+          <text x="370" y="142" fill="var(--color-cst)" fontSize="7" opacity="0.18" fontFamily="Inter, sans-serif">Long Tide</text>
+          {/* Still point */}
+          <circle cx="200" cy="165" r="2" fill="var(--text-primary)" opacity="0.15">
+            <animate attributeName="opacity" values="0.1;0.35;0.1" dur="25s" repeatCount="indefinite" />
+          </circle>
+          <text x="200" y="178" fill="var(--text-primary)" fontSize="6" opacity="0.12" fontFamily="Inter, sans-serif" textAnchor="middle">Stilhed</text>
+        </svg>
+      </div>
+
+      {/* ═══ INTEGRATION — Where they meet ═══ */}
+      <section className={styles.cardSection}>
+        <div
+          className={`${styles.deepCard} ${expandedCard === 'integration' ? styles.expanded : ''}`}
+          onClick={() => toggle('integration')}
+        >
+          <div className={styles.cardRow}>
+            <div className={styles.cardIcon}>
+              <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
+                <circle cx="24" cy="24" r="16" fill="none" stroke="var(--text-primary)" strokeWidth="0.4" opacity="0.15" strokeDasharray="2,4">
+                  <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="40s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="16" cy="20" r="4" fill="none" stroke="var(--color-alt)" strokeWidth="0.5" opacity="0.4" />
+                <circle cx="32" cy="20" r="4" fill="none" stroke="var(--color-whm)" strokeWidth="0.5" opacity="0.4" />
+                <circle cx="24" cy="32" r="4" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.4" />
+                <circle cx="24" cy="24" r="1.5" fill="var(--text-primary)" opacity="0.2" />
+              </svg>
+            </div>
+            <div className={styles.cardContent}>
+              <p className={styles.cardLabel}>De tre som én</p>
+              <h2 className={styles.cardTitle}>Integration</h2>
+              <p className={styles.cardSubtitle}>Når disciplinerne smelter sammen</p>
+            </div>
+            <span className={styles.cardChevron}>{expandedCard === 'integration' ? '−' : '+'}</span>
+          </div>
+          <div className={styles.cardExpandable}>
+            <div className={styles.cardBody}>
+              <p className={styles.cardText}>
+                De tre discipliner er ikke separate praksisser — de er tre indgange til det
+                samme territorium. ALT arbejder udefra-ind gennem vævet og nerverne.
+                Wim Hof arbejder indefra-ud gennem åndedrættet og kemien. Kraniosakral
+                terapi lytter til det, der allerede bevæger sig, uden at tilføje noget.
+              </p>
+              <p className={styles.cardTextExtra}>
+                Når de tre kombineres, opstår der en synergi: ansigtsbehandlingen åbner
+                de kranielle nerver, så åndedrættet kan bevæge sig frit. Åndedrættet
+                aktiverer nervesystemet, så den kraniosakrale rytme kan udfolde sig fuldt.
+                Og den kraniosakrale lytning skaber det stille rum, hvor alt det andet
+                kan integreres. Det er en spiral, ikke en linje — hver praksis forstærker
+                de andre, og over tid bliver grænsen mellem dem umulig at finde.
+              </p>
+              <ul className={styles.bullets}>
+                <li>ALT åbner nervevejene, åndedræt fylder dem med energi</li>
+                <li>Kuldeeksponering skærper det, som berøringen blødgør</li>
+                <li>Kraniosakral lytning integrerer alt i stilhed</li>
+                <li>Nervesystemet er den fælles akse for alle tre</li>
+                <li>Over tid opleves de tre som én sammenhængende praksis</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ EXERCISES SECTION ═══ */}
+      <div className={styles.heroVisual}>
+        <svg viewBox="0 0 400 120" className={styles.heroSvg}>
+          {/* Hands/practice symbol */}
+          <path d="M160,60 Q180,30 200,60 Q220,30 240,60" fill="none" stroke="var(--text-primary)" strokeWidth="0.6" opacity="0.15">
+            <animate attributeName="d" values="M160,60 Q180,25 200,60 Q220,25 240,60;M160,60 Q180,45 200,55 Q220,45 240,60;M160,60 Q180,25 200,60 Q220,25 240,60" dur="10s" repeatCount="indefinite" />
+          </path>
+          <circle cx="200" cy="60" r="20" fill="none" stroke="var(--text-primary)" strokeWidth="0.3" opacity="0.08">
+            <animate attributeName="r" values="18;28;18" dur="10s" repeatCount="indefinite" />
+          </circle>
+          <text x="200" y="95" fill="var(--text-primary)" fontSize="8" opacity="0.15" fontFamily="'Cormorant Garamond', serif" textAnchor="middle" fontStyle="italic">Øvelser</text>
+        </svg>
+      </div>
+
+      {/* ═══ EXERCISE 1 — Breath (WHM) ═══ */}
+      <section className={styles.cardSection}>
+        <div
+          className={`${styles.deepCard} ${styles.exerciseCard} ${activeExercise === 'breath' ? styles.expanded : ''}`}
+          onClick={() => setActiveExercise(activeExercise === 'breath' ? null : 'breath')}
+        >
+          <div className={styles.cardRow}>
+            <div className={styles.cardIcon}>
+              <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
+                <circle cx="24" cy="24" r={breathPhase ? (breathPhase === 'in' ? 16 : breathPhase === 'hold' ? 16 : 8) : 10} fill="none" stroke="var(--color-whm)" strokeWidth="0.8" opacity="0.5">
+                  {!breathPhase && <animate attributeName="r" values="8;14;8" dur="8s" repeatCount="indefinite" />}
+                </circle>
+                <circle cx="24" cy="24" r="2" fill="var(--color-whm)" opacity="0.4" />
+              </svg>
+            </div>
+            <div className={styles.cardContent}>
+              <p className={styles.cardLabel}>Øvelse — Åndedræt</p>
+              <h2 className={styles.cardTitle}>Bevidst vejrtrækning</h2>
+              <p className={styles.cardSubtitle}>4-4-4 boks-åndedræt</p>
+            </div>
+            <span className={styles.cardChevron}>{activeExercise === 'breath' ? '−' : '+'}</span>
+          </div>
+          <div className={styles.cardExpandable}>
+            <div className={styles.cardBody}>
+              <p className={styles.cardText}>
+                Denne øvelse bruger boks-åndedræt (box breathing) til at balancere
+                nervesystemet. Indånd i 4 sekunder, hold i 4 sekunder, udånd i 4 sekunder.
+                Øvelsen aktiverer den ventrale vagale vej og bringer dig fra stress
+                til tilstedeværelse. Brug den som forberedelse til dybere praksis.
+              </p>
+              <div className={styles.exerciseArea} onClick={(e) => e.stopPropagation()}>
+                <div className={styles.breathCircle}>
+                  <svg viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="var(--color-whm)" strokeWidth="1" opacity="0.15" />
+                    <circle
+                      cx="60" cy="60"
+                      r={breathPhase === 'in' ? 50 : breathPhase === 'hold' ? 50 : breathPhase === 'out' ? 25 : 35}
+                      fill="none"
+                      stroke="var(--color-whm)"
+                      strokeWidth="1.5"
+                      opacity="0.5"
+                      style={{ transition: 'r 3.8s ease-in-out' }}
+                    />
+                    <text x="60" y="58" textAnchor="middle" fill="var(--text-primary)" fontSize="11" fontFamily="'Cormorant Garamond', serif" opacity="0.6">
+                      {breathPhase === 'in' ? 'Indånd' : breathPhase === 'hold' ? 'Hold' : breathPhase === 'out' ? 'Udånd' : 'Start'}
+                    </text>
+                    <text x="60" y="74" textAnchor="middle" fill="var(--text-secondary)" fontSize="8" fontFamily="Inter, sans-serif" opacity="0.4">
+                      {breathPhase ? `Cyklus ${breathCount + 1}` : 'Tryk herunder'}
+                    </text>
+                  </svg>
+                </div>
+                <button className={styles.exerciseBtn} onClick={startBreathExercise}>
+                  {breathPhase ? 'Stop' : 'Begynd øvelsen'}
+                </button>
+              </div>
+            </div>
+          </div>
+          <span className={styles.cardAccent} style={{ background: 'var(--color-whm)' }} />
+        </div>
+      </section>
+
+      {/* ═══ EXERCISE 2 — Face (ALT) ═══ */}
+      <section className={styles.cardSection}>
+        <div
+          className={`${styles.deepCard} ${styles.exerciseCard} ${activeExercise === 'face' ? styles.expanded : ''}`}
+          onClick={() => setActiveExercise(activeExercise === 'face' ? null : 'face')}
+        >
+          <div className={styles.cardRow}>
+            <div className={styles.cardIcon}>
+              <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
+                <ellipse cx="24" cy="22" rx="10" ry="14" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.5" />
+                <circle cx="19" cy="19" r="1" fill="var(--color-alt)" opacity="0.4" />
+                <circle cx="29" cy="19" r="1" fill="var(--color-alt)" opacity="0.4" />
+                <path d="M20,27 Q24,30 28,27" fill="none" stroke="var(--color-alt)" strokeWidth="0.5" opacity="0.3" />
+              </svg>
+            </div>
+            <div className={styles.cardContent}>
+              <p className={styles.cardLabel}>Øvelse — Ansigt</p>
+              <h2 className={styles.cardTitle}>Ansigtets kort</h2>
+              <p className={styles.cardSubtitle}>Selvberøring og bevidst kontakt</p>
+            </div>
+            <span className={styles.cardChevron}>{activeExercise === 'face' ? '−' : '+'}</span>
+          </div>
+          <div className={styles.cardExpandable}>
+            <div className={styles.cardBody}>
+              <p className={styles.cardText}>
+                Denne øvelse hjælper dig med at mærke dit eget ansigt med nye hænder.
+                Luk øjnene. Placer begge hænders fingerspidser let på kinderne — så let
+                at du kun lige mærker kontakten. Bliv der i 30 sekunder uden at bevæge dig.
+              </p>
+              <p className={styles.cardTextExtra}>
+                Mærk nu langsomt opefter mod tindingeregionen. Læg mærke til temperatur,
+                spænding, blødhed. Bevæg dig ned langs kæbelinjen. Afslut med fingerspidserne
+                let placeret på panden. Hele rejsen tager 3-5 minutter. Du træner ikke
+                musklerne — du genoptager kontakten mellem hænderne og nervesystemet.
+              </p>
+              <div className={styles.exerciseSteps}>
+                <div className={styles.step}><span className={styles.stepNum}>1</span><span>Luk øjnene. Placer fingerspidserne på kinderne med minimal berøring.</span></div>
+                <div className={styles.step}><span className={styles.stepNum}>2</span><span>Bliv i 30 sekunder. Mærk varme, puls, spænding.</span></div>
+                <div className={styles.step}><span className={styles.stepNum}>3</span><span>Glid langsomt opefter til tindingerne. Bliv der 20 sekunder.</span></div>
+                <div className={styles.step}><span className={styles.stepNum}>4</span><span>Følg kæbelinjen ned med langsomme fingerspidser.</span></div>
+                <div className={styles.step}><span className={styles.stepNum}>5</span><span>Afslut på panden. Mærk stilheden under hænderne.</span></div>
+              </div>
+            </div>
+          </div>
+          <span className={styles.cardAccent} style={{ background: 'var(--color-alt)' }} />
+        </div>
+      </section>
+
+      {/* ═══ EXERCISE 3 — Craniosacral listening ═══ */}
+      <section className={styles.cardSection}>
+        <div
+          className={`${styles.deepCard} ${styles.exerciseCard} ${activeExercise === 'listen' ? styles.expanded : ''}`}
+          onClick={() => setActiveExercise(activeExercise === 'listen' ? null : 'listen')}
+        >
+          <div className={styles.cardRow}>
+            <div className={styles.cardIcon}>
+              <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
+                <circle cx="24" cy="24" r="12" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.25">
+                  <animate attributeName="r" values="10;16;10" dur="16s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.25;0.1;0.25" dur="16s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="24" cy="24" r="6" fill="none" stroke="var(--color-cst)" strokeWidth="0.4" opacity="0.3">
+                  <animate attributeName="r" values="5;9;5" dur="12s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="24" cy="24" r="1.5" fill="var(--color-cst)" opacity="0.4">
+                  <animate attributeName="opacity" values="0.2;0.5;0.2" dur="8s" repeatCount="indefinite" />
+                </circle>
+              </svg>
+            </div>
+            <div className={styles.cardContent}>
+              <p className={styles.cardLabel}>Øvelse — Lytning</p>
+              <h2 className={styles.cardTitle}>Stilhedens hånd</h2>
+              <p className={styles.cardSubtitle}>Mærk den kraniosakrale rytme</p>
+            </div>
+            <span className={styles.cardChevron}>{activeExercise === 'listen' ? '−' : '+'}</span>
+          </div>
+          <div className={styles.cardExpandable}>
+            <div className={styles.cardBody}>
+              <p className={styles.cardText}>
+                Denne øvelse introducerer dig til den kraniosakrale lytning. Sæt dig
+                behageligt. Placer én hånd på toppen af dit hoved (vertex) med blød, åben
+                kontakt. Tryk ikke — forestil dig at din hånd flyder på vandoverfladen.
+              </p>
+              <p className={styles.cardTextExtra}>
+                Vent. Lyt med hånden. Efter 1-2 minutter kan du muligvis mærke en subtil,
+                langsom bevægelse — en ekspansion og kontraktion der ikke følger dit
+                åndedræt. Det er CRI, den kraniosakrale rytme. Døm den ikke. Analyser den
+                ikke. Mærk den bare. Denne kvalitet af tilstedeværelse — at lytte uden at
+                ville ændre — er kernen i al kraniosakral praksis.
+              </p>
+              <div className={styles.exerciseSteps}>
+                <div className={styles.step}><span className={styles.stepNum}>1</span><span>Sæt dig behageligt. Luk øjnene. Lad åndedrættet falde til ro.</span></div>
+                <div className={styles.step}><span className={styles.stepNum}>2</span><span>Placer én hånd blidt på toppen af hovedet. Minimal kontakt.</span></div>
+                <div className={styles.step}><span className={styles.stepNum}>3</span><span>Forestil dig at hånden flyder. Giv slip på al intention.</span></div>
+                <div className={styles.step}><span className={styles.stepNum}>4</span><span>Vent 2-3 minutter. Mærk eventuelle subtile bevægelser.</span></div>
+                <div className={styles.step}><span className={styles.stepNum}>5</span><span>Afslut langsomt. Mærk hele kroppen i stilhed et øjeblik.</span></div>
+              </div>
+            </div>
+          </div>
+          <span className={styles.cardAccent} style={{ background: 'var(--color-cst)' }} />
+        </div>
+      </section>
+
+      {/* Bottom spacer */}
+      <div className={styles.bottomSpacer} />
+    </main>
+  )
+}

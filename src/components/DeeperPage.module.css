@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   DeeperPage — Go Deeper
+   DeeperPage — Dybere
    ═══════════════════════════════════════════ */
 
 .page {
@@ -9,8 +9,6 @@
   position: relative;
   min-height: 100dvh;
 }
-
-/* ── Ambient Glow ── */
 
 .ambientGlow {
   position: fixed;
@@ -22,8 +20,8 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(90, 138, 170, var(--glow-opacity)) 0%,
-    rgba(201, 168, 124, calc(var(--glow-opacity) * 0.4)) 40%,
+    rgba(201, 168, 124, var(--glow-opacity)) 0%,
+    rgba(90, 138, 170, calc(var(--glow-opacity) * 0.5)) 40%,
     transparent 70%
   );
   pointer-events: none;
@@ -87,42 +85,16 @@
   color: var(--text-primary);
 }
 
-/* ── Section Headers ── */
+/* ── Card Section ── */
 
-.sectionHeader {
-  text-align: center;
+.cardSection {
   margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.sectionEyebrow {
-  font-size: 0.55rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--text-tertiary);
-  margin-bottom: 6px;
-  font-weight: 400;
-}
-
-.sectionTitle {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
-  font-weight: 300;
-  color: var(--text-primary);
-}
-
-/* ── Deep Cards ── */
-
-.cardsSection {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-bottom: 40px;
   position: relative;
   z-index: 1;
   animation: fadeUp 0.7s ease 0.15s both;
 }
+
+/* ── Deep Card ── */
 
 .deepCard {
   background: var(--bg-glass);
@@ -217,16 +189,19 @@
   padding-top: 14px;
 }
 
-.cardDescription {
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-  line-height: 1.85;
-  font-weight: 300;
+.cardBody {
   padding-top: 12px;
   border-top: 1px solid var(--border-subtle);
 }
 
-.cardDescription2 {
+.cardText {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  font-weight: 300;
+}
+
+.cardTextExtra {
   font-size: 0.78rem;
   color: var(--text-secondary);
   line-height: 1.85;
@@ -234,24 +209,16 @@
   margin-top: 14px;
 }
 
-.cardDescription3 {
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-  line-height: 1.85;
-  font-weight: 300;
-  margin-top: 14px;
-}
-
-.cardBullets {
+.bullets {
   list-style: none;
   padding: 0;
-  margin: 16px 0 0;
+  margin: 16px 0 0 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.cardBullets li {
+.bullets li {
   font-size: 0.72rem;
   color: var(--text-secondary);
   line-height: 1.7;
@@ -260,7 +227,7 @@
   position: relative;
 }
 
-.cardBullets li::before {
+.bullets li::before {
   content: '';
   position: absolute;
   left: 0;
@@ -282,127 +249,88 @@
   border-radius: 0 0 1px 1px;
 }
 
-/* ── Exercise Section ── */
-
-.exerciseSection {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-bottom: 40px;
-  position: relative;
-  z-index: 1;
-  animation: fadeUp 0.7s ease 0.2s both;
-}
+/* ── Exercise Card extras ── */
 
 .exerciseCard {
+  /* subtle distinction */
+}
+
+.exerciseArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 20px 0;
+}
+
+.breathCircle {
+  width: 120px;
+  height: 120px;
+}
+
+.breathCircle svg {
+  width: 100%;
+  height: 100%;
+}
+
+.breathCircle circle {
+  transition: r 3.8s ease-in-out;
+}
+
+.exerciseBtn {
   background: var(--bg-glass);
   border: 1px solid var(--bg-glass-border);
-  border-radius: 14px;
-  padding: 22px 22px;
-  position: relative;
-  overflow: hidden;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 
-.exerciseHeader {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 14px;
-}
-
-.exerciseBadge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.85rem;
-  font-weight: 400;
+.exerciseBtn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-medium);
   color: var(--text-primary);
-  opacity: 0.8;
 }
 
-.exerciseTitle {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 300;
-  line-height: 1.2;
-}
-
-.exerciseSubtitle {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--text-tertiary);
-  margin-top: 2px;
-}
-
-.exerciseBody {
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-  line-height: 1.85;
-  font-weight: 300;
-  margin-bottom: 14px;
-}
+/* ── Exercise Steps ── */
 
 .exerciseSteps {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  counter-reset: step;
+  margin-top: 18px;
 }
 
-.exerciseSteps li {
-  font-size: 0.75rem;
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.74rem;
   color: var(--text-secondary);
   line-height: 1.7;
   font-weight: 300;
-  padding-left: 28px;
-  position: relative;
-  counter-increment: step;
 }
 
-.exerciseSteps li::before {
-  content: counter(step);
-  position: absolute;
-  left: 0;
-  top: 0;
+.stepNum {
+  flex: 0 0 20px;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  border: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
   font-size: 0.6rem;
   color: var(--text-tertiary);
   font-weight: 400;
-}
-
-.exerciseDuration {
-  margin-top: 14px;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--text-tertiary);
-  font-weight: 400;
-}
-
-.exerciseAccent {
-  position: absolute;
-  top: 0;
-  left: 20px;
-  right: 20px;
-  height: 1px;
-  opacity: 0.25;
-  border-radius: 0 0 1px 1px;
+  margin-top: 2px;
 }
 
 /* ── Bottom spacer ── */
