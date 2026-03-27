@@ -66,6 +66,44 @@
   animation: slideIn 0.25s ease both;
 }
 
+/* ── Language switcher ── */
+
+.langSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.langBtn {
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.langBtn:hover {
+  color: var(--text-secondary);
+}
+
+.langActive {
+  color: var(--text-primary);
+  background: var(--bg-glass);
+}
+
+.langDivider {
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  opacity: 0.3;
+}
+
 /* ── Sections ── */
 
 .section {

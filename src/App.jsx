@@ -11,6 +11,7 @@ import Menu from './components/Menu'
 export default function App() {
   const [theme, setTheme] = useState('dark')
   const [activeTab, setActiveTab] = useState('home')
+  const [language, setLanguage] = useState('da')
 
   const handleTabChange = (tab) => {
     setActiveTab(tab)
@@ -25,20 +26,20 @@ export default function App() {
 
   const renderPage = () => {
     switch (activeTab) {
-      case 'alt': return <AltPage />
-      case 'whm': return <WhmPage />
-      case 'cranio': return <CranioPage />
-      case 'deeper': return <DeeperPage />
-      default: return <HomePage activeTab={activeTab} onNavigate={handleTabChange} />
+      case 'alt': return <AltPage language={language} />
+      case 'whm': return <WhmPage language={language} />
+      case 'cranio': return <CranioPage language={language} />
+      case 'deeper': return <DeeperPage language={language} />
+      default: return <HomePage activeTab={activeTab} onNavigate={handleTabChange} language={language} />
     }
   }
 
   return (
     <div className="app-shell">
-      <Menu onNavigate={handleTabChange} />
+      <Menu onNavigate={handleTabChange} language={language} onLanguageChange={setLanguage} />
       <ThemeToggle theme={theme} onToggle={toggleTheme} />
       {renderPage()}
-      <BottomNav activeTab={activeTab} onTabChange={handleTabChange} />
+      <BottomNav activeTab={activeTab} onTabChange={handleTabChange} language={language} />
     </div>
   )
 }

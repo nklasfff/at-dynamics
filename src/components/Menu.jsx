@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './Menu.module.css'
 
-export default function Menu({ onNavigate }) {
+export default function Menu({ onNavigate, language, onLanguageChange }) {
   const [open, setOpen] = useState(false)
 
   const navigate = (tab) => {
@@ -25,6 +25,23 @@ export default function Menu({ onNavigate }) {
         <>
           <div className={styles.backdrop} onClick={() => setOpen(false)} />
           <div className={styles.panel}>
+
+            {/* ── Language switcher ── */}
+            <div className={styles.langSwitcher}>
+              <button
+                className={`${styles.langBtn} ${language === 'da' ? styles.langActive : ''}`}
+                onClick={() => onLanguageChange('da')}
+              >
+                DA
+              </button>
+              <span className={styles.langDivider}>|</span>
+              <button
+                className={`${styles.langBtn} ${language === 'es' ? styles.langActive : ''}`}
+                onClick={() => onLanguageChange('es')}
+              >
+                ES
+              </button>
+            </div>
 
             {/* ── Profile ── */}
             <section className={styles.section}>
