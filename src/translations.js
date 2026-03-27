@@ -466,6 +466,204 @@ const es = {
     'Espera 2-3 minutos. Percibe cualquier movimiento sutil.',
     'Finaliza lentamente. Siente todo el cuerpo en quietud un momento.',
   ],
+
+  // ══════════════════════════════════════
+  // SessionPlanPage
+  // ══════════════════════════════════════
+  sessionPlanEyebrow: 'Práctica',
+  sessionPlanTitle: 'Tu plan de sesiones',
+  sessionPlanSubtitle: 'Una guía para estructurar tu práctica personal — desde la preparación hasta la integración.',
+
+  // Card 1 — Preparación
+  sessionPrepLabel: 'Antes de empezar',
+  sessionPrepTitle: 'Preparación',
+  sessionPrepSubtitle: 'Espacio, cuerpo e intención',
+  sessionPrepText: 'Crea el entorno adecuado antes de comenzar. Atenúa la luz, busca una temperatura agradable y elimina las distracciones. El cuerpo necesita una señal de que algo diferente está a punto de suceder. Cinco minutos de silencio — simplemente sentarte y percibirte — bastan para crear la transición del ritmo cotidiano al tempo más lento de la práctica.',
+  sessionPrepTextExtra: 'La transición entre la vida diaria y la práctica es más importante de lo que la mayoría cree. El sistema nervioso necesita un puente. Un par de respiraciones conscientes, la sensación del suelo bajo tu cuerpo y una intención suave — no una meta, sino una dirección. Hazle saber al cuerpo que aquí es seguro abrirse. No se trata de un entorno perfecto, sino de una decisión interior de estar presente.',
+  sessionPrepBullets: [
+    'Busca un lugar tranquilo y atenúa la luz — señala al cuerpo que es hora',
+    'Pon el teléfono en silencio y elimina las distracciones visibles',
+    'Siéntate o acuéstate y siente el contacto con la superficie',
+    'Toma tres respiraciones lentas y deja caer los hombros',
+    'Establece una intención suave para la sesión — no una meta, sino una dirección',
+  ],
+
+  // Card 2 — Flujo de sesión
+  sessionFlowLabel: 'La secuencia',
+  sessionFlowTitle: 'Flujo de sesión',
+  sessionFlowSubtitle: 'De la activación a la integración',
+  sessionFlowText: 'La secuencia recomendada: comienza con la respiración Wim Hof (10–15 minutos) para activar el sistema nervioso y oxigenar los tejidos. Continúa con el trabajo facial ALT (15–20 minutos) mientras el cuerpo está energizado. Finaliza con la autoescucha craneosacral (10–15 minutos) para integrar todo.',
+  sessionFlowTextExtra: 'Por qué funciona esta secuencia: la respiración primero crea un estado atento pero regulado. El trabajo ALT se beneficia del aumento de la circulación sanguínea y la flexibilidad tisular. La escucha craneosacral al final permite que el sistema nervioso procese e integre toda la estimulación. Piénsalo como una ola — se construye, alcanza su cresta y desciende naturalmente hacia la calma.',
+  sessionFlowBullets: [
+    'Wim Hof primero: activa el sistema nervioso y aumenta la irrigación tisular',
+    'ALT en el centro: aprovecha la circulación elevada y la flexibilidad del tejido',
+    'Craneosacral al final: deja que el sistema nervioso encuentre su nuevo equilibrio',
+    'Haz pausas breves entre las disciplinas — un minuto es suficiente',
+    'Escucha al cuerpo: algunos días piden un énfasis diferente',
+  ],
+
+  // Card 3 — Duración
+  sessionTimingLabel: 'Tiempo y ritmo',
+  sessionTimingTitle: 'Duración',
+  sessionTimingSubtitle: 'Tres formatos para tres situaciones de vida',
+  sessionTimingText: 'Tres formatos de sesión: Corto (20 min) para días ajetreados — elige UNA disciplina y estate plenamente presente. Estándar (45 min) — la secuencia completa en tres partes. Profundo (75+ min) — retenciones prolongadas, escucha más larga, silencio más profundo. Elige el formato que se adapte a tu día.',
+  sessionTimingTextExtra: 'La regularidad importa más que la duración. Una práctica diaria de 20 minutos construye más que una sesión semanal de 90 minutos. Escucha a tu cuerpo. Algunos días piden activación (más Wim Hof), otros suavidad (más craneosacral). Confía en lo que sientes. La práctica no es un programa — es una conversación con tu sistema nervioso.',
+  sessionTimingBullets: [
+    'Formato corto (20 min): una disciplina con presencia plena',
+    'Formato estándar (45 min): la secuencia completa en tres partes',
+    'Formato profundo (75+ min): retenciones prolongadas y silencio más largo',
+    'La regularidad supera a la duración — una práctica corta diaria es mejor que una larga esporádica',
+    'Deja que las necesidades del cuerpo determinen el peso de cada disciplina',
+  ],
+
+  // Card 4 — Integración
+  sessionIntegrateLabel: 'El cierre',
+  sessionIntegrateTitle: 'Integración',
+  sessionIntegrateSubtitle: 'Los últimos cinco minutos',
+  sessionIntegrateText: 'Nunca apresures el final. Los últimos cinco minutos son donde el cambio se consolida. Quédate quieto, con las manos descansando sobre el cuerpo, y simplemente observa. ¿Qué ha cambiado? ¿Qué se siente diferente? ¿Dónde hay espacio que antes no existía?',
+  sessionIntegrateTextExtra: 'La integración no es pasiva — es el proceso activo de reorganización del sistema nervioso. Como una bola de nieve que se asienta tras ser agitada, el cuerpo necesita tiempo para encontrar su nuevo equilibrio. Estos minutos no son tiempo perdido — quizá sean la parte más importante de toda la sesión. Déjalos ser. Deja que el cuerpo haga su trabajo.',
+  sessionIntegrateBullets: [
+    'Acuéstate boca arriba con las manos sobre el abdomen o el pecho',
+    'Cierra los ojos y percibe el nuevo estado del cuerpo sin analizarlo',
+    'Da al sistema nervioso al menos cinco minutos para encontrar el equilibrio',
+    'Observa qué ha cambiado — sin juzgarlo',
+    'Levántate despacio y conserva la sensación durante el resto del día',
+  ],
+
+  // ══════════════════════════════════════
+  // BreathPracticePage
+  // ══════════════════════════════════════
+  breathEyebrow: 'Práctica',
+  breathTitle: 'Práctica respiratoria',
+  breathSubtitle: 'La respiración es el puente entre lo consciente y lo inconsciente — la única función autónoma que podemos dirigir con la voluntad. Explórala como fundamento de las tres disciplinas.',
+
+  // Card 1 — La respiración consciente
+  breathConsciousLabel: 'El fundamento',
+  breathConsciousTitle: 'La respiración consciente',
+  breathConsciousSubtitle: 'La puerta entre voluntad y autonomía',
+  breathConsciousText: 'La respiración es la única función autónoma que podemos controlar conscientemente. Eso la convierte en el puente más poderoso entre el sistema nervioso voluntario y el involuntario. Cada tradición — desde el pranayama yóguico hasta la respiración clínica moderna — lo reconoce. Cuando cambias conscientemente tu patrón respiratorio, modificas directamente tu neuroquímica, tu variabilidad de frecuencia cardíaca y tu estado emocional.',
+  breathConsciousTextExtra: 'El diafragma no es solo un músculo respiratorio — es la bomba central del cuerpo. Masajea el corazón desde abajo, mueve las vísceras rítmicamente, genera los cambios de presión que impulsan el flujo del líquido cefalorraquídeo y está directamente inervado por el nervio frénico (C3-C5). Un diafragma bloqueado lo bloquea todo.',
+  breathConsciousBullets: [
+    'La respiración es la única vía consciente de acceso al sistema nervioso autónomo',
+    'Cada respiración modifica el pH sanguíneo, el ritmo cardíaco y la base emocional',
+    'El diafragma masajea el corazón, el hígado y el estómago con cada inhalación',
+    'El nervio frénico conecta las vértebras cervicales directamente con el centro respiratorio',
+    'Una respiración libre es el requisito previo de todo cambio corporal profundo',
+  ],
+
+  // Card 2 — La respiración en las tres prácticas
+  breathThreeLabel: 'Tres perspectivas',
+  breathThreeTitle: 'La respiración en las tres prácticas',
+  breathThreeSubtitle: 'El mismo aire, tres lenguajes',
+  breathThreeText: 'En Wim Hof, la respiración es una herramienta — la hiperventilación controlada seguida de retención genera cambios medibles en el pH sanguíneo, la adrenalina y la respuesta inmunitaria. En ALT, la respiración acompaña el trabajo tisular — el terapeuta coordina el contacto con la respiración del cliente y utiliza la exhalación para liberar restricciones fasciales. En terapia craneosacral, se escucha la respiración — no la pulmonar, sino la Respiración Primaria, el movimiento craneosacral más profundo.',
+  breathThreeTextExtra: 'Estas tres relaciones con la respiración — comandarla, coordinarse con ella y escucharla — representan una progresión de lo activo a lo receptivo. La maestría en el trabajo respiratorio significa dominar los tres estados y saber cuándo es apropiado cada uno. A veces hay que impulsar el sistema; a veces hay que seguirlo; a veces basta con ser testigo.',
+  breathThreeBullets: [
+    'Wim Hof utiliza la respiración como herramienta activa para alterar la bioquímica sanguínea',
+    'ALT sincroniza el contacto con la fase de exhalación del cliente para soltar el tejido',
+    'La terapia craneosacral escucha la Respiración Primaria detrás de la respiración pulmonar',
+    'La progresión de comando a escucha refleja la maduración del sistema nervioso',
+    'El terapeuta completo domina las tres relaciones respiratorias',
+  ],
+
+  // SVG labels
+  breathSvgInhale: 'Inhalación',
+  breathSvgExhale: 'Exhalación',
+
+  // Card 3 — Tono vagal
+  breathVagalLabel: 'Sistema nervioso',
+  breathVagalTitle: 'Tono vagal',
+  breathVagalSubtitle: 'La línea directa de la respiración al sistema nervioso',
+  breathVagalText: 'La variabilidad de frecuencia cardíaca (VFC) — la variación sutil en el tiempo entre latidos — es el estándar de oro para medir el tono vagal. Una VFC alta indica un sistema nervioso flexible y resiliente. Una VFC baja se correlaciona con estrés, inflamación y enfermedad. La respiración lenta y profunda con exhalación prolongada es la vía más directa para aumentar el tono vagal y llevar el sistema nervioso hacia el reposo y la reparación.',
+  breathVagalTextExtra: 'El mecanismo es elegante: durante la inhalación, el corazón se acelera ligeramente (simpático). Durante la exhalación, se frena (parasimpático a través del vago). Al prolongar la exhalación (por ejemplo, inhalar 4 segundos, exhalar 6-8 segundos), se pasa más tiempo en activación parasimpática. Con semanas de práctica, esto remodela las vías vagales y genera un cambio duradero en la regulación de base.',
+  breathVagalBullets: [
+    'La VFC es la medida más fiable de la flexibilidad del sistema nervioso',
+    'La inhalación activa lo simpático; la exhalación, lo parasimpático',
+    'La exhalación prolongada es la vía más simple hacia la activación parasimpática',
+    'El tono vagal se puede entrenar — el sistema nervioso se remodela con práctica constante',
+    'Una VFC baja se correlaciona con inflamación, ansiedad y enfermedad cardiovascular',
+  ],
+
+  // Card 4 — Práctica diaria
+  breathDailyLabel: 'Implementación',
+  breathDailyTitle: 'Práctica diaria',
+  breathDailySubtitle: 'Cinco minutos que lo cambian todo',
+  breathDailyText: 'No necesitas una hora. Cinco minutos de respiración consciente cada mañana generan un efecto cascada a lo largo de todo el día. La clave es la constancia, no la duración. Comienza con la respiración de coherencia: inhalación y exhalación de igual duración a un ritmo de 5,5 respiraciones por minuto (aprox. 5,5 segundos de entrada, 5,5 de salida). Esta frecuencia específica maximiza la sincronización cardiopulmonar y está documentada como la óptima para la VFC en diversas poblaciones.',
+  breathDailyTextExtra: 'Construye tu práctica por capas. Semanas 1-2: 5 minutos de respiración de coherencia mañana y noche. Semanas 3-4: añade 2 minutos de exhalación prolongada (4 de entrada, 7 de salida). Semana 5+: comienza a experimentar con pausas respiratorias tras la exhalación. Este enfoque progresivo respeta la necesidad del sistema nervioso de adaptarse gradualmente y previene la ansiedad que pueden provocar las prácticas respiratorias agresivas.',
+  breathDailyBullets: [
+    'La respiración de coherencia a 5,5 resp./min optimiza la VFC',
+    'La constancia supera a la intensidad — cinco minutos diarios superan a una hora semanal',
+    'La exhalación prolongada (4 de entrada, 7 de salida) activa directamente el nervio vago',
+    'La progresión gradual previene la ansiedad y respeta el sistema nervioso',
+    'La respiración matutina establece el tono autónomo de todo el día',
+  ],
+
+  // ══════════════════════════════════════
+  // ThreeRhythmsPage
+  // ══════════════════════════════════════
+  rhythmEyebrow: 'Tres movimientos',
+  rhythmTitle: 'Los tres ritmos',
+  rhythmSubtitle: 'Contacto, respiración y pulso craneosacral — tres lenguajes para la misma inteligencia. Cuando convergen, surge algo mayor que la suma.',
+
+  // SVG labels
+  rhythmSvgTouch: 'Contacto',
+  rhythmSvgBreath: 'Respiración',
+  rhythmSvgTide: 'Craneosacral',
+
+  // Card 1 — El ritmo del contacto
+  rhythmTouchLabel: 'ALT',
+  rhythmTouchTitle: 'El ritmo del contacto',
+  rhythmTouchSubtitle: 'La conversación de las manos con el tejido',
+  rhythmTouchText: 'En ALT, las manos del terapeuta se mueven a través de las seis capas del rostro en un ritmo específico — ni demasiado rápido, lo que activaría reflejos de protección, ni demasiado lento, lo que perdería el compromiso del tejido. El ritmo es vivo; responde a lo que el tejido ofrece. Cuando se encuentra una restricción fascial, las manos desaceleran. Cuando el tejido cede, el ritmo cambia. No es masaje — es una conversación conducida exclusivamente a través del contacto.',
+  rhythmTouchTextExtra: 'El ritmo del contacto en ALT está directamente conectado al sistema nervioso del propio terapeuta. Un terapeuta estresado genera respuestas tisulares estresadas. El terapeuta debe regular primero su propio sistema — a través de la respiración consciente y el silencio interior — antes de que las manos puedan realmente escuchar. Los mejores terapeutas de ALT no describen su trabajo como algo que hacen al tejido, sino como algo por lo que se dejan mover.',
+  rhythmTouchBullets: [
+    'Las manos adaptan su velocidad a la respuesta del tejido en tiempo real',
+    'Un contacto demasiado rápido activa la protección simpática',
+    'Un contacto demasiado lento pierde la conexión con la calidad viva del tejido',
+    'El sistema nervioso del terapeuta marca el tono de toda la sesión',
+    'El contacto más diestro se siente como si las manos fueran guiadas por el propio tejido',
+  ],
+
+  // Card 2 — El ritmo de la respiración
+  rhythmBreathLabel: 'Wim Hof',
+  rhythmBreathTitle: 'El ritmo de la respiración',
+  rhythmBreathSubtitle: 'Del caos al control a la entrega',
+  rhythmBreathText: 'El ritmo respiratorio del Método Wim Hof tiene tres fases distintas, cada una con su propio carácter. La fase de hiperventilación es rápida y poderosa — treinta respiraciones profundas que sobrescriben conscientemente la regulación de CO₂ del cuerpo. La fase de retención es silencio absoluto — el aliento retenido con los pulmones vacíos, entregado a la sabiduría del cuerpo. La respiración de recuperación es una única inhalación profunda sostenida durante quince segundos — integración. El patrón se repite tres a cuatro veces, y cada ronda profundiza.',
+  rhythmBreathTextExtra: 'Lo que hace único al ritmo del Método Wim Hof es su uso deliberado de los extremos. A diferencia de la mayoría de las prácticas respiratorias que buscan calma y equilibrio, el WHM genera conscientemente estrés fisiológico — y luego lo disuelve. El cuerpo aprende que puede atravesar la intensidad y regresar a la seguridad. Esa es la esencia del entrenamiento de la resiliencia: no evitar el estrés, sino ampliar el espectro que el sistema nervioso puede tolerar y del que puede recuperarse.',
+  rhythmBreathBullets: [
+    'Treinta respiraciones potentes modifican el pH sanguíneo en menos de dos minutos',
+    'La retención con pulmones vacíos activa el reflejo de inmersión',
+    'La respiración de recuperación consolida los cambios fisiológicos',
+    'Cada ronda lleva al sistema más profundo en la respuesta adaptativa',
+    'El estrés consciente seguido de reposo consciente desarrolla la capacidad del sistema nervioso',
+  ],
+
+  // Card 3 — El ritmo craneosacral
+  rhythmTideLabel: 'Craneosacral',
+  rhythmTideTitle: 'El ritmo craneosacral',
+  rhythmTideSubtitle: 'Cuerpo, fluido y energía en movimiento',
+  rhythmTideText: 'El ritmo craneosacral tiene tres capas. El CRI — el más rápido — refleja el movimiento del cuerpo físico: huesos, membranas, tejido. La Mid-Tide pertenece al cuerpo fluido — aquí el terapeuta no percibe estructuras sino corrientes y fuerzas organizadoras. La Long Tide es la más lenta y profunda: un movimiento energético que trasciende lo individual. El terapeuta no las mide — se perciben a través de la calidad de la atención.',
+  rhythmTideTextExtra: 'A diferencia de los ritmos del contacto y la respiración, el ritmo craneosacral no puede controlarse ni dirigirse. Solo puede recibirse. Requiere una orientación fundamentalmente distinta: de lo activo a lo receptivo, del hacer al ser. El terapeuta se sumerge en un campo de atención amplio y suave, y espera. El ritmo no se revela porque el terapeuta lo busque, sino porque se vuelve lo suficientemente silencioso para descubrir lo que siempre estuvo ahí.',
+  rhythmTideBullets: [
+    'El CRI refleja el cuerpo físico — huesos, membranas y tejido',
+    'La Mid-Tide pertenece al cuerpo fluido — corrientes y fuerzas organizadoras',
+    'La Long Tide es energética — trasciende lo individual',
+    'El ritmo no puede dirigirse — solo recibirse a través de la atención silenciosa',
+    'Escuchar al cuerpo requiere que el terapeuta se vuelva silencioso',
+  ],
+
+  // Card 4 — Sincronización
+  rhythmSyncLabel: 'Fusión',
+  rhythmSyncTitle: 'Sincronización',
+  rhythmSyncSubtitle: 'Cuando los tres se vuelven uno',
+  rhythmSyncText: 'En la práctica avanzada, los tres ritmos comienzan a sincronizarse. Las manos del terapeuta encuentran un ritmo que es simultáneamente responsivo al tejido (ALT), coordinado con la respiración (WHM) y alineado con el pulso craneosacral. No es algo que pueda forzarse o planificarse — surge cuando el terapeuta está profundamente presente y las tres habilidades están internalizadas.',
+  rhythmSyncTextExtra: 'La sincronización es la marca del dominio en AnThes Dynamics. Es el momento donde las tres disciplinas separadas se disuelven en un solo campo de práctica. Las manos se mueven, la respiración fluye, el pulso craneosacral lo sostiene todo — y los tres son expresión de la misma inteligencia. Los terapeutas que alcanzan este estado lo describen como algo sin esfuerzo — no porque el trabajo sea fácil, sino porque la separación entre terapeuta, técnica y cliente desaparece.',
+  rhythmSyncBullets: [
+    'La sincronización no puede forzarse — emerge de la presencia profunda',
+    'Las tres habilidades deben dominarse por separado antes de poder fusionarse',
+    'El terapeuta percibe un solo campo unificado en lugar de tres prácticas separadas',
+    'El cliente experimenta una coherencia profunda que rara vez puede expresar con palabras',
+    'La separación entre terapeuta y cliente se disuelve en el campo sincrónico',
+  ],
 }
 
 export function t(key, language) {
