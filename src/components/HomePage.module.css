@@ -90,8 +90,8 @@
 .practicesSection {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 16px;
+  margin-bottom: 32px;
   position: relative;
   z-index: 1;
 }
@@ -185,7 +185,7 @@
 }
 
 .practiceCard.expanded .cardExpandable {
-  max-height: 300px;
+  max-height: 800px;
   padding-top: 14px;
 }
 
@@ -208,12 +208,121 @@
   border-radius: 0 0 1px 1px;
 }
 
+.cardDescription2 {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-top: 14px;
+}
+
+.cardBullets {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardBullets li {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 300;
+  padding-left: 16px;
+  position: relative;
+}
+
+.cardBullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+  opacity: 0.6;
+}
+
+/* ── Deeper Teaser Card ── */
+
+.deeperTeaser {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24px;
+}
+
+.deeperTeaserCard {
+  background: var(--bg-glass);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 14px;
+  padding: 22px 22px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.deeperTeaserCard:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-medium);
+}
+
+.deeperTeaserIcon {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+}
+
+.deeperTeaserContent {
+  flex: 1;
+}
+
+.deeperTeaserLabel {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-tertiary);
+  margin-bottom: 2px;
+  font-weight: 400;
+}
+
+.deeperTeaserTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.deeperTeaserSub {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.deeperTeaserArrow {
+  flex: 0 0 auto;
+  font-size: 1rem;
+  color: var(--text-tertiary);
+}
+
+.deeperTeaser {
+  animation: fadeUp 0.7s ease 0.22s both;
+}
+
 /* ── Today Section ── */
 
 .todaySection {
   position: relative;
   z-index: 1;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
 }
 
 .todayCard {
@@ -247,7 +356,7 @@
 .pillsSection {
   display: flex;
   gap: 6px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   position: relative;
   z-index: 1;
 }
