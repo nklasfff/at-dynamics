@@ -44,32 +44,32 @@ export default function HomePage({ onNavigate, language }) {
 
           {/* ALT — layered face form */}
           <ellipse cx="150" cy="150" rx="75" ry="100" fill="none" stroke="url(#gAlt)" strokeWidth="1.2">
-            <animateTransform attributeName="transform" type="scale" values="1,1;1.065,0.955;1,1" dur="8s" repeatCount="indefinite" additive="sum" />
+            <animateTransform attributeName="transform" type="scale" values="1,1;1.065,0.955;1,1" dur="9s" repeatCount="indefinite" additive="sum" />
           </ellipse>
           <ellipse cx="150" cy="150" rx="55" ry="78" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.4">
-            <animateTransform attributeName="transform" type="scale" values="1,1;0.94,1.05;1,1" dur="7s" repeatCount="indefinite" additive="sum" />
+            <animateTransform attributeName="transform" type="scale" values="1,1;0.94,1.05;1,1" dur="8s" repeatCount="indefinite" additive="sum" />
           </ellipse>
 
           {/* WHM — breath wave */}
           <path d="M80,150 Q130,80 200,150 Q270,220 320,150" fill="none" stroke="url(#gWhm)" strokeWidth="1.4">
-            <animate attributeName="d" values="M80,150 Q130,50 200,150 Q270,250 320,150;M80,150 Q130,115 200,130 Q270,165 320,150;M80,150 Q130,50 200,150 Q270,250 320,150" dur="6.5s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M80,150 Q130,50 200,150 Q270,250 320,150;M80,150 Q130,115 200,130 Q270,165 320,150;M80,150 Q130,50 200,150 Q270,250 320,150" dur="7s" repeatCount="indefinite" />
           </path>
           <path d="M100,150 Q150,100 200,150 Q250,200 300,150" fill="none" stroke="var(--color-whm)" strokeWidth="0.6" opacity="0.3">
-            <animate attributeName="d" values="M100,150 Q150,78 200,150 Q250,222 300,150;M100,150 Q150,125 200,138 Q250,162 300,150;M100,150 Q150,78 200,150 Q250,222 300,150" dur="6.5s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M100,150 Q150,78 200,150 Q250,222 300,150;M100,150 Q150,125 200,138 Q250,162 300,150;M100,150 Q150,78 200,150 Q250,222 300,150" dur="7s" repeatCount="indefinite" />
           </path>
 
           {/* CST — rhythm arcs */}
           <path d="M60,165 Q200,125 340,165" fill="none" stroke="url(#gCst)" strokeWidth="1.2">
-            <animate attributeName="d" values="M60,165 Q200,105 340,165;M60,165 Q200,155 340,165;M60,165 Q200,105 340,165" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M60,165 Q200,105 340,165;M60,165 Q200,155 340,165;M60,165 Q200,105 340,165" dur="12.5s" repeatCount="indefinite" />
           </path>
           <path d="M80,180 Q200,150 320,180" fill="none" stroke="var(--color-cst)" strokeWidth="0.6" opacity="0.3">
-            <animate attributeName="d" values="M80,180 Q200,132 320,180;M80,180 Q200,172 320,180;M80,180 Q200,132 320,180" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M80,180 Q200,132 320,180;M80,180 Q200,172 320,180;M80,180 Q200,132 320,180" dur="12.5s" repeatCount="indefinite" />
           </path>
 
           {/* Center convergence */}
           <circle cx="200" cy="150" r="4" fill="none" stroke="var(--text-primary)" strokeWidth="0.5" opacity="0.2">
-            <animate attributeName="r" values="3;10;3" dur="8s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.15;0.5;0.15" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="r" values="3;10;3" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.15;0.5;0.15" dur="9s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="150" r="1.5" fill="var(--text-primary)" opacity="0.4" />
 
@@ -89,7 +89,7 @@ export default function HomePage({ onNavigate, language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <ellipse cx="24" cy="22" rx="12" ry="16" fill="none" stroke="var(--color-alt)" strokeWidth="1" opacity="0.7">
-                  <animateTransform attributeName="transform" type="scale" values="1,1;1.08,0.94;1,1" dur="7s" repeatCount="indefinite" additive="sum" />
+                  <animateTransform attributeName="transform" type="scale" values="1,1;1.08,0.94;1,1" dur="8s" repeatCount="indefinite" additive="sum" />
                 </ellipse>
                 <ellipse cx="24" cy="22" rx="8" ry="11" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.35" />
                 <line x1="24" y1="6" x2="24" y2="38" stroke="var(--color-alt)" strokeWidth="0.3" opacity="0.2" />
@@ -131,7 +131,7 @@ export default function HomePage({ onNavigate, language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M8,24 Q16,10 24,24 Q32,38 40,24" fill="none" stroke="var(--color-whm)" strokeWidth="1" opacity="0.7">
-                  <animate attributeName="d" values="M8,24 Q16,2 24,24 Q32,46 40,24;M8,24 Q16,19 24,21 Q32,27 40,24;M8,24 Q16,2 24,24 Q32,46 40,24" dur="5.5s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M8,24 Q16,2 24,24 Q32,46 40,24;M8,24 Q16,19 24,21 Q32,27 40,24;M8,24 Q16,2 24,24 Q32,46 40,24" dur="6s" repeatCount="indefinite" />
                 </path>
                 <circle cx="24" cy="24" r="2" fill="var(--color-whm)" opacity="0.3" />
               </svg>

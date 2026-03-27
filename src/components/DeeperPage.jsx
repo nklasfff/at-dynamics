@@ -67,10 +67,10 @@ export default function DeeperPage({ language }) {
 
           {/* ALT — descending face layers */}
           <ellipse cx="130" cy="110" rx="60" ry="85" fill="none" stroke="url(#dAlt)" strokeWidth="0.8">
-            <animateTransform attributeName="transform" type="scale" values="1,1;1.045,0.97;1,1" dur="10s" repeatCount="indefinite" additive="sum" />
+            <animateTransform attributeName="transform" type="scale" values="1,1;1.045,0.97;1,1" dur="11s" repeatCount="indefinite" additive="sum" />
           </ellipse>
           <ellipse cx="130" cy="110" rx="42" ry="60" fill="none" stroke="var(--color-alt)" strokeWidth="0.5" opacity="0.3">
-            <animateTransform attributeName="transform" type="scale" values="1,1;0.955,1.03;1,1" dur="8s" repeatCount="indefinite" additive="sum" />
+            <animateTransform attributeName="transform" type="scale" values="1,1;0.955,1.03;1,1" dur="9s" repeatCount="indefinite" additive="sum" />
           </ellipse>
           <ellipse cx="130" cy="110" rx="24" ry="35" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.2" />
           {/* Meridian lines */}
@@ -79,30 +79,30 @@ export default function DeeperPage({ language }) {
 
           {/* WHM — breath spiral */}
           <path d="M200,50 Q240,80 200,130 Q160,180 200,210" fill="none" stroke="url(#dWhm)" strokeWidth="1">
-            <animate attributeName="d" values="M200,50 Q260,80 200,130 Q140,180 200,210;M200,50 Q210,100 200,130 Q190,160 200,210;M200,50 Q260,80 200,130 Q140,180 200,210" dur="6.5s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,50 Q260,80 200,130 Q140,180 200,210;M200,50 Q210,100 200,130 Q190,160 200,210;M200,50 Q260,80 200,130 Q140,180 200,210" dur="7s" repeatCount="indefinite" />
           </path>
           <path d="M200,70 Q230,95 200,130 Q170,165 200,190" fill="none" stroke="var(--color-whm)" strokeWidth="0.5" opacity="0.3">
-            <animate attributeName="d" values="M200,70 Q250,95 200,130 Q150,165 200,190;M200,70 Q208,108 200,130 Q192,152 200,190;M200,70 Q250,95 200,130 Q150,165 200,190" dur="6.5s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M200,70 Q250,95 200,130 Q150,165 200,190;M200,70 Q208,108 200,130 Q192,152 200,190;M200,70 Q250,95 200,130 Q150,165 200,190" dur="7s" repeatCount="indefinite" />
           </path>
           {/* Breath dots */}
           <circle cx="200" cy="130" r="3" fill="var(--color-whm)" opacity="0.25">
-            <animate attributeName="r" values="3;9;3" dur="3s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="r" values="3;9;3" dur="3.5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.5s" repeatCount="indefinite" />
           </circle>
 
           {/* CST — tidal waves */}
           <path d="M260,80 Q310,130 260,180" fill="none" stroke="url(#dCst)" strokeWidth="0.8">
-            <animate attributeName="d" values="M260,67 Q325,130 260,193;M260,100 Q288,130 260,160;M260,67 Q325,130 260,193" dur="13s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M260,67 Q325,130 260,193;M260,100 Q288,130 260,160;M260,67 Q325,130 260,193" dur="14.5s" repeatCount="indefinite" />
           </path>
           <path d="M275,90 Q315,130 275,170" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.3">
-            <animate attributeName="d" values="M275,78 Q330,130 275,182;M275,105 Q293,130 275,155;M275,78 Q330,130 275,182" dur="13s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M275,78 Q330,130 275,182;M275,105 Q293,130 275,155;M275,78 Q330,130 275,182" dur="14.5s" repeatCount="indefinite" />
           </path>
           <path d="M290,100 Q320,130 290,160" fill="none" stroke="var(--color-cst)" strokeWidth="0.3" opacity="0.2">
-            <animate attributeName="d" values="M290,88 Q335,130 290,172;M290,112 Q303,130 290,148;M290,88 Q335,130 290,172" dur="13s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M290,88 Q335,130 290,172;M290,112 Q303,130 290,148;M290,88 Q335,130 290,172" dur="14.5s" repeatCount="indefinite" />
           </path>
           {/* Still point at center */}
           <circle cx="290" cy="130" r="2" fill="var(--color-cst)" opacity="0.3">
-            <animate attributeName="opacity" values="0.1;0.5;0.1" dur="13s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.1;0.5;0.1" dur="14.5s" repeatCount="indefinite" />
           </circle>
 
           {/* Connecting threads between disciplines */}
@@ -121,7 +121,7 @@ export default function DeeperPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <ellipse cx="24" cy="22" rx="14" ry="18" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.6">
-                  <animateTransform attributeName="transform" type="scale" values="1,1;1.06,0.955;1,1" dur="9s" repeatCount="indefinite" additive="sum" />
+                  <animateTransform attributeName="transform" type="scale" values="1,1;1.06,0.955;1,1" dur="10s" repeatCount="indefinite" additive="sum" />
                 </ellipse>
                 <ellipse cx="24" cy="22" rx="9" ry="12" fill="none" stroke="var(--color-alt)" strokeWidth="0.5" opacity="0.3" />
                 <ellipse cx="24" cy="22" rx="4" ry="6" fill="none" stroke="var(--color-alt)" strokeWidth="0.3" opacity="0.2" />
@@ -179,7 +179,7 @@ export default function DeeperPage({ language }) {
                 attributeName="transform"
                 type="scale"
                 values={`1,1;${1 + i * 0.008},${1 - i * 0.005};1,1`}
-                dur={`${6.5 + i * 1.6}s`}
+                dur={`${7.2 + i * 1.8}s`}
                 repeatCount="indefinite"
                 additive="sum"
               />
@@ -187,10 +187,10 @@ export default function DeeperPage({ language }) {
           ))}
           {/* Nerve pathways */}
           <path d="M200,10 Q180,50 160,90 Q150,120 155,160" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.2" strokeDasharray="3,6">
-            <animate attributeName="stroke-dashoffset" values="0;-27" dur="5s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="0;-27" dur="5.5s" repeatCount="indefinite" />
           </path>
           <path d="M200,10 Q220,50 240,90 Q250,120 245,160" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.2" strokeDasharray="3,6">
-            <animate attributeName="stroke-dashoffset" values="0;-27" dur="5s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="0;-27" dur="5.5s" repeatCount="indefinite" />
           </path>
         </svg>
       </div>
@@ -205,13 +205,13 @@ export default function DeeperPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M6,24 Q14,8 24,24 Q34,40 42,24" fill="none" stroke="var(--color-whm)" strokeWidth="0.8" opacity="0.6">
-                  <animate attributeName="d" values="M6,24 Q14,0 24,24 Q34,48 42,24;M6,24 Q14,17 24,21 Q34,27 42,24;M6,24 Q14,0 24,24 Q34,48 42,24" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M6,24 Q14,0 24,24 Q34,48 42,24;M6,24 Q14,17 24,21 Q34,27 42,24;M6,24 Q14,0 24,24 Q34,48 42,24" dur="5.5s" repeatCount="indefinite" />
                 </path>
                 <path d="M10,24 Q18,14 24,24 Q30,34 38,24" fill="none" stroke="var(--color-whm)" strokeWidth="0.4" opacity="0.3">
-                  <animate attributeName="d" values="M10,24 Q18,6 24,24 Q30,42 38,24;M10,24 Q18,19 24,22 Q30,27 38,24;M10,24 Q18,6 24,24 Q30,42 38,24" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M10,24 Q18,6 24,24 Q30,42 38,24;M10,24 Q18,19 24,22 Q30,27 38,24;M10,24 Q18,6 24,24 Q30,42 38,24" dur="5.5s" repeatCount="indefinite" />
                 </path>
                 <circle cx="24" cy="24" r="2" fill="var(--color-whm)" opacity="0.3">
-                  <animate attributeName="r" values="2;6;2" dur="3s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="2;6;2" dur="3.5s" repeatCount="indefinite" />
                 </circle>
               </svg>
             </div>
@@ -268,8 +268,8 @@ export default function DeeperPage({ language }) {
           ))}
           {/* Retention circle */}
           <circle cx="200" cy="80" r="8" fill="none" stroke="var(--color-whm)" strokeWidth="0.5" opacity="0.2">
-            <animate attributeName="r" values="5;26;5" dur="10s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.22;0.05;0.22" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="r" values="5;26;5" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.22;0.05;0.22" dur="11s" repeatCount="indefinite" />
           </circle>
         </svg>
       </div>
@@ -284,14 +284,14 @@ export default function DeeperPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M8,26 Q24,16 40,26" fill="none" stroke="var(--color-cst)" strokeWidth="0.7" opacity="0.5">
-                  <animate attributeName="d" values="M8,26 Q24,8 40,26;M8,26 Q24,23 40,26;M8,26 Q24,8 40,26" dur="11s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M8,26 Q24,8 40,26;M8,26 Q24,23 40,26;M8,26 Q24,8 40,26" dur="12.5s" repeatCount="indefinite" />
                 </path>
                 <path d="M12,30 Q24,22 36,30" fill="none" stroke="var(--color-cst)" strokeWidth="0.4" opacity="0.3">
-                  <animate attributeName="d" values="M12,30 Q24,14 36,30;M12,30 Q24,27 36,30;M12,30 Q24,14 36,30" dur="11s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M12,30 Q24,14 36,30;M12,30 Q24,27 36,30;M12,30 Q24,14 36,30" dur="12.5s" repeatCount="indefinite" />
                 </path>
                 <path d="M16,34 Q24,28 32,34" fill="none" stroke="var(--color-cst)" strokeWidth="0.3" opacity="0.2" />
                 <circle cx="24" cy="26" r="2" fill="none" stroke="var(--color-cst)" strokeWidth="0.4" opacity="0.3">
-                  <animate attributeName="r" values="2;7;2" dur="11s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="2;7;2" dur="12.5s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="26" r="0.8" fill="var(--color-cst)" opacity="0.4" />
               </svg>
@@ -331,15 +331,15 @@ export default function DeeperPage({ language }) {
         <svg viewBox="0 0 400 180" className={styles.heroSvg}>
           {/* CRI — fast rhythm */}
           <path d="M40,60 Q80,40 120,60 Q160,80 200,60 Q240,40 280,60 Q320,80 360,60" fill="none" stroke="var(--color-cst)" strokeWidth="0.7" opacity="0.45">
-            <animate attributeName="d" values="M40,60 Q80,23 120,60 Q160,97 200,60 Q240,23 280,60 Q320,97 360,60;M40,60 Q80,48 120,60 Q160,72 200,60 Q240,48 280,60 Q320,72 360,60;M40,60 Q80,23 120,60 Q160,97 200,60 Q240,23 280,60 Q320,97 360,60" dur="4s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M40,60 Q80,23 120,60 Q160,97 200,60 Q240,23 280,60 Q320,97 360,60;M40,60 Q80,48 120,60 Q160,72 200,60 Q240,48 280,60 Q320,72 360,60;M40,60 Q80,23 120,60 Q160,97 200,60 Q240,23 280,60 Q320,97 360,60" dur="4.5s" repeatCount="indefinite" />
           </path>
           {/* Mid-Tide — slower */}
           <path d="M40,100 Q120,75 200,100 Q280,125 360,100" fill="none" stroke="var(--color-cst)" strokeWidth="0.9" opacity="0.35">
-            <animate attributeName="d" values="M40,100 Q120,55 200,100 Q280,145 360,100;M40,100 Q120,86 200,100 Q280,114 360,100;M40,100 Q120,55 200,100 Q280,145 360,100" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M40,100 Q120,55 200,100 Q280,145 360,100;M40,100 Q120,86 200,100 Q280,114 360,100;M40,100 Q120,55 200,100 Q280,145 360,100" dur="11s" repeatCount="indefinite" />
           </path>
           {/* Long Tide — slowest */}
           <path d="M40,140 Q200,115 360,140" fill="none" stroke="var(--color-cst)" strokeWidth="1.1" opacity="0.2">
-            <animate attributeName="d" values="M40,140 Q200,98 360,140;M40,140 Q200,134 360,140;M40,140 Q200,98 360,140" dur="20s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M40,140 Q200,98 360,140;M40,140 Q200,134 360,140;M40,140 Q200,98 360,140" dur="22s" repeatCount="indefinite" />
           </path>
           {/* Labels */}
           <text x="370" y="62" fill="var(--color-cst)" fontSize="7" opacity="0.3" fontFamily="Inter, sans-serif">CRI</text>
@@ -347,7 +347,7 @@ export default function DeeperPage({ language }) {
           <text x="370" y="142" fill="var(--color-cst)" fontSize="7" opacity="0.18" fontFamily="Inter, sans-serif">Long Tide</text>
           {/* Still point */}
           <circle cx="200" cy="165" r="2" fill="var(--text-primary)" opacity="0.15">
-            <animate attributeName="opacity" values="0.05;0.45;0.05" dur="20s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.05;0.45;0.05" dur="22s" repeatCount="indefinite" />
           </circle>
           <text x="200" y="178" fill="var(--text-primary)" fontSize="6" opacity="0.12" fontFamily="Inter, sans-serif" textAnchor="middle">{t('deeperSvgStillness', language) || 'Stilhed'}</text>
         </svg>
@@ -363,7 +363,7 @@ export default function DeeperPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <circle cx="24" cy="24" r="16" fill="none" stroke="var(--text-primary)" strokeWidth="0.4" opacity="0.15" strokeDasharray="2,4">
-                  <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="32s" repeatCount="indefinite" />
+                  <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="36s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="16" cy="20" r="4" fill="none" stroke="var(--color-alt)" strokeWidth="0.5" opacity="0.4" />
                 <circle cx="32" cy="20" r="4" fill="none" stroke="var(--color-whm)" strokeWidth="0.5" opacity="0.4" />
@@ -405,10 +405,10 @@ export default function DeeperPage({ language }) {
         <svg viewBox="0 0 400 120" className={styles.heroSvg}>
           {/* Hands/practice symbol */}
           <path d="M160,60 Q180,30 200,60 Q220,30 240,60" fill="none" stroke="var(--text-primary)" strokeWidth="0.6" opacity="0.15">
-            <animate attributeName="d" values="M160,60 Q180,14 200,60 Q220,14 240,60;M160,60 Q180,44 200,53 Q220,44 240,60;M160,60 Q180,14 200,60 Q220,14 240,60" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M160,60 Q180,14 200,60 Q220,14 240,60;M160,60 Q180,44 200,53 Q220,44 240,60;M160,60 Q180,14 200,60 Q220,14 240,60" dur="9s" repeatCount="indefinite" />
           </path>
           <circle cx="200" cy="60" r="20" fill="none" stroke="var(--text-primary)" strokeWidth="0.3" opacity="0.08">
-            <animate attributeName="r" values="15;35;15" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="r" values="15;35;15" dur="9s" repeatCount="indefinite" />
           </circle>
           <text x="200" y="95" fill="var(--text-primary)" fontSize="8" opacity="0.15" fontFamily="'Cormorant Garamond', serif" textAnchor="middle" fontStyle="italic">{t('deeperSvgExercises', language) || 'Øvelser'}</text>
         </svg>
@@ -424,7 +424,7 @@ export default function DeeperPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <circle cx="24" cy="24" r={breathPhase ? (breathPhase === 'in' ? 16 : breathPhase === 'hold' ? 16 : 8) : 10} fill="none" stroke="var(--color-whm)" strokeWidth="0.8" opacity="0.5">
-                  {!breathPhase && <animate attributeName="r" values="6;18;6" dur="6.5s" repeatCount="indefinite" />}
+                  {!breathPhase && <animate attributeName="r" values="6;18;6" dur="7s" repeatCount="indefinite" />}
                 </circle>
                 <circle cx="24" cy="24" r="2" fill="var(--color-whm)" opacity="0.4" />
               </svg>
@@ -529,14 +529,14 @@ export default function DeeperPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <circle cx="24" cy="24" r="12" fill="none" stroke="var(--color-cst)" strokeWidth="0.5" opacity="0.25">
-                  <animate attributeName="r" values="8;20;8" dur="13s" repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="0.28;0.06;0.28" dur="13s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="8;20;8" dur="14.5s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.28;0.06;0.28" dur="14.5s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="24" r="6" fill="none" stroke="var(--color-cst)" strokeWidth="0.4" opacity="0.3">
-                  <animate attributeName="r" values="4;12;4" dur="10s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="4;12;4" dur="11s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="24" r="1.5" fill="var(--color-cst)" opacity="0.4">
-                  <animate attributeName="opacity" values="0.15;0.6;0.15" dur="6.5s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.15;0.6;0.15" dur="7s" repeatCount="indefinite" />
                 </circle>
               </svg>
             </div>

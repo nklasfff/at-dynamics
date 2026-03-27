@@ -53,36 +53,36 @@ export default function SessionPlanPage({ language }) {
 
           {/* Wim Hof phase — energy rise */}
           <path d="M60,130 Q90,60 120,50 Q135,48 150,70" fill="none" stroke="url(#spWhm)" strokeWidth="1.2">
-            <animate attributeName="d" values="M60,130 Q90,52 120,42 Q135,40 150,66;M60,130 Q90,68 120,60 Q135,56 150,78;M60,130 Q90,52 120,42 Q135,40 150,66" dur="6.5s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M60,130 Q90,52 120,42 Q135,40 150,66;M60,130 Q90,68 120,60 Q135,56 150,78;M60,130 Q90,52 120,42 Q135,40 150,66" dur="7s" repeatCount="indefinite" />
           </path>
           {/* Breath pulse dots */}
           <circle cx="105" cy="55" r="2" fill="var(--color-whm)" opacity="0.3">
-            <animate attributeName="r" values="1;7;1" dur="3s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1;7;1" dur="3.5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.5s" repeatCount="indefinite" />
           </circle>
 
           {/* ALT phase — sustained plateau */}
           <path d="M150,70 Q180,55 200,60 Q220,65 250,80" fill="none" stroke="url(#spAlt)" strokeWidth="1.2">
-            <animate attributeName="d" values="M150,70 Q180,48 200,56 Q220,62 250,80;M150,76 Q180,62 200,67 Q220,72 250,87;M150,70 Q180,48 200,56 Q220,62 250,80" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M150,70 Q180,48 200,56 Q220,62 250,80;M150,76 Q180,62 200,67 Q220,72 250,87;M150,70 Q180,48 200,56 Q220,62 250,80" dur="9s" repeatCount="indefinite" />
           </path>
           {/* ALT work pulse */}
           <circle cx="200" cy="60" r="2" fill="var(--color-alt)" opacity="0.25">
-            <animate attributeName="r" values="1;6;1" dur="5s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.15;0.55;0.15" dur="5s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1;6;1" dur="5.5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.15;0.55;0.15" dur="5.5s" repeatCount="indefinite" />
           </circle>
 
           {/* CST phase — settling descent */}
           <path d="M250,80 Q280,100 310,120 Q330,132 350,138" fill="none" stroke="url(#spCst)" strokeWidth="1.2">
-            <animate attributeName="d" values="M250,78 Q280,98 310,118 Q330,131 350,137;M250,86 Q280,106 310,125 Q330,137 350,140;M250,78 Q280,98 310,118 Q330,131 350,137" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="d" values="M250,78 Q280,98 310,118 Q330,131 350,137;M250,86 Q280,106 310,125 Q330,137 350,140;M250,78 Q280,98 310,118 Q330,131 350,137" dur="12.5s" repeatCount="indefinite" />
           </path>
           {/* Still point at end */}
           <circle cx="345" cy="138" r="2" fill="var(--color-cst)" opacity="0.2">
-            <animate attributeName="opacity" values="0.05;0.55;0.05" dur="13s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.05;0.55;0.05" dur="14.5s" repeatCount="indefinite" />
           </circle>
 
           {/* Energy envelope — faint arc over the whole session */}
           <path d="M40,140 Q120,20 200,40 Q280,60 360,140" fill="none" stroke="var(--text-primary)" strokeWidth="0.3" opacity="0.06" strokeDasharray="4,8">
-            <animate attributeName="stroke-dashoffset" values="0;-36" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="0;-36" dur="9s" repeatCount="indefinite" />
           </path>
 
           {/* Phase labels — small dots along the arc */}
@@ -108,12 +108,12 @@ export default function SessionPlanPage({ language }) {
                 <line x1="14" y1="8" x2="34" y2="8" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.5" />
                 {/* Threshold light */}
                 <path d="M18,40 L24,28 L30,40" fill="none" stroke="var(--color-alt)" strokeWidth="0.5" opacity="0.3">
-                  <animate attributeName="opacity" values="0.1;0.6;0.1" dur="6.5s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.1;0.6;0.1" dur="7s" repeatCount="indefinite" />
                 </path>
                 {/* Dot of intention */}
                 <circle cx="24" cy="24" r="1.5" fill="var(--color-alt)" opacity="0.3">
-                  <animate attributeName="r" values="1;4.5;1" dur="8s" repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="0.2;0.6;0.2" dur="8s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="1;4.5;1" dur="9s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.2;0.6;0.2" dur="9s" repeatCount="indefinite" />
                 </circle>
               </svg>
             </div>
@@ -158,10 +158,10 @@ export default function SessionPlanPage({ language }) {
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 {/* Flowing arrow / wave pattern */}
                 <path d="M8,32 Q16,16 24,24 Q32,32 40,16" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.6">
-                  <animate attributeName="d" values="M8,36 Q16,10 24,24 Q32,38 40,10;M8,26 Q16,22 24,24 Q32,26 40,22;M8,36 Q16,10 24,24 Q32,38 40,10" dur="5.5s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M8,36 Q16,10 24,24 Q32,38 40,10;M8,26 Q16,22 24,24 Q32,26 40,22;M8,36 Q16,10 24,24 Q32,38 40,10" dur="6s" repeatCount="indefinite" />
                 </path>
                 <path d="M8,36 Q16,24 24,28 Q32,32 40,24" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.3">
-                  <animate attributeName="d" values="M8,38 Q16,20 24,28 Q32,36 40,20;M8,31 Q16,26 24,28 Q32,30 40,26;M8,38 Q16,20 24,28 Q32,36 40,20" dur="5.5s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M8,38 Q16,20 24,28 Q32,36 40,20;M8,31 Q16,26 24,28 Q32,30 40,26;M8,38 Q16,20 24,28 Q32,36 40,20" dur="6s" repeatCount="indefinite" />
                 </path>
                 {/* Arrow tip */}
                 <path d="M37,14 L40,16 L37,18" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.5" />
@@ -214,51 +214,51 @@ export default function SessionPlanPage({ language }) {
 
           {/* Center glow */}
           <circle cx="200" cy="110" r="40" fill="url(#spCenterGlow)">
-            <animate attributeName="r" values="30;50;30" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="r" values="30;50;30" dur="11s" repeatCount="indefinite" />
           </circle>
 
           {/* WHM orbit — top left */}
           <circle cx="145" cy="75" r="45" fill="none" stroke="var(--color-whm)" strokeWidth="0.8" opacity="0.35">
-            <animate attributeName="r" values="40;50;40" dur="6.5s" repeatCount="indefinite" />
+            <animate attributeName="r" values="40;50;40" dur="7s" repeatCount="indefinite" />
           </circle>
           <circle cx="145" cy="75" r="30" fill="none" stroke="var(--color-whm)" strokeWidth="0.4" opacity="0.15" />
           <circle cx="145" cy="75" r="4" fill="var(--color-whm)" opacity="0.3">
-            <animate attributeName="opacity" values="0.1;0.6;0.1" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.1;0.6;0.1" dur="3.5s" repeatCount="indefinite" />
           </circle>
 
           {/* ALT orbit — top right */}
           <circle cx="255" cy="75" r="45" fill="none" stroke="var(--color-alt)" strokeWidth="0.8" opacity="0.35">
-            <animate attributeName="r" values="48;38;48" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="r" values="48;38;48" dur="9s" repeatCount="indefinite" />
           </circle>
           <circle cx="255" cy="75" r="30" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.15" />
           <circle cx="255" cy="75" r="4" fill="var(--color-alt)" opacity="0.3">
-            <animate attributeName="opacity" values="0.1;0.6;0.1" dur="5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.1;0.6;0.1" dur="5.5s" repeatCount="indefinite" />
           </circle>
 
           {/* CST orbit — bottom center */}
           <circle cx="200" cy="155" r="45" fill="none" stroke="var(--color-cst)" strokeWidth="0.8" opacity="0.35">
-            <animate attributeName="r" values="41;49;41" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="r" values="41;49;41" dur="12.5s" repeatCount="indefinite" />
           </circle>
           <circle cx="200" cy="155" r="30" fill="none" stroke="var(--color-cst)" strokeWidth="0.4" opacity="0.15" />
           <circle cx="200" cy="155" r="4" fill="var(--color-cst)" opacity="0.3">
-            <animate attributeName="opacity" values="0.05;0.55;0.05" dur="13s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.05;0.55;0.05" dur="14.5s" repeatCount="indefinite" />
           </circle>
 
           {/* Connecting flows between practices */}
           <path d="M170,95 Q200,105 200,110" fill="none" stroke="var(--color-whm)" strokeWidth="0.4" opacity="0.15" strokeDasharray="2,5">
-            <animate attributeName="stroke-dashoffset" values="0;-21" dur="5s" repeatCount="indefinite" />
-          </path>
-          <path d="M230,95 Q200,105 200,110" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.15" strokeDasharray="2,5">
             <animate attributeName="stroke-dashoffset" values="0;-21" dur="5.5s" repeatCount="indefinite" />
           </path>
+          <path d="M230,95 Q200,105 200,110" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.15" strokeDasharray="2,5">
+            <animate attributeName="stroke-dashoffset" values="0;-21" dur="6s" repeatCount="indefinite" />
+          </path>
           <path d="M200,130 Q200,120 200,110" fill="none" stroke="var(--color-cst)" strokeWidth="0.4" opacity="0.15" strokeDasharray="2,5">
-            <animate attributeName="stroke-dashoffset" values="0;-21" dur="6.5s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="0;-21" dur="7s" repeatCount="indefinite" />
           </path>
 
           {/* Center integration point */}
           <circle cx="200" cy="110" r="3" fill="var(--text-primary)" opacity="0.12">
-            <animate attributeName="r" values="1;9;1" dur="8s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.05;0.28;0.05" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1;9;1" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.05;0.28;0.05" dur="9s" repeatCount="indefinite" />
           </circle>
         </svg>
       </div>
@@ -277,10 +277,10 @@ export default function SessionPlanPage({ language }) {
                 <circle cx="24" cy="24" r="12" fill="none" stroke="var(--color-alt)" strokeWidth="0.3" opacity="0.2" />
                 {/* Clock hands */}
                 <line x1="24" y1="24" x2="24" y2="14" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.5">
-                  <animateTransform attributeName="transform" type="rotate" values="0 24 24;360 24 24" dur="48s" repeatCount="indefinite" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 24 24;360 24 24" dur="54s" repeatCount="indefinite" />
                 </line>
                 <line x1="24" y1="24" x2="30" y2="24" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.35">
-                  <animateTransform attributeName="transform" type="rotate" values="0 24 24;360 24 24" dur="10s" repeatCount="indefinite" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 24 24;360 24 24" dur="11s" repeatCount="indefinite" />
                 </line>
                 {/* Three time markers */}
                 <circle cx="24" cy="9" r="1" fill="var(--color-alt)" opacity="0.3" />
@@ -331,28 +331,28 @@ export default function SessionPlanPage({ language }) {
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 {/* Settling / stillness — concentric rings fading inward */}
                 <circle cx="24" cy="24" r="18" fill="none" stroke="var(--color-alt)" strokeWidth="0.6" opacity="0.2">
-                  <animate attributeName="r" values="20;14;20" dur="11s" repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="0.15;0.38;0.15" dur="11s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="20;14;20" dur="12.5s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.15;0.38;0.15" dur="12.5s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="24" r="12" fill="none" stroke="var(--color-alt)" strokeWidth="0.5" opacity="0.25">
-                  <animate attributeName="r" values="14;9;14" dur="10s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="14;9;14" dur="11s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="24" r="6" fill="none" stroke="var(--color-alt)" strokeWidth="0.4" opacity="0.3">
-                  <animate attributeName="r" values="7;4;7" dur="8s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="7;4;7" dur="9s" repeatCount="indefinite" />
                 </circle>
                 {/* Still center point */}
                 <circle cx="24" cy="24" r="2" fill="var(--color-alt)" opacity="0.35">
-                  <animate attributeName="opacity" values="0.15;0.6;0.15" dur="13s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.15;0.6;0.15" dur="14.5s" repeatCount="indefinite" />
                 </circle>
                 {/* Settling particles */}
                 <circle cx="18" cy="16" r="0.8" fill="var(--color-alt)" opacity="0.15">
-                  <animate attributeName="cy" values="14;23;14" dur="8s" repeatCount="indefinite" />
+                  <animate attributeName="cy" values="14;23;14" dur="9s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="30" cy="18" r="0.8" fill="var(--color-alt)" opacity="0.15">
-                  <animate attributeName="cy" values="16;25;16" dur="10s" repeatCount="indefinite" />
+                  <animate attributeName="cy" values="16;25;16" dur="11s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="14" r="0.8" fill="var(--color-alt)" opacity="0.15">
-                  <animate attributeName="cy" values="12;22;12" dur="9s" repeatCount="indefinite" />
+                  <animate attributeName="cy" values="12;22;12" dur="10s" repeatCount="indefinite" />
                 </circle>
               </svg>
             </div>

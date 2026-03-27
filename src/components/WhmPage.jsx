@@ -35,15 +35,15 @@ export default function WhmPage({ language }) {
               <animate
                 attributeName="d"
                 values={`M30,${150+i*3} Q110,${75+i*14} 200,${150+i*3} Q290,${225-i*14} 370,${150+i*3};M30,${150+i*3} Q110,${138+i*3} 200,${147+i*3} Q290,${162-i*3} 370,${150+i*3};M30,${150+i*3} Q110,${75+i*14} 200,${150+i*3} Q290,${225-i*14} 370,${150+i*3}`}
-                dur={`${4+i*0.65}s`}
+                dur={`${4.5+i*0.72}s`}
                 repeatCount="indefinite"
               />
             </path>
           ))}
           {/* Retention void */}
           <circle cx="200" cy="150" r="20" fill="none" stroke="var(--color-whm)" strokeWidth="0.9" opacity="0.25">
-            <animate attributeName="r" values="10;45;10" dur="13s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.3;0.05;0.3" dur="13s" repeatCount="indefinite" />
+            <animate attributeName="r" values="10;45;10" dur="14.5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.3;0.05;0.3" dur="14.5s" repeatCount="indefinite" />
           </circle>
           {/* Ice crystal structure */}
           {[0,60,120,180,240,300].map(angle => (
@@ -60,7 +60,7 @@ export default function WhmPage({ language }) {
           {/* Breath count markers */}
           {[1,2,3].map(i => (
             <circle key={i} cx={130+i*45} cy="250" r="4" fill="none" stroke="var(--color-whm)" strokeWidth="0.7" opacity={0.2+i*0.14}>
-              <animate attributeName="r" values={`2;${7+i*1.5};2`} dur={`${6.5+i*1.6}s`} repeatCount="indefinite" />
+              <animate attributeName="r" values={`2;${7+i*1.5};2`} dur={`${7.2+i*1.8}s`} repeatCount="indefinite" />
             </circle>
           ))}
           <text x="175" y="270" fill="var(--color-whm)" fontSize="6" opacity="0.25" fontFamily="Inter, sans-serif">{t('whmSvgRound1', language) || 'Runde 1'}</text>
@@ -76,7 +76,7 @@ export default function WhmPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <path d="M8,24 Q16,8 24,24 Q32,40 40,24" fill="none" stroke="var(--color-whm)" strokeWidth="1.3" opacity="0.7">
-                  <animate attributeName="d" values="M8,24 Q16,0 24,24 Q32,48 40,24;M8,24 Q16,20 24,23 Q32,26 40,24;M8,24 Q16,0 24,24 Q32,48 40,24" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="d" values="M8,24 Q16,0 24,24 Q32,48 40,24;M8,24 Q16,20 24,23 Q32,26 40,24;M8,24 Q16,0 24,24 Q32,48 40,24" dur="5.5s" repeatCount="indefinite" />
                 </path>
               </svg>
             </div>
@@ -120,7 +120,7 @@ export default function WhmPage({ language }) {
                   <line key={angle} x1="24" y1="24" x2={24+Math.cos(angle*Math.PI/180)*14} y2={24+Math.sin(angle*Math.PI/180)*14} stroke="var(--color-whm)" strokeWidth="0.9" opacity="0.65" />
                 ))}
                 <circle cx="24" cy="24" r="4" fill="none" stroke="var(--color-whm)" strokeWidth="1.0" opacity="0.7">
-                  <animate attributeName="r" values="2;9;2" dur="6.5s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="2;9;2" dur="7s" repeatCount="indefinite" />
                 </circle>
               </svg>
             </div>
@@ -161,7 +161,7 @@ export default function WhmPage({ language }) {
           <line x1="60" y1="100" x2="340" y2="100" stroke="var(--text-primary)" strokeWidth="0.55" opacity="0.12" />
           {/* Warm side */}
           <circle cx="80" cy="100" r="20" fill="none" stroke="var(--color-alt)" strokeWidth="0.7" opacity="0.3">
-            <animate attributeName="r" values="15;29;15" dur="6.5s" repeatCount="indefinite" />
+            <animate attributeName="r" values="15;29;15" dur="7s" repeatCount="indefinite" />
           </circle>
           <circle cx="80" cy="100" r="10" fill="none" stroke="var(--color-alt)" strokeWidth="0.55" opacity="0.2" />
           {/* Cold side — ice crystal */}
@@ -183,8 +183,8 @@ export default function WhmPage({ language }) {
             </g>
           ))}
           <circle cx="320" cy="100" r="4" fill="none" stroke="var(--color-whm)" strokeWidth="0.9" opacity="0.55">
-            <animate attributeName="r" values="2;12;2" dur="8s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.6;0.1;0.6" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="r" values="2;12;2" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.6;0.1;0.6" dur="9s" repeatCount="indefinite" />
           </circle>
           {/* Transition waves between warm and cold */}
           {[0,1,2].map(i => (
@@ -199,7 +199,7 @@ export default function WhmPage({ language }) {
               <animate
                 attributeName="d"
                 values={`M${140+i*30},${73+i*10} Q${180+i*15},${90} ${220+i*10},${127-i*10};M${140+i*30},${95+i*10} Q${180+i*15},${110} ${220+i*10},${105-i*10};M${140+i*30},${73+i*10} Q${180+i*15},${90} ${220+i*10},${127-i*10}`}
-                dur={`${5+i*1.6}s`}
+                dur={`${5.4+i*1.8}s`}
                 repeatCount="indefinite"
               />
             </path>
@@ -218,7 +218,7 @@ export default function WhmPage({ language }) {
             <div className={styles.cardIcon}>
               <svg viewBox="0 0 48 48" className={styles.cardIconSvg}>
                 <circle cx="24" cy="24" r="10" fill="none" stroke="var(--color-whm)" strokeWidth="0.9" opacity="0.55">
-                  <animate attributeName="r" values="5;19;5" dur="8s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="5;19;5" dur="9s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="24" cy="24" r="3" fill="var(--color-whm)" opacity="0.45" />
               </svg>
