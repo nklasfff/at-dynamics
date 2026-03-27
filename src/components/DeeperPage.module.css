@@ -1,0 +1,425 @@
+/* ═══════════════════════════════════════════
+   DeeperPage — Go Deeper
+   ═══════════════════════════════════════════ */
+
+.page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  min-height: 100dvh;
+}
+
+/* ── Ambient Glow ── */
+
+.ambientGlow {
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(90, 138, 170, var(--glow-opacity)) 0%,
+    rgba(201, 168, 124, calc(var(--glow-opacity) * 0.4)) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Header ── */
+
+.header {
+  text-align: center;
+  padding-top: 56px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.7s ease both;
+}
+
+.eyebrow {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--text-tertiary);
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 7vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  max-width: 340px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* ── Hero Visual ── */
+
+.heroVisual {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 32px;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.7s ease 0.08s both;
+}
+
+.heroSvg {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  color: var(--text-primary);
+}
+
+/* ── Section Headers ── */
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionEyebrow {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.sectionTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--text-primary);
+}
+
+/* ── Deep Cards ── */
+
+.cardsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.7s ease 0.15s both;
+}
+
+.deepCard {
+  background: var(--bg-glass);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 14px;
+  padding: 22px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  cursor: pointer;
+}
+
+.deepCard:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-medium);
+}
+
+.cardRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cardIcon {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+}
+
+.cardIconSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.cardContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardLabel {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-tertiary);
+  margin-bottom: 2px;
+  font-weight: 400;
+}
+
+.cardTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 1px;
+}
+
+.cardSubtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.cardChevron {
+  flex: 0 0 auto;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--text-tertiary);
+  transition: color 0.3s;
+  width: 24px;
+  text-align: center;
+}
+
+.deepCard:hover .cardChevron {
+  color: var(--text-secondary);
+}
+
+/* ── Card Expandable ── */
+
+.cardExpandable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  padding-top: 0;
+}
+
+.deepCard.expanded .cardExpandable {
+  max-height: 1200px;
+  padding-top: 14px;
+}
+
+.cardDescription {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  font-weight: 300;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.cardDescription2 {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-top: 14px;
+}
+
+.cardDescription3 {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-top: 14px;
+}
+
+.cardBullets {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardBullets li {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 300;
+  padding-left: 16px;
+  position: relative;
+}
+
+.cardBullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+  opacity: 0.6;
+}
+
+.cardAccent {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  opacity: 0.3;
+  border-radius: 0 0 1px 1px;
+}
+
+/* ── Exercise Section ── */
+
+.exerciseSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.7s ease 0.2s both;
+}
+
+.exerciseCard {
+  background: var(--bg-glass);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 14px;
+  padding: 22px 22px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.exerciseHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.exerciseBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  opacity: 0.8;
+}
+
+.exerciseTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.exerciseSubtitle {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-tertiary);
+  margin-top: 2px;
+}
+
+.exerciseBody {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 14px;
+}
+
+.exerciseSteps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  counter-reset: step;
+}
+
+.exerciseSteps li {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 300;
+  padding-left: 28px;
+  position: relative;
+  counter-increment: step;
+}
+
+.exerciseSteps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+.exerciseDuration {
+  margin-top: 14px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+.exerciseAccent {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  opacity: 0.25;
+  border-radius: 0 0 1px 1px;
+}
+
+/* ── Bottom spacer ── */
+
+.bottomSpacer {
+  height: 90px;
+}
+
+/* ── Animations ── */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
