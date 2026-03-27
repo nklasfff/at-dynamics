@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import styles from './HomePage.module.css'
 import ScrollToTop from './ScrollToTop'
+import { t } from '../translations'
 
-export default function HomePage({ onNavigate }) {
+export default function HomePage({ onNavigate, language }) {
   const [expandedCard, setExpandedCard] = useState(null)
   const [expandedNerve, setExpandedNerve] = useState(null)
   const [expandedDepth, setExpandedDepth] = useState(null)
@@ -16,11 +17,10 @@ export default function HomePage({ onNavigate }) {
 
       {/* Header */}
       <header className={styles.header}>
-        <p className={styles.eyebrow}>Praksis</p>
-        <h1 className={styles.title}>AnThes Dynamics</h1>
+        <p className={styles.eyebrow}>{t('homeEyebrow', language) || 'Praksis'}</p>
+        <h1 className={styles.title}>{t('homeTitle', language) || 'AnThes Dynamics'}</h1>
         <p className={styles.subtitle}>
-          Tre discipliner. Én krop. Hvor gammel visdom
-          og moderne åndedrætsforskning mødes.
+          {t('homeSubtitle', language) || 'Tre discipliner. Én krop. Hvor gammel visdom og moderne åndedrætsforskning mødes.'}
         </p>
       </header>
 
@@ -96,31 +96,27 @@ export default function HomePage({ onNavigate }) {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Ansigtsbehandling</p>
-              <h2 className={styles.cardTitle}>ALT</h2>
-              <p className={styles.cardSubtitle}>AnsigtsLøftningsTeknik</p>
+              <p className={styles.cardLabel}>{t('homeAltLabel', language) || 'Ansigtsbehandling'}</p>
+              <h2 className={styles.cardTitle}>{t('homeAltTitle', language) || 'ALT'}</h2>
+              <p className={styles.cardSubtitle}>{t('homeAltSubtitle', language) || 'AnsigtsLøftningsTeknik'}</p>
             </div>
             <span className={styles.cardChevron}>{expandedCard === 'alt' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              Seks lag fra hud til sjæl. Stanley Rosenbergs skånsomme bindevævsteknik
-              arbejder gennem fem kranienerver — og genopretter ansigtet og, via den
-              polyvagale forbindelse, hele nervesystemet. 97 muskler. Seks sessioner.
-              Én forvandling.
+              {t('homeAltDesc', language) || 'Seks lag fra hud til sjæl. Stanley Rosenbergs skånsomme bindevævsteknik arbejder gennem fem kranienerver — og genopretter ansigtet og, via den polyvagale forbindelse, hele nervesystemet. 97 muskler. Seks sessioner. Én forvandling.'}
             </p>
             <p className={styles.cardDescription2}>
-              Ansigtet er kroppens mest nerveforbundne område. Når bindevævet i de seks lag
-              løsnes, frigøres ikke blot spænding — der åbnes en direkte kanal til det
-              parasympatiske nervesystem. Resultatet er en forandring der kan ses udenpå
-              og mærkes indeni.
+              {t('homeAltDesc2', language) || 'Ansigtet er kroppens mest nerveforbundne område. Når bindevævet i de seks lag løsnes, frigøres ikke blot spænding — der åbnes en direkte kanal til det parasympatiske nervesystem. Resultatet er en forandring der kan ses udenpå og mærkes indeni.'}
             </p>
             <ul className={styles.cardBullets}>
-              <li>Arbejder med fem kranienerver der styrer ansigt og hals</li>
-              <li>Seks lag: hud, subkutant fedt, SMAS, muskler, dybt fedt, periost</li>
-              <li>Aktiverer den ventrale vagusnerve via ansigtsmuskulaturen</li>
-              <li>97 ansigtsmuskler engageres i en systematisk protokol</li>
-              <li>Forbinder fysisk vævsarbejde med polyvagal regulering</li>
+              {(t('homeAltBullets', language) || [
+                'Arbejder med fem kranienerver der styrer ansigt og hals',
+                'Seks lag: hud, subkutant fedt, SMAS, muskler, dybt fedt, periost',
+                'Aktiverer den ventrale vagusnerve via ansigtsmuskulaturen',
+                '97 ansigtsmuskler engageres i en systematisk protokol',
+                'Forbinder fysisk vævsarbejde med polyvagal regulering',
+              ]).map((b, i) => <li key={i}>{b}</li>)}
             </ul>
           </div>
           <span className={styles.cardAccent} style={{ background: 'var(--color-alt)' }} />
@@ -141,32 +137,27 @@ export default function HomePage({ onNavigate }) {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Åndedræt</p>
-              <h2 className={styles.cardTitle}>Wim Hof</h2>
-              <p className={styles.cardSubtitle}>Metoden</p>
+              <p className={styles.cardLabel}>{t('homeWhmLabel', language) || 'Åndedræt'}</p>
+              <h2 className={styles.cardTitle}>{t('homeWhmTitle', language) || 'Wim Hof'}</h2>
+              <p className={styles.cardSubtitle}>{t('homeWhmSubtitle', language) || 'Metoden'}</p>
             </div>
             <span className={styles.cardChevron}>{expandedCard === 'whm' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              Åndedræt, kulde, mindset. Tre søjler der åbner det autonome nervesystem
-              — og beviser at viljen kan nå derhen, hvor medicinen sagde det var umuligt.
-              Kontrolleret hyperventilation ændrer blodkemien. Kuldeeksponering træner
-              det sympatiske respons. Dialektikken mellem komfort og stress skaber en ny
-              kapacitet.
+              {t('homeWhmDesc', language) || 'Åndedræt, kulde, mindset. Tre søjler der åbner det autonome nervesystem — og beviser at viljen kan nå derhen, hvor medicinen sagde det var umuligt. Kontrolleret hyperventilation ændrer blodkemien. Kuldeeksponering træner det sympatiske respons. Dialektikken mellem komfort og stress skaber en ny kapacitet.'}
             </p>
             <p className={styles.cardDescription2}>
-              Wim Hof-metoden er mere end vejrtrækningsøvelser. Det er et system der
-              træner nervesystemets evne til at skifte mellem aktivering og ro — og dermed
-              opbygger en resiliens der rækker langt ud over selve praksis. Videnskabelige
-              studier har vist målbar påvirkning af immunforsvaret og inflammationsmarkører.
+              {t('homeWhmDesc2', language) || 'Wim Hof-metoden er mere end vejrtrækningsøvelser. Det er et system der træner nervesystemets evne til at skifte mellem aktivering og ro — og dermed opbygger en resiliens der rækker langt ud over selve praksis. Videnskabelige studier har vist målbar påvirkning af immunforsvaret og inflammationsmarkører.'}
             </p>
             <ul className={styles.cardBullets}>
-              <li>Kontrolleret hyperventilation øger blodets pH og sænker CO₂</li>
-              <li>Kuldeeksponering aktiverer brunt fedtvæv og noradrenalin</li>
-              <li>Retentionsfasen træner kroppens tolerans for stress</li>
-              <li>Bevidst mindset forbinder de fysiske teknikker med mental fokus</li>
-              <li>Dokumenteret effekt på immunrespons i kliniske studier</li>
+              {(t('homeWhmBullets', language) || [
+                'Kontrolleret hyperventilation øger blodets pH og sænker CO₂',
+                'Kuldeeksponering aktiverer brunt fedtvæv og noradrenalin',
+                'Retentionsfasen træner kroppens tolerans for stress',
+                'Bevidst mindset forbinder de fysiske teknikker med mental fokus',
+                'Dokumenteret effekt på immunrespons i kliniske studier',
+              ]).map((b, i) => <li key={i}>{b}</li>)}
             </ul>
           </div>
           <span className={styles.cardAccent} style={{ background: 'var(--color-whm)' }} />
@@ -191,32 +182,27 @@ export default function HomePage({ onNavigate }) {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Lytning</p>
-              <h2 className={styles.cardTitle}>Kraniosakral</h2>
-              <p className={styles.cardSubtitle}>Terapi</p>
+              <p className={styles.cardLabel}>{t('homeCstLabel', language) || 'Lytning'}</p>
+              <h2 className={styles.cardTitle}>{t('homeCstTitle', language) || 'Kraniosakral'}</h2>
+              <p className={styles.cardSubtitle}>{t('homeCstSubtitle', language) || 'Terapi'}</p>
             </div>
             <span className={styles.cardChevron}>{expandedCard === 'cst' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              Tre rytmer, én stilhed. Fra A.T. Still til James Jealous — at lytte til
-              kroppens dybeste rytmer med fem grams tryk og uendelig tålmodighed. Det
-              kraniosakrale system pulserer med Primary Respiration, en ufrivillig rytme
-              uafhængig af hjerteslag og lungeåndedræt. Det er livets mest grundlæggende
-              udtryk i form.
+              {t('homeCstDesc', language) || 'Tre rytmer, én stilhed. Fra A.T. Still til James Jealous — at lytte til kroppens dybeste rytmer med fem grams tryk og uendelig tålmodighed. Det kraniosakrale system pulserer med Primary Respiration, en ufrivillig rytme uafhængig af hjerteslag og lungeåndedræt. Det er livets mest grundlæggende udtryk i form.'}
             </p>
             <p className={styles.cardDescription2}>
-              Kraniosakral terapi hviler på princippet om at kroppen besidder en medfødt
-              selvregulerende intelligens. Ved at lytte med ekstrem sensitivitet kan
-              behandleren opfange subtile bevægelsesmønstre der afslører, hvor systemet
-              holder fast — og hvor det er klar til at slippe.
+              {t('homeCstDesc2', language) || 'Kraniosakral terapi hviler på princippet om at kroppen besidder en medfødt selvregulerende intelligens. Ved at lytte med ekstrem sensitivitet kan behandleren opfange subtile bevægelsesmønstre der afslører, hvor systemet holder fast — og hvor det er klar til at slippe.'}
             </p>
             <ul className={styles.cardBullets}>
-              <li>CRI: Kranial rytmisk impuls — 8–12 cykler/min</li>
-              <li>Mid-tide: Langsommere rytme — 2–3 cykler/min</li>
-              <li>Long tide: Den dybeste rytme — ca. 1 cyklus/100 sek.</li>
-              <li>Still point: Øjeblikke af fuldstændig stilhed og reorganisering</li>
-              <li>5 grams berøring — lettere end en sommerfugls landing</li>
+              {(t('homeCstBullets', language) || [
+                'CRI: Kranial rytmisk impuls — 8–12 cykler/min',
+                'Mid-tide: Langsommere rytme — 2–3 cykler/min',
+                'Long tide: Den dybeste rytme — ca. 1 cyklus/100 sek.',
+                'Still point: Øjeblikke af fuldstændig stilhed og reorganisering',
+                '5 grams berøring — lettere end en sommerfugls landing',
+              ]).map((b, i) => <li key={i}>{b}</li>)}
             </ul>
           </div>
           <span className={styles.cardAccent} style={{ background: 'var(--color-cst)' }} />
@@ -286,33 +272,27 @@ export default function HomePage({ onNavigate }) {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Den røde tråd</p>
-              <h2 className={styles.cardTitle}>Nervesystemet</h2>
-              <p className={styles.cardSubtitle}>Hvor alle tre mødes</p>
+              <p className={styles.cardLabel}>{t('homeNsLabel', language) || 'Den røde tråd'}</p>
+              <h2 className={styles.cardTitle}>{t('homeNsTitle', language) || 'Nervesystemet'}</h2>
+              <p className={styles.cardSubtitle}>{t('homeNsSubtitle', language) || 'Hvor alle tre mødes'}</p>
             </div>
             <span className={styles.cardChevron}>{expandedNerve === 'ns' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              Alle tre praksisser deler én akse: det autonome nervesystem.
-              ALT arbejder gennem de fem kranienerver for social kontakt. Wim Hof
-              træner skiftet mellem sympatisk aktivering og parasympatisk hvile.
-              Kraniosakral terapi lytter til Primary Respiration — nervesystemets
-              dybeste udtryk for medfødt intelligens. Forskellige indgange.
-              Samme destination.
+              {t('homeNsDesc', language) || 'Alle tre praksisser deler én akse: det autonome nervesystem. ALT arbejder gennem de fem kranienerver for social kontakt. Wim Hof træner skiftet mellem sympatisk aktivering og parasympatisk hvile. Kraniosakral terapi lytter til Primary Respiration — nervesystemets dybeste udtryk for medfødt intelligens. Forskellige indgange. Samme destination.'}
             </p>
             <p className={styles.cardDescription2}>
-              Det autonome nervesystem er kroppens usynlige dirigent. Det styrer hjerterytme,
-              fordøjelse, immunrespons og følelsesmæssig regulering — alt sammen uden bevidst
-              kontrol. Når de tre praksisser mødes her, skabes en synergi der overstiger
-              summen af de enkelte dele.
+              {t('homeNsDesc2', language) || 'Det autonome nervesystem er kroppens usynlige dirigent. Det styrer hjerterytme, fordøjelse, immunrespons og følelsesmæssig regulering — alt sammen uden bevidst kontrol. Når de tre praksisser mødes her, skabes en synergi der overstiger summen af de enkelte dele.'}
             </p>
             <ul className={styles.cardBullets}>
-              <li>Vagusnerven forbinder hjerne, hjerte, lunger og tarm</li>
-              <li>80% af vagus' fibre sender information opad — fra krop til hjerne</li>
-              <li>Ansigtsnerven (CN VII) er direkte koblet til trygheds-signalering</li>
-              <li>Åndedræt er den eneste autonome funktion vi bevidst kan styre</li>
-              <li>De tre praksisser tilgår det samme system fra tre forskellige vinkler</li>
+              {(t('homeNsBullets', language) || [
+                'Vagusnerven forbinder hjerne, hjerte, lunger og tarm',
+                '80% af vagus\' fibre sender information opad — fra krop til hjerne',
+                'Ansigtsnerven (CN VII) er direkte koblet til trygheds-signalering',
+                'Åndedræt er den eneste autonome funktion vi bevidst kan styre',
+                'De tre praksisser tilgår det samme system fra tre forskellige vinkler',
+              ]).map((b, i) => <li key={i}>{b}</li>)}
             </ul>
           </div>
         </div>
@@ -335,31 +315,27 @@ export default function HomePage({ onNavigate }) {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Feedback-kredsløbet</p>
-              <h2 className={styles.cardTitle}>Krop ⇄ Sind</h2>
-              <p className={styles.cardSubtitle}>Tovejs-intelligens</p>
+              <p className={styles.cardLabel}>{t('homeLoopLabel', language) || 'Feedback-kredsløbet'}</p>
+              <h2 className={styles.cardTitle}>{t('homeLoopTitle', language) || 'Krop ⇄ Sind'}</h2>
+              <p className={styles.cardSubtitle}>{t('homeLoopSubtitle', language) || 'Tovejs-intelligens'}</p>
             </div>
             <span className={styles.cardChevron}>{expandedNerve === 'loop' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              Ansigtet former nervesystemet. Nervesystemet former følelsen.
-              Følelsen former relationen. Og relationen omformer kroppen. Dette
-              tovejs-kredsløb er motoren i alle tre praksisser — vævsarbejde
-              ændrer følelse, åndedræt ændrer kemi, lytning ændrer alt.
+              {t('homeLoopDesc', language) || 'Ansigtet former nervesystemet. Nervesystemet former følelsen. Følelsen former relationen. Og relationen omformer kroppen. Dette tovejs-kredsløb er motoren i alle tre praksisser — vævsarbejde ændrer følelse, åndedræt ændrer kemi, lytning ændrer alt.'}
             </p>
             <p className={styles.cardDescription2}>
-              Denne tovejs-intelligens er ikke abstrakt filosofi — den er fysiologisk
-              virkelighed. Kroppens fascia-netværk, nervebaner og væskestrømme danner
-              et kommunikationssystem der konstant sender information i begge retninger.
-              At arbejde med kroppen er at arbejde med sindet, og omvendt.
+              {t('homeLoopDesc2', language) || 'Denne tovejs-intelligens er ikke abstrakt filosofi — den er fysiologisk virkelighed. Kroppens fascia-netværk, nervebaner og væskestrømme danner et kommunikationssystem der konstant sender information i begge retninger. At arbejde med kroppen er at arbejde med sindet, og omvendt.'}
             </p>
             <ul className={styles.cardBullets}>
-              <li>Bottom-up: Kropslige ændringer påvirker følelser og tanker</li>
-              <li>Top-down: Mental intention påvirker vævstilstand og kemi</li>
-              <li>Fascia forbinder alle strukturer i én kontinuerlig vævsmatrix</li>
-              <li>Interoception — evnen til at mærke kroppen indefra — er nøglen</li>
-              <li>Regulering sker i relationen mellem terapeut og klient</li>
+              {(t('homeLoopBullets', language) || [
+                'Bottom-up: Kropslige ændringer påvirker følelser og tanker',
+                'Top-down: Mental intention påvirker vævstilstand og kemi',
+                'Fascia forbinder alle strukturer i én kontinuerlig vævsmatrix',
+                'Interoception — evnen til at mærke kroppen indefra — er nøglen',
+                'Regulering sker i relationen mellem terapeut og klient',
+              ]).map((b, i) => <li key={i}>{b}</li>)}
             </ul>
           </div>
         </div>
@@ -418,32 +394,27 @@ export default function HomePage({ onNavigate }) {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Gå dybere</p>
-              <h2 className={styles.cardTitle}>Polyvagal teori</h2>
-              <p className={styles.cardSubtitle}>Videnskaben om tryghed</p>
+              <p className={styles.cardLabel}>{t('homePolyvagalLabel', language) || 'Gå dybere'}</p>
+              <h2 className={styles.cardTitle}>{t('homePolyvagalTitle', language) || 'Polyvagal teori'}</h2>
+              <p className={styles.cardSubtitle}>{t('homePolyvagalSubtitle', language) || 'Videnskaben om tryghed'}</p>
             </div>
             <span className={styles.cardChevron}>{expandedDepth === 'polyvagal' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              Stephen Porges' polyvagale teori afdækker tre tilstande i det autonome
-              nervesystem: ventral vagal (social kontakt, tryghed), sympatisk
-              (kamp/flugt) og dorsal vagal (frys, nedlukning). Alle tre praksisser
-              i AT Dynamics arbejder på at genoprette ventral vagal funktion — den
-              tilstand hvor heling, forbindelse og vækst bliver mulig.
+              {t('homePolyvagalDesc', language) || 'Stephen Porges\' polyvagale teori afdækker tre tilstande i det autonome nervesystem: ventral vagal (social kontakt, tryghed), sympatisk (kamp/flugt) og dorsal vagal (frys, nedlukning). Alle tre praksisser i AT Dynamics arbejder på at genoprette ventral vagal funktion — den tilstand hvor heling, forbindelse og vækst bliver mulig.'}
             </p>
             <p className={styles.cardDescription2}>
-              Den polyvagale forståelse revolutionerede synet på trauma og regulering.
-              Det handler ikke om at undgå stress — men om at opbygge nervesystemets
-              kapacitet til at bevæge sig fleksibelt mellem tilstande og vende tilbage
-              til tryghed. Det er præcis det, de tre praksisser træner.
+              {t('homePolyvagalDesc2', language) || 'Den polyvagale forståelse revolutionerede synet på trauma og regulering. Det handler ikke om at undgå stress — men om at opbygge nervesystemets kapacitet til at bevæge sig fleksibelt mellem tilstande og vende tilbage til tryghed. Det er præcis det, de tre praksisser træner.'}
             </p>
             <ul className={styles.cardBullets}>
-              <li>Ventral vagal: Tryghed, social kontakt, kreativitet og heling</li>
-              <li>Sympatisk: Mobilisering, kamp-eller-flugt, handling under pres</li>
-              <li>Dorsal vagal: Nedlukning, frys, energibesparelse, dissociation</li>
-              <li>Neuroception: Nervesystemets ubevidste scanning af sikkerhed</li>
-              <li>Co-regulering: Vi regulerer hinanden gennem nærvær og stemmeklang</li>
+              {(t('homePolyvagalBullets', language) || [
+                'Ventral vagal: Tryghed, social kontakt, kreativitet og heling',
+                'Sympatisk: Mobilisering, kamp-eller-flugt, handling under pres',
+                'Dorsal vagal: Nedlukning, frys, energibesparelse, dissociation',
+                'Neuroception: Nervesystemets ubevidste scanning af sikkerhed',
+                'Co-regulering: Vi regulerer hinanden gennem nærvær og stemmeklang',
+              ]).map((b, i) => <li key={i}>{b}</li>)}
             </ul>
           </div>
         </div>
@@ -462,32 +433,27 @@ export default function HomePage({ onNavigate }) {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Den dybeste rytme</p>
-              <h2 className={styles.cardTitle}>Primary Respiration</h2>
-              <p className={styles.cardSubtitle}>Livets åndedræt under åndedrættet</p>
+              <p className={styles.cardLabel}>{t('homePrimaryLabel', language) || 'Den dybeste rytme'}</p>
+              <h2 className={styles.cardTitle}>{t('homePrimaryTitle', language) || 'Primary Respiration'}</h2>
+              <p className={styles.cardSubtitle}>{t('homePrimarySubtitle', language) || 'Livets åndedræt under åndedrættet'}</p>
             </div>
             <span className={styles.cardChevron}>{expandedDepth === 'primary' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <p className={styles.cardDescription}>
-              Under lungeåndedrættet og under hjerteSlaget findes en langsommere,
-              finere rytme. Primary Respiration — den kraniosakrale puls — bevæger
-              sig med 6–12 cykler i minuttet. Det er kroppens mest grundlæggende
-              udtryk for liv, til stede fra den embryologiske udvikling til døden.
-              Når denne rytme er fri, følger sundhed.
+              {t('homePrimaryDesc', language) || 'Under lungeåndedrættet og under hjerteSlaget findes en langsommere, finere rytme. Primary Respiration — den kraniosakrale puls — bevæger sig med 6–12 cykler i minuttet. Det er kroppens mest grundlæggende udtryk for liv, til stede fra den embryologiske udvikling til døden. Når denne rytme er fri, følger sundhed.'}
             </p>
             <p className={styles.cardDescription2}>
-              William Garner Sutherland opdagede denne rytme i begyndelsen af 1900-tallet
-              og kaldte den "Breath of Life". Senere udviklede James Jealous den biodynamiske
-              tilgang, der betragter denne rytme som et udtryk for kroppens iboende
-              sundhed — ikke en mekanisk bevægelse, men en levende kraft.
+              {t('homePrimaryDesc2', language) || 'William Garner Sutherland opdagede denne rytme i begyndelsen af 1900-tallet og kaldte den "Breath of Life". Senere udviklede James Jealous den biodynamiske tilgang, der betragter denne rytme som et udtryk for kroppens iboende sundhed — ikke en mekanisk bevægelse, men en levende kraft.'}
             </p>
             <ul className={styles.cardBullets}>
-              <li>Opdaget af W.G. Sutherland — elev af osteopatiens grundlægger</li>
-              <li>Cerebrospinalvæsken pulserer uafhængigt af hjerte og lunger</li>
-              <li>Rytmen er til stede fra embryonalperioden til efter døden</li>
-              <li>Biodynamisk tilgang: At lytte til sundhed frem for at fixe sygdom</li>
-              <li>Still point-induktion kan nulstille hele nervesystemets tonus</li>
+              {(t('homePrimaryBullets', language) || [
+                'Opdaget af W.G. Sutherland — elev af osteopatiens grundlægger',
+                'Cerebrospinalvæsken pulserer uafhængigt af hjerte og lunger',
+                'Rytmen er til stede fra embryonalperioden til efter døden',
+                'Biodynamisk tilgang: At lytte til sundhed frem for at fixe sygdom',
+                'Still point-induktion kan nulstille hele nervesystemets tonus',
+              ]).map((b, i) => <li key={i}>{b}</li>)}
             </ul>
           </div>
         </div>
@@ -496,12 +462,10 @@ export default function HomePage({ onNavigate }) {
       {/* ═══ DAILY READING ═══ */}
       <section className={styles.todaySection}>
         <div className={styles.todayCard}>
-          <p className={styles.todayLabel}>Dagens læsning</p>
+          <p className={styles.todayLabel}>{t('homeTodayLabel', language) || 'Dagens læsning'}</p>
           <p className={styles.todayQuote}>
             <em>
-              Kroppen er ikke noget der skal repareres — den er en proces
-              der skal lyttes til. Hvert åndedræt, hver stilhed, hver
-              berøring er en samtale med noget dybere end tanken.
+              {t('homeTodayQuote', language) || 'Kroppen er ikke noget der skal repareres — den er en proces der skal lyttes til. Hvert åndedræt, hver stilhed, hver berøring er en samtale med noget dybere end tanken.'}
             </em>
           </p>
         </div>
@@ -525,11 +489,10 @@ export default function HomePage({ onNavigate }) {
             </svg>
           </div>
           <div className={styles.deeperTeaserContent}>
-            <p className={styles.deeperTeaserLabel}>Udforsk i dybden</p>
-            <h2 className={styles.deeperTeaserTitle}>Gå dybere ind i de tre praksisser</h2>
+            <p className={styles.deeperTeaserLabel}>{t('homeDeeperTeaserLabel', language) || 'Udforsk i dybden'}</p>
+            <h2 className={styles.deeperTeaserTitle}>{t('homeDeeperTeaserTitle', language) || 'Gå dybere ind i de tre praksisser'}</h2>
             <p className={styles.deeperTeaserSub}>
-              Detaljeret viden, interaktive øvelser og den fulde sammenhæng
-              mellem ansigt, åndedræt og kraniosakral terapi.
+              {t('homeDeeperTeaserSub', language) || 'Detaljeret viden, interaktive øvelser og den fulde sammenhæng mellem ansigt, åndedræt og kraniosakral terapi.'}
             </p>
           </div>
           <span className={styles.deeperTeaserArrow}>→</span>
@@ -540,24 +503,24 @@ export default function HomePage({ onNavigate }) {
       <section className={styles.pillsSection}>
         <div className={styles.pill}>
           <span className={styles.pillDot} style={{ background: 'var(--color-alt)' }} />
-          <span className={styles.pillText}>Din sessionsplan</span>
+          <span className={styles.pillText}>{t('homePill1', language) || 'Din sessionsplan'}</span>
         </div>
         <div className={styles.pill}>
           <span className={styles.pillDot} style={{ background: 'var(--color-whm)' }} />
-          <span className={styles.pillText}>Åndedrætspraksis</span>
+          <span className={styles.pillText}>{t('homePill2', language) || 'Åndedrætspraksis'}</span>
         </div>
         <div className={styles.pill}>
           <span className={styles.pillDot} style={{ background: 'var(--color-cst)' }} />
-          <span className={styles.pillText}>De tre rytmer</span>
+          <span className={styles.pillText}>{t('homePill3', language) || 'De tre rytmer'}</span>
         </div>
         <div className={styles.pill}>
           <span className={styles.pillDot} style={{ background: 'var(--text-secondary)' }} />
-          <span className={styles.pillText}>Dyk dybere</span>
+          <span className={styles.pillText}>{t('homePill4', language) || 'Dyk dybere'}</span>
         </div>
       </section>
 
       {/* Bottom spacer for nav */}
-      <ScrollToTop />
+      <ScrollToTop language={language} />
       <div className={styles.bottomSpacer} />
     </main>
   )

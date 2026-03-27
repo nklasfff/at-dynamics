@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import styles from './DeeperPage.module.css'
 import ScrollToTop from './ScrollToTop'
+import { t } from '../translations'
 
-export default function CranioPage() {
+export default function CranioPage({ language }) {
   const [expanded, setExpanded] = useState(null)
   const toggle = (id) => setExpanded(expanded === id ? null : id)
 
@@ -11,11 +12,10 @@ export default function CranioPage() {
       <div className={styles.ambientGlow} />
 
       <header className={styles.header}>
-        <p className={styles.eyebrow}>Lytning</p>
-        <h1 className={styles.title}>Kraniosakral</h1>
+        <p className={styles.eyebrow}>{t('cranioEyebrow', language) || 'Lytning'}</p>
+        <h1 className={styles.title}>{t('cranioTitle', language) || 'Kraniosakral'}</h1>
         <p className={styles.subtitle}>
-          Terapi bygget på stilhed, berøring og kroppens
-          ældste rytmer. At lytte til det, der allerede ved.
+          {t('cranioSubtitle', language) || 'Terapi bygget på stilhed, berøring og kroppens ældste rytmer. At lytte til det, der allerede ved.'}
         </p>
       </header>
 
@@ -75,36 +75,28 @@ export default function CranioPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Historien</p>
-              <h2 className={styles.cardTitle}>Fra Still til Jealous</h2>
-              <p className={styles.cardSubtitle}>150 år med at lytte til kroppen</p>
+              <p className={styles.cardLabel}>{t('cranioOriginsLabel', language) || 'Historien'}</p>
+              <h2 className={styles.cardTitle}>{t('cranioOriginsTitle', language) || 'Fra Still til Jealous'}</h2>
+              <p className={styles.cardSubtitle}>{t('cranioOriginsSubtitle', language) || '150 år med at lytte til kroppen'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'origins' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Andrew Taylor Still grundlagde osteopatien i 1874 ud fra en radikal
-                overbevisning: kroppen besidder en iboende selvhelbredende intelligens, og
-                lægens opgave er at fjerne hindringerne for denne intelligens. Hans elev
-                William Garner Sutherland bragte denne tanke videre til kraniet og opdagede
-                i 1899, at de kranielle suturer er designet til bevægelse — ikke sammenvoksning.
+                {t('cranioOriginsText', language) || 'Andrew Taylor Still grundlagde osteopatien i 1874 ud fra en radikal overbevisning: kroppen besidder en iboende selvhelbredende intelligens, og lægens opgave er at fjerne hindringerne for denne intelligens. Hans elev William Garner Sutherland bragte denne tanke videre til kraniet og opdagede i 1899, at de kranielle suturer er designet til bevægelse — ikke sammenvoksning.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Sutherland brugte de næste femti år på at forfine sin palpation og udvide
-                sin forståelse. Han gik fra en mekanisk model (kraniel osteopati) til en
-                levende, biodynamisk forståelse, hvor behandleren samarbejder med kroppens
-                egne kræfter snarere end at manipulere dem. James Jealous arvede denne
-                tradition og formaliserede den biodynamiske tilgang i 1990erne — en praksis
-                hvor hænderne ikke gør, men modtager. Hvor stilhed ikke er fravær, men
-                den mest aktive tilstand af alle.
+                {t('cranioOriginsTextExtra', language) || 'Sutherland brugte de næste femti år på at forfine sin palpation og udvide sin forståelse. Han gik fra en mekanisk model (kraniel osteopati) til en levende, biodynamisk forståelse, hvor behandleren samarbejder med kroppens egne kræfter snarere end at manipulere dem. James Jealous arvede denne tradition og formaliserede den biodynamiske tilgang i 1990erne — en praksis hvor hænderne ikke gør, men modtager. Hvor stilhed ikke er fravær, men den mest aktive tilstand af alle.'}
               </p>
               <ul className={styles.bullets}>
-                <li>A.T. Still (1874): kroppen som selvregulerende organisme</li>
-                <li>Sutherland (1899): kranieknoglerne er designet til bevægelse</li>
-                <li>50 års palpation: fra mekanik til biodynamik</li>
-                <li>James Jealous (1990erne): formalisering af den biodynamiske tilgang</li>
-                <li>Tre generationers arv: fra manipulation til lytning</li>
+                {(t('cranioOriginsBullets', language) || [
+                  'A.T. Still (1874): kroppen som selvregulerende organisme',
+                  'Sutherland (1899): kranieknoglerne er designet til bevægelse',
+                  '50 års palpation: fra mekanik til biodynamik',
+                  'James Jealous (1990erne): formalisering af den biodynamiske tilgang',
+                  'Tre generationers arv: fra manipulation til lytning',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -130,36 +122,28 @@ export default function CranioPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>De tre tidevande</p>
-              <h2 className={styles.cardTitle}>CRI, Mid-Tide, Long Tide</h2>
-              <p className={styles.cardSubtitle}>Tre hastigheder af liv</p>
+              <p className={styles.cardLabel}>{t('cranioRhythmsLabel', language) || 'De tre tidevande'}</p>
+              <h2 className={styles.cardTitle}>{t('cranioRhythmsTitle', language) || 'CRI, Mid-Tide, Long Tide'}</h2>
+              <p className={styles.cardSubtitle}>{t('cranioRhythmsSubtitle', language) || 'Tre hastigheder af liv'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'rhythms' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Den hurtigste rytme — Cranial Rhythmic Impulse — bevæger sig med otte
-                til tolv cykler i minuttet. Det er denne rytme, de fleste behandlere
-                først lærer at palpere. Den afspejler den mekaniske bevægelse af
-                cerebrospinalvæsken og knoglerne. CRI er kroppens fysiologiske
-                kommentar — den fortæller, hvor der er frihed og hvor der er restriktion.
+                {t('cranioRhythmsText', language) || 'Den hurtigste rytme — Cranial Rhythmic Impulse — bevæger sig med otte til tolv cykler i minuttet. Det er denne rytme, de fleste behandlere først lærer at palpere. Den afspejler den mekaniske bevægelse af cerebrospinalvæsken og knoglerne. CRI er kroppens fysiologiske kommentar — den fortæller, hvor der er frihed og hvor der er restriktion.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Mid-Tide er langsommere — omkring to en halv cyklus i minuttet — og
-                tilhører et andet perceptuelt felt. Her mærker behandleren ikke
-                strukturer men kræfter. Det er det organiserende princip der former og
-                opretholder vævets arkitektur. Long Tide er den langsomste: én cyklus
-                på hundrede sekunder. Den opleves som en universel tidevandsbevægelse
-                der transcenderer det individuelle. Sutherland kaldte den "Breath of Life"
-                — livets åndedræt, der var til stede før det første lungeåndedrag.
+                {t('cranioRhythmsTextExtra', language) || 'Mid-Tide er langsommere — omkring to en halv cyklus i minuttet — og tilhører et andet perceptuelt felt. Her mærker behandleren ikke strukturer men kræfter. Det er det organiserende princip der former og opretholder vævets arkitektur. Long Tide er den langsomste: én cyklus på hundrede sekunder. Den opleves som en universel tidevandsbevægelse der transcenderer det individuelle. Sutherland kaldte den "Breath of Life" — livets åndedræt, der var til stede før det første lungeåndedrag.'}
               </p>
               <ul className={styles.bullets}>
-                <li>CRI: mekanik og struktur — den mest håndgribelige rytme</li>
-                <li>Mid-Tide: organiseringskraft — det felt der former vævet</li>
-                <li>Long Tide: universel bevægelse — livets grundpuls</li>
-                <li>Behandleren skifter perceptuelt niveau, ikke teknik</li>
-                <li>Dybere lytning afslører dybere lag af sundhed</li>
+                {(t('cranioRhythmsBullets', language) || [
+                  'CRI: mekanik og struktur — den mest håndgribelige rytme',
+                  'Mid-Tide: organiseringskraft — det felt der former vævet',
+                  'Long Tide: universel bevægelse — livets grundpuls',
+                  'Behandleren skifter perceptuelt niveau, ikke teknik',
+                  'Dybere lytning afslører dybere lag af sundhed',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -223,36 +207,28 @@ export default function CranioPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Væsken</p>
-              <h2 className={styles.cardTitle}>Cerebrospinalvæsken</h2>
-              <p className={styles.cardSubtitle}>Nervesystemets indre ocean</p>
+              <p className={styles.cardLabel}>{t('cranioCsfLabel', language) || 'Væsken'}</p>
+              <h2 className={styles.cardTitle}>{t('cranioCsfTitle', language) || 'Cerebrospinalvæsken'}</h2>
+              <p className={styles.cardSubtitle}>{t('cranioCsfSubtitle', language) || 'Nervesystemets indre ocean'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'csf' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Cerebrospinalvæsken (CSF) omgiver hjernen og rygmarven som et
-                beskyttende vandlag. Den produceres primært i hjernens ventrikler af
-                choroid plexus — små karvævsstrukturer der filtrerer blodet og skaber
-                en klar, næringsrig væske. Dagligt produceres omkring 500 milliliter,
-                og hele volumen udskiftes tre til fire gange i døgnet.
+                {t('cranioCsfText', language) || 'Cerebrospinalvæsken (CSF) omgiver hjernen og rygmarven som et beskyttende vandlag. Den produceres primært i hjernens ventrikler af choroid plexus — små karvævsstrukturer der filtrerer blodet og skaber en klar, næringsrig væske. Dagligt produceres omkring 500 milliliter, og hele volumen udskiftes tre til fire gange i døgnet.'}
               </p>
               <p className={styles.cardTextExtra}>
-                CSF transporterer næringsstoffer til hjernevævet, fjerner
-                stofskifteaffald (inklusive de amyloidproteiner der forbindes med
-                Alzheimers), og fungerer som en hydraulisk stødpude. I kraniosakral
-                forståelse er CSF mere end en passiv væske — den bærer en dynamisk
-                potens, en livskraft som Sutherland anså for at være selve drivkraften
-                bag den kraniosakrale rytme. Når CSF-flowet er frit, afspejler det sig
-                i hele kroppens vitalitet og reguleringsevne.
+                {t('cranioCsfTextExtra', language) || 'CSF transporterer næringsstoffer til hjernevævet, fjerner stofskifteaffald (inklusive de amyloidproteiner der forbindes med Alzheimers), og fungerer som en hydraulisk stødpude. I kraniosakral forståelse er CSF mere end en passiv væske — den bærer en dynamisk potens, en livskraft som Sutherland anså for at være selve drivkraften bag den kraniosakrale rytme. Når CSF-flowet er frit, afspejler det sig i hele kroppens vitalitet og reguleringsevne.'}
               </p>
               <ul className={styles.bullets}>
-                <li>500 ml produceres dagligt — hele volumen udskiftes 3-4 gange</li>
-                <li>Fjerner stofskifteaffald fra hjernen, særligt under søvn</li>
-                <li>Hydraulisk beskyttelse mod stød og tryk</li>
-                <li>Bærer ifølge Sutherland en potens — en livskraft</li>
-                <li>Frit CSF-flow korrelerer med vitalitet og selvregulering</li>
+                {(t('cranioCsfBullets', language) || [
+                  '500 ml produceres dagligt — hele volumen udskiftes 3-4 gange',
+                  'Fjerner stofskifteaffald fra hjernen, særligt under søvn',
+                  'Hydraulisk beskyttelse mod stød og tryk',
+                  'Bærer ifølge Sutherland en potens — en livskraft',
+                  'Frit CSF-flow korrelerer med vitalitet og selvregulering',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -275,35 +251,28 @@ export default function CranioPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Kernen</p>
-              <h2 className={styles.cardTitle}>Dynamic Stillness</h2>
-              <p className={styles.cardSubtitle}>Hvor bevægelse og stilhed mødes</p>
+              <p className={styles.cardLabel}>{t('cranioStillnessLabel', language) || 'Kernen'}</p>
+              <h2 className={styles.cardTitle}>{t('cranioStillnessTitle', language) || 'Dynamic Stillness'}</h2>
+              <p className={styles.cardSubtitle}>{t('cranioStillnessSubtitle', language) || 'Hvor bevægelse og stilhed mødes'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'stillness' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Under alle tre rytmer — under CRI, under Mid-Tide, under Long Tide —
-                findes et felt af fuldstændig stilhed. Ikke tomhed, men en stilhed der
-                vibrerer af potentiale. Sutherland og Jealous kaldte det Dynamic Stillness.
-                Det er det punkt, hvorfra reorganisering spontant opstår i kroppen.
+                {t('cranioStillnessText', language) || 'Under alle tre rytmer — under CRI, under Mid-Tide, under Long Tide — findes et felt af fuldstændig stilhed. Ikke tomhed, men en stilhed der vibrerer af potentiale. Sutherland og Jealous kaldte det Dynamic Stillness. Det er det punkt, hvorfra reorganisering spontant opstår i kroppen.'}
               </p>
               <p className={styles.cardTextExtra}>
-                I den biodynamiske tradition er behandlerens dybeste opgave at facilitere
-                kontakt med dette felt. Det kræver ikke handling men tilstedeværelse — en
-                kvalitet af opmærksomhed der er bred nok til at rumme hele systemet og
-                stille nok til ikke at forstyrre det. Når klienten og behandleren sammen
-                når dette felt, sker der ofte spontane frigørelser: vævsspændinger
-                opløses, åndedrættet fordybes, og der opstår en følelse af dyb hvile der
-                er anderledes end søvn. Det er kroppens eget integrationspunkt.
+                {t('cranioStillnessTextExtra', language) || 'I den biodynamiske tradition er behandlerens dybeste opgave at facilitere kontakt med dette felt. Det kræver ikke handling men tilstedeværelse — en kvalitet af opmærksomhed der er bred nok til at rumme hele systemet og stille nok til ikke at forstyrre det. Når klienten og behandleren sammen når dette felt, sker der ofte spontane frigørelser: vævsspændinger opløses, åndedrættet fordybes, og der opstår en følelse af dyb hvile der er anderledes end søvn. Det er kroppens eget integrationspunkt.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Stilhed er ikke fravær men et aktivt felt af potentiale</li>
-                <li>Spontan reorganisering opstår fra stilhedspunktet</li>
-                <li>Behandleren faciliterer kontakt — handler ikke</li>
-                <li>Klient og behandler når feltet sammen i resonans</li>
-                <li>Kroppens dybeste heling sker fra dette stille centrum</li>
+                {(t('cranioStillnessBullets', language) || [
+                  'Stilhed er ikke fravær men et aktivt felt af potentiale',
+                  'Spontan reorganisering opstår fra stilhedspunktet',
+                  'Behandleren faciliterer kontakt — handler ikke',
+                  'Klient og behandler når feltet sammen i resonans',
+                  'Kroppens dybeste heling sker fra dette stille centrum',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -323,37 +292,28 @@ export default function CranioPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>I praksis</p>
-              <h2 className={styles.cardTitle}>En session</h2>
-              <p className={styles.cardSubtitle}>Hvad sker der på briksen</p>
+              <p className={styles.cardLabel}>{t('cranioSessionLabel', language) || 'I praksis'}</p>
+              <h2 className={styles.cardTitle}>{t('cranioSessionTitle', language) || 'En session'}</h2>
+              <p className={styles.cardSubtitle}>{t('cranioSessionSubtitle', language) || 'Hvad sker der på briksen'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'session' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Du ligger fuldt påklædt på en behandlingsbriks. Behandleren placerer
-                hænderne forsigtigt — typisk under hovedet, ved fødderne eller langs
-                rygsøjlen. Trykket er minimalt: omkring fem gram, svarende til vægten
-                af en femøre. De første minutter handler om kontakt — at lade
-                nervesystemet vænne sig til en tilstedeværelse uden agenda.
+                {t('cranioSessionText', language) || 'Du ligger fuldt påklædt på en behandlingsbriks. Behandleren placerer hænderne forsigtigt — typisk under hovedet, ved fødderne eller langs rygsøjlen. Trykket er minimalt: omkring fem gram, svarende til vægten af en femøre. De første minutter handler om kontakt — at lade nervesystemet vænne sig til en tilstedeværelse uden agenda.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Efterhånden som tilliden etableres, begynder behandleren at palpere de
-                kraniosakrale rytmer. Der lyttens efter restriktioner — steder hvor
-                bevægelsen er begrænset eller asymmetrisk. Behandleren følger vævets
-                egne bevægelsesmønstre, og i den proces opstår der ofte naturlige
-                stilhedspunkter — øjeblikke hvor hele systemet holder pause og
-                reorganiserer. En session varer typisk 45-60 minutter. Mange oplever
-                en dyb afslapning der minder om tilstanden lige før søvn, mens andre
-                mærker subtile bevægelser, varme eller en følelse af udvidelse.
+                {t('cranioSessionTextExtra', language) || 'Efterhånden som tilliden etableres, begynder behandleren at palpere de kraniosakrale rytmer. Der lyttens efter restriktioner — steder hvor bevægelsen er begrænset eller asymmetrisk. Behandleren følger vævets egne bevægelsesmønstre, og i den proces opstår der ofte naturlige stilhedspunkter — øjeblikke hvor hele systemet holder pause og reorganiserer. En session varer typisk 45-60 minutter. Mange oplever en dyb afslapning der minder om tilstanden lige før søvn, mens andre mærker subtile bevægelser, varme eller en følelse af udvidelse.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Fuldt påklædt — ingen olier, ingen krævende stillinger</li>
-                <li>Fem grams berøring — blødere end de fleste kan forestille sig</li>
-                <li>Behandleren lytter med hænderne efter bevægelse og restriktion</li>
-                <li>Stilhedspunkter opstår spontant og er tegn på reorganisering</li>
-                <li>45-60 minutter i en tilstand mellem vågen og sovende</li>
+                {(t('cranioSessionBullets', language) || [
+                  'Fuldt påklædt — ingen olier, ingen krævende stillinger',
+                  'Fem grams berøring — blødere end de fleste kan forestille sig',
+                  'Behandleren lytter med hænderne efter bevægelse og restriktion',
+                  'Stilhedspunkter opstår spontant og er tegn på reorganisering',
+                  '45-60 minutter i en tilstand mellem vågen og sovende',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -361,7 +321,7 @@ export default function CranioPage() {
         </div>
       </section>
 
-      <ScrollToTop />
+      <ScrollToTop language={language} />
       <div className={styles.bottomSpacer} />
     </main>
   )

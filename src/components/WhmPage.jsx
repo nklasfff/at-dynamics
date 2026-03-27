@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import styles from './DeeperPage.module.css'
 import ScrollToTop from './ScrollToTop'
+import { t } from '../translations'
 
-export default function WhmPage() {
+export default function WhmPage({ language }) {
   const [expanded, setExpanded] = useState(null)
   const toggle = (id) => setExpanded(expanded === id ? null : id)
 
@@ -11,11 +12,10 @@ export default function WhmPage() {
       <div className={styles.ambientGlow} />
 
       <header className={styles.header}>
-        <p className={styles.eyebrow}>Åndedræt</p>
-        <h1 className={styles.title}>Wim Hof</h1>
+        <p className={styles.eyebrow}>{t('whmEyebrow', language) || 'Åndedræt'}</p>
+        <h1 className={styles.title}>{t('whmTitle', language) || 'Wim Hof'}</h1>
         <p className={styles.subtitle}>
-          Metoden der forvandler åndedræt til et redskab for
-          fysiologisk kontrol og indre modstandskraft.
+          {t('whmSubtitle', language) || 'Metoden der forvandler åndedræt til et redskab for fysiologisk kontrol og indre modstandskraft.'}
         </p>
       </header>
 
@@ -63,9 +63,9 @@ export default function WhmPage() {
               <animate attributeName="r" values={`3;${5+i};3`} dur={`${8+i*2}s`} repeatCount="indefinite" />
             </circle>
           ))}
-          <text x="175" y="270" fill="var(--color-whm)" fontSize="6" opacity="0.25" fontFamily="Inter, sans-serif">Runde 1</text>
-          <text x="220" y="270" fill="var(--color-whm)" fontSize="6" opacity="0.3" fontFamily="Inter, sans-serif">Runde 2</text>
-          <text x="265" y="270" fill="var(--color-whm)" fontSize="6" opacity="0.4" fontFamily="Inter, sans-serif">Runde 3</text>
+          <text x="175" y="270" fill="var(--color-whm)" fontSize="6" opacity="0.25" fontFamily="Inter, sans-serif">{t('whmSvgRound1', language) || 'Runde 1'}</text>
+          <text x="220" y="270" fill="var(--color-whm)" fontSize="6" opacity="0.3" fontFamily="Inter, sans-serif">{t('whmSvgRound2', language) || 'Runde 2'}</text>
+          <text x="265" y="270" fill="var(--color-whm)" fontSize="6" opacity="0.4" fontFamily="Inter, sans-serif">{t('whmSvgRound3', language) || 'Runde 3'}</text>
         </svg>
       </div>
 
@@ -81,35 +81,28 @@ export default function WhmPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Søjle 1</p>
-              <h2 className={styles.cardTitle}>Åndedrættet</h2>
-              <p className={styles.cardSubtitle}>30 åndedrag der ændrer kemien</p>
+              <p className={styles.cardLabel}>{t('whmBreathLabel', language) || 'Søjle 1'}</p>
+              <h2 className={styles.cardTitle}>{t('whmBreathTitle', language) || 'Åndedrættet'}</h2>
+              <p className={styles.cardSubtitle}>{t('whmBreathSubtitle', language) || '30 åndedrag der ændrer kemien'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'breath' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Grundøvelsen er enkel i sin form men dybtgående i sin virkning. Tredive
-                til fyrre dybe indåndinger gennem næsen, med passive udåndinger, skaber
-                en tilstand af respiratorisk alkalose. Blodets kuldioxidniveau falder,
-                iltbindingen til hæmoglobin strammes (Bohr-effekten), og cellernes
-                faktiske iltforsyning ændrer paradoksalt karakter.
+                {t('whmBreathText', language) || 'Grundøvelsen er enkel i sin form men dybtgående i sin virkning. Tredive til fyrre dybe indåndinger gennem næsen, med passive udåndinger, skaber en tilstand af respiratorisk alkalose. Blodets kuldioxidniveau falder, iltbindingen til hæmoglobin strammes (Bohr-effekten), og cellernes faktiske iltforsyning ændrer paradoksalt karakter.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Efter de tredive åndedrag kommer udåndingen — og så holder man vejret
-                med tomme lunger. Det er her, den egentlige transformation finder sted.
-                Uden luft i lungerne og med ændret blodkemi oplever kroppen en kontrolleret
-                dykning i iltmætning. Milten frigiver ekstra røde blodlegemer. Hjernen
-                skifter til en tilstand af skærpet opmærksomhed. Det sympatiske
-                nervesystem aktiveres — men uden panik, fordi konteksten er frivillig.
+                {t('whmBreathTextExtra', language) || 'Efter de tredive åndedrag kommer udåndingen — og så holder man vejret med tomme lunger. Det er her, den egentlige transformation finder sted. Uden luft i lungerne og med ændret blodkemi oplever kroppen en kontrolleret dykning i iltmætning. Milten frigiver ekstra røde blodlegemer. Hjernen skifter til en tilstand af skærpet opmærksomhed. Det sympatiske nervesystem aktiveres — men uden panik, fordi konteksten er frivillig.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Respiratorisk alkalose: pH stiger fra 7.4 mod 7.75 under øvelsen</li>
-                <li>Bohr-effekten: ilt bindes strammere til hæmoglobin ved lav CO₂</li>
-                <li>Milten kontraherer og frigiver ekstra røde blodlegemer</li>
-                <li>Retentionen er frivillig stress — nervesystemet lærer forskellen</li>
-                <li>Tre runder fordyber effekten progressivt med hver cyklus</li>
+                {(t('whmBreathBullets', language) || [
+                  'Respiratorisk alkalose: pH stiger fra 7.4 mod 7.75 under øvelsen',
+                  'Bohr-effekten: ilt bindes strammere til hæmoglobin ved lav CO₂',
+                  'Milten kontraherer og frigiver ekstra røde blodlegemer',
+                  'Retentionen er frivillig stress — nervesystemet lærer forskellen',
+                  'Tre runder fordyber effekten progressivt med hver cyklus',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -132,36 +125,28 @@ export default function WhmPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Søjle 2</p>
-              <h2 className={styles.cardTitle}>Kulden</h2>
-              <p className={styles.cardSubtitle}>Kroppens ældste træningspartner</p>
+              <p className={styles.cardLabel}>{t('whmColdLabel', language) || 'Søjle 2'}</p>
+              <h2 className={styles.cardTitle}>{t('whmColdTitle', language) || 'Kulden'}</h2>
+              <p className={styles.cardSubtitle}>{t('whmColdSubtitle', language) || 'Kroppens ældste træningspartner'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'cold' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Mennesket er evolutionært designet til temperaturvariation. Moderne
-                komfortkultur — konstant 21 grader, aldrig for koldt, aldrig for varmt —
-                har bedøvet et helt fysiologisk system. Kuldeeksponering genaktiverer det.
-                Når huden registrerer temperaturer under 15 grader, udløser det en kaskade
-                af vaskulære og hormonelle responser.
+                {t('whmColdText', language) || 'Mennesket er evolutionært designet til temperaturvariation. Moderne komfortkultur — konstant 21 grader, aldrig for koldt, aldrig for varmt — har bedøvet et helt fysiologisk system. Kuldeeksponering genaktiverer det. Når huden registrerer temperaturer under 15 grader, udløser det en kaskade af vaskulære og hormonelle responser.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Det perifere karsystem trækker sig sammen for at bevare kerntemperaturen.
-                Brunt fedtvæv — et metabolisk aktivt væv de fleste voksne har i
-                begrænset mængde — aktiveres og begynder at producere varme direkte fra
-                fedt. Noradrenalin udskilles i mængder der er tre til fem gange over
-                baseline. Denne neurotransmitter påvirker opmærksomhed, stemningsleje og
-                immunfunktion. Over tid udvider kroppen sin komfortzone bogstaveligt —
-                den tåler mere, reagerer hurtigere og restituerer bedre.
+                {t('whmColdTextExtra', language) || 'Det perifere karsystem trækker sig sammen for at bevare kerntemperaturen. Brunt fedtvæv — et metabolisk aktivt væv de fleste voksne har i begrænset mængde — aktiveres og begynder at producere varme direkte fra fedt. Noradrenalin udskilles i mængder der er tre til fem gange over baseline. Denne neurotransmitter påvirker opmærksomhed, stemningsleje og immunfunktion. Over tid udvider kroppen sin komfortzone bogstaveligt — den tåler mere, reagerer hurtigere og restituerer bedre.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Vaskulær gymnastik: karrene træner kontraktion og dilatation</li>
-                <li>Brunt fedtvæv producerer varme og øger metabolisk rate</li>
-                <li>Noradrenalin stiger 200-500% under kuldepåvirkning</li>
-                <li>Gradvis progression: fra kolde afslutninger til isbad</li>
-                <li>Komfortzonen udvides med praksis — ikke kun mentalt, men fysiologisk</li>
+                {(t('whmColdBullets', language) || [
+                  'Vaskulær gymnastik: karrene træner kontraktion og dilatation',
+                  'Brunt fedtvæv producerer varme og øger metabolisk rate',
+                  'Noradrenalin stiger 200-500% under kuldepåvirkning',
+                  'Gradvis progression: fra kolde afslutninger til isbad',
+                  'Komfortzonen udvides med praksis — ikke kun mentalt, men fysiologisk',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -220,9 +205,9 @@ export default function WhmPage() {
             </path>
           ))}
           {/* Labels */}
-          <text x="80" y="140" fill="var(--color-alt)" fontSize="6" opacity="0.3" fontFamily="Inter, sans-serif" textAnchor="middle">Komfort</text>
-          <text x="320" y="140" fill="var(--color-whm)" fontSize="6" opacity="0.4" fontFamily="Inter, sans-serif" textAnchor="middle">Kulde</text>
-          <text x="200" y="160" fill="var(--text-primary)" fontSize="7" opacity="0.2" fontFamily="'Cormorant Garamond', serif" textAnchor="middle" fontStyle="italic">Viljen</text>
+          <text x="80" y="140" fill="var(--color-alt)" fontSize="6" opacity="0.3" fontFamily="Inter, sans-serif" textAnchor="middle">{t('whmSvgComfort', language) || 'Komfort'}</text>
+          <text x="320" y="140" fill="var(--color-whm)" fontSize="6" opacity="0.4" fontFamily="Inter, sans-serif" textAnchor="middle">{t('whmSvgCold', language) || 'Kulde'}</text>
+          <text x="200" y="160" fill="var(--text-primary)" fontSize="7" opacity="0.2" fontFamily="'Cormorant Garamond', serif" textAnchor="middle" fontStyle="italic">{t('whmSvgWill', language) || 'Viljen'}</text>
         </svg>
       </div>
 
@@ -239,35 +224,28 @@ export default function WhmPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Søjle 3</p>
-              <h2 className={styles.cardTitle}>Mindset</h2>
-              <p className={styles.cardSubtitle}>Viljen som fysiologisk kraft</p>
+              <p className={styles.cardLabel}>{t('whmMindLabel', language) || 'Søjle 3'}</p>
+              <h2 className={styles.cardTitle}>{t('whmMindTitle', language) || 'Mindset'}</h2>
+              <p className={styles.cardSubtitle}>{t('whmMindSubtitle', language) || 'Viljen som fysiologisk kraft'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'mind' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Det tredje element i Wim Hof Metoden er det mindst synlige men måske det
-                mest afgørende. Mindset er ikke positiv tænkning — det er evnen til at
-                forblive tilstede med ubehag uden at flygte ind i reaktion. Det er
-                forskellen mellem at mærke kulden og at blive overtaget af kulden.
+                {t('whmMindText', language) || 'Det tredje element i Wim Hof Metoden er det mindst synlige men måske det mest afgørende. Mindset er ikke positiv tænkning — det er evnen til at forblive tilstede med ubehag uden at flygte ind i reaktion. Det er forskellen mellem at mærke kulden og at blive overtaget af kulden.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Denne kapacitet er direkte knyttet til præfrontal cortex' kontrol over
-                amygdala — hjernens alarmcentral. Med gentagen øvelse styrkes de neurale
-                forbindelser, der tillader bevidst regulering af stressresponsen. Det
-                handler ikke om at undertrykke frygten, men om at skabe et rum mellem
-                stimulus og respons. I det rum ligger friheden — og det rum vokser med
-                praksis. Mange udøvere rapporterer, at denne evne overføres til andre
-                livsområder: vanskelige samtaler, præstationspres, kroniske smerter.
+                {t('whmMindTextExtra', language) || 'Denne kapacitet er direkte knyttet til præfrontal cortex\' kontrol over amygdala — hjernens alarmcentral. Med gentagen øvelse styrkes de neurale forbindelser, der tillader bevidst regulering af stressresponsen. Det handler ikke om at undertrykke frygten, men om at skabe et rum mellem stimulus og respons. I det rum ligger friheden — og det rum vokser med praksis. Mange udøvere rapporterer, at denne evne overføres til andre livsområder: vanskelige samtaler, præstationspres, kroniske smerter.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Præfrontal regulering af amygdala styrkes med praksis</li>
-                <li>Rummet mellem stimulus og respons kan trænes og udvides</li>
-                <li>Ubehagstolerance overføres til alle livets stressorer</li>
-                <li>Bevidst fokus ændrer den neurochemiske respons på kulde</li>
-                <li>Viljen er ikke undertrykkelse men tilstedeværelse med det der er</li>
+                {(t('whmMindBullets', language) || [
+                  'Præfrontal regulering af amygdala styrkes med praksis',
+                  'Rummet mellem stimulus og respons kan trænes og udvides',
+                  'Ubehagstolerance overføres til alle livets stressorer',
+                  'Bevidst fokus ændrer den neurochemiske respons på kulde',
+                  'Viljen er ikke undertrykkelse men tilstedeværelse med det der er',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -289,36 +267,28 @@ export default function WhmPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Forskningen</p>
-              <h2 className={styles.cardTitle}>Videnskaben bag</h2>
-              <p className={styles.cardSubtitle}>Fra skepsis til peer-reviewed evidens</p>
+              <p className={styles.cardLabel}>{t('whmScienceLabel', language) || 'Forskningen'}</p>
+              <h2 className={styles.cardTitle}>{t('whmScienceTitle', language) || 'Videnskaben bag'}</h2>
+              <p className={styles.cardSubtitle}>{t('whmScienceSubtitle', language) || 'Fra skepsis til peer-reviewed evidens'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'science' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                I 2011 begyndte forskere ved Radboud University Medical Center i Nijmegen
-                at undersøge Wim Hofs påstande videnskabeligt. Resultaterne overraskede
-                det medicinske establishment. Hof demonstrerede under kontrollerede
-                laboratorieforhold, at han kunne påvirke sit medfødte immunsystem
-                viljestyret — noget der blev anset for fysiologisk umuligt.
+                {t('whmScienceText', language) || 'I 2011 begyndte forskere ved Radboud University Medical Center i Nijmegen at undersøge Wim Hofs påstande videnskabeligt. Resultaterne overraskede det medicinske establishment. Hof demonstrerede under kontrollerede laboratorieforhold, at han kunne påvirke sit medfødte immunsystem viljestyret — noget der blev anset for fysiologisk umuligt.'}
               </p>
               <p className={styles.cardTextExtra}>
-                I 2014 publicerede Matthijs Kox og kollegaer et banebrydende studie i
-                Proceedings of the National Academy of Sciences. Tolv trænede frivillige
-                blev injiceret med endotoxin (et bakterielt komponent der normalt udløser
-                influenzalignende symptomer). De trænede deltagere viste signifikant lavere
-                niveauer af proinflammatoriske cytokiner og rapporterede færre symptomer
-                end kontrolgruppen. Studiet etablerede for første gang, at det autonome
-                nervesystem og immunresponsen kan påvirkes gennem bevidst praksis.
+                {t('whmScienceTextExtra', language) || 'I 2014 publicerede Matthijs Kox og kollegaer et banebrydende studie i Proceedings of the National Academy of Sciences. Tolv trænede frivillige blev injiceret med endotoxin (et bakterielt komponent der normalt udløser influenzalignende symptomer). De trænede deltagere viste signifikant lavere niveauer af proinflammatoriske cytokiner og rapporterede færre symptomer end kontrolgruppen. Studiet etablerede for første gang, at det autonome nervesystem og immunresponsen kan påvirkes gennem bevidst praksis.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Radboud-studiet 2014: viljestyret modulering af immunrespons</li>
-                <li>Proinflammatoriske cytokiner reduceret signifikant hos trænede</li>
-                <li>Adrenalin-niveauer steg markant under åndedrættsprotokollen</li>
-                <li>Endotoxin-symptomer halveret sammenlignet med kontrolgruppe</li>
-                <li>Publiceret i PNAS — et af verdens mest respekterede tidsskrifter</li>
+                {(t('whmScienceBullets', language) || [
+                  'Radboud-studiet 2014: viljestyret modulering af immunrespons',
+                  'Proinflammatoriske cytokiner reduceret signifikant hos trænede',
+                  'Adrenalin-niveauer steg markant under åndedrættsprotokollen',
+                  'Endotoxin-symptomer halveret sammenlignet med kontrolgruppe',
+                  'Publiceret i PNAS — et af verdens mest respekterede tidsskrifter',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -338,34 +308,28 @@ export default function WhmPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Praksis</p>
-              <h2 className={styles.cardTitle}>Daglig rytme</h2>
-              <p className={styles.cardSubtitle}>Sådan ser en morgenrutine ud</p>
+              <p className={styles.cardLabel}>{t('whmDailyLabel', language) || 'Praksis'}</p>
+              <h2 className={styles.cardTitle}>{t('whmDailyTitle', language) || 'Daglig rytme'}</h2>
+              <p className={styles.cardSubtitle}>{t('whmDailySubtitle', language) || 'Sådan ser en morgenrutine ud'}</p>
             </div>
             <span className={styles.cardChevron}>{expanded === 'daily' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                En typisk Wim Hof-morgen begynder på tom mave. Sæt dig eller læg dig
-                behageligt. Tre runder åndedræt: tredive dybe indåndinger, derefter
-                retention med tomme lunger (start med 1-2 minutter, byg op over uger),
-                efterfulgt af en genopfyldningsindånding der holdes i 15 sekunder.
+                {t('whmDailyText', language) || 'En typisk Wim Hof-morgen begynder på tom mave. Sæt dig eller læg dig behageligt. Tre runder åndedræt: tredive dybe indåndinger, derefter retention med tomme lunger (start med 1-2 minutter, byg op over uger), efterfulgt af en genopfyldningsindånding der holdes i 15 sekunder.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Efter åndedrættet følger kulden. For begyndere er to minutter med koldt
-                brusebad tilstrækkeligt. Med tiden kan det udbygges til isbad, vinterbadning
-                eller længere eksponering. Det vigtige er progressionen — aldrig tvang, altid
-                respekt for kroppens aktuelle grænse. Hele rutinen tager 15-20 minutter og
-                efterlader de fleste udøvere med en følelse af klarhed, energi og
-                indre varme der kan mærkes i timevis.
+                {t('whmDailyTextExtra', language) || 'Efter åndedrættet følger kulden. For begyndere er to minutter med koldt brusebad tilstrækkeligt. Med tiden kan det udbygges til isbad, vinterbadning eller længere eksponering. Det vigtige er progressionen — aldrig tvang, altid respekt for kroppens aktuelle grænse. Hele rutinen tager 15-20 minutter og efterlader de fleste udøvere med en følelse af klarhed, energi og indre varme der kan mærkes i timevis.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Morgen på tom mave giver den reneste fysiologiske respons</li>
-                <li>Tre runder: 30 åndedrag → retention → genopfyldning</li>
-                <li>Retentionstiden vokser naturligt med praksis</li>
-                <li>Kuldeeksponering fra 30 sekunder og op — aldrig forceret</li>
-                <li>15-20 minutters investering med effekt der varer hele dagen</li>
+                {(t('whmDailyBullets', language) || [
+                  'Morgen på tom mave giver den reneste fysiologiske respons',
+                  'Tre runder: 30 åndedrag → retention → genopfyldning',
+                  'Retentionstiden vokser naturligt med praksis',
+                  'Kuldeeksponering fra 30 sekunder og op — aldrig forceret',
+                  '15-20 minutters investering med effekt der varer hele dagen',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -373,7 +337,7 @@ export default function WhmPage() {
         </div>
       </section>
 
-      <ScrollToTop />
+      <ScrollToTop language={language} />
       <div className={styles.bottomSpacer} />
     </main>
   )

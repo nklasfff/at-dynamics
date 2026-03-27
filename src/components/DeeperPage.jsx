@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import styles from './DeeperPage.module.css'
 import ScrollToTop from './ScrollToTop'
+import { t } from '../translations'
 
-export default function DeeperPage() {
+export default function DeeperPage({ language }) {
   const [expandedCard, setExpandedCard] = useState(null)
   const [activeExercise, setActiveExercise] = useState(null)
   const [breathCount, setBreathCount] = useState(0)
@@ -38,11 +39,10 @@ export default function DeeperPage() {
 
       {/* Header */}
       <header className={styles.header}>
-        <p className={styles.eyebrow}>Dybere</p>
-        <h1 className={styles.title}>Tre veje ind</h1>
+        <p className={styles.eyebrow}>{t('deeperEyebrow', language) || 'Dybere'}</p>
+        <h1 className={styles.title}>{t('deeperTitle', language) || 'Tre veje ind'}</h1>
         <p className={styles.subtitle}>
-          Udforsk hver disciplin i dybden. Forstå principperne,
-          mærk rytmerne, og prøv øvelserne selv.
+          {t('deeperSubtitle', language) || 'Udforsk hver disciplin i dybden. Forstå principperne, mærk rytmerne, og prøv øvelserne selv.'}
         </p>
       </header>
 
@@ -130,37 +130,28 @@ export default function DeeperPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Ansigtsbehandling i dybden</p>
-              <h2 className={styles.cardTitle}>AnsigtsLøftningsTeknik</h2>
-              <p className={styles.cardSubtitle}>Seks lag, fem nerver, én forvandling</p>
+              <p className={styles.cardLabel}>{t('deeperAltLabel', language) || 'Ansigtsbehandling i dybden'}</p>
+              <h2 className={styles.cardTitle}>{t('deeperAltTitle', language) || 'AnsigtsLøftningsTeknik'}</h2>
+              <p className={styles.cardSubtitle}>{t('deeperAltSubtitle', language) || 'Seks lag, fem nerver, én forvandling'}</p>
             </div>
             <span className={styles.cardChevron}>{expandedCard === 'alt' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Hvad sker der egentlig, når fingerspidserne møder ansigtets væv? Under huden
-                ligger et komplekst landskab af bindevæv, muskelfibre og nervebaner, der
-                fungerer som en direkte kommunikationskanal mellem periferi og hjernestamme.
-                Rosenbergs tilgang adskiller sig fra konventionel ansigtsbehandling ved at
-                respektere hvert anatomisk lag som et selvstændigt system med sin egen rytme
-                og sin egen modstandsgrænse.
+                {t('deeperAltText', language) || 'Hvad sker der egentlig, når fingerspidserne møder ansigtets væv? Under huden ligger et komplekst landskab af bindevæv, muskelfibre og nervebaner, der fungerer som en direkte kommunikationskanal mellem periferi og hjernestamme. Rosenbergs tilgang adskiller sig fra konventionel ansigtsbehandling ved at respektere hvert anatomisk lag som et selvstændigt system med sin egen rytme og sin egen modstandsgrænse.'}
               </p>
               <p className={styles.cardTextExtra}>
-                De fem kranienerver, der forgrener sig gennem ansigtet — trigeminus, facialis,
-                glossopharyngeus, vagus og accessorius — danner tilsammen en sensorisk bro til
-                hjernestammens autonome reguleringscentre. Det er derfor, at et skånsomt tryk
-                på kæbelinjen kan ændre hjertefrekvens, og en blid berøring ved tindingen kan
-                løsne spændingen i mellemgulvet. Behandlingsforløbet strækker sig over seks
-                uger, og med hver session trænger arbejdet dybere ind i lagene — fra overflade
-                mod knogle, fra spænding mod frihed.
+                {t('deeperAltTextExtra', language) || 'De fem kranienerver, der forgrener sig gennem ansigtet — trigeminus, facialis, glossopharyngeus, vagus og accessorius — danner tilsammen en sensorisk bro til hjernestammens autonome reguleringscentre. Det er derfor, at et skånsomt tryk på kæbelinjen kan ændre hjertefrekvens, og en blid berøring ved tindingen kan løsne spændingen i mellemgulvet. Behandlingsforløbet strækker sig over seks uger, og med hver session trænger arbejdet dybere ind i lagene — fra overflade mod knogle, fra spænding mod frihed.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Hvert lag har sin egen berøringskvalitet og responstid</li>
-                <li>Kranienerverne bærer sensorisk information begge veje</li>
-                <li>Kæbelinjen er en nøgle til vagusnerven og parasympatisk regulering</li>
-                <li>Forandringen akkumuleres over seks sessioner i stigende dybde</li>
-                <li>Ansigtet afspejler nervesystemets tilstand — og kan ændre den</li>
+                {(t('deeperAltBullets', language) || [
+                  'Hvert lag har sin egen berøringskvalitet og responstid',
+                  'Kranienerverne bærer sensorisk information begge veje',
+                  'Kæbelinjen er en nøgle til vagusnerven og parasympatisk regulering',
+                  'Forandringen akkumuleres over seks sessioner i stigende dybde',
+                  'Ansigtet afspejler nervesystemets tilstand — og kan ændre den',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -225,37 +216,28 @@ export default function DeeperPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Åndedræt i dybden</p>
-              <h2 className={styles.cardTitle}>Wim Hof Metoden</h2>
-              <p className={styles.cardSubtitle}>Åndedræt, kulde og viljens kraft</p>
+              <p className={styles.cardLabel}>{t('deeperWhmLabel', language) || 'Åndedræt i dybden'}</p>
+              <h2 className={styles.cardTitle}>{t('deeperWhmTitle', language) || 'Wim Hof Metoden'}</h2>
+              <p className={styles.cardSubtitle}>{t('deeperWhmSubtitle', language) || 'Åndedræt, kulde og viljens kraft'}</p>
             </div>
             <span className={styles.cardChevron}>{expandedCard === 'whm' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Bag de 30 kraftfulde indåndinger ligger en præcis fysiologisk mekanisme.
-                Når blodets CO₂-niveau falder under den hurtige vejrtrækning, stiger pH-værdien
-                og udløser en kaskade: blodkarrene trækker sig sammen, iltafgivelsen til
-                vævene ændres, og hjernen registrerer en midlertidig iltmangel. Det er i
-                retentionsfasen — med tomme lunger og lukket mund — at det interessante sker:
-                kroppen møder sin egen stressrespons uden ekstern trussel.
+                {t('deeperWhmText', language) || 'Bag de 30 kraftfulde indåndinger ligger en præcis fysiologisk mekanisme. Når blodets CO\u2082-niveau falder under den hurtige vejrtrækning, stiger pH-værdien og udløser en kaskade: blodkarrene trækker sig sammen, iltafgivelsen til vævene ændres, og hjernen registrerer en midlertidig iltmangel. Det er i retentionsfasen \u2014 med tomme lunger og lukket mund \u2014 at det interessante sker: kroppen møder sin egen stressrespons uden ekstern trussel.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Kulden er den anden søjle, og dens virkning er dybt fysiologisk. Koldt vand
-                under 15 grader aktiverer kroppens brune fedtvæv, frigiver noradrenalin og
-                skærper det vaskulære system. Men den egentlige træning handler ikke om kulden
-                selv — den handler om øjeblikket lige inden. Det øjeblik, hvor viljen møder
-                ubehaget og vælger at blive. Radboud-studiet fra 2014 dokumenterede, at
-                trænede udøvere kunne modulere deres medfødte immunrespons viljestyret —
-                noget der indtil da blev anset for umuligt.
+                {t('deeperWhmTextExtra', language) || 'Kulden er den anden søjle, og dens virkning er dybt fysiologisk. Koldt vand under 15 grader aktiverer kroppens brune fedtvæv, frigiver noradrenalin og skærper det vaskulære system. Men den egentlige træning handler ikke om kulden selv \u2014 den handler om øjeblikket lige inden. Det øjeblik, hvor viljen møder ubehaget og vælger at blive. Radboud-studiet fra 2014 dokumenterede, at trænede udøvere kunne modulere deres medfødte immunrespons viljestyret \u2014 noget der indtil da blev anset for umuligt.'}
               </p>
               <ul className={styles.bullets}>
-                <li>pH-stigningen i blodet udløser en kontrolleret alarmreaktion</li>
-                <li>Retentionsfasen er mødet med kroppens egen overlevelsesmekanisme</li>
-                <li>Brunt fedtvæv aktiveres og øger kroppens varmeproduktion</li>
-                <li>Noradrenalin-frigivelsen skærper opmærksomhed og immunfunktion</li>
-                <li>Viljen til at forblive i ubehag træner nervesystemets omstillingsevne</li>
+                {(t('deeperWhmBullets', language) || [
+                  'pH-stigningen i blodet udløser en kontrolleret alarmreaktion',
+                  'Retentionsfasen er mødet med kroppens egen overlevelsesmekanisme',
+                  'Brunt fedtvæv aktiveres og øger kroppens varmeproduktion',
+                  'Noradrenalin-frigivelsen skærper opmærksomhed og immunfunktion',
+                  'Viljen til at forblive i ubehag træner nervesystemets omstillingsevne',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -315,37 +297,28 @@ export default function DeeperPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Kraniosakral i dybden</p>
-              <h2 className={styles.cardTitle}>Kraniosakral Terapi</h2>
-              <p className={styles.cardSubtitle}>Tre rytmer, én stilhed</p>
+              <p className={styles.cardLabel}>{t('deeperCstLabel', language) || 'Kraniosakral i dybden'}</p>
+              <h2 className={styles.cardTitle}>{t('deeperCstTitle', language) || 'Kraniosakral Terapi'}</h2>
+              <p className={styles.cardSubtitle}>{t('deeperCstSubtitle', language) || 'Tre rytmer, én stilhed'}</p>
             </div>
             <span className={styles.cardChevron}>{expandedCard === 'cst' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                I begyndelsen af det 20. århundrede bemærkede osteopaten William Garner
-                Sutherland noget bemærkelsesværdigt: kraniets knogler er ikke fuldstændig
-                fusionerede hos voksne, men bevæger sig i et subtilt, rytmisk mønster. Denne
-                observation førte ham på en årtier lang undersøgelse, der afslørede et helt
-                nyt fysiologisk system — drevet af cerebrospinalvæskens produktion og
-                reabsorption mellem hjernens ventrikler og rygmarvskanalen.
+                {t('deeperCstText', language) || 'I begyndelsen af det 20. århundrede bemærkede osteopaten William Garner Sutherland noget bemærkelsesværdigt: kraniets knogler er ikke fuldstændig fusionerede hos voksne, men bevæger sig i et subtilt, rytmisk mønster. Denne observation førte ham på en årtier lang undersøgelse, der afslørede et helt nyt fysiologisk system \u2014 drevet af cerebrospinalvæskens produktion og reabsorption mellem hjernens ventrikler og rygmarvskanalen.'}
               </p>
               <p className={styles.cardTextExtra}>
-                James Jealous videreførte denne tradition og formaliserede den biodynamiske
-                tilgang, hvor behandleren ikke manipulerer men lytter. Der er tre perceptuelle
-                niveauer: den hurtigste rytme er kroppens mekaniske respons, den mellemste er
-                det organiserende felt der former væv og struktur, og den langsomste er en
-                universel tidevandsbevægelse der forbinder individet med noget større. Mellem
-                og under disse tre lag findes stilhedszonen — det felt hvorfra reorganisering
-                spontant opstår, når systemet mødes med tilstrækkelig ro og tilstedeværelse.
+                {t('deeperCstTextExtra', language) || 'James Jealous videreførte denne tradition og formaliserede den biodynamiske tilgang, hvor behandleren ikke manipulerer men lytter. Der er tre perceptuelle niveauer: den hurtigste rytme er kroppens mekaniske respons, den mellemste er det organiserende felt der former væv og struktur, og den langsomste er en universel tidevandsbevægelse der forbinder individet med noget større. Mellem og under disse tre lag findes stilhedszonen \u2014 det felt hvorfra reorganisering spontant opstår, når systemet mødes med tilstrækkelig ro og tilstedeværelse.'}
               </p>
               <ul className={styles.bullets}>
-                <li>Sutherlands opdagelse: kranieknoglerne bevæger sig hele livet</li>
-                <li>Cerebrospinalvæsken pulserer uafhængigt af hjerte og lunger</li>
-                <li>Tre perceptuelle lag svarer til tre niveauer af organisering</li>
-                <li>Behandleren lytter med hænderne — uden at tilføje kraft eller retning</li>
-                <li>Stilhed er ikke fravær af bevægelse men kilden til al bevægelse</li>
+                {(t('deeperCstBullets', language) || [
+                  'Sutherlands opdagelse: kranieknoglerne bevæger sig hele livet',
+                  'Cerebrospinalvæsken pulserer uafhængigt af hjerte og lunger',
+                  'Tre perceptuelle lag svarer til tre niveauer af organisering',
+                  'Behandleren lytter med hænderne \u2014 uden at tilføje kraft eller retning',
+                  'Stilhed er ikke fravær af bevægelse men kilden til al bevægelse',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -376,7 +349,7 @@ export default function DeeperPage() {
           <circle cx="200" cy="165" r="2" fill="var(--text-primary)" opacity="0.15">
             <animate attributeName="opacity" values="0.1;0.35;0.1" dur="25s" repeatCount="indefinite" />
           </circle>
-          <text x="200" y="178" fill="var(--text-primary)" fontSize="6" opacity="0.12" fontFamily="Inter, sans-serif" textAnchor="middle">Stilhed</text>
+          <text x="200" y="178" fill="var(--text-primary)" fontSize="6" opacity="0.12" fontFamily="Inter, sans-serif" textAnchor="middle">{t('deeperSvgStillness', language) || 'Stilhed'}</text>
         </svg>
       </div>
 
@@ -399,34 +372,28 @@ export default function DeeperPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>De tre som én</p>
-              <h2 className={styles.cardTitle}>Integration</h2>
-              <p className={styles.cardSubtitle}>Når disciplinerne smelter sammen</p>
+              <p className={styles.cardLabel}>{t('deeperIntegrationLabel', language) || 'De tre som én'}</p>
+              <h2 className={styles.cardTitle}>{t('deeperIntegrationTitle', language) || 'Integration'}</h2>
+              <p className={styles.cardSubtitle}>{t('deeperIntegrationSubtitle', language) || 'Når disciplinerne smelter sammen'}</p>
             </div>
             <span className={styles.cardChevron}>{expandedCard === 'integration' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                De tre discipliner er ikke separate praksisser — de er tre indgange til det
-                samme territorium. ALT arbejder udefra-ind gennem vævet og nerverne.
-                Wim Hof arbejder indefra-ud gennem åndedrættet og kemien. Kraniosakral
-                terapi lytter til det, der allerede bevæger sig, uden at tilføje noget.
+                {t('deeperIntegrationText', language) || 'De tre discipliner er ikke separate praksisser — de er tre indgange til det samme territorium. ALT arbejder udefra-ind gennem vævet og nerverne. Wim Hof arbejder indefra-ud gennem åndedrættet og kemien. Kraniosakral terapi lytter til det, der allerede bevæger sig, uden at tilføje noget.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Når de tre kombineres, opstår der en synergi: ansigtsbehandlingen åbner
-                de kranielle nerver, så åndedrættet kan bevæge sig frit. Åndedrættet
-                aktiverer nervesystemet, så den kraniosakrale rytme kan udfolde sig fuldt.
-                Og den kraniosakrale lytning skaber det stille rum, hvor alt det andet
-                kan integreres. Det er en spiral, ikke en linje — hver praksis forstærker
-                de andre, og over tid bliver grænsen mellem dem umulig at finde.
+                {t('deeperIntegrationTextExtra', language) || 'Når de tre kombineres, opstår der en synergi: ansigtsbehandlingen åbner de kranielle nerver, så åndedrættet kan bevæge sig frit. Åndedrættet aktiverer nervesystemet, så den kraniosakrale rytme kan udfolde sig fuldt. Og den kraniosakrale lytning skaber det stille rum, hvor alt det andet kan integreres. Det er en spiral, ikke en linje — hver praksis forstærker de andre, og over tid bliver grænsen mellem dem umulig at finde.'}
               </p>
               <ul className={styles.bullets}>
-                <li>ALT åbner nervevejene, åndedræt fylder dem med energi</li>
-                <li>Kuldeeksponering skærper det, som berøringen blødgør</li>
-                <li>Kraniosakral lytning integrerer alt i stilhed</li>
-                <li>Nervesystemet er den fælles akse for alle tre</li>
-                <li>Over tid opleves de tre som én sammenhængende praksis</li>
+                {(t('deeperIntegrationBullets', language) || [
+                  'ALT åbner nervevejene, åndedræt fylder dem med energi',
+                  'Kuldeeksponering skærper det, som berøringen blødgør',
+                  'Kraniosakral lytning integrerer alt i stilhed',
+                  'Nervesystemet er den fælles akse for alle tre',
+                  'Over tid opleves de tre som én sammenhængende praksis',
+                ]).map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </div>
           </div>
@@ -443,7 +410,7 @@ export default function DeeperPage() {
           <circle cx="200" cy="60" r="20" fill="none" stroke="var(--text-primary)" strokeWidth="0.3" opacity="0.08">
             <animate attributeName="r" values="18;28;18" dur="10s" repeatCount="indefinite" />
           </circle>
-          <text x="200" y="95" fill="var(--text-primary)" fontSize="8" opacity="0.15" fontFamily="'Cormorant Garamond', serif" textAnchor="middle" fontStyle="italic">Øvelser</text>
+          <text x="200" y="95" fill="var(--text-primary)" fontSize="8" opacity="0.15" fontFamily="'Cormorant Garamond', serif" textAnchor="middle" fontStyle="italic">{t('deeperSvgExercises', language) || 'Øvelser'}</text>
         </svg>
       </div>
 
@@ -463,19 +430,16 @@ export default function DeeperPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Øvelse — Åndedræt</p>
-              <h2 className={styles.cardTitle}>Bevidst vejrtrækning</h2>
-              <p className={styles.cardSubtitle}>4-4-4 boks-åndedræt</p>
+              <p className={styles.cardLabel}>{t('deeperBreathExLabel', language) || 'Øvelse — Åndedræt'}</p>
+              <h2 className={styles.cardTitle}>{t('deeperBreathExTitle', language) || 'Bevidst vejrtrækning'}</h2>
+              <p className={styles.cardSubtitle}>{t('deeperBreathExSubtitle', language) || '4-4-4 boks-åndedræt'}</p>
             </div>
             <span className={styles.cardChevron}>{activeExercise === 'breath' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Denne øvelse bruger boks-åndedræt (box breathing) til at balancere
-                nervesystemet. Indånd i 4 sekunder, hold i 4 sekunder, udånd i 4 sekunder.
-                Øvelsen aktiverer den ventrale vagale vej og bringer dig fra stress
-                til tilstedeværelse. Brug den som forberedelse til dybere praksis.
+                {t('deeperBreathExText', language) || 'Denne øvelse bruger boks-åndedræt (box breathing) til at balancere nervesystemet. Indånd i 4 sekunder, hold i 4 sekunder, udånd i 4 sekunder. Øvelsen aktiverer den ventrale vagale vej og bringer dig fra stress til tilstedeværelse. Brug den som forberedelse til dybere praksis.'}
               </p>
               <div className={styles.exerciseArea} onClick={(e) => e.stopPropagation()}>
                 <div className={styles.breathCircle}>
@@ -491,15 +455,15 @@ export default function DeeperPage() {
                       style={{ transition: 'r 3.8s ease-in-out' }}
                     />
                     <text x="60" y="58" textAnchor="middle" fill="var(--text-primary)" fontSize="11" fontFamily="'Cormorant Garamond', serif" opacity="0.6">
-                      {breathPhase === 'in' ? 'Indånd' : breathPhase === 'hold' ? 'Hold' : breathPhase === 'out' ? 'Udånd' : 'Start'}
+                      {breathPhase === 'in' ? (t('deeperBreathIn', language) || 'Indånd') : breathPhase === 'hold' ? (t('deeperBreathHold', language) || 'Hold') : breathPhase === 'out' ? (t('deeperBreathOut', language) || 'Udånd') : (t('deeperBreathStart', language) || 'Start')}
                     </text>
                     <text x="60" y="74" textAnchor="middle" fill="var(--text-secondary)" fontSize="8" fontFamily="Inter, sans-serif" opacity="0.4">
-                      {breathPhase ? `Cyklus ${breathCount + 1}` : 'Tryk herunder'}
+                      {breathPhase ? `${t('deeperBreathCycle', language) || 'Cyklus'} ${breathCount + 1}` : (t('deeperBreathPressBelow', language) || 'Tryk herunder')}
                     </text>
                   </svg>
                 </div>
                 <button className={styles.exerciseBtn} onClick={startBreathExercise}>
-                  {breathPhase ? 'Stop' : 'Begynd øvelsen'}
+                  {breathPhase ? (t('deeperBreathStop', language) || 'Stop') : (t('deeperBreathBegin', language) || 'Begynd øvelsen')}
                 </button>
               </div>
             </div>
@@ -524,31 +488,30 @@ export default function DeeperPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Øvelse — Ansigt</p>
-              <h2 className={styles.cardTitle}>Ansigtets kort</h2>
-              <p className={styles.cardSubtitle}>Selvberøring og bevidst kontakt</p>
+              <p className={styles.cardLabel}>{t('deeperFaceExLabel', language) || 'Øvelse — Ansigt'}</p>
+              <h2 className={styles.cardTitle}>{t('deeperFaceExTitle', language) || 'Ansigtets kort'}</h2>
+              <p className={styles.cardSubtitle}>{t('deeperFaceExSubtitle', language) || 'Selvberøring og bevidst kontakt'}</p>
             </div>
             <span className={styles.cardChevron}>{activeExercise === 'face' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Denne øvelse hjælper dig med at mærke dit eget ansigt med nye hænder.
-                Luk øjnene. Placer begge hænders fingerspidser let på kinderne — så let
-                at du kun lige mærker kontakten. Bliv der i 30 sekunder uden at bevæge dig.
+                {t('deeperFaceExText', language) || 'Denne øvelse hjælper dig med at mærke dit eget ansigt med nye hænder. Luk øjnene. Placer begge hænders fingerspidser let på kinderne — så let at du kun lige mærker kontakten. Bliv der i 30 sekunder uden at bevæge dig.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Mærk nu langsomt opefter mod tindingeregionen. Læg mærke til temperatur,
-                spænding, blødhed. Bevæg dig ned langs kæbelinjen. Afslut med fingerspidserne
-                let placeret på panden. Hele rejsen tager 3-5 minutter. Du træner ikke
-                musklerne — du genoptager kontakten mellem hænderne og nervesystemet.
+                {t('deeperFaceExTextExtra', language) || 'Mærk nu langsomt opefter mod tindingeregionen. Læg mærke til temperatur, spænding, blødhed. Bevæg dig ned langs kæbelinjen. Afslut med fingerspidserne let placeret på panden. Hele rejsen tager 3-5 minutter. Du træner ikke musklerne — du genoptager kontakten mellem hænderne og nervesystemet.'}
               </p>
               <div className={styles.exerciseSteps}>
-                <div className={styles.step}><span className={styles.stepNum}>1</span><span>Luk øjnene. Placer fingerspidserne på kinderne med minimal berøring.</span></div>
-                <div className={styles.step}><span className={styles.stepNum}>2</span><span>Bliv i 30 sekunder. Mærk varme, puls, spænding.</span></div>
-                <div className={styles.step}><span className={styles.stepNum}>3</span><span>Glid langsomt opefter til tindingerne. Bliv der 20 sekunder.</span></div>
-                <div className={styles.step}><span className={styles.stepNum}>4</span><span>Følg kæbelinjen ned med langsomme fingerspidser.</span></div>
-                <div className={styles.step}><span className={styles.stepNum}>5</span><span>Afslut på panden. Mærk stilheden under hænderne.</span></div>
+                {(t('deeperFaceSteps', language) || [
+                  'Luk øjnene. Placer fingerspidserne på kinderne med minimal berøring.',
+                  'Bliv i 30 sekunder. Mærk varme, puls, spænding.',
+                  'Glid langsomt opefter til tindingerne. Bliv der 20 sekunder.',
+                  'Følg kæbelinjen ned med langsomme fingerspidser.',
+                  'Afslut på panden. Mærk stilheden under hænderne.',
+                ]).map((step, i) => (
+                  <div key={i} className={styles.step}><span className={styles.stepNum}>{i + 1}</span><span>{step}</span></div>
+                ))}
               </div>
             </div>
           </div>
@@ -578,32 +541,30 @@ export default function DeeperPage() {
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <p className={styles.cardLabel}>Øvelse — Lytning</p>
-              <h2 className={styles.cardTitle}>Stilhedens hånd</h2>
-              <p className={styles.cardSubtitle}>Mærk den kraniosakrale rytme</p>
+              <p className={styles.cardLabel}>{t('deeperListenExLabel', language) || 'Øvelse — Lytning'}</p>
+              <h2 className={styles.cardTitle}>{t('deeperListenExTitle', language) || 'Stilhedens hånd'}</h2>
+              <p className={styles.cardSubtitle}>{t('deeperListenExSubtitle', language) || 'Mærk den kraniosakrale rytme'}</p>
             </div>
             <span className={styles.cardChevron}>{activeExercise === 'listen' ? '−' : '+'}</span>
           </div>
           <div className={styles.cardExpandable}>
             <div className={styles.cardBody}>
               <p className={styles.cardText}>
-                Denne øvelse introducerer dig til den kraniosakrale lytning. Sæt dig
-                behageligt. Placer én hånd på toppen af dit hoved (vertex) med blød, åben
-                kontakt. Tryk ikke — forestil dig at din hånd flyder på vandoverfladen.
+                {t('deeperListenExText', language) || 'Denne øvelse introducerer dig til den kraniosakrale lytning. Sæt dig behageligt. Placer én hånd på toppen af dit hoved (vertex) med blød, åben kontakt. Tryk ikke — forestil dig at din hånd flyder på vandoverfladen.'}
               </p>
               <p className={styles.cardTextExtra}>
-                Vent. Lyt med hånden. Efter 1-2 minutter kan du muligvis mærke en subtil,
-                langsom bevægelse — en ekspansion og kontraktion der ikke følger dit
-                åndedræt. Det er CRI, den kraniosakrale rytme. Døm den ikke. Analyser den
-                ikke. Mærk den bare. Denne kvalitet af tilstedeværelse — at lytte uden at
-                ville ændre — er kernen i al kraniosakral praksis.
+                {t('deeperListenExTextExtra', language) || 'Vent. Lyt med hånden. Efter 1-2 minutter kan du muligvis mærke en subtil, langsom bevægelse — en ekspansion og kontraktion der ikke følger dit åndedræt. Det er CRI, den kraniosakrale rytme. Døm den ikke. Analyser den ikke. Mærk den bare. Denne kvalitet af tilstedeværelse — at lytte uden at ville ændre — er kernen i al kraniosakral praksis.'}
               </p>
               <div className={styles.exerciseSteps}>
-                <div className={styles.step}><span className={styles.stepNum}>1</span><span>Sæt dig behageligt. Luk øjnene. Lad åndedrættet falde til ro.</span></div>
-                <div className={styles.step}><span className={styles.stepNum}>2</span><span>Placer én hånd blidt på toppen af hovedet. Minimal kontakt.</span></div>
-                <div className={styles.step}><span className={styles.stepNum}>3</span><span>Forestil dig at hånden flyder. Giv slip på al intention.</span></div>
-                <div className={styles.step}><span className={styles.stepNum}>4</span><span>Vent 2-3 minutter. Mærk eventuelle subtile bevægelser.</span></div>
-                <div className={styles.step}><span className={styles.stepNum}>5</span><span>Afslut langsomt. Mærk hele kroppen i stilhed et øjeblik.</span></div>
+                {(t('deeperListenSteps', language) || [
+                  'Sæt dig behageligt. Luk øjnene. Lad åndedrættet falde til ro.',
+                  'Placer én hånd blidt på toppen af hovedet. Minimal kontakt.',
+                  'Forestil dig at hånden flyder. Giv slip på al intention.',
+                  'Vent 2-3 minutter. Mærk eventuelle subtile bevægelser.',
+                  'Afslut langsomt. Mærk hele kroppen i stilhed et øjeblik.',
+                ]).map((step, i) => (
+                  <div key={i} className={styles.step}><span className={styles.stepNum}>{i + 1}</span><span>{step}</span></div>
+                ))}
               </div>
             </div>
           </div>
@@ -612,7 +573,7 @@ export default function DeeperPage() {
       </section>
 
       {/* Bottom spacer */}
-      <ScrollToTop />
+      <ScrollToTop language={language} />
       <div className={styles.bottomSpacer} />
     </main>
   )
