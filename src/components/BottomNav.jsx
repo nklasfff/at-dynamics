@@ -42,13 +42,13 @@ const tabs = [
     ),
   },
   {
-    id: 'profile',
-    label: 'Profil',
+    id: 'deeper',
+    label: 'Dybere',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.2" stroke="currentColor">
-        <line x1="4" y1="8" x2="20" y2="8" />
-        <line x1="4" y1="12" x2="16" y2="12" opacity="0.5" />
-        <line x1="4" y1="16" x2="12" y2="16" opacity="0.3" />
+        <circle cx="12" cy="12" r="8" opacity="0.2" />
+        <circle cx="12" cy="12" r="5" opacity="0.35" />
+        <circle cx="12" cy="12" r="2" opacity="0.6" />
       </svg>
     ),
   },

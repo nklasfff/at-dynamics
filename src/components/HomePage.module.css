@@ -34,36 +34,36 @@
 
 .header {
   text-align: center;
-  padding-top: 64px;
-  margin-bottom: 8px;
+  padding-top: 56px;
+  margin-bottom: 4px;
   position: relative;
   z-index: 1;
 }
 
 .eyebrow {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: var(--text-tertiary);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-weight: 400;
 }
 
 .title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.4rem, 8vw, 3.2rem);
+  font-size: clamp(2.2rem, 8vw, 3rem);
   font-weight: 300;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: var(--text-primary);
 }
 
 .subtitle {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
-  line-height: 1.9;
-  max-width: 380px;
+  line-height: 1.85;
+  max-width: 340px;
   margin: 0 auto;
   font-weight: 300;
 }
@@ -73,24 +73,25 @@
 .heroVisual {
   display: flex;
   justify-content: center;
-  padding: 20px 0 32px;
+  padding: 16px 0 24px;
   position: relative;
   z-index: 1;
 }
 
 .heroSvg {
-  width: 280px;
+  width: 100%;
+  max-width: 360px;
   height: auto;
   color: var(--text-primary);
 }
 
-/* ── Practice Cards ── */
+/* ── Practice Cards — Compact with fold-out ── */
 
 .practicesSection {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 48px;
+  gap: 8px;
+  margin-bottom: 8px;
   position: relative;
   z-index: 1;
 }
@@ -98,56 +99,94 @@
 .practiceCard {
   background: var(--bg-glass);
   border: 1px solid var(--bg-glass-border);
-  border-radius: 16px;
-  padding: 32px 28px 28px;
+  border-radius: 14px;
+  padding: 18px 20px;
   position: relative;
   overflow: hidden;
   transition: all 0.4s ease;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  cursor: pointer;
 }
 
 .practiceCard:hover {
   background: var(--bg-card-hover);
   border-color: var(--border-medium);
-  transform: translateY(-1px);
 }
 
-.cardIllustration {
+.cardRow {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 16px;
 }
 
-.cardSvg {
-  width: 100px;
-  height: 110px;
+.cardIcon {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+}
+
+.cardIconSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.cardContent {
+  flex: 1;
+  min-width: 0;
 }
 
 .cardLabel {
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   color: var(--text-tertiary);
-  margin-bottom: 6px;
+  margin-bottom: 2px;
   font-weight: 400;
 }
 
 .cardTitle {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   font-weight: 300;
-  line-height: 1.1;
-  margin-bottom: 2px;
+  line-height: 1.15;
+  margin-bottom: 1px;
 }
 
 .cardSubtitle {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 300;
   font-style: italic;
   color: var(--text-secondary);
-  margin-bottom: 14px;
+}
+
+.cardChevron {
+  flex: 0 0 auto;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--text-tertiary);
+  transition: color 0.3s;
+  width: 24px;
+  text-align: center;
+}
+
+.practiceCard:hover .cardChevron {
+  color: var(--text-secondary);
+}
+
+/* ── Card Expandable ── */
+
+.cardExpandable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease, padding 0.45s ease;
+  padding-top: 0;
+}
+
+.practiceCard.expanded .cardExpandable {
+  max-height: 300px;
+  padding-top: 14px;
 }
 
 .cardDescription {
@@ -155,70 +194,18 @@
   color: var(--text-secondary);
   line-height: 1.85;
   font-weight: 300;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
 }
 
 .cardAccent {
   position: absolute;
   top: 0;
-  left: 28px;
-  right: 28px;
+  left: 20px;
+  right: 20px;
   height: 1px;
-  opacity: 0.25;
+  opacity: 0.3;
   border-radius: 0 0 1px 1px;
-}
-
-/* ── Divider ── */
-
-.dividerSection {
-  display: flex;
-  justify-content: center;
-  padding: 8px 0 40px;
-  position: relative;
-  z-index: 1;
-}
-
-.dividerSvg {
-  width: 200px;
-  height: 40px;
-}
-
-/* ── Connection Section ── */
-
-.connectionSection {
-  text-align: center;
-  margin-bottom: 48px;
-  position: relative;
-  z-index: 1;
-  padding: 0 8px;
-}
-
-.connectionLabel {
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--text-tertiary);
-  margin-bottom: 10px;
-  font-weight: 400;
-}
-
-.connectionTitle {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-bottom: 20px;
-}
-
-.connectionText {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  line-height: 1.95;
-  max-width: 420px;
-  margin: 0 auto 16px;
-  font-weight: 300;
-}
-
-.connectionText:last-child {
-  margin-bottom: 0;
 }
 
 /* ── Today Section ── */
@@ -226,39 +213,84 @@
 .todaySection {
   position: relative;
   z-index: 1;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .todayCard {
   background: var(--bg-glass);
   border: 1px solid var(--bg-glass-border);
-  border-radius: 16px;
-  padding: 28px 28px;
+  border-radius: 14px;
+  padding: 22px 22px;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 
 .todayLabel {
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   color: var(--text-tertiary);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-weight: 400;
 }
 
 .todayQuote {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 300;
   line-height: 1.85;
   color: var(--text-secondary);
 }
 
+/* ── Pills Section ── */
+
+.pillsSection {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.pill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-glass);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 12px;
+  padding: 14px 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.pill:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-medium);
+}
+
+.pillDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex: 0 0 6px;
+  opacity: 0.7;
+}
+
+.pillText {
+  font-size: 0.62rem;
+  color: var(--text-secondary);
+  line-height: 1.3;
+  font-weight: 400;
+}
+
 /* ── Bottom spacer ── */
 
 .bottomSpacer {
-  height: 100px;
+  height: 90px;
 }
 
 /* ── Animations ── */
@@ -266,7 +298,7 @@
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -275,21 +307,21 @@
 }
 
 .header {
-  animation: fadeUp 0.8s ease both;
+  animation: fadeUp 0.7s ease both;
 }
 
 .heroVisual {
-  animation: fadeUp 0.8s ease 0.1s both;
+  animation: fadeUp 0.7s ease 0.08s both;
 }
 
 .practicesSection {
-  animation: fadeUp 0.8s ease 0.2s both;
-}
-
-.connectionSection {
-  animation: fadeUp 0.8s ease 0.3s both;
+  animation: fadeUp 0.7s ease 0.15s both;
 }
 
 .todaySection {
-  animation: fadeUp 0.8s ease 0.4s both;
+  animation: fadeUp 0.7s ease 0.2s both;
+}
+
+.pillsSection {
+  animation: fadeUp 0.7s ease 0.25s both;
 }
